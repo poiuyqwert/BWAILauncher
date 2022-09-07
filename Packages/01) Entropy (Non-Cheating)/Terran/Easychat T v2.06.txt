@@ -1,0 +1,696 @@
+# Easychat T v2.04
+# modified EasyChatT by Archon_Wing for BWAIWar4
+# Adapted for Entropy III
+
+# Terran Expansion Custom Level
+TMCx(1342, 111, aiscript):
+
+start_town()
+transports_off()
+farms_notiming()
+
+#if DEBUG
+debug(null, Easychat Terran 2.06)
+	--null--
+#endif
+
+multirun(essentials)
+build(1, command_center, 100)
+wait_build(1, command_center)
+multirun(scv)
+multirun(cloak detect)
+wait_buildstart(9, scv)
+build(1, supply_depot, 80)
+wait_buildstart(10, scv)
+build(1, barracks, 80)
+wait_buildstart(1, barracks)
+build(2, barracks, 80)
+multirun(quick expo?)
+wait_build(1, barracks)
+train(1, marine)
+defenseuse_gg(2, marine)
+defenseuse_ga(2, marine)
+defenseuse_ag(2, marine)
+defenseuse_aa(2, marine)
+farms_timing()
+multirun(tvp bunker)
+train(4, marine)
+
+multirun(comsat)
+
+define_max(24, marine)
+define_max(3, firebat)
+define_max(4, medic)
+define_max(18, siege_tank)
+define_max(20, vulture)
+define_max(18, goliath)
+define_max(60, scv)
+define_max(2, dropship)
+define_max(4, battlecruiser)
+define_max(2, science_vessel)
+define_max(255, wraith)
+
+
+train(6, marine)
+build(1, refinery, 80)
+
+train(8, marine)
+build(1, academy, 80)
+wait_buildstart(1, academy)
+
+train(12, marine)
+
+build(2, bunker, 80)
+wait_build(1, academy)
+
+multirun(stim range)
+defenseuse_gg(1, firebat)
+defenseuse_gg(1, marine)
+train(1, firebat)
+multirun(shop upgrades)
+multirun(build machine shop)
+train(2, firebat)
+multirun(medics)
+build(1, factory, 120)
+wait_buildstart(1, factory)
+train(16, marine)
+
+expand(1, expo)
+train(20, marine)
+
+wait_build(1, factory)
+build(1, machine_shop, 80)
+wait_build(1, machine_shop)
+train(3, siege_tank)
+attack_add(3, siege_tank)
+attack_add(20, marine)
+attack_add(3, medic)
+attack_add(2, firebat)
+attack_prepare()
+multirun(prepare facts)
+attack_do()
+attack_clear()
+defensebuild_gg(1, vulture)
+defensebuild_gg(1, siege_tank)
+defensebuild_ga(1, siege_tank)
+defensebuild_ga(1, vulture)
+multirun(upgrades)
+
+multirun(bc upgrades)
+wait(1)
+multirun(mass expo)
+clear_combatdata()
+multirun(need goliath)
+attack_add(12, marine)
+attack_add(2, medic)
+attack_add(5, siege_tank)
+attack_add(6, vulture)
+
+multirun(train tanks)
+multirun(train vultures)
+wait(150)
+attack_prepare()
+attack_do()
+
+attack_clear()
+clear_combatdata()
+
+
+define_max(2, firebat)
+define_max(4, marine)
+define_max(1, medic)
+
+
+--more attacking--
+multirun(train tanks)
+wait(15)
+multirun(train vultures)
+wait(15)
+attack_add(12, siege_tank)
+attack_add(20, vulture)
+notowns_jump(armory, destroy)
+
+defenseuse_gg(1, goliath)
+defenseuse_ga(1, goliath)
+defenseuse_ag(1, goliath)
+defenseuse_aa(1, goliath)
+attack_add(6, goliath)
+
+--destroy--
+wait(4800)
+
+attack_prepare()
+attack_do()
+attack_clear()
+clear_combatdata()
+
+
+--attack selector--
+resources_jump(2000, 2000, bc attack)
+resources_jump(1000, 500, mid attack)
+wait(1)
+
+resources_jump(100, 100, more attacking)
+wait(300)
+
+resources_jump(1500, 2000, bc attack)
+resources_jump(1000, 500, mid attack)
+resources_jump(100, 0, more attacking)
+wait(1000)
+
+resources_jump(100, 0, more attacking)
+send_suicide(0)
+wait(1000)
+
+goto(attack selector)
+
+
+--mid attack--
+multirun(train vultures)
+wait(15)
+multirun(train more tanks)
+attack_add(20, vulture)
+attack_add(16, siege_tank)
+multirun(add 1 vessel)
+notowns_jump(armory, mid attack 2)
+attack_add(8, goliath)
+multirun(train goliaths)
+
+--mid attack 2--
+wait(3600)
+attack_prepare()
+attack_do()
+attack_clear()
+clear_combatdata()
+wait(100)
+
+goto(attack selector)
+
+
+--bc attack--
+notowns_jump(control_tower, mid attack)
+notowns_jump(science_facility, mid attack)
+multirun(train more tanks)
+wait(5)
+multirun(train vultures)
+wait(5)
+wait(5)
+notowns_jump(physics_lab, get lab)
+--bc attack 2--
+multirun(train battlecruisers)
+attack_add(2, battlecruiser)
+attack_add(18, siege_tank)
+attack_add(20, vulture)
+attack_add(2, science_vessel)
+notowns_jump(armory, bc attack 3)
+attack_add(8, goliath)
+multirun(train goliaths)
+--bc attack 3--
+wait(3400)
+attack_prepare()
+attack_do()
+attack_clear()
+clear_combatdata()
+wait(100)
+
+goto(attack selector)
+
+--get lab--
+build(1, science_facility, 85)
+wait_build(1, science_facility)
+build(1, physics_lab, 85)
+wait_build(1, physics_lab)
+defenseuse_gg(1, battlecruiser)
+defenseuse_ga(1, battlecruiser)
+defenseuse_aa(1, battlecruiser)
+defenseuse_ag(1, battlecruiser)
+defensebuild_gg(1, battlecruiser)
+defensebuild_ag(1, battlecruiser)
+goto(bc attack 2)
+
+
+--prepare facts--
+build(2, factory, 90)
+wait_buildstart(2, factory)
+build(3, factory, 90)
+wait_build(3, factory)
+build(2, machine_shop, 90)
+build(4, factory, 90)
+wait(2500)
+build(5, factory, 90)
+wait_buildstart(5, factory)
+build(1, armory, 80)
+wait_build(1, armory)
+defenseuse_gg(1, goliath)
+defenseuse_ga(1, goliath)
+defenseuse_ag(1, goliath)
+defenseuse_aa(1, goliath)
+wait(5300)
+build(1, starport, 90)
+wait_build(1, starport)
+build(1, control_tower, 90)
+build(1, science_facility, 90)
+wait_build(1, control_tower)
+wait_force(1, science_vessel)
+tech(emp_shockwave, 80)
+--need transports--
+wait(1500)
+resources_jump(2000, 2000, get transports)
+groundmap_jump(need transports)
+--get transports--
+check_transports()
+stop()
+
+
+
+
+
+--cloak detect--
+enemyowns_jump(templar_archives, detection)
+enemyowns_jump(lair, detection)
+enemyowns_jump(starport, detection)
+wait(400)
+
+goto(cloak detect)
+
+
+--detection--
+
+build(1, academy, 80)
+wait_buildstart(1, academy)
+build(1, engineering_bay, 80)
+
+--turrets--
+wait_build(1, engineering_bay)
+build(1, missile_turret, 80)
+wait_buildstart(1, missile_turret)
+wait(100)
+build(2, missile_turret, 75)
+wait_buildstart(2, missile_turret)
+wait(500)
+
+build(3, missile_turret, 75)
+stop()
+
+
+--shop upgrades--
+wait_build(1, machine_shop)
+defenseuse_gg(1, siege_tank)
+defenseuse_ga(1, siege_tank)
+defenseuse_gg(1, vulture)
+defenseuse_ga(1, vulture)
+tech(siege_mode, 90)
+train(3, siege_tank)
+wait_force(3, siege_tank)
+wait(800)
+wait_train(1, vulture)
+tech(spider_mines, 60)
+wait(1200)
+wait_train(1, goliath)
+upgrade(1, goliath_range, 65)
+wait(1200)
+
+upgrade(1, vulture_speed, 30)
+stop()
+
+
+
+
+
+
+
+--bc upgrades--
+wait_buildstart(1, physics_lab)
+
+build(2, starport, 80)
+wait_build(2, starport)
+build(2, control_tower, 80)
+wait_build(1, physics_lab)
+tech(yamato_gun, 60)
+wait(1000)
+upgrade(1, battlecruiser_mana, 30)
+wait(1000)
+
+stop()
+
+
+--need goliath--
+enemyowns_jump(stargate, TMCx 0024)
+enemyowns_jump(shuttle, TMCx 0024)
+enemyowns_jump(spire, TMCx 0024)
+wait(500)
+
+goto(need goliath)
+
+
+--TMCx 0024--
+build(1, engineering_bay, 80)
+wait_build(1, factory)
+build(1, armory, 90)
+wait_build(1, armory)
+defensebuild_ag(1, goliath)
+defenseuse_gg(1, goliath)
+defenseuse_ga(1, goliath)
+defenseuse_ag(1, goliath)
+defenseuse_aa(1, goliath)
+goto(turrets)
+
+
+--expo--
+start_town()
+build(1, command_center, 115)
+get_oldpeons(2)
+multirun(expo turrets)
+wait_build(1, command_center)
+multirun(scv)
+get_oldpeons(8)
+--expo 2--
+build(1, bunker, 50)
+wait_buildstart(1, bunker)
+--expo 3--
+wait(1500)
+multirun(expo comsat)
+wait(3000)
+build(1, factory, 50)
+wait_build(1, factory)
+build(1, machine_shop, 50)
+wait_build(1, machine_shop)
+wait(3000)
+build(2, factory, 45)
+stop()
+#For later expos
+--outer expo--
+start_town()
+build(1, command_center, 85)
+get_oldpeons(2)
+multirun(expo turrets)
+wait_build(1, command_center)
+multirun(expo scv)
+goto(expo 3)
+
+
+--expo turrets--
+notowns_jump(engineering_bay, wait turrets)
+wait_buildstart(1, command_center)
+build(1, missile_turret, 70)
+wait_buildstart(1, missile_turret)
+build(2, missile_turret, 50)
+wait(1500)
+build(3, missile_turret, 50)
+stop()
+
+
+--wait turrets--
+wait(400)
+
+goto(expo turrets)
+
+--expo comsat--
+notowns_jump(academy, wait expo comsat)
+player_need(1, academy)
+build(1, comsat_station, 75)
+stop()
+
+--wait expo comsat--
+wait(400)
+goto(expo comsat)
+
+
+
+--mass expo--
+wait(2600)
+expand(2, expo)
+--mass expo 2--
+wait(7400)
+expand(99, outer expo)
+goto(mass expo 2)
+
+
+
+
+--upgrades--
+wait_build(1, armory)
+
+
+upgrade(1, t_vehicle_weapon, 60)
+multirun(armor upgrades)
+wait(4500)
+wait_build(1, science_facility)
+upgrade(2, t_vehicle_weapon, 60)
+
+wait(4800)
+
+upgrade(3, t_vehicle_weapon, 60)
+
+wait(5000)
+
+wait_train(3, battlecruiser)
+upgrade(1, t_ship_weapon, 30)
+wait(5000)
+upgrade(1, t_ship_plating, 20)
+wait(5000)
+upgrade(2, t_ship_weapon, 10)
+wait(5000)
+upgrade(2, t_ship_plating, 10)
+wait(5000)
+
+upgrade(3, t_ship_weapon, 10)
+wait(5000)
+upgrade(3, t_ship_plating, 10)
+stop()
+
+--armor upgrades--
+build(2, armory, 80)
+wait_build(2, armory)
+upgrade(1, t_vehicle_plating, 60)
+wait(4500)
+wait_build(1, science_facility)
+upgrade(2, t_vehicle_plating, 60)
+wait(4800)
+upgrade(3, t_vehicle_plating, 50)
+stop()
+
+
+--scv--
+wait_build(1, command_center)
+build(1, scv, 80)
+wait_build(1, scv)
+build(2, scv, 80)
+wait_build(2, scv)
+build(3, scv, 80)
+wait_build(3, scv)
+build(4, scv, 80)
+wait_build(4, scv)
+build(5, scv, 80)
+wait_build(5, scv)
+build(6, scv, 80)
+wait_build(6, scv)
+build(7, scv, 80)
+wait_build(7, scv)
+build(8, scv, 80)
+wait_build(8, scv)
+build(9, scv, 80)
+wait_build(9, scv)
+build(10, scv, 80)
+wait_build(10, scv)
+build(11, scv, 80)
+wait_build(11, scv)
+build(12, scv, 80)
+wait_build(12, scv)
+build(13, scv, 80)
+wait_build(13, scv)
+build(14, scv, 80)
+wait_build(14, scv)
+build(15, scv, 80)
+wait_build(15, scv)
+build(16, scv, 80)
+wait_build(16, scv)
+build(17, scv, 80)
+wait_build(17, scv)
+build(18, scv, 80)
+wait_build(18, scv)
+build(19, scv, 80)
+wait_build(19, scv)
+build(20, scv, 80)
+wait_build(20, scv)
+build(21, scv, 80)
+wait_build(21, scv)
+build(22, scv, 80)
+wait_build(22, scv)
+build(23, scv, 80)
+wait_build(23, scv)
+build(24, scv, 80)
+wait_build(24, scv)
+build(25, scv, 80)
+wait_build(25, scv)
+stop()
+
+--expo scv--
+wait_build(1, command_center)
+build(1, scv, 70)
+wait_build(1, scv)
+get_oldpeons(8)
+build(2, scv, 65)
+wait_build(2, scv)
+build(3, scv, 65)
+wait_build(3, scv)
+build(4, scv, 65)
+wait_build(4, scv)
+build(5, scv, 65)
+wait_build(5, scv)
+build(6, scv, 65)
+wait_build(6, scv)
+build(7, scv, 65)
+wait_build(7, scv)
+build(8, scv, 65)
+wait_build(8, scv)
+build(9, scv, 65)
+wait_build(9, scv)
+build(10, scv, 65)
+wait_build(10, scv)
+build(11, scv, 65)
+wait_build(11, scv)
+build(12, scv, 65)
+wait_build(12, scv)
+build(13, scv, 65)
+wait_build(13, scv)
+build(14, scv, 65)
+wait_build(14, scv)
+build(15, scv, 65)
+wait_build(15, scv)
+build(16, scv, 65)
+wait_build(16, scv)
+build(17, scv, 65)
+wait_build(17, scv)
+build(18, scv, 65)
+wait_build(18, scv)
+build(19, scv, 65)
+wait_build(19, scv)
+build(20, scv, 65)
+wait_build(20, scv)
+build(21, scv, 65)
+wait_build(21, scv)
+build(22, scv, 65)
+wait_build(22, scv)
+build(23, scv, 65)
+wait_build(23, scv)
+build(24, scv, 65)
+wait_build(24, scv)
+build(25, scv, 65)
+wait_build(25, scv)
+stop()
+
+
+--comsat--
+wait_build(1, academy)
+build(1, comsat_station, 80)
+stop()
+
+--stim range--
+tech(stim_packs, 80)
+wait(1800)
+upgrade(1, marine_range, 80)
+stop()
+
+
+
+--train tanks--
+wait_force(5, siege_tank)
+wait_force(9, siege_tank)
+stop()
+
+--train more tanks--
+wait_force(9, siege_tank)
+wait_force(14, siege_tank)
+wait_force(18, siege_tank)
+stop()
+
+--train vultures--
+wait_force(10, vulture)
+wait_force(20, vulture)
+stop()
+
+--train goliaths--
+wait_force(3, goliath)
+wait_force(5, goliath)
+stop()
+--train battlecruisers--
+wait_force(2, battlecruiser)
+--terminate--
+stop()
+
+--add 1 vessel--
+notowns_jump(science_facility, terminate)
+notowns_jump(control_tower, terminate)
+attack_add(1, science_vessel)
+stop()
+
+		--essentials--
+	wait_build(1, barracks)
+	player_need(1, barracks)
+	wait_build(1, factory)
+	player_need(1, factory)
+	wait_build(1, starport)
+	player_need(1, starport)
+	wait_build(1, science_facility)
+	player_need(1, science_facility)
+	stop()
+	
+	--tvp bunker--
+wait_buildstart(12, scv)
+rush(0, build tvp bunker)
+wait_build(1, barracks)
+wait(1500)
+build(1, bunker, 95)
+stop()
+--build tvp bunker--
+wait_buildstart(2, supply_depot)
+wait_build(1, barracks)
+creep(3)
+build(1, bunker, 95)
+wait_build(1, bunker)
+enemyowns_jump(cybernetics_core, terminate)
+creep(3)
+
+build(2, bunker, 120)
+stop()
+
+--quick expo?--
+rush(0, terminate)
+wait(1000)
+expand(1, super fast expo)
+wait(1000)
+player_need(1, refinery)
+wait(2000)
+build(1, factory, 80)
+wait_build(1, factory)
+build(1, machine_shop, 80)
+stop()
+
+
+
+
+--super fast expo--
+start_town()
+build(1, command_center, 80)
+wait_build(1, command_center)
+multirun(scv)
+get_oldpeons(4)
+build(1, barracks, 80)
+goto(expo 2)
+
+--build machine shop--
+wait_build(1, factory)
+build(1, machine_shop, 90)
+wait_force(10, siege_tank)
+stop()
+
+--medics--
+wait_build(1, academy)
+train(2, medic)
+wait_force(2, medic)
+stop()
+
+
+
+

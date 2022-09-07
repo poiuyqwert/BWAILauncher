@@ -1,0 +1,1469 @@
+# Ashara P v1.0
+# P Vs T Script by Ashara v0.64
+# P Vs Z Script by Ashara v0.21
+
+# Protoss Expansion Custom Level
+PMCx(1343, 101, aiscript):
+
+
+    start_town()
+    transports_off()
+    farms_notiming() 
+
+#if DEBUG
+    debug(null, Ashara P v1.0)
+    --null--
+#endif
+
+    race_jump(vs_Terran, vs_Zerg, vs_Protoss)
+
+################################# Protoss Vs Terran Part #######################
+
+        --vs_Terran--
+        
+    define_max(79, probe)
+    define_max(40, zealot)
+    define_max(10, dragoon)
+    define_max(255, high_templar)
+    define_max(255, archon)
+    define_max(50, dark_templar)
+    define_max(255, dark_archon)
+    define_max(255, shuttle)
+    define_max(255, reaver)
+    define_max(6, observer)
+    define_max(8, scout)
+    define_max(20, carrier)
+    define_max(255, arbiter)
+    define_max(255, corsair)
+
+# ###################### VsTerran Building main part #################
+
+# Main building
+    build(1, nexus, 2)
+    wait_buildstart(1, nexus)
+    build(4, probe, 2)
+    wait_buildstart(4, probe)
+    build(5, probe, 2)
+    wait_buildstart(5, probe)
+    build(6, probe, 2)
+    wait_buildstart(6, probe)
+    build(7, probe, 2)
+    wait_buildstart(7, probe)
+    build(1, pylon, 2)
+    wait_buildstart(1, pylon)
+    build(8, probe, 2)
+    wait_build(1, pylon)
+    build(1, gateway, 2)
+    wait_buildstart(1, gateway)
+    wait(200)
+    enemyowns_jump(barracks, main_dt_rush_t)
+    goto(main_zeal_rush_t)
+
+        --main_dt_rush_t--
+    build(10, probe, 2)
+    wait_buildstart(10, probe)
+    build(1, assimilator, 2)
+    wait_buildstart(1, assimilator)
+    build(11, probe, 2)
+    wait_buildstart(11, probe)
+    wait_build(1, gateway)
+    build(1, cybernetics_core, 2)
+    wait_buildstart(1, cybernetics_core)
+    build(13, probe, 2)
+    wait_buildstart(13, probe)
+    train(1, zealot)
+    build(1, citadel_of_adun, 2)
+    wait_buildstart(1, citadel_of_adun)
+    build(14, probe, 2)
+    build(2, pylon, 2)
+    wait_buildstart(2, pylon)
+    build(15, probe, 2)
+    build(1, templar_archives, 2)
+    wait_buildstart(1, templar_archives)
+    train(2, zealot)
+    build(17, probe, 2)
+    wait(200)
+    build(2, gateway, 2)
+    wait_build(1, templar_archives)
+    farms_timing()
+    multirun(m_attack_step0_t)
+    wait(1)
+    multirun(m_dt_defense_t)
+    wait(1000)
+    build(3, gateway, 2)
+    wait_buildstart(3, gateway)
+
+        --l_upzeal_t--
+    resources_jump(300, 100, main_step2_t)
+    wait(250)
+    goto(l_upzeal_t)
+
+        --main_step2_t--
+    upgrade(1, zealot_speed, 2)
+    expand(99, start_expand_t)
+    wait(3200)
+    build(23, probe, 2)
+    wait(500)
+    wait(1)
+    multirun(full_zeal_t)
+    wait(1)
+    build(1, stargate, 3)
+
+# from here both dt rush part and zeal rush part follow the same build
+
+        --g_join_t--
+    defenseclear_gg()
+    defensebuild_gg(1, zealot)
+    defenseuse_gg(1, zealot)
+    defensebuild_gg(1, dark_templar)
+    defenseuse_gg(1, dark_templar)
+    defensebuild_gg(1, carrier)
+    defenseuse_gg(1, carrier)
+    defenseclear_ag()
+    defensebuild_ag(1, scout)
+    defenseuse_ag(1, scout)
+    defensebuild_ag(1, dragoon)
+    defenseuse_ag(1, dragoon)
+    defensebuild_ag(1, carrier)
+    defenseuse_ag(1, carrier)
+    defenseclear_aa()
+    defensebuild_aa(1, scout)
+    defenseuse_aa(1, scout)
+    defensebuild_aa(1, carrier)
+    defenseuse_aa(1, carrier)
+    defenseclear_ga()
+    defensebuild_ga(1, carrier)
+    defenseuse_ga(1, carrier)
+    wait_buildstart(1, stargate)
+    build(1, fleet_beacon, 2)
+    build(3, stargate, 2)
+    wait_buildstart(1, fleet_beacon)
+    wait(1000)
+    multirun(m_attackfinal_t)
+    wait(1)
+    build(23, probe, 2)
+    build(1, forge, 2)
+    wait(1000)
+    expand(199, start_expand2_t)
+    wait(1)
+    upgrade(1, carrier_capacity, 2)
+    multirun(air_attack_t)
+    wait(1000)
+    wait(600)
+    build(8, pylon, 2)
+    wait(1)
+    wait(1)
+    build(1, robotics_facility, 2)
+    wait(1)
+    wait_buildstart(1, robotics_facility)
+    build(1, observatory, 2)
+    wait(1)
+    wait_buildstart(1, observatory)
+    multirun(spy_coming_t)
+    wait(1)
+    wait(2500)
+    goto(main_step3_t)
+
+        --main_step3_t--
+    wait(450)
+    resources_jump(1100, 400, main_step4_t)
+    wait(200)
+    goto(main_step3_t)
+
+
+        --main_step4_t--
+    wait(100)
+    expand(199, start_expand3_t)
+    wait(1000)
+    build(4, gateway, 2)
+    wait(1)
+    wait_buildstart(1, gateway)
+    wait_buildstart(2, gateway)
+    wait_buildstart(3, gateway)
+    wait_buildstart(4, gateway)
+    build(1, photon_cannon, 2)
+    wait_buildstart(1, photon_cannon)
+    build(2, photon_cannon, 2)
+    wait_buildstart(2, photon_cannon)
+    build(3, photon_cannon, 1)
+    wait(4000)
+    goto(main_step3_t)
+
+
+
+        --main_zeal_rush_t--
+    build(2, gateway, 2)
+    wait_buildstart(2, gateway)
+    build(10, probe, 2)
+    wait_buildstart(9, probe)
+    train(1, zealot)
+    wait_train(1, zealot)
+    wait_build(2, gateway)
+    train(3, zealot)
+    build(2, pylon, 2)
+    wait_buildstart(2, pylon)
+    build(11, probe, 2)
+    wait_buildstart(11, probe)
+    wait_train(3, zealot)
+    multirun(m_rushzealot_t)
+
+        --l_train2zeal_t--
+    resources_jump(200, 0, end_l_train2zeal_t)
+    wait(10)
+    goto(l_train2zeal_t)
+
+        --end_l_train2zeal_t--
+    train(5, zealot)
+    multirun(m_addrushzealot2_t)
+    build(12, probe, 2)
+    wait_buildstart(12, probe)
+    build(13, probe, 2)
+    wait_buildstart(13, probe)
+    farms_timing()
+    build(1, assimilator, 2)
+    wait_buildstart(1, assimilator)
+    build(14, probe, 2)
+    wait_buildstart(14, probe)
+    wait_build(2, gateway)
+    build(1, cybernetics_core, 2)
+    wait_buildstart(1, cybernetics_core)
+    build(15, probe, 2)
+    wait_buildstart(15, probe)
+    build(16, probe, 2)
+    wait_buildstart(16, probe)
+    build(3, gateway, 2)
+    build(23, probe, 2)
+    multirun(m_zeal_rush_train1_t)
+    defensebuild_gg(1, zealot)
+    defenseuse_gg(1, zealot)
+    wait_buildstart(3, gateway)
+    wait(8000)
+    defensebuild_ag(1, dragoon)
+    defenseuse_ag(1, dragoon)
+    goto(end_loop)
+
+        --m_rush_step2_t--
+    expand(160, rushexpand_t)
+    defensebuild_gg(1, zealot)
+    defenseuse_gg(1, zealot)
+    build(1, forge, 2)
+    build(1, citadel_of_adun, 2)
+    upgrade(1, dragoon_range, 1)
+    wait_buildstart(1, citadel_of_adun)
+    wait(600)
+    build(1, stargate, 2)
+    build(1, templar_archives, 2)
+    wait_buildstart(1, templar_archives)
+    multirun(m_dark_templar4_t)
+    defenseclear_gg()
+    defensebuild_gg(1, dark_templar)
+    defenseuse_gg(1, dark_templar)
+    goto(end_loop)
+
+        --m_rush_step3_t--
+    defenseuse_gg(1, zealot)
+    defenseuse_gg(1, dark_templar)
+    defenseuse_gg(1, dragoon)
+    defensebuild_gg(1, zealot)
+    wait(4500)
+    goto(g_join_t)
+
+# ######################## VsTerran expanding ##############################
+
+        --start_expand_t--
+    start_town()
+    build(1, nexus, 2)
+    wait_buildstart(1, nexus)
+    build(1, pylon, 2)
+    build(2, pylon, 2)
+    wait(500)
+    wait_build(1, nexus)
+    build(3, probe, 2)
+    wait_buildstart(1, pylon)
+    get_oldpeons(6)
+    wait_buildstart(2, pylon)
+    build(15, probe, 2)
+    wait(2800)
+    build(2, gateway, 2)
+    wait_buildstart(1, gateway)
+    wait_buildstart(2, gateway)
+    build(4, pylon, 2)
+    wait_buildstart(3, pylon)
+    wait_buildstart(4, pylon)
+    wait(4000)
+        --cannon_exp1_t--
+    wait(550)
+    notowns_jump(forge, cannon_exp1_t)
+    player_need(1, forge)
+    build(4, photon_cannon, 2)
+    wait(1000)
+    wait_buildstart(1, photon_cannon)
+    wait_buildstart(2, photon_cannon)
+    wait_buildstart(3, photon_cannon)
+    wait_buildstart(4, photon_cannon)
+    wait(8000)
+    expand(80, start_expand3_t)
+    goto(end_loop)
+
+        --start_expand2_t--
+    start_town()
+    build(1, nexus, 2)
+    wait_buildstart(1, nexus)
+    build(1, pylon, 2)
+    build(2, pylon, 2)
+    wait(500)
+    wait_build(1, nexus)
+    build(3, probe, 2)
+    wait_buildstart(1, pylon)
+    get_oldpeons(9)
+    wait_buildstart(2, pylon)
+    build(13, probe, 2)
+    wait(500)
+    build(2, gateway, 2)
+    wait_buildstart(1, gateway)
+    wait_buildstart(2, gateway)
+    build(3, pylon, 2)
+    wait_buildstart(3, pylon)
+    player_need(1, cybernetics_core)
+    build(1, stargate, 2)
+    wait(1)
+    wait_buildstart(1, stargate)
+        --cannon_exp2_t--
+    wait(550)
+    notowns_jump(forge, cannon_exp2_t)
+    player_need(1, forge)
+    build(4, photon_cannon, 2)
+    wait_buildstart(1, photon_cannon)
+    wait_buildstart(2, photon_cannon)
+    wait_buildstart(3, photon_cannon)
+    wait_buildstart(4, photon_cannon)
+    wait(6000)
+    expand(80, start_expand3_t)
+    goto(end_loop)
+
+        --start_expand3_t--
+    start_town()
+    wait(300)
+    build(1, nexus, 2)
+    wait_buildstart(1, nexus)
+    build(1, pylon, 2)
+    build(2, pylon, 2)
+    wait_build(1, nexus)
+    wait_buildstart(1, pylon)
+    build(3, probe, 2)
+    wait_buildstart(2, pylon)
+    build(2, gateway, 2)
+    get_oldpeons(6)
+    build(13, probe, 2)
+    wait(500)
+    wait_buildstart(1, gateway)
+    wait_buildstart(2, gateway)
+    build(3, pylon, 2)
+    wait(1)
+    wait_buildstart(3, pylon)
+        --cannon_exp3_t--
+    wait(550)
+    notowns_jump(forge, cannon_exp3_t)
+    player_need(1, forge)
+    build(3, photon_cannon, 2)
+    wait(1)
+    wait_buildstart(1, photon_cannon)
+    wait_buildstart(2, photon_cannon)
+    wait_buildstart(3, photon_cannon)
+    wait(6000)
+    expand(199, start_expand3_t)
+    goto(end_loop)
+
+
+        --rushexpand_t--
+    start_town()
+    build(1, nexus, 2)
+    wait(700)
+    wait_buildstart(1, nexus)
+    build(1, pylon, 2)
+    build(2, pylon, 2)
+    wait_buildstart(1, pylon)
+    wait_buildstart(2, pylon)
+    wait_build(1, nexus)
+    build(3, probe, 2)
+    get_oldpeons(4)
+    build(16, probe, 2)
+    wait(400)
+    build(2, gateway, 2)
+    wait_buildstart(1, gateway)
+    wait_buildstart(2, gateway)
+    wait(100)
+    build(4, pylon, 2)
+    wait(100)
+        --cannon_rushexp1--
+    wait(550)
+    notowns_jump(forge, cannon_rushexp1)
+    build(1, photon_cannon, 2)
+    wait_buildstart(1, photon_cannon)
+    build(2, photon_cannon, 2)
+    wait_buildstart(2, photon_cannon)
+    build(3, photon_cannon, 2)
+    wait_buildstart(3, photon_cannon)
+    build(4, photon_cannon, 2)
+    wait_buildstart(4, photon_cannon)
+    build(5, photon_cannon, 2)
+    wait_buildstart(5, photon_cannon)
+    wait(1000)
+    wait(6000)
+    expand(199, start_expand3_t)
+    goto(end_loop)
+
+################ Vs Terran Training ##############################
+
+        --m_dark_templar4_t--
+    wait(300)
+    notowns_jump(templar_archives, m_dark_templar4_t)
+    wait_build(1, templar_archives)
+    train(4, dark_templar)
+    wait_train(4, dark_templar)
+    multirun(m_rush_step3_t)
+    attack_clear()
+    attack_add(4, dark_templar)
+    attack_do()
+    attack_clear()
+    guard_resources(dark_templar)
+    goto(end_loop)
+
+
+# loop for training dark_templars, stops after 12 game minutes
+        --m_dt_defense_t--
+    defensebuild_gg(1, dark_templar)
+    defenseuse_gg(1, dark_templar)
+        --l_defense_t--
+    train(1, dark_templar)
+    wait_train(1, dark_templar)
+    wait(50)
+    train(2, dark_templar)
+    wait_train(2, dark_templar)
+    wait(50)
+    train(3, dark_templar)
+    wait_train(3, dark_templar)
+    wait(50)
+    train(4, dark_templar)
+    wait_train(4, dark_templar)
+    wait(50)
+    train(5, dark_templar)
+    wait_train(5, dark_templar)
+    wait(50)
+    train(6, dark_templar)
+    wait_train(6, dark_templar)
+    wait(50)
+    train(7, dark_templar)
+    wait_train(7, dark_templar)
+    wait(50)
+    train(8, dark_templar)
+    wait_train(8, dark_templar)
+    wait(50)
+    train(9, dark_templar)
+    wait_train(9, dark_templar)
+    time_jump(12, end_loop)
+    wait(1000)
+    goto(l_defense_t)
+
+        --full_zeal_t--
+    wait(450)
+    resources_jump(1000, 0, full_zeal2_t)
+    goto(full_zeal_t)
+
+
+        --full_zeal2_t--
+    train(40, zealot)
+    attack_add(40, zealot)
+    wait(10)
+    goto(full_zeal_t)
+
+
+# training for zealot rush part
+        --m_zeal_rush_train1_t--
+    multirun(m_rush_step2_t)
+    goto(g_zeal_rush_train2_t)
+
+        --g_zeal_rush_train2_t--
+    wait(450)
+    resources_jump(1000, 0, g_zeal_rush_train3_t)
+    goto(g_zeal_rush_train2_t)
+
+        --g_zeal_rush_train3_t--
+    train(4, dragoon)
+    train(12, zealot)
+    attack_add(4, dragoon)
+    attack_add(12, zealot)
+    wait(500)
+    notowns_jump(templar_archives, g_zeal_rush_train3_t)
+    wait(10000)
+        --g_zeal_rush_train4_t--
+    wait(50)
+    train(6, dark_templar)
+    attack_add(6, dark_templar)
+    wait(50)
+    train(3, zealot)
+    attack_add(3, zealot)
+    wait(50)
+    train(10, dark_templar)
+    attack_add(10, dark_templar)
+    wait(50)
+    train(6, zealot)
+    attack_add(6, zealot)
+    wait(50)
+    train(20, dark_templar)
+    attack_add(20, dark_templar)
+    wait(50)
+    train(12, zealot)
+    attack_add(12, zealot)
+    wait(50)
+    train(30, dark_templar)
+    attack_add(30, dark_templar)
+    wait(50)
+    train(15, zealot)
+    attack_add(15, zealot)
+    wait(1500)
+    goto(g_zeal_rush_train4_t)
+
+
+# common training for both zeal rush and dt rush parts
+
+#observer training
+        --spy_coming_t--
+    wait(650)
+    notowns_jump(observatory, spy_coming_t)
+    player_need(1, observatory)
+        --spy_coming2_t--
+    upgrade(1, observer_speed, 2)
+    attack_add(1, observer)
+    train(1, observer)
+    wait(50)
+    train(3, observer)
+    upgrade(1, observer_sight, 1)
+    wait(50)
+    train(6, observer)
+    wait_train(6, observer)
+    wait(400)
+    goto(spy_coming2_t)
+
+#final training
+        --m_trainingfinal_t--
+    wait(450)
+    notowns_jump(fleet_beacon, m_attackfinal_t)
+    train(3, carrier)
+    attack_add(3, carrier)
+    wait(50)
+    train(6, dark_templar)
+    attack_add(6, dark_templar)
+    wait(50)
+    train(6, zealot)
+    attack_add(6, zealot)
+    wait(50)
+    train(6, carrier)
+    attack_add(6, carrier)
+    wait(50)
+    train(10, dark_templar)
+    attack_add(10, dark_templar)
+    wait(50)
+    train(12, zealot)
+    attack_add(12, zealot)
+    wait(50)
+    train(9, carrier)
+    attack_add(9, carrier)
+    wait(50)
+    train(20, dark_templar)
+    attack_add(20, dark_templar)
+    wait(50)
+    train(20, zealot)
+    attack_add(20, zealot)
+    wait(50)
+    train(6, dragoon)
+    attack_add(6, dragoon)
+    wait(50)
+    train(12, carrier)
+    attack_add(12, carrier)
+    wait(50)
+    train(30, dark_templar)
+    attack_add(30, dark_templar)
+    wait(50)
+    train(30, zealot)
+    attack_add(30, zealot)
+    wait(1500)
+    goto(m_trainingfinal_t)
+
+
+
+# ################## Vs Terran attacking and defending ####################
+
+        --m_rushzealot_t--
+    send_suicide(0)
+    stop()
+
+        --m_addrushzealot2_t--
+    wait_train(5, zealot)
+    attack_clear()
+    attack_add(2, zealot)
+    attack_do()
+    attack_clear()
+    stop()
+
+        --m_attack_step0_t--
+        --repeatrush_t--
+    wait(1)
+    time_jump(12, attack_step1_t)
+    wait(1)
+    attack_clear()
+    attack_add(1, dark_templar)
+    wait(1)
+    attack_add(3, dark_templar)
+    wait(1)
+    attack_add(1, dark_templar)
+    attack_do()
+    attack_clear()
+    wait(320)
+    goto(repeatrush_t)
+
+
+        --attack_step1_t--
+    wait(1)
+    wait(100)
+    wait(1)
+    multirun(defense_step2_t)
+    wait(1300)
+    guard_resources(dark_templar)
+        --attack_step3_t--
+    wait(18000)
+    wait_finishattack()
+    attack_clear()
+    attack_add(25, zealot)
+    attack_add(18, dark_templar)
+    wait(50)
+    attack_prepare()
+    attack_do()
+    wait(3000)
+    goto(attack_step3_t)
+
+
+        --defense_step2_t--
+    defensebuild_gg(1, dark_templar)
+    defenseuse_gg(1, dark_templar)
+    defensebuild_gg(1, zealot)
+    defenseuse_gg(1, zealot)
+    defenseclear_ag()
+    defensebuild_ag(1, dragoon)
+    defenseuse_ag(1, dragoon)
+    wait(5000)
+    goto(end_loop)
+
+
+        --air_attack_t--
+    wait(650)
+    notowns_jump(fleet_beacon, air_attack_t)
+    player_need(1, fleet_beacon)
+    defenseclear_aa()
+    defenseclear_ag()
+    defensebuild_aa(1, scout)
+    defenseuse_aa(1, scout)
+    defenseuse_aa(1, carrier)
+    defensebuild_ag(1, carrier)
+    defenseuse_ag(1, carrier)
+    wait(50)
+    wait_train(6, carrier)
+    attack_clear()
+    attack_add(8, carrier)
+    wait(50)
+    attack_add(24, zealot)
+    wait(50)
+    attack_add(22, dark_templar)
+    wait(50)
+    attack_prepare()
+    attack_do()
+    wait(3000)
+    goto(air_attack_t)
+
+
+        --m_attackfinal_t--
+    wait(650)
+    notowns_jump(fleet_beacon, m_attackfinal_t)
+    multirun(m_trainingfinal_t)
+    wait(1)
+    upgrade(3, p_air_weapon, 2)
+    wait(1)
+    upgrade(3, p_plating, 1)
+        --m_forgefinal_t--
+    wait(650)
+    notowns_jump(forge, m_forgefinal_t)
+    wait(1)
+    upgrade(3, p_plasma_shield, 2)
+    wait(1)
+    upgrade(3, p_ground_weapon, 1)
+
+        --last_chance_t--
+    wait(14000)
+    send_suicide(0)
+    wait(2000)
+    goto(last_chance_t)
+
+
+
+
+
+################################# Protoss Vs Zerg Part #######################
+
+
+        --vs_Zerg--
+    define_max(30, zealot)
+    define_max(255, dragoon)
+    define_max(255, shuttle)
+    define_max(255, scout)
+    define_max(8, corsair)
+    define_max(255, carrier)
+    define_max(4, observer)
+    define_max(255, arbiter)
+    define_max(10, high_templar)
+    define_max(20, dark_templar)
+    define_max(9, archon)
+    define_max(3, dark_archon)
+    define_max(65, probe)
+    define_max(255, reaver)
+
+    multirun(m_research_z)
+
+############################# Vs Zerg main building part
+
+    build(1, nexus, 2)
+    wait_buildstart(1, nexus)
+    build(1, probe, 2)
+    wait_buildstart(1, probe)
+    build(2, probe, 2)
+    wait_buildstart(2, probe)
+    build(3, probe, 2)
+    wait_buildstart(3, probe)
+    build(4, probe, 2)
+    wait_buildstart(4, probe)
+    build(5, probe, 2)
+    wait_buildstart(5, probe)
+    build(6, probe, 2)
+    wait_buildstart(6, probe)
+    build(6, probe, 2)
+    wait_buildstart(6, probe)
+    build(7, probe, 2)
+    wait_buildstart(7, probe)
+    build(1, pylon, 2)
+    wait_buildstart(1, pylon)
+    enemyresources_jump(130, 0, g_pool_rush_z)
+    enemyowns_jump(spawning_pool, g_pool_rush_z)
+    build(8, probe, 2)
+    wait_buildstart(8, probe)
+    build(9, probe, 2)
+    wait_buildstart(9, probe)
+    build(1, gateway, 2)
+    wait_buildstart(1, gateway)
+    build(10, probe, 2)
+    wait_buildstart(10, probe)
+    enemyowns_jump(spawning_pool, g_9pool_z)
+    goto(g_2hatch_z)
+
+# zerg is either fast expanding or building a 2nd hatch in his main or sleeping
+        --g_2hatch_z--
+    multirun(m_train_prush_z)
+    defenseuse_gg(1, zealot)
+    build(2, gateway, 2)
+    wait_buildstart(2, gateway)
+    build(11, probe, 2)
+    wait_build(1, gateway)
+    train(1, zealot)
+    wait_buildstart(11, probe)
+    wait_build(2, gateway)
+    train(3, zealot)
+    wait(100)
+    build(2, pylon, 2)
+    wait_buildstart(2, pylon)
+    build(12, probe, 2)
+    wait_buildstart(12, probe)
+    build(3, pylon, 2)
+    wait_buildstart(3, pylon)
+    build(13, probe, 2)
+    wait_buildstart(13, probe)
+    build(14, probe, 2)
+    wait_buildstart(14, probe)
+    build(15, probe, 2)
+    wait_buildstart(15, probe)
+    build(3, gateway, 2)
+    wait_buildstart(3, gateway)
+    farms_timing()
+    build(16, probe, 2)
+    wait_buildstart(16, probe)
+    build(17, probe, 2)
+    wait_buildstart(17, probe)
+    wait(4500)
+    goto(g_main_pool_rush2_z)
+
+# zerg is 9 pooling
+        --g_9pool_z--
+    defenseuse_gg(1, zealot)
+    multirun(m_train_9pool_z)
+    build(11, probe, 2)
+    wait_buildstart(11, probe)
+    build(2, gateway, 2)
+    wait_buildstart(2, gateway)
+    build(12, probe, 2)
+    wait_buildstart(12, probe)
+    build(13, probe, 2)
+    wait_buildstart(13, probe)
+    build(2, pylon, 2)
+    wait_buildstart(2, pylon)
+    wait(600)
+    build(14, probe, 2)
+    wait_buildstart(14, probe)
+    build(15, probe, 2)
+    wait_buildstart(15, probe)
+    farms_timing()
+    wait(200)
+    goto(g_main_pool_rush2_z)
+
+# zerg is supposed to do some nasty 4,5 or 6 pooling
+        --g_pool_rush_z--
+    build(8, probe, 2)
+    wait_buildstart(8, probe)
+    build(1, gateway, 2)
+    wait_buildstart(1, gateway)
+    build(9, probe, 2)
+    wait_buildstart(9, probe)
+    enemyowns_jump(spawning_pool, g_pool_rush_step0_z)
+    goto(g_2hatch_z)
+
+        --g_pool_rush_step0_z--
+    defenseuse_gg(1, zealot)
+    multirun(m_train_zrush_z)
+    build(2, gateway, 2)
+    wait_buildstart(2, gateway)
+    wait(100)
+    build(10, probe, 2)
+    wait_buildstart(10, probe)
+    build(11, probe, 2)
+    wait_buildstart(11, probe)
+    farms_timing()
+    build(12, probe, 2)
+    wait_buildstart(12, probe)
+    enemyowns_jump(creep_colony, g_main_pool_rush2_z)
+    enemyowns_jump(sunken_colony, g_main_pool_rush2_z)
+    enemyowns_jump(zergling, g_main_pool_rush1_z)
+    goto(g_main_pool_rush2_z)
+
+        --g_main_pool_rush1_z--
+    build(13, probe, 2)
+    wait_buildstart(13, probe)
+    build(14, probe, 2)
+    wait_buildstart(14, probe)
+    build(3, gateway, 2)
+    wait_buildstart(3, gateway)
+    build(15, probe, 2)
+    wait_buildstart(15, probe)
+    build(16, probe, 2)
+    wait_buildstart(16, probe)
+    wait(800)
+    goto(g_main_pool_rush2_z)
+
+        --g_main_pool_rush2_z--
+    build(13, probe, 2)
+    wait_buildstart(13, probe)
+    build(14, probe, 2)
+    wait_buildstart(14, probe)
+    wait(500)
+    expand(99, start_expand_turtle_z)
+    build(1, assimilator, 2)
+    wait_buildstart(1, assimilator)
+    build(15, probe, 2)
+    wait_buildstart(15, probe)
+    build(3, pylon, 2)
+    wait_buildstart(3, pylon)
+
+        --g_norush2_main_step0_z--
+    wait(300)
+    resources_jump(210, 0, g_main_next0_z)
+    goto(g_norush2_main_step0_z)
+
+        --g_main_next0_z--
+    build(16, probe, 2)
+    wait_buildstart(16, probe)
+    build(1, cybernetics_core, 2)
+    wait_buildstart(1, cybernetics_core)
+    build(17, probe, 2)
+    wait_buildstart(17, probe)
+    build(3, gateway, 2)
+    wait_buildstart(3, gateway)
+        --g_norush2_main_step1_z--
+    wait(500)
+    notowns_jump(cybernetics_core, g_norush2_main_step1_z)
+    build(1, citadel_of_adun, 2)
+    wait_buildstart(1, citadel_of_adun)
+    wait(400)
+    build(18, probe, 2)
+    wait_buildstart(18, probe)
+    wait(400)
+    enemyowns_jump(lair, g_anti_muta_z)
+    goto(g_norush2_main_step1bis_z)
+
+        --g_norush2_main_step1bis_z--
+    build(19, probe, 2)
+    wait_buildstart(19, probe)
+        --g_norush2_main_step2_z--
+    wait(500)
+    notowns_jump(citadel_of_adun, g_norush2_main_step2_z)
+    build(1, templar_archives, 2)
+    build(20, probe, 2)
+    wait_buildstart(20, probe)
+    wait_buildstart(1, templar_archives)
+    wait(800)
+    build(1, forge, 2)
+    wait(100)
+    wait_buildstart(1, forge)
+    defenseuse_gg(1, dark_templar)
+    defenseuse_gg(1, archon)
+    defenseuse_gg(1, zealot)
+    build(21, probe, 2)
+    wait_buildstart(21, probe)
+    wait(500)
+    build(1, photon_cannon, 2)
+    build(22, probe, 2)
+    wait_buildstart(22, probe)
+    wait_buildstart(1, photon_cannon)
+    build(1, stargate, 2)
+    wait_buildstart(1, stargate)
+    defenseclear_aa()
+    defensebuild_aa(1, corsair)
+    defenseuse_aa(1, corsair)
+    build(1, robotics_facility, 2)
+    wait_buildstart(1, robotics_facility)
+        --g_norush2_main_step3_z--
+    wait(500)
+    notowns_jump(robotics_facility, g_norush2_main_step3_z)
+    build(1, observatory, 2)
+    wait_buildstart(1, observatory)
+    enemyowns_jump(spire, g_anti_muta3_z)
+        --g_norush2_main_step4_z--
+    build(23, probe, 2)
+    wait_buildstart(23, probe)
+    wait(300)
+    build(2, photon_cannon, 2)
+    wait_buildstart(2, photon_cannon)
+    expand(99, start_expand_z)
+    wait(1000)
+    wait(1000)
+    wait(500)
+    build(2, stargate, 2)
+    wait_buildstart(2, stargate)
+    build(1, fleet_beacon, 2)
+    wait_buildstart(1, fleet_beacon)
+    multirun(m_suicide_z)
+    wait(1000)
+    multirun(m_train_final_z)
+    wait(100)
+    goto(g_final_expand_z)
+
+        --g_anti_muta_z--
+    build(1, stargate, 2)
+    wait_buildstart(1, stargate)
+    defensebuild_aa(1, corsair)
+    defenseuse_aa(1, corsair)
+    enemyowns_jump(spire, g_anti_muta2_z)
+    goto(g_norush2_main_step1bis_z)
+
+        --g_anti_muta2_z--
+    define_max(14, corsair)
+    build(2, stargate, 2)
+    wait_buildstart(2, stargate)
+    goto(g_norush2_main_step1bis_z)
+
+        --g_anti_muta3_z--
+    define_max(14, corsair)
+    build(2, stargate, 2)
+    wait_buildstart(2, stargate)
+    goto(g_norush2_main_step4_z)
+
+# ################# Vs Zerg Expanding part
+
+#expanding loop called by main part
+        --g_final_expand_z--
+    wait(2000)
+    expand(99, start_expand_z)
+    wait(8000)
+    goto(g_final_expand_z)
+
+# first expanding against some zerg build orders
+        --start_expand_turtle_z--
+    start_town()
+    build(1, nexus, 2)
+    wait(500)
+    wait_buildstart(1, nexus)
+    wait(500)
+    build(1, pylon, 2)
+    wait(100)
+    wait(500)
+    wait_build(1, nexus)
+    build(1, probe, 2)
+    wait_buildstart(1, probe)
+    build(2, probe, 2)
+    wait_buildstart(2, probe)
+    build(3, probe, 2)
+    wait_buildstart(3, probe)
+    wait_buildstart(1, pylon)
+    build(2, pylon, 2)
+#get_oldpeons 4
+    wait_buildstart(2, pylon)
+    build(4, probe, 2)
+    wait_buildstart(4, probe)
+    build(5, probe, 2)
+    wait_buildstart(5, probe)
+    build(6, probe, 2)
+    wait_buildstart(6, probe)
+    build(7, probe, 2)
+    wait_buildstart(7, probe)
+    build(8, probe, 2)
+    wait_buildstart(8, probe)
+    build(9, probe, 2)
+    wait_buildstart(9, probe)
+    build(10, probe, 2)
+    wait_buildstart(10, probe)
+    build(1, gateway, 2)
+    wait_buildstart(1, gateway)
+    build(11, probe, 2)
+    wait_buildstart(11, probe)
+    build(1, assimilator, 1)
+    build(12, probe, 2)
+    wait_buildstart(12, probe)
+    build(13, probe, 2)
+    wait_buildstart(13, probe)
+    build(14, probe, 2)
+    wait_buildstart(14, probe)
+    build(15, probe, 2)
+    wait_buildstart(15, probe)
+    build(2, gateway, 2)
+    wait_buildstart(2, gateway)
+    build(16, probe, 2)
+    wait_buildstart(16, probe)
+        --cannon_exp_turtle_z--
+    wait(550)
+    enemyowns_jump(lair, cannon_exp_turtle2_z)
+    goto(cannon_exp_turtle_z)
+        --cannon_exp_turtle2_z--
+    wait(900)
+    notowns_jump(forge, cannon_exp_turtle2_z)
+    build(1, photon_cannon, 2)
+    wait_buildstart(1, photon_cannon)
+    build(2, photon_cannon, 2)
+    wait_buildstart(2, photon_cannon)
+    build(3, photon_cannon, 2)
+    wait_buildstart(3, photon_cannon)
+    build(18, probe, 2)
+    wait_buildstart(18, probe)
+    build(19, probe, 2)
+    wait_buildstart(19, probe)
+    goto(end_loop)
+
+# normal expanding vs zerg
+
+        --start_expand_z--
+    start_town()
+    build(1, nexus, 2)
+    wait(700)
+    wait_buildstart(1, nexus)
+    wait(100)
+    build(1, pylon, 2)
+    wait_buildstart(1, pylon)
+    wait(100)
+    build(2, pylon, 2)
+    wait_buildstart(2, pylon)
+    wait(200)
+    wait_build(1, nexus)
+    build(1, probe, 2)
+    wait_buildstart(1, probe)
+    build(2, probe, 2)
+    wait_buildstart(2, probe)
+    build(1, photon_cannon, 2)
+    wait_buildstart(1, photon_cannon)
+    build(1, gateway, 2)
+    wait_buildstart(1, gateway)
+    build(2, photon_cannon, 2)
+    wait_buildstart(2, photon_cannon)
+    build(3, probe, 2)
+    wait_buildstart(3, probe)
+#get_oldpeons 7
+    wait_buildstart(2, pylon)
+    build(1, assimilator, 1)
+    build(4, probe, 2)
+    wait_buildstart(4, probe)
+    build(2, gateway, 2)
+    wait_buildstart(2, gateway)
+    build(5, probe, 2)
+    wait_buildstart(5, probe)
+    build(3, photon_cannon, 2)
+    wait_buildstart(3, photon_cannon)
+    build(6, probe, 2)
+    wait_buildstart(6, probe)
+#build 4 photon_cannon 2
+#wait_buildstart 4 photon_cannon
+    build(7, probe, 2)
+    wait_buildstart(7, probe)
+    build(8, probe, 2)
+    wait_buildstart(8, probe)
+    build(9, probe, 2)
+    wait_buildstart(9, probe)
+    build(10, probe, 2)
+    wait_buildstart(10, probe)
+    build(11, probe, 2)
+    wait_buildstart(11, probe)
+    build(12, probe, 2)
+    wait_buildstart(12, probe)
+    build(13, probe, 2)
+    wait_buildstart(13, probe)
+    build(14, probe, 2)
+    wait_buildstart(14, probe)
+    build(12, probe, 2)
+    wait_buildstart(15, probe)
+    build(15, probe, 2)
+    wait_buildstart(16, probe)
+    wait(5800)
+    expand(99, start_expand_z)
+    wait(1000)
+    goto(end_loop)
+
+##################### Vs Zerg Training and Attacking #####################
+
+        --m_train_final_z--
+    train(40, zealot)
+    train(9, high_templar)
+    train(4, archon)
+    train(10, dark_templar)
+    train(1, observer)
+    wait(3000)
+    goto(m_train_final_z)
+
+        --m_train_prush_z--
+    multirun(m_suicide_rush3_z)
+    train(30, zealot)
+    wait(100)
+    goto(g_zrush2_z)
+
+        --m_suicide_rush3_z--
+    wait_train(5, zealot)
+    send_suicide(0)
+    wait(4000)
+    attack_clear()
+    wait_train(21, zealot)
+    attack_add(24, zealot)
+    attack_prepare()
+    attack_do()
+    attack_clear()
+    stop()
+
+        --m_train_9pool_z--
+    train(5, zealot)
+    wait_train(5, zealot)
+    wait(1000)
+    multirun(t_def_dt5_z)
+    wait(100)
+    multirun(t_def_zeal12_z)
+    wait(3800)
+    goto(zrush2_step4_z)
+
+
+        --m_train_zrush_z--
+    train(2, zealot)
+    attack_add(2, zealot)
+    wait_train(2, zealot)
+    enemyowns_jump(sunken_colony, g_zrush2_z)
+    enemyowns_jump(zergling, g_zrush1_z)
+    enemyowns_jump(creep_colony, g_zrush2_z)
+
+#this part wasn't tested, 6pooling then doing nothing seems a bit odd 
+    goto(m_train_prush_z)
+
+        --g_zrush1_z--
+    train(12, zealot)
+    wait_train(12, zealot)
+    send_suicide(0)
+    goto(g_zrush2_z)
+
+        --g_zrush2_z--
+    attack_clear()
+    multirun(t_zeal20_stop_z)
+        --zrush2_step1_z--
+    wait(500)
+    enemyowns_jump(spire, g_train_goon_z)
+    notowns_jump(stargate, zrush2_step1_z)
+    multirun(t_sair6_stop_z)
+    wait(150)
+    multirun(t_zeal20_stop_z)
+        --zrush2_step2_z--
+    wait(500)
+    notowns_jump(templar_archives, zrush2_step2_z)
+        --zrush2_step3_z--
+    train(8, high_templar)
+    train(2, archon)
+    train(12, dark_templar)
+    train(6, corsair)
+    train(25, zealot)
+
+    wait(250)
+    notowns_jump(observatory, zrush2_step3_z)
+    train(3, observer)
+#notowns_jump robotics_support_bay zrush2_step3_z
+    define_max(60, zealot)
+        --zrush2_step4_z--
+#multirun t_reav5_z
+#wait 150
+#multirun t_da2_z
+#wait 150
+    multirun(t_ht8_z)
+    wait(150)
+    multirun(t_dt14_z)
+    wait(150)
+    multirun(t_sair8_z)
+    wait(150)
+    multirun(t_zeal35_z)
+    stop()
+
+        --t_reav5_z--
+    train(5, reaver)
+    wait(2000)
+    goto(t_reav5_z)
+
+        --t_da2_z--
+    train(2, dark_archon)
+    wait(2000)
+    goto(t_da2_z)
+
+
+        --t_ht8_z--
+    train(8, high_templar)
+    train(3, archon)
+    wait(2000)
+    goto(t_ht8_z)
+
+        --t_def_dt5_z--
+    wait(250)
+    notowns_jump(templar_archives, t_def_dt5_z)
+    defenseuse_gg(1, dark_templar)
+    train(5, dark_templar)
+    wait_train(5, dark_templar)
+    stop()
+
+        --t_def_zeal12_z--
+    defenseuse_gg(1, zealot)
+    train(12, zealot)
+    wait_train(12, zealot)
+    stop()
+
+        --t_dt14_z--
+    train(14, dark_templar)
+    train(1, dark_archon)
+    wait(2000)
+    goto(t_dt14_z)
+
+        --t_sair6_stop_z--
+    train(6, corsair)
+    wait(2000)
+    stop()
+
+        --t_sair8_z--
+    train(8, corsair)
+    wait(2000)
+    goto(t_sair8_z)
+
+        --t_zeal20_stop_z--
+    train(20, zealot)
+    wait(3000)
+    stop()
+
+
+        --t_zeal35_z--
+    train(35, zealot)
+    wait(3000)
+    goto(t_zeal35_z)
+
+        --g_train_goon_z--
+    define_max(12, dragoon)
+    train(12, dragoon)
+    attack_add(10, dragoon)
+    goto(zrush2_step2_z)
+        --m_suicide_z--
+    wait(5500)
+    wait(1000)
+    send_suicide(0)
+    wait(2000)
+    goto(m_suicide_z)
+
+
+# ################### Vs Zerg Research ###############
+
+        --m_research_z--
+    wait(7000)
+    multirun(r_ta_z)
+    wait(500)
+    multirun(r_corsair_z)
+    wait(500)
+    multirun(r_leg_z)
+    wait(300)
+    multirun(r_obs_z)
+    wait(8000)
+    multirun(r_gweapon_z)
+    wait(3500)
+    multirun(r_aweapon_z)
+    wait(3500)
+#multirun r_scarab_z
+    wait(500)
+    goto(end_loop)
+
+
+        --r_armor_z--
+    wait(350)
+    notowns_jump(forge, r_armor_z)
+    upgrade(1, p_armor, 1)
+    wait(4100)
+        --r_armor2_z--
+    wait(350)
+    notowns_jump(templar_archives, r_armor2_z)
+    upgrade(2, p_armor, 1)
+    wait(4600)
+        --r_armor3_z--
+    wait(350)
+    notowns_jump(templar_archives, r_armor3_z)
+    upgrade(3, p_armor, 1)
+    wait(5100)
+    stop()
+
+        --r_gweapon_z--
+    wait(350)
+    notowns_jump(forge, r_gweapon_z)
+    upgrade(1, p_ground_weapon, 1)
+    wait(4100)
+        --r_gweapon2_z--
+    wait(350)
+    notowns_jump(templar_archives, r_gweapon2_z)
+    upgrade(2, p_ground_weapon, 1)
+    wait(4600)
+        --r_gweapon3_z--
+    wait(350)
+    notowns_jump(templar_archives, r_gweapon3_z)
+    upgrade(3, p_ground_weapon, 1)
+    wait(5100)
+        --r_shield_z--
+    wait(350)
+    notowns_jump(forge, r_shield_z)
+    upgrade(1, p_plasma_shield, 1)
+    wait(4100)
+        --r_shield2_z--
+    wait(350)
+    notowns_jump(cybernetics_core, r_shield2_z)
+    upgrade(2, p_plasma_shield, 1)
+    wait(4600)
+        --r_shield3_z--
+    wait(350)
+    notowns_jump(cybernetics_core, r_shield3_z)
+    upgrade(3, p_plasma_shield, 1)
+    wait(5100)
+    stop()
+
+
+        --r_aweapon_z--
+    wait(350)
+    notowns_jump(cybernetics_core, r_aweapon_z)
+    upgrade(1, p_air_weapon, 1)
+    wait(4100)
+        --r_aweapon2_z--
+    wait(350)
+    notowns_jump(fleet_beacon, r_aweapon2_z)
+    upgrade(2, p_air_weapon, 1)
+    wait(4600)
+        --r_aweapon3_z--
+    wait(350)
+    notowns_jump(fleet_beacon, r_aweapon3_z)
+    upgrade(3, p_air_weapon, 1)
+    wait(5100)
+    stop()
+
+        --r_scarab_z--
+    wait(550)
+    notowns_jump(robotics_support_bay, r_scarab_z)
+    upgrade(1, scarab_damage, 1)
+    wait(2600)
+    stop()
+
+        --r_corsair_z--
+    wait(450)
+    notowns_jump(fleet_beacon, r_corsair_z)
+    tech(disruption_web, 1)
+    wait(1300)
+    wait(10000)
+    wait(1050)
+    notowns_jump(fleet_beacon, r_corsair_z)
+    upgrade(1, corsair_mana, 1)
+    wait(2600)
+    stop()
+
+        --r_obs_z--
+    wait(750)
+    notowns_jump(observatory, r_obs_z)
+    upgrade(1, observer_speed, 1)
+    wait(2100)
+    wait(10000)
+        --r_obs2_z--
+    wait(1050)
+    notowns_jump(observatory, r_obs2_z)
+    upgrade(1, observer_sight, 1)
+    wait(2100)
+    stop()
+
+        --r_ta_z--
+    wait(350)
+    notowns_jump(templar_archives, r_ta_z)
+    tech(psionic_storm, 1)
+    wait(1900)
+        --r_ta2_z--
+    wait(350)
+    notowns_jump(templar_archives, r_ta2_z)
+    tech(mind_control, 1)
+    wait(1900)
+        --r_ta3_z--
+    wait(350)
+    notowns_jump(templar_archives, r_ta3_z)
+    tech(maelstrom, 1)
+    wait(1600)
+    wait(10000)
+        --r_ta4_z--
+    wait(1050)
+    notowns_jump(templar_archives, r_ta4_z)
+    upgrade(1, dark_archon_mana, 1)
+    wait(2600)
+        --r_ta5_z--
+    wait(1050)
+    notowns_jump(templar_archives, r_ta5_z)
+    upgrade(1, templar_mana, 1)
+    wait(2600)
+    stop()
+
+        --r_leg_z--
+    wait(550)
+    notowns_jump(citadel_of_adun, r_leg_z)
+    upgrade(1, zealot_speed, 1)
+    wait(2100)
+    stop()
+
+
+        --vs_Protoss--
+
+
+
+
+
+# ################ Here is the end ####################
+        --end_loop--
+    wait(30000)
+    wait(30000)
+    goto(end_loop)
+
+
+
+
+

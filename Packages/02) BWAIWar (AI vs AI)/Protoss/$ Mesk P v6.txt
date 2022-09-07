@@ -1,0 +1,912 @@
+# ProtossXtreme v6
+
+PMCx(1343, 101, aiscript):
+
+#===================================== The Great Apocalypse: ProtossXtreme 2.0 ========================
+#===================== Version 6, updated to include Skootz and some minor changes ========
+#===================== no u
+#===================== goatse
+#===================== Created by IskatuMesk, lord of all that is Carriers
+
+ 
+#if DEBUG
+    debug(debugmsg, ProtossXtreme v6.0)
+    --debugmsg--
+#endif
+
+   groundmap_jump(standard)
+    random_jump(125, skootz)
+    goto(lolcarriers)
+
+        --standard--
+    random_jump(125, skootz)
+    goto(lolcarriers)
+
+    start_town()
+        --probemelikeananimal--
+    build(1, probe, 1)
+    wait_build(1, probe)
+    build(2, probe, 1)
+    wait_build(2, probe)
+    build(3, probe, 1)
+    wait_build(3, probe)
+    build(4, probe, 1)
+    wait_build(4, probe)
+    build(5, probe, 1)
+    wait_build(5, probe)
+    build(6, probe, 1)
+    wait_build(6, probe)
+    build(7, probe, 1)
+    wait_build(7, probe)
+    build(8, probe, 1)
+    wait_build(8, probe)
+    build(9, probe, 1)
+    wait_build(9, probe)
+    build(10, probe, 1)
+    wait_build(10, probe)
+    build(11, probe, 1)
+    wait_build(11, probe)
+    build(12, probe, 1)
+    wait_build(12, probe)
+    build(13, probe, 1)
+    wait_build(13, probe)
+    build(14, probe, 1)
+    wait_build(14, probe)
+    build(15, probe, 1)
+    wait_build(15, probe)
+    build(16, probe, 1)
+    wait_build(16, probe)
+    build(17, probe, 1)
+    wait_build(17, probe)
+    build(18, probe, 1)
+    wait_build(18, probe)
+    build(19, probe, 1)
+    wait_build(19, probe)
+    build(20, probe, 1)
+    wait_build(20, probe)
+    build(21, probe, 1)
+    wait_build(21, probe)
+    build(22, probe, 1)
+    wait_build(22, probe)
+    build(23, probe, 1)
+    wait_build(23, probe)
+    build(24, probe, 1)
+    wait_build(24, probe)
+    build(25, probe, 1)
+    wait_build(25, probe)
+    stop()
+
+        --exp--
+        --block3--
+    start_town()
+    build(1, nexus, 2)
+    wait(1000)
+    multirun(pielons)
+    wait(1000)
+    multirun(expstargay)
+        --canunz--
+    build(1, photon_cannon, 2)
+    wait_buildstart(1, photon_cannon)
+    build(2, photon_cannon, 2)
+    wait_buildstart(2, photon_cannon)
+    build(3, photon_cannon, 2)
+    wait_buildstart(3, photon_cannon)
+    build(4, photon_cannon, 2)
+    wait_buildstart(4, photon_cannon)
+    build(5, photon_cannon, 2)
+    wait_buildstart(5, photon_cannon)
+    build(2, shield_battery, 8)
+    stop()
+
+
+        --massexpandp--
+    expand(99, block3)
+    wait(6500)
+    goto(massexpandp)
+
+        --money--
+    give_money()
+    wait(20)
+    goto(money)
+
+
+        --lolcarriers--
+    start_campaign()
+    wait(1)
+
+    start_town()
+    defaultbuild_off()
+    default_min(0)
+    wait(1)
+    multirun(money)
+    define_max(100, probe)
+    define_max(1, zealot)
+    define_max(1, dragoon)
+    define_max(4, dark_templar)
+    define_max(1, high_templar)
+    define_max(1, archon)
+    define_max(1, dark_archon)
+    define_max(6, shuttle)
+    define_max(6, observer)
+    define_max(10, reaver)
+    define_max(10, scout)
+    define_max(10, corsair)
+    define_max(30, carrier)
+    define_max(4, arbiter)
+    build(4, probe, 150)
+    build(1, nexus, 150)
+    multirun(pielons)
+    multirun(gayway)
+    wait(1000)
+    expand(1, xtremexpandcarrier)
+    multirun(doggynigga)
+    multirun(commencerape)
+    wait(1000)
+    multirun(getfukncariorz)
+    defensebuild_aa(1, corsair)
+    defenseuse_aa(1, corsair)
+    defensebuild_aa(1, scout)
+    defenseuse_aa(1, scout)
+    defensebuild_gg(1, scout)
+    defenseuse_gg(1, scout)
+    defensebuild_ga(1, scout)
+    defenseuse_ga(1, scout)
+    defensebuild_ag(1, scout)
+    defenseuse_ag(1, scout)
+    wait(1000)
+    multirun(robocock)
+    farms_timing()
+    wait(2000)
+    expand(2, xtremexpandcarrier)
+    define_max(5, zealot)
+    define_max(5, dragoon)
+    multirun(m_research)
+    multirun(probemelikeananimal)
+    multirun(jihad)
+    wait(3500)
+    expand(3, xtremexpandcarrier)
+    multirun(b_adun1)
+    wait(1)
+    multirun(b_archive1+)
+    wait(1)
+    multirun(goatse)
+    wait(1)
+    tech(stasis_field, 2)
+
+
+        --block4--
+    expand(99, xtremexpandcarrier)
+    wait(5000)
+
+    goto(block4)
+
+
+        --jihad--
+    wait(3500)
+    send_suicide(0)
+    goto(jihad)
+
+#========= Multirun protocols, don't kill mah ai pl0x :((
+
+        --pielons--
+    build(1, pylon, 2)
+    wait_buildstart(1, pylon)
+    build(2, pylon, 2)
+    wait_buildstart(2, pylon)
+    build(3, pylon, 2)
+    wait_buildstart(3, pylon)
+    build(4, pylon, 1)
+    wait_buildstart(4, pylon)
+    build(5, pylon, 1)
+    wait_buildstart(5, pylon)
+    stop()
+
+        --getfukncariorz--
+    wait(15)
+    notowns_jump(stargate, getfukncariorz)
+    wait_build(1, stargate)
+    build(1, fleet_beacon, 3)
+    wait_buildstart(1, fleet_beacon)
+    defenseuse_gg(1, carrier)
+    defensebuild_gg(1, carrier)
+    upgrade(1, carrier_capacity, 5)
+    stop()
+
+        --b_adun1--
+    wait(20)
+    notowns_jump(cybernetics_core, b_adun1)
+    build(1, citadel_of_adun, 2)
+    wait_buildstart(1, citadel_of_adun)
+    stop()
+
+
+        --b_archive1+--
+    wait(15)
+    notowns_jump(citadel_of_adun, b_archive1+)
+    wait_build(1, citadel_of_adun)
+    build(1, templar_archives, 2)
+    wait_buildstart(1, templar_archives)
+    stop()
+
+        --gayway--
+    wait(20)
+    notowns_jump(pylon, gayway)
+    build(1, gateway, 2)
+    wait_build(1, gateway)
+    build(2, cybernetics_core, 3)
+    wait_build(1, cybernetics_core)
+    defenseuse_gg(1, dragoon)
+    defensebuild_gg(1, dragoon)
+    defensebuild_aa(1, dragoon)
+    defensebuild_ga(1, dragoon)
+    defenseuse_gg(1, zealot)
+    defenseuse_ga(1, zealot)
+    build(2, forge, 2)
+    wait_build(2, forge)
+    stop()
+
+        --doggynigga--
+    wait(20)
+    notowns_jump(cybernetics_core, doggynigga)
+    build(1, stargate, 3)
+    wait_buildstart(1, stargate)
+    build(2, stargate, 3)
+    wait_buildstart(2, stargate)
+    build(4, stargate, 3)
+    wait_buildstart(4, stargate)
+    build(5, stargate, 3)
+    wait_buildstart(5, stargate)
+    build(6, stargate, 3)
+    wait_buildstart(6, stargate)
+    build(7, stargate, 3)
+    wait_buildstart(7, stargate)
+    build(8, stargate, 3)
+    wait_buildstart(8, stargate)
+    build(9, stargate, 3)
+    wait_buildstart(8, stargate)
+    build(10, stargate, 2)
+    wait_buildstart(10, stargate)
+    build(11, stargate, 2)
+    wait_buildstart(11, stargate)
+    build(12, stargate, 2)
+    wait_buildstart(12, stargate)
+    build(13, stargate, 2)
+    wait_buildstart(13, stargate)
+    build(14, stargate, 2)
+    wait_buildstart(14, stargate)
+    build(15, stargate, 2)
+    wait_buildstart(15, stargate)
+    build(16, stargate, 2)
+    wait_buildstart(16, stargate)
+    build(17, stargate, 2)
+    wait_buildstart(17, stargate)
+    build(18, stargate, 2)
+    wait_buildstart(18, stargate)
+    build(19, stargate, 2)
+    wait_buildstart(19, stargate)
+    build(20, stargate, 2)
+    wait_buildstart(20, stargate)
+
+        --goatse--
+    wait(20)
+    notowns_jump(templar_archives, goatse)
+    build(1, arbiter_tribunal, 2)
+    place_guard(arbiter, 0)
+#multirun arbiterspam
+    stop()
+
+        --initattack--
+    wait(4500)
+    send_suicide(0)
+    goto(initattack)
+
+
+        --robocock--
+    wait(20)
+    notowns_jump(fleet_beacon, robocock)
+    build(1, robotics_facility, 2)
+    wait_buildstart(1, robotics_facility)
+    build(2, robotics_facility, 2)
+    wait_buildstart(2, robotics_facility)
+    build(3, robotics_facility, 1)
+    wait_buildstart(3, robotics_facility)
+    build(4, robotics_facility, 1)
+    wait_buildstart(4, robotics_facility)
+    build(1, observatory, 3)
+    place_guard(observer, 0)
+    place_guard(observer, 1)
+    build(1, robotics_support_bay, 2)
+    defenseuse_gg(1, reaver)
+    defensebuild_gg(1, reaver)
+    check_transports()
+#multirun reavermang
+    upgrade(1, shuttle_speed, 2)
+    stop()
+
+        --expstargay--
+    build(5, stargate, 3)
+    wait_build(5, stargate)
+    stop()
+
+#=============== I UNLEASH THE BEAST - Attack protocols
+
+        --commencerape--
+    wait(20)
+    notowns_jump(fleet_beacon, commencerape)
+    train(5, carrier)
+    defensebuild_aa(1, carrier)
+    defenseuse_aa(1, carrier)
+    defensebuild_gg(1, carrier)
+    defenseuse_gg(1, carrier)
+    defensebuild_ga(1, carrier)
+    defenseuse_ga(1, carrier)
+    defensebuild_ag(1, carrier)
+    defenseuse_ag(1, carrier)
+    wait_force(5, carrier)
+    attack_add(5, carrier)
+    attack_prepare()
+    wait(200)
+    attack_do()
+    attack_clear()
+    clear_combatdata()
+    wait(2000)
+    train(10, carrier)
+    train(4, corsair)
+    train(4, scout)
+    attack_add(10, carrier)
+    attack_add(4, corsair)
+    attack_add(4, scout)
+    attack_prepare()
+    wait(500)
+    attack_do()
+    attack_clear()
+    clear_combatdata()
+    define_max(1, zealot)
+    define_max(1, dragoon)
+
+#==== Final attack loopity
+        --MASSCARRORZOMGZ--
+    multirun(t_reav6)
+    train(10, corsair)
+    train(6, scout)
+    train(12, carrier)
+    train(2, arbiter)
+    multirun(t_obs4)
+    wait_force(12, carrier)
+    attack_add(2, arbiter)
+    attack_add(12, carrier)
+    attack_add(6, scout)
+    attack_add(10, corsair)
+    attack_add(6, reaver)
+    attack_prepare()
+    wait(1000)
+    attack_do()
+    attack_clear()
+    clear_combatdata()
+    wait(2000)
+    expand(99, block3)
+    goto(MASSCARRORZOMGZ)
+
+
+# ======= Jacking some of Ashara's attack protocols to streamline mine
+
+        --t_reav6--
+    wait(60)
+    notowns_jump(robotics_support_bay, t_reav6)
+    train(6, reaver)
+    attack_add(6, reaver)
+    stop()
+
+        --t_obs4--
+    wait(60)
+    notowns_jump(observatory, t_obs4)
+    train(4, observer)
+    attack_add(4, observer)
+    stop()
+
+
+#======== Jacking Ashara's research script to see if it will solve major issues regarding comp's lack of desire to upg
+#======== The only thing I changed is a bit of timing, the rest is all his work!
+
+        --m_research--
+    wait(500)
+    multirun(r_aweapon)
+    multirun(r_plate)
+    wait(1000)
+    multirun(r_shield)
+    wait(500)
+    multirun(r_corsair)
+    wait(100)
+    multirun(r_armor)
+    wait(6000)
+    multirun(r_scarab)
+    wait(100)
+    multirun(r_obs)
+    wait(100)
+    multirun(r_goon)
+    wait(1)
+    upgrade(1, scout_speed, 2)
+    stop()
+
+        --r_shield--
+    wait(250)
+    notowns_jump(forge, r_shield)
+    upgrade(1, p_plasma_shield, 1)
+    wait(4100)
+        --r_shield2--
+    wait(250)
+    notowns_jump(cybernetics_core, r_shield2)
+    upgrade(2, p_plasma_shield, 1)
+    wait(4600)
+        --r_shield3--
+    wait(250)
+    notowns_jump(cybernetics_core, r_shield3)
+    upgrade(3, p_plasma_shield, 1)
+    wait(5100)
+    stop()
+
+        --r_armor--
+    wait(250)
+    notowns_jump(forge, r_armor)
+    upgrade(1, p_armor, 1)
+    wait(4100)
+        --r_armor2--
+    wait(250)
+    notowns_jump(templar_archives, r_armor2)
+    upgrade(2, p_armor, 1)
+    wait(4600)
+        --r_armor3--
+    wait(250)
+    notowns_jump(templar_archives, r_armor3)
+    upgrade(3, p_armor, 1)
+    wait(5100)
+    stop()
+
+        --r_gweapon--
+    wait(250)
+    notowns_jump(forge, r_gweapon)
+    upgrade(1, p_ground_weapon, 1)
+    wait(4100)
+        --r_gweapon2--
+    wait(250)
+    notowns_jump(templar_archives, r_gweapon2)
+    upgrade(2, p_ground_weapon, 1)
+    wait(4600)
+        --r_gweapon3--
+    wait(250)
+    notowns_jump(templar_archives, r_gweapon3)
+    upgrade(3, p_ground_weapon, 1)
+    wait(5100)
+    stop()
+
+        --r_plate--
+    wait(550)
+    notowns_jump(cybernetics_core, r_plate)
+    upgrade(1, p_plating, 1)
+    wait(4100)
+        --r_plate2--
+    wait(550)
+    notowns_jump(fleet_beacon, r_plate2)
+    upgrade(2, p_plating, 1)
+    wait(4600)
+        --r_plate3--
+    wait(550)
+    notowns_jump(fleet_beacon, r_plate3)
+    upgrade(3, p_plating, 1)
+    wait(5100)
+    stop()
+
+
+        --r_aweapon--
+    wait(250)
+    notowns_jump(cybernetics_core, r_aweapon)
+    upgrade(1, p_air_weapon, 2)
+    wait(4100)
+        --r_aweapon2--
+    wait(250)
+    notowns_jump(fleet_beacon, r_aweapon2)
+    upgrade(2, p_air_weapon, 2)
+    wait(4600)
+        --r_aweapon3--
+    wait(250)
+    notowns_jump(fleet_beacon, r_aweapon3)
+    upgrade(3, p_air_weapon, 2)
+    wait(5100)
+    stop()
+
+        --r_scarab--
+    wait(550)
+    notowns_jump(robotics_support_bay, r_scarab)
+    upgrade(1, scarab_damage, 1)
+    wait(2600)
+        --r_scarab2--
+    wait(1050)
+    notowns_jump(robotics_support_bay, r_scarab2)
+    upgrade(1, reaver_capacity, 1)
+    wait(2600)
+    stop()
+
+        --r_corsair--
+    wait(350)
+    notowns_jump(fleet_beacon, r_corsair)
+    tech(disruption_web, 1)
+    wait(1300)
+        --r_corsair2--
+    wait(1050)
+    notowns_jump(fleet_beacon, r_corsair)
+    upgrade(1, corsair_mana, 1)
+    wait(2600)
+    stop()
+
+        --r_obs--
+    wait(550)
+    notowns_jump(observatory, r_obs)
+    upgrade(1, observer_speed, 1)
+    wait(2100)
+    wait_upgrades()
+        --r_obs2--
+    wait(1050)
+    notowns_jump(observatory, r_obs2)
+    upgrade(1, observer_sight, 1)
+    wait(2100)
+    stop()
+
+        --r_goon--
+    wait(350)
+    notowns_jump(cybernetics_core, r_goon)
+    upgrade(1, dragoon_range, 1)
+    wait(2600)
+    stop()
+
+
+# ============ Scout/Sair air dominance script
+# ============ Scout/Sair air dominance script
+# ============ Scout/Sair air dominance script
+# ============ Scout/Sair air dominance script
+
+        --skootz--
+    start_campaign()
+    wait(1)
+
+    start_town()
+    defaultbuild_off()
+    default_min(0)
+    wait(1)
+    multirun(money)
+    define_max(100, probe)
+    define_max(1, zealot)
+    define_max(1, dragoon)
+    define_max(4, dark_templar)
+    define_max(1, high_templar)
+    define_max(1, archon)
+    define_max(1, dark_archon)
+    define_max(6, shuttle)
+    define_max(6, observer)
+    define_max(10, reaver)
+    define_max(45, scout)
+    define_max(22, corsair)
+    define_max(6, carrier)
+    define_max(4, arbiter)
+    build(4, probe, 150)
+    build(1, nexus, 150)
+    multirun(pielons)
+    multirun(gayway)
+    wait(1000)
+    expand(1, xtremexpandskoot)
+    multirun(doggynigga)
+    multirun(commencemolestation)
+    wait(1000)
+    multirun(getfukncariorz)
+    defensebuild_aa(1, corsair)
+    defenseuse_aa(1, corsair)
+    defensebuild_aa(1, scout)
+    defenseuse_aa(1, scout)
+    defensebuild_gg(1, scout)
+    defenseuse_gg(1, scout)
+    defensebuild_ga(1, scout)
+    defenseuse_ga(1, scout)
+    defensebuild_ag(1, scout)
+    defenseuse_ag(1, scout)
+    wait(1000)
+    expand(2, xtremexpandskoot)
+    multirun(robocock)
+    farms_timing()
+    wait(2000)
+    multirun(m_research)
+    multirun(probemelikeananimal)
+    multirun(jihad)
+    wait(3500)
+    expand(3, xtremexpandskoot)
+    multirun(b_adun1)
+    wait(1)
+    multirun(b_archive1+)
+    wait(1)
+    multirun(goatse)
+    wait(1)
+    tech(stasis_field, 2)
+    multirun(sairs)
+
+        --block69--
+    expand(99, xtremexpandskoot)
+    train(30, scout)
+    train(4, carrier)
+    train(2, arbiter)
+    attack_add(4, carrier)
+    attack_add(30, scout)
+    attack_prepare()
+    wait(500)
+    attack_do()
+    attack_clear()
+    clear_combatdata()
+    wait(750)
+    goto(block69)
+
+        --commencemolestation--
+    wait(20)
+    notowns_jump(fleet_beacon, commencerape)
+    train(10, scout)
+    train(4, corsair)
+    train(2, carrier)
+    defensebuild_aa(1, carrier)
+    defensebuild_gg(1, carrier)
+    wait_force(2, carrier)
+    attack_add(10, scout)
+    attack_add(4, corsair)
+    attack_add(2, carrier)
+    attack_prepare()
+    wait(200)
+    attack_do()
+    attack_clear()
+    clear_combatdata()
+    stop()
+
+#======================== Extra
+
+        --sairs--
+    defensebuild_aa(1, corsair)
+    defenseuse_aa(1, corsair)
+    train(10, corsair)
+    attack_add(10, corsair)
+    attack_prepare()
+    wait(500)
+    attack_do()
+    attack_clear()
+    goto(sairs)
+
+
+
+
+# ======== A whole chunk of Ashara's stuff I am jerry-rigging into PX to create an ABOMINATION
+# === I modified a bit to suite the unique needs of PX
+
+
+
+# ===== Carrier expansion script
+        --xtremexpandcarrier--
+    start_town()
+    multirun(b_nexus1)
+    wait(850)
+    multirun(b_pylon5)
+    multirun(b_probes2)
+    wait(1200)
+    multirun(b_pylon10)
+    multirun(b_stargate4)
+    wait(2220)
+    multirun(b_robotic2)
+    wait(2500)
+    multirun(b_cannon5)
+
+    build(4, shield_battery, 2)
+
+        --carriersupport--
+
+    multirun(t_carrier14)
+    wait(2)
+    multirun(t_corsair10)
+    wait(2)
+    multirun(t_reav8)
+    wait(3900)
+    goto(carriersupport)
+
+
+
+# ===== Scout expansion script
+
+        --xtremexpandskoot--
+    start_town()
+    multirun(b_nexus1)
+    wait(850)
+    multirun(b_pylon5)
+    multirun(b_probes2)
+    wait(1200)
+    multirun(b_pylon10)
+    multirun(b_stargate4)
+    wait(2220)
+    multirun(b_robotic2)
+    wait(2500)
+    multirun(b_cannon5)
+
+
+        --skootsupport--
+
+    multirun(t_carrier4)
+    wait(2)
+    multirun(t_corsair10)
+    wait(2)
+    multirun(t_scout20)
+    wait(3900)
+    goto(skootsupport)
+
+
+
+
+
+
+
+
+
+        --t_reav8--
+    wait(60)
+    notowns_jump(robotics_support_bay, t_reav8)
+    train(8, reaver)
+    attack_add(8, reaver)
+    stop()
+
+        --t_scout20--
+    wait(60)       
+    notowns_jump(stargate, t_scout20)
+    train(20, scout)
+    attack_add(20, scout)
+    stop()
+
+        --t_corsair10--
+    wait(60)
+    notowns_jump(stargate, t_corsair10)
+    train(10, corsair)
+    attack_add(10, corsair)
+    stop()
+
+        --t_corsair12--
+    wait(60)
+    notowns_jump(stargate, t_corsair12)
+    train(12, corsair)
+    attack_add(12, corsair)
+    stop()
+
+        --t_carrier4--
+    wait(60)
+    notowns_jump(fleet_beacon, t_carrier4)
+    train(4, carrier)
+    attack_add(4, carrier)
+    stop()
+
+
+
+        --t_carrier14--
+    wait(60)
+    notowns_jump(fleet_beacon, t_carrier14)
+    train(14, carrier)
+    attack_add(14, carrier)
+    stop()
+
+        --t_carrier10--
+    wait(60)
+    notowns_jump(fleet_beacon, t_carrier10)
+    train(10, carrier)
+    attack_add(10, carrier)
+    stop()
+
+        --b_probes2--
+    wait_build(1, nexus)
+    build(1, probe, 2)
+    wait_buildstart(1, probe)
+    build(2, probe, 1)
+    wait_buildstart(2, probe)
+    stop()
+
+
+        --b_nexus1--
+    build(1, nexus, 2)
+    wait_buildstart(1, nexus)
+    stop()
+
+        --b_pylon5--
+    build(1, pylon, 2)
+    wait_buildstart(1, pylon)
+    build(2, pylon, 2)
+    wait_buildstart(2, pylon)
+    build(3, pylon, 2)
+    wait_buildstart(3, pylon)
+    build(4, pylon, 1)
+    wait_buildstart(4, pylon)
+    build(5, pylon, 1)
+    wait_buildstart(5, pylon)
+    stop()
+
+
+        --b_pylon10--
+    build(1, pylon, 2)
+    wait_buildstart(1, pylon)
+    build(2, pylon, 2)
+    wait_buildstart(2, pylon)
+    build(3, pylon, 2)
+    wait_buildstart(3, pylon)
+    build(4, pylon, 2)
+    wait_buildstart(4, pylon)
+    build(5, pylon, 2)
+    wait_buildstart(5, pylon)
+    build(6, pylon, 2)
+    wait_buildstart(6, pylon)
+    build(7, pylon, 2)
+    wait_buildstart(7, pylon)
+    build(8, pylon, 2)
+    wait_buildstart(8, pylon)
+    build(9, pylon, 2)
+    wait_buildstart(9, pylon)
+    build(10, pylon, 2)
+    wait_buildstart(10, pylon)
+    stop()
+
+
+        --b_cannon5--
+    wait(20)
+    notowns_jump(forge, b_cannon5)
+    build(1, photon_cannon, 2)
+    wait_buildstart(1, photon_cannon)
+    build(2, photon_cannon, 2)
+    wait_buildstart(2, photon_cannon)
+    build(3, photon_cannon, 2)
+    wait_buildstart(3, photon_cannon)
+    build(4, photon_cannon, 1)
+    wait_buildstart(4, photon_cannon)
+    build(5, photon_cannon, 1)
+    wait_buildstart(5, photon_cannon)
+    stop()
+
+        --b_stargate4--
+    wait(20)
+    notowns_jump(cybernetics_core, b_stargate4)
+    build(1, stargate, 2)
+    wait_buildstart(1, stargate)
+    build(2, stargate, 2)
+    wait_buildstart(2, stargate)
+    build(3, stargate, 2)
+    wait_buildstart(3, stargate)
+    build(4, stargate, 2)
+    wait_buildstart(4, stargate)
+
+    build(5, stargate, 2)
+    wait_buildstart(5, stargate)
+    build(6, stargate, 2)
+    wait_buildstart(6, stargate)
+    build(7, stargate, 2)
+    wait_buildstart(7, stargate)
+
+    build(8, stargate, 2)
+    wait_buildstart(8, stargate)
+    build(9, stargate, 2)
+    wait_buildstart(9, stargate)
+    build(10, stargate, 1)
+    wait_buildstart(10, stargate)
+    stop()
+
+        --b_robotic2--
+    wait(20)
+    notowns_jump(cybernetics_core, b_robotic2)
+    build(1, robotics_facility, 2)
+    wait_buildstart(1, robotics_facility)
+    build(2, robotics_facility, 2)
+    wait_buildstart(2, robotics_facility)
+    stop()
+
+
+
+
+# ========== I don't think having a loop at the end of the script actually does anything but I mean, it's called cocks it has a wait of 6942, so it's staying
+#===============================================================================
+# ==========================================================
+        --cocks--
+    wait(6942)
+    goto(cocks)
+
+

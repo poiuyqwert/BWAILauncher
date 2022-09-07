@@ -1,0 +1,920 @@
+### NOTE: There is no way to determine the scripts flags or if it is a BW script or not!
+###       please update the header below appropriately!
+ZMCx(1344, 101, aiscript): # Script Name: ZAPOC 7.4 Revise1
+
+# ==== Our best, last hope for ZONS.
+# ==== SECOND REVISION OF 6.9
+# ==== Attack code inspired by Myk
+
+#if DEBUG
+    debug(null, ZAPOC 7.4 by IskatuMesk)
+    --null--
+#endif
+
+
+# ======== Insert race detection jumper here.
+#start_campaign
+#wait 1
+
+    start_town()
+#defaultbuild_off
+#default_min 0
+#wait 1
+
+# ======== Main script
+    define_max(15, drone)
+    define_max(255, zergling)
+    define_max(5, hydralisk)
+    define_max(30, mutalisk)
+    define_max(16, guardian)
+    define_max(14, devourer)
+    define_max(14, lurker)
+    define_max(16, ultralisk)
+    define_max(3, defiler)
+    define_max(2, queen)
+    define_max(10, scourge)
+    multirun(cash_zbath)
+
+    build(5, drone, 90)
+    wait(10)
+    multirun(b_pool)
+    wait(10)
+    multirun(b_hatch5)
+    defenseuse_gg(1, zergling)
+    defensebuild_gg(1, zergling)
+    wait(1000)
+    build(1, lair, 90)
+    wait_buildstart(1, lair)
+    build(1, evolution_chamber, 80)
+    wait(10)
+    build(6, drone, 90)
+    multirun(hydraden)
+    wait(100)
+    build(2, lair, 90)
+    wait(100)
+    build(4, overlord, 80)
+#multirun defenses
+    upgrade(1, overlord_speed, 80)
+    defenseuse_gg(1, hydralisk)
+    defenseuse_ga(1, hydralisk)
+    defenseuse_ag(1, hydralisk)
+    defenseuse_aa(1, hydralisk)
+    defensebuild_ag(1, hydralisk)
+    defensebuild_ga(1, hydralisk)
+    defensebuild_aa(1, hydralisk)
+    defensebuild_gg(1, hydralisk)
+    wait(500)
+    build(8, drone, 90)
+    multirun(air_units)
+    wait(10)
+    multirun(b_hatch5x)
+    wait(10)
+    build(8, overlord, 80)
+    defenseuse_gg(1, mutalisk)
+    defensebuild_gg(1, mutalisk)
+    defenseuse_gg(1, guardian)
+    defensebuild_gg(1, guardian)
+    defenseuse_aa(1, mutalisk)
+    defensebuild_aa(1, mutalisk)
+    defenseuse_ag(1, mutalisk)
+    defensebuild_ag(1, mutalisk)
+    defenseuse_ga(1, mutalisk)
+    defensebuild_ga(1, mutalisk)
+    multirun(b_nest)
+    build(10, drone, 90)
+    wait(300)
+    define_max(35, hydralisk)
+    send_suicide(0)
+    wait(300)
+    build(12, overlord, 80)
+    multirun(evo_upgrades_zbath)
+    wait(2000)
+    multirun(ultras)
+    wait(10)
+    multirun(defilers)
+    wait(10)
+#multirun suicide_loop
+    defenseuse_aa(1, devourer)
+    defensebuild_aa(1, devourer)
+    wait(10)
+    build(16, overlord, 80)
+    multirun(b_xhatchb)
+    race_jump(vterran, loop, loop)
+
+        --loop--
+    send_suicide(0)
+    wait(100)
+    defenseclear_gg()
+    defenseclear_ag()
+    defenseclear_ga()
+    defenseclear_aa()
+    wait(10)
+    multirun(a_mutas)
+    wait(50)
+    multirun(a_guards)
+    wait(50)
+    multirun(a_devs)
+    wait(50)
+    multirun(a_ultras)
+    wait(50)
+    multirun(a_hydras)
+    wait(50)
+    multirun(a_defilers)
+    wait(50)
+    multirun(a_luckers)
+
+#train 18 mutalisk
+#train 6 devourer
+#train 6 guardian
+#train 25 hydralisk
+#train 30 zergling
+#train 8 ultralisk
+#attack_add 25 hydralisk
+#attack_add 30 zergling
+#attack_add 8 ultralisk
+#attack_add 6 devourer
+#attack_add 6 guardian
+#attack_add 18 mutalisk
+
+    wait(900)
+#attack_prepare
+    clear_combatdata()
+    send_suicide(0)
+    wait(50)
+    multirun(a_ultras)
+    wait(50)
+    multirun(a_hydras)
+    wait(50)
+    multirun(a_luckers)
+    wait(800)
+#attack_prepare
+    wait(1000)
+    goto(loop)
+
+
+
+
+
+
+        --suicide_loop--
+    wait(1500)
+    send_suicide(0)
+    clear_combatdata()
+    goto(suicide_loop)
+
+# ###########################
+# ==== Construction-related
+# ###########################
+
+
+# ======== This might not work. Can we make ZAPOC get an INSANE number of hatcheries?!
+
+
+        --b_pool--
+    build(1, spawning_pool, 100)
+    stop()
+
+        --b_hatch5--
+    build(2, hatchery, 80)
+    wait_buildstart(2, hatchery)
+    build(3, hatchery, 80)
+    wait_buildstart(3, hatchery)
+    build(4, hatchery, 80)
+    wait_buildstart(4, hatchery)
+    build(5, hatchery, 80)
+    wait_buildstart(5, hatchery)
+    build(6, hatchery, 80)
+    wait_buildstart(6, hatchery)
+    build(7, hatchery, 80)
+    wait_buildstart(7, hatchery)
+    build(8, hatchery, 80)
+    wait_buildstart(8, hatchery)
+    build(9, hatchery, 80)
+    stop()
+
+        --b_hatch5x--
+    start_town()
+    build(2, hatchery, 80)
+    wait_buildstart(2, hatchery)
+    build(3, hatchery, 80)
+    wait_buildstart(3, hatchery)
+    build(4, hatchery, 80)
+    wait_buildstart(4, hatchery)
+    build(5, hatchery, 80)
+    wait_buildstart(5, hatchery)
+    build(6, hatchery, 80)
+    wait_buildstart(6, hatchery)
+    build(7, hatchery, 80)
+    stop()
+
+        --b_hatch12--
+    build(8, hatchery, 80)
+    wait_buildstart(8, hatchery)
+    build(9, hatchery, 80)
+    wait_buildstart(9, hatchery)
+    build(10, hatchery, 80)
+    wait_buildstart(10, hatchery)
+    build(11, hatchery, 80)
+    wait_buildstart(11, hatchery)
+    build(12, hatchery, 80)
+    wait_buildstart(12, hatchery)
+    build(13, hatchery, 80)
+    stop()
+
+        --b_xhatch--
+    start_town()
+    build(2, hatchery, 80)
+    wait_buildstart(2, hatchery)
+    build(3, hatchery, 80)
+    wait_buildstart(3, hatchery)
+    build(4, hatchery, 80)
+    wait_buildstart(4, hatchery)
+    build(5, hatchery, 80)
+    wait_buildstart(5, hatchery)
+    build(6, hatchery, 80)
+    wait_buildstart(6, hatchery)
+    build(7, hatchery, 80)
+    wait_buildstart(7, hatchery)
+    build(9, hatchery, 80)
+    wait_buildstart(9, hatchery)
+    build(10, hatchery, 80)
+    wait_buildstart(10, hatchery)
+    build(11, hatchery, 80)
+    wait_buildstart(11, hatchery)
+    build(12, hatchery, 80)
+    wait_buildstart(12, hatchery)
+    build(13, hatchery, 80)
+    stop()
+
+        --b_xhatchb--
+    start_town()
+    build(2, hatchery, 80)
+    wait_buildstart(2, hatchery)
+    build(3, hatchery, 80)
+    wait_buildstart(3, hatchery)
+    build(4, hatchery, 80)
+    wait_buildstart(4, hatchery)
+    build(5, hatchery, 80)
+    wait_buildstart(5, hatchery)
+    build(6, hatchery, 80)
+    wait_buildstart(6, hatchery)
+    build(7, hatchery, 80)
+    wait_buildstart(7, hatchery)
+    build(9, hatchery, 80)
+    wait_buildstart(9, hatchery)
+    build(10, hatchery, 80)
+    wait_buildstart(10, hatchery)
+    build(11, hatchery, 80)
+    wait_buildstart(11, hatchery)
+    build(12, hatchery, 80)
+    wait_buildstart(12, hatchery)
+    build(13, hatchery, 80)
+    wait_buildstart(13, hatchery)
+    build(14, hatchery, 80)
+    wait_buildstart(14, hatchery)
+    build(15, hatchery, 80)
+    wait_buildstart(15, hatchery)
+    build(16, hatchery, 80)
+    wait_buildstart(16, hatchery)
+    build(17, hatchery, 80)
+    wait_buildstart(17, hatchery)
+    build(18, hatchery, 80)
+    wait_buildstart(18, hatchery)
+    build(19, hatchery, 80)
+    wait_buildstart(19, hatchery)
+    build(20, hatchery, 80)
+    wait_buildstart(20, hatchery)
+    build(22, hatchery, 80)
+    wait_buildstart(22, hatchery)
+    build(23, hatchery, 80)
+    wait_buildstart(23, hatchery)
+    build(24, hatchery, 80)
+    wait_buildstart(24, hatchery)
+    build(25, hatchery, 80)
+    wait_buildstart(25, hatchery)
+    build(26, hatchery, 80)
+    wait_buildstart(26, hatchery)
+    build(27, hatchery, 80)
+    wait_buildstart(27, hatchery)
+    build(28, hatchery, 80)
+    wait_buildstart(28, hatchery)
+    build(29, hatchery, 80)
+    stop()
+
+        --b_nest--
+    wait_build(1, lair)
+    build(1, queen_nest, 100)
+
+        --hivez--
+    wait(20)
+    notowns_jump(queen_nest, hivez)
+    build(1, hive, 110)
+    wait_build(1, hive)
+
+        --olcap--
+    wait(20)
+    notowns_jump(hive, olcap)
+    upgrade(1, overlord_capacity, 80)
+    stop()
+
+
+        --hydraden--
+    build(1, hydralisk_den, 80)
+
+        --hydrachek--
+    wait(20)
+    notowns_jump(hydralisk_den, hydrachek)
+    build(2, hydralisk_den, 80)
+    wait(500)
+    tech(lurker_aspect, 80)
+    wait(700)
+    goto(hydra_upgrades)
+
+        --air_units--
+    wait_build(1, lair)
+    build(1, spire, 90)
+    wait_buildstart(1, spire)
+    build(2, spire, 90)
+        --gspirecheck--
+    wait(20)
+    notowns_jump(hive, gspirecheck)
+    build(1, greater_spire, 95)
+    wait_buildstart(1, greater_spire)
+    goto(air_upgrades_zbath)
+
+        --hydra_upgrades--
+    upgrade(1, hydralisk_range, 80)
+    wait(500)
+    upgrade(1, hydralisk_speed, 80)
+    stop()
+
+
+        --defilers--
+    build(1, defiler_mound, 80)
+    wait_build(1, defiler_mound)
+    place_guard(defiler, 0)
+    tech(plague, 30)
+    wait(2000)
+    upgrade(1, defiler_mana, 30)
+    wait(10)
+    stop()
+
+        --ultras--
+    build(1, ultralisk_cavern, 90)
+    wait_build(1, ultralisk_cavern)
+    defenseuse_gg(1, ultralisk)
+    defensebuild_gg(1, ultralisk)
+    upgrade(1, ultralisk_speed, 70)
+    wait(2000)
+    upgrade(1, ultralisk_armor, 70)
+    wait(10)
+    stop()
+
+
+        --evo_upgrades_zbath--
+    build(2, evolution_chamber, 85)
+    wait_buildstart(2, evolution_chamber)
+    wait(200)
+    build(3, evolution_chamber, 85)
+    wait_build(3, evolution_chamber)
+    upgrade(1, z_melee_attack, 80)
+    upgrade(1, z_carapace, 80)
+    upgrade(1, z_missile_attack, 80)
+    wait(4500)
+    upgrade(2, z_melee_attack, 80)
+    upgrade(2, z_carapace, 80)
+    upgrade(2, z_missile_attack, 80)
+    wait(4500)
+    upgrade(3, z_melee_attack, 80)
+    upgrade(3, z_carapace, 80)
+    upgrade(3, z_missile_attack, 80)
+    wait(10)
+    stop()
+
+        --air_upgrades_zbath--
+    upgrade(1, z_flyer_attack, 80)
+    upgrade(1, z_flyer_carapace, 80)
+    wait(4500)
+    upgrade(2, z_flyer_attack, 80)
+    upgrade(2, z_flyer_carapace, 80)
+    wait(4500)
+    upgrade(3, z_flyer_attack, 80)
+    upgrade(3, z_flyer_carapace, 80)
+    wait(10)
+    stop()
+
+# ###########################
+# ==== Defense facility handler
+# ###########################
+# == This will make the decision to either wait until the hive to build some Anti-Air, or build it early.
+
+        --defenses--
+    race_jump(standard, standard, d_protoss)
+
+        --standard--
+    wait_build(1, hive)
+
+        --d_protoss--
+    build(1, creep_colony, 80)
+    wait_buildstart(1, creep_colony)
+    build(1, spore_colony, 80)
+    build(2, creep_colony, 80)
+    wait_buildstart(2, creep_colony)
+    build(2, spore_colony, 2)
+    build(3, creep_colony, 80)
+    wait_buildstart(3, creep_colony)
+    build(3, spore_colony, 2)
+    build(4, creep_colony, 80)
+    wait_buildstart(4, creep_colony)
+    build(4, spore_colony, 80)
+    creep(3)
+    build(5, creep_colony, 80)
+    wait_buildstart(5, creep_colony)
+    build(5, spore_colony, 2)
+    build(6, creep_colony, 80)
+    wait_buildstart(6, creep_colony)
+    build(6, spore_colony, 80)
+    build(7, creep_colony, 80)
+    wait_buildstart(7, creep_colony)
+    build(8, creep_colony, 80)
+    wait_buildstart(8, creep_colony)
+    build(9, creep_colony, 80)
+    wait_buildstart(9, creep_colony)
+    build(10, creep_colony, 80)
+    wait_buildstart(10, creep_colony)
+    build(10, spore_colony, 80)
+    stop()
+
+
+
+# ###########################
+# ==== Attack-related
+# ###########################
+
+
+        --hydras--
+    notowns_jump(hydralisk_den, halt)
+    defenseuse_gg(1, hydralisk)
+    defenseuse_ga(1, hydralisk)
+    defenseuse_ag(1, hydralisk)
+    defenseuse_aa(1, hydralisk)
+    defensebuild_ag(1, hydralisk)
+    defensebuild_ga(1, hydralisk)
+    defensebuild_aa(1, hydralisk)
+    defensebuild_gg(1, hydralisk)
+    train(20, hydralisk)
+    wait_force(20, hydralisk)
+    attack_add(20, hydralisk)
+    attack_prepare()
+    wait(200)
+    attack_do()
+    attack_clear()
+    stop()
+
+
+        --a_lings--
+    notowns_jump(spawning_pool, halt)
+    defensebuild_gg(1, zergling)
+    defenseuse_gg(1, zergling)
+    train(5, zergling)
+#attack_add 5 zergling
+    wait(10)
+    train(10, zergling)
+#attack_add 5 zergling
+    wait(10)
+    train(15, zergling)
+#attack_add 5 zergling
+    wait(10)
+    stop()
+
+        --a_luckers--
+    notowns_jump(hydralisk_den, halt)
+    defenseuse_gg(1, lurker)
+    defensebuild_gg(1, lurker)
+    train(1, lurker)
+
+    wait(10)
+    train(2, lurker)
+
+    wait(10)
+    train(3, lurker)
+
+    wait(10)
+    train(4, lurker)
+
+    wait(10)
+    train(5, lurker)
+
+    wait(10)
+    train(6, lurker)
+
+    wait(10)
+    train(7, lurker)
+
+    wait(10)
+    train(8, lurker)
+
+    wait(10)
+    stop()
+
+
+        --a_hydras--
+    notowns_jump(hydralisk_den, halt)
+    defenseuse_gg(1, hydralisk)
+    defenseuse_ga(1, hydralisk)
+    defenseuse_ag(1, hydralisk)
+    defenseuse_aa(1, hydralisk)
+    defensebuild_ag(1, hydralisk)
+    defensebuild_ga(1, hydralisk)
+    defensebuild_aa(1, hydralisk)
+    defensebuild_gg(1, hydralisk)
+    train(5, hydralisk)
+#attack_add 5 hydralisk
+    wait(10)
+    train(10, hydralisk)
+#attack_add 5 hydralisk
+    wait(10)
+    train(15, hydralisk)
+#attack_add 5 hydralisk
+    wait(10)
+    train(20, hydralisk)
+#attack_add 5 hydralisk
+    wait(10)
+    train(25, hydralisk)
+#attack_add 5 hydralisk
+    wait(10)
+    train(30, hydralisk)
+#attack_add 5 hydralisk
+    wait(10)
+    stop()
+
+        --a_defilers--
+    notowns_jump(defiler_mound, halt)
+    train(1, defiler)
+#attack_add 1 defiler
+    wait(10)
+    train(2, defiler)
+#attack_add 1 defiler
+    wait(10)
+    train(3, defiler)
+#attack_add 1 defiler
+    wait(10)
+    stop()
+
+
+        --a_mutas--
+    notowns_jump(spire, halt)
+    defenseuse_gg(1, mutalisk)
+    defensebuild_gg(1, mutalisk)
+    defenseuse_gg(1, guardian)
+    defensebuild_gg(1, guardian)
+    defenseuse_aa(1, mutalisk)
+    defensebuild_aa(1, mutalisk)
+    defenseuse_ag(1, mutalisk)
+    defensebuild_ag(1, mutalisk)
+    defenseuse_ga(1, mutalisk)
+    defensebuild_ga(1, mutalisk)
+    train(4, mutalisk)
+#attack_add 4 mutalisk
+    wait(10)
+    train(8, mutalisk)
+#attack_add 4 mutalisk
+    wait(10)
+    train(12, mutalisk)
+#attack_add 4 mutalisk
+    wait(10)
+    train(16, mutalisk)
+#attack_add 4 mutalisk
+    wait(10)
+    train(20, mutalisk)
+#attack_add 4 mutalisk
+    wait(10)
+    stop()
+
+        --a_guards--
+    notowns_jump(greater_spire, halt)
+    defensebuild_gg(1, guardian)
+    defenseuse_gg(1, guardian)
+    train(2, guardian)
+#attack_add 2 guardian
+    wait(10)
+    train(4, guardian)
+#attack_add 2 guardian
+    wait(10)
+    train(6, guardian)
+#attack_add 2 guardian
+    wait(10)
+    train(8, guardian)
+#attack_add 2 guardian
+    wait(10)
+    train(10, guardian)
+    wait(10)
+    train(12, guardian)
+    wait(10)
+    stop()
+
+        --a_devs--
+    notowns_jump(greater_spire, halt)
+    defenseuse_aa(1, devourer)
+    defensebuild_aa(1, devourer)
+    train(2, devourer)
+#attack_add 2 devourer
+    wait(10)
+    train(4, devourer)
+#attack_add 2 devourer
+    wait(10)
+    train(6, devourer)
+#attack_add 2 devourer
+    wait(10)
+    stop()
+
+        --a_ultras--
+    notowns_jump(ultralisk_cavern, halt)
+    defensebuild_gg(1, ultralisk)
+    defenseuse_gg(1, ultralisk)
+    train(2, ultralisk)
+#attack_add 2 ultralisk
+    wait(10)
+    train(4, ultralisk)
+#attack_add 2 ultralisk
+    wait(10)
+    train(6, ultralisk)
+#attack_add 2 ultralisk
+    wait(10)
+    train(7, ultralisk)
+#attack_add 2 ultralisk
+    wait(10)
+    train(10, ultralisk)
+#attack_add 2 ultralisk
+    wait(10)
+    train(12, ultralisk)
+    wait(10)
+    stop()
+
+
+
+        --halt--
+    stop()
+
+
+
+        --cash_zbath--
+    wait(100)
+    resources_jump(900, 900, cash_zbath)
+    give_money()
+    wait(100)
+    goto(cash_zbath)
+
+
+
+
+# ================
+# VS Terran Protocols
+# ================
+
+        --vterran--
+    define_max(20, zergling)
+    define_max(15, hydralisk)
+    define_max(40, mutalisk)
+    define_max(20, ultralisk)
+    define_max(10, devourer)
+    define_max(20, guardian)
+    build(2, spawning_pool, 80)
+    upgrade(1, zergling_attack, 80)
+    upgrade(1, zergling_speed, 80)
+
+        --vterranlupe--
+    send_suicide(0)
+    wait(100)
+    defenseclear_gg()
+    defenseclear_ag()
+    defenseclear_ga()
+    defenseclear_aa()
+    wait(10)
+    multirun(a_lings_t)
+    wait(50)
+    multirun(a_mutas_t)
+    wait(50)
+    multirun(a_guards_t)
+    wait(50)
+    multirun(a_devs_t)
+    wait(50)
+    multirun(a_ultras_t)
+    wait(50)
+    multirun(a_hydras_t)
+    wait(50)
+    multirun(a_luckers_t)
+
+    wait(500)
+#attack_prepare
+    clear_combatdata()
+    send_suicide(0)
+    wait(50)
+    multirun(a_ultras_t)
+    wait(50)
+    multirun(a_hydras_t)
+    wait(50)
+    multirun(a_lings_t)
+    wait(50)
+    multirun(a_luckers_t)
+    wait(600)
+    send_suicide(0)
+    wait(50)
+    multirun(a_mutas_t)
+    wait(50)
+    multirun(a_guards_t)
+    wait(50)
+    multirun(a_devs_t)
+    wait(600)
+    goto(vterranlupe)
+
+
+        --a_lings_t--
+    notowns_jump(spawning_pool, halt)
+    defensebuild_gg(1, zergling)
+    defenseuse_gg(1, zergling)
+    train(5, zergling)
+#attack_add 5 zergling
+    wait(10)
+    train(10, zergling)
+#attack_add 5 zergling
+    wait(10)
+    train(15, zergling)
+#attack_add 5 zergling
+    wait(10)
+    train(20, zergling)
+#attack_add 5 zergling
+    wait(10)
+    stop()
+
+        --a_luckers_t--
+    notowns_jump(hydralisk_den, halt)
+    defenseuse_gg(1, lurker)
+    defensebuild_gg(1, lurker)
+    train(1, lurker)
+    wait(10)
+    train(2, lurker)
+    wait(10)
+    train(3, lurker)
+    wait(10)
+    train(4, lurker)
+    wait(10)
+    train(5, lurker)
+    wait(10)
+    train(6, lurker)
+    wait(10)
+    train(7, lurker)
+    wait(10)
+    train(8, lurker)
+    wait(10)
+    train(9, lurker)
+    wait(10)
+    train(10, lurker)
+    wait(10)
+    train(11, lurker)
+    wait(10)
+    train(12, lurker)
+    wait(10)
+    train(13, lurker)
+    wait(10)
+    train(14, lurker)
+    wait(10)
+    train(15, lurker)
+    wait(10)
+    stop()
+
+
+        --a_hydras_t--
+    notowns_jump(hydralisk_den, halt)
+    defenseuse_gg(1, hydralisk)
+    defenseuse_ga(1, hydralisk)
+    defenseuse_ag(1, hydralisk)
+    defenseuse_aa(1, hydralisk)
+    defensebuild_ag(1, hydralisk)
+    defensebuild_ga(1, hydralisk)
+    defensebuild_aa(1, hydralisk)
+    defensebuild_gg(1, hydralisk)
+    train(5, hydralisk)
+#attack_add 5 hydralisk
+    wait(10)
+    train(10, hydralisk)
+#attack_add 5 hydralisk
+    wait(10)
+    train(15, hydralisk)
+#attack_add 5 hydralisk
+    wait(10)
+    stop()
+
+
+        --a_mutas_t--
+    notowns_jump(spire, halt)
+    defenseuse_gg(1, mutalisk)
+    defensebuild_gg(1, mutalisk)
+    defenseuse_gg(1, guardian)
+    defensebuild_gg(1, guardian)
+    defenseuse_aa(1, mutalisk)
+    defensebuild_aa(1, mutalisk)
+    defenseuse_ag(1, mutalisk)
+    defensebuild_ag(1, mutalisk)
+    defenseuse_ga(1, mutalisk)
+    defensebuild_ga(1, mutalisk)
+    train(4, mutalisk)
+#attack_add 4 mutalisk
+    wait(10)
+    train(8, mutalisk)
+#attack_add 4 mutalisk
+    wait(10)
+    train(12, mutalisk)
+#attack_add 4 mutalisk
+    wait(10)
+    train(16, mutalisk)
+#attack_add 4 mutalisk
+    wait(10)
+    train(20, mutalisk)
+#attack_add 4 mutalisk
+    wait(10)
+    train(25, mutalisk)
+#attack_add 4 mutalisk
+    wait(10)
+    train(30, mutalisk)
+#attack_add 4 mutalisk
+    wait(10)
+    train(35, mutalisk)
+#attack_add 4 mutalisk
+    wait(10)
+    train(40, mutalisk)
+#attack_add 4 mutalisk
+    wait(10)
+    stop()
+
+        --a_guards_t--
+    notowns_jump(greater_spire, halt)
+    defensebuild_gg(1, guardian)
+    defenseuse_gg(1, guardian)
+    train(2, guardian)
+#attack_add 2 guardian
+    wait(10)
+    train(4, guardian)
+#attack_add 2 guardian
+    wait(10)
+    train(6, guardian)
+#attack_add 2 guardian
+    wait(10)
+    train(8, guardian)
+#attack_add 2 guardian
+    wait(10)
+    train(10, guardian)
+    wait(10)
+    train(12, guardian)
+    wait(10)
+    train(14, guardian)
+    wait(10)
+    train(16, guardian)
+    wait(10)
+    train(18, guardian)
+    wait(10)
+    stop()
+
+        --a_devs_t--
+    notowns_jump(greater_spire, halt)
+    defenseuse_aa(1, devourer)
+    defensebuild_aa(1, devourer)
+    train(2, devourer)
+#attack_add 2 devourer
+    wait(10)
+    train(4, devourer)
+#attack_add 2 devourer
+    wait(10)
+    train(6, devourer)
+#attack_add 2 devourer
+    wait(10)
+    stop()
+
+        --a_ultras_t--
+    notowns_jump(ultralisk_cavern, halt)
+    defensebuild_gg(1, ultralisk)
+    defenseuse_gg(1, ultralisk)
+    train(2, ultralisk)
+#attack_add 2 ultralisk
+    wait(10)
+    train(4, ultralisk)
+#attack_add 2 ultralisk
+    wait(10)
+    train(6, ultralisk)
+#attack_add 2 ultralisk
+    wait(10)
+    train(7, ultralisk)
+#attack_add 2 ultralisk
+    wait(10)
+    train(10, ultralisk)
+#attack_add 2 ultralisk
+    wait(10)
+    train(12, ultralisk)
+    wait(10)
+    train(14, ultralisk)
+    wait(10)
+    train(16, ultralisk)
+    wait(10)
+    train(18, ultralisk)
+    wait(10)
+    stop()

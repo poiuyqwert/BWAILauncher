@@ -1,0 +1,992 @@
+# JH24 Z v1.0
+
+
+# Zerg Expansion Custom Level
+ZMCx(1344, 101, aiscript):
+
+	start_town()
+	transports_off()
+
+#if DEBUG
+	debug(null, JH24 Z v1.0)
+	--null--
+#endif
+
+	wait(1)
+	race_jump(ZMCx 0000, ZMCx 0001, ZMCx 0002)
+
+
+		--ZMCx 0000--
+	wait(1)
+
+	farms_notiming()
+	define_max(80, drone)
+	define_max(100, zergling)
+	define_max(100, hydralisk)
+	define_max(100, mutalisk)
+	define_max(10, queen)
+	define_max(100, ultralisk)
+	define_max(255, scourge)
+	define_max(10, defiler)
+	define_max(100, guardian)
+	define_max(7, devourer)
+	wait(1)
+
+	build(1, hatchery, 150)
+	wait_build(1, hatchery)
+	build(6, drone, 80)
+	wait_buildstart(6, drone)
+	enemyresources_jump(80, 0, ZMCx 0005)
+	build(7, drone, 80)
+	wait_buildstart(7, drone)
+	build(8, drone, 80)
+	wait_buildstart(8, drone)
+	build(1, spawning_pool, 80)
+	wait_buildstart(1, spawning_pool)
+	build(9, drone, 80)
+	wait_buildstart(9, drone)
+	rush(0, ZMCx 0006)
+	build(2, overlord, 80)
+	wait_build(2, overlord)
+	build(12, drone, 80)
+	wait_buildstart(12, drone)
+	goto(ZMCx 0007)
+
+
+		--ZMCx 0008--
+	wait(1)
+
+	multirun(ZMCx 0003)
+	multirun(ZMCx 0004)
+	train(2, zergling)
+	build(2, hatchery, 80)
+	wait_buildstart(2, hatchery)
+	farms_timing()
+	multirun(ZMCx 0009)
+	multirun(ZMCx 0010)
+	expand(1, ZMCx 0011)
+	multirun(ZMCx 0014)
+	train(6, zergling)
+	build(1, extractor, 80)
+	wait_buildstart(1, extractor)
+	player_need(1, spawning_pool)
+	build(14, drone, 72)
+	train(12, zergling)
+	multirun(ZMCx 0012)
+	build(16, drone, 72)
+	train(15, zergling)
+	build(18, drone, 72)
+	multirun(ZMCx 0013)
+	build(3, hatchery, 80)
+	wait_buildstart(3, hatchery)
+	multirun(ZMCx 0018)
+	wait(1)
+
+	defensebuild_gg(1, hydralisk)
+	defensebuild_ga(1, hydralisk)
+	defenseuse_gg(1, hydralisk)
+	defenseuse_ga(1, hydralisk)
+	defenseuse_ag(1, hydralisk)
+	defenseuse_aa(1, hydralisk)
+	defensebuild_ag(1, hydralisk)
+	defensebuild_aa(1, hydralisk)
+	train(22, zergling)
+	build(20, drone, 72)
+	player_need(1, hydralisk_den)
+	wait(100)
+
+	multirun(ZMCx 0015)
+	build(22, drone, 72)
+	multirun(ZMCx 0016)
+	multirun(ZMCx 0017)
+	build(24, drone, 72)
+	check_transports()
+
+		--ZMCx 0023--
+	wait(1)
+
+	attack_add(60, zergling)
+	train(12, zergling)
+	attack_prepare()
+	wait(500)
+
+	attack_do()
+	attack_clear()
+	clear_combatdata()
+	wait(100)
+
+	enemyowns_jump(starport, stage2)
+	enemyowns_jump(spire, stage2)
+	enemyowns_jump(stargate, stage2)
+	enemyowns_jump(robotics_support_bay, stage2)
+	wait(10)
+
+	goto(ZMCx 0023)
+
+
+		--stage2--
+	wait(1)
+
+	notowns_jump(hydralisk_den, ZMCx 0023)
+	attack_add(60, hydralisk)
+	attack_add(60, zergling)
+	train(13, zergling)
+	train(13, hydralisk)
+	attack_prepare()
+	wait(600)
+
+	attack_do()
+	attack_clear()
+	clear_combatdata()
+	wait(100)
+
+	enemyowns_jump(science_facility, stage3)
+	enemyowns_jump(fleet_beacon, stage3)
+	enemyowns_jump(arbiter_tribunal, stage3)
+	enemyowns_jump(hive, stage3)
+	wait(10)
+
+	goto(stage2)
+
+
+		--stage3--
+	wait(1)
+
+	notowns_jump(lair, stage2)
+	wait(10)
+
+	build(1, queen_nest, 70)
+	wait_buildstart(1, queen_nest)
+	wait(20)
+
+	attack_add(60, hydralisk)
+	attack_add(30, zergling)
+	train(10, zergling)
+	train(13, hydralisk)
+	attack_prepare()
+	wait(600)
+
+	attack_do()
+	attack_clear()
+	clear_combatdata()
+	wait(100)
+
+	notowns_jump(queen_nest, stage3)
+	wait(10)
+
+	build(1, hive, 70)
+	wait_buildstart(1, hive)
+	wait(50)
+
+	attack_add(60, hydralisk)
+	attack_add(60, zergling)
+	train(12, zergling)
+	train(12, hydralisk)
+	attack_prepare()
+	wait(600)
+
+	attack_do()
+	attack_clear()
+	clear_combatdata()
+	wait(100)
+
+
+		--final--
+	notowns_jump(hive, stage3)
+	wait(1)
+
+	attack_add(60, zergling)
+	attack_add(60, hydralisk)
+	attack_add(25, lurker)
+	train(12, zergling)
+	train(12, hydralisk)
+	train(6, lurker)
+	train(16, hydralisk)
+	attack_prepare()
+	wait(600)
+
+	attack_do()
+	attack_clear()
+	clear_combatdata()
+	wait(100)
+
+	goto(final)
+
+
+		--ZMCx 0001--
+	wait(1)
+
+	farms_notiming()
+	define_max(80, drone)
+	define_max(100, zergling)
+	define_max(100, hydralisk)
+	define_max(100, mutalisk)
+	define_max(10, queen)
+	define_max(100, ultralisk)
+	define_max(255, scourge)
+	define_max(10, defiler)
+	define_max(100, guardian)
+	define_max(6, devourer)
+	wait(1)
+
+	build(1, hatchery, 150)
+	wait_build(1, hatchery)
+	build(6, drone, 80)
+	wait_buildstart(6, drone)
+	enemyresources_jump(80, 0, ZMCx 0005)
+	build(9, drone, 80)
+	rush(0, ZMCx 0006)
+	build(2, overlord, 80)
+	wait_build(2, overlord)
+	build(12, drone, 80)
+	goto(ZMCx 0007)
+
+
+		--ZMCx 0025--
+	wait(1)
+
+	multirun(ZMCx 0003)
+	multirun(ZMCx 0004)
+	train(2, zergling)
+	build(2, hatchery, 80)
+	wait_buildstart(2, hatchery)
+	multirun(ZMCx 0009)
+	multirun(ZMCx 0010)
+	farms_timing()
+	train(6, zergling)
+	build(1, extractor, 80)
+	wait_buildstart(1, extractor)
+	wait(100)
+
+	train(8, zergling)
+	player_need(1, spawning_pool)
+	build(14, drone, 72)
+	defensebuild_gg(1, zergling)
+	defenseuse_gg(1, zergling)
+	defensebuild_ga(1, zergling)
+	defenseuse_ga(1, zergling)
+	build(16, drone, 72)
+	multirun(ZMCx 0012)
+	train(12, zergling)
+	expand(1, ZMCx 0011)
+	multirun(ZMCx 0013)
+	multirun(ZMCx 0014)
+	build(18, drone, 72)
+	defensebuild_gg(1, hydralisk)
+	defensebuild_ga(1, hydralisk)
+	defenseuse_gg(1, hydralisk)
+	defenseuse_ga(1, hydralisk)
+	defenseuse_ag(1, hydralisk)
+	defenseuse_aa(1, hydralisk)
+	defensebuild_ag(1, hydralisk)
+	defensebuild_aa(1, hydralisk)
+	build(3, hatchery, 80)
+	multirun(ZMCx 0018)
+	train(20, zergling)
+	build(22, drone, 72)
+	player_need(1, hydralisk_den)
+	multirun(ZMCx 0015)
+	multirun(ZMCx 0016)
+	multirun(ZMCx 0017)
+	wait(1)
+
+	build(24, drone, 72)
+	wait(1)
+
+	check_transports()
+	random_jump(255, ZMCx 0023)
+	stop()
+
+
+		--ZMCx 0002--
+	wait(1)
+
+	farms_notiming()
+	define_max(80, drone)
+	define_max(100, zergling)
+	define_max(100, hydralisk)
+	define_max(100, mutalisk)
+	define_max(10, queen)
+	define_max(100, ultralisk)
+	define_max(255, scourge)
+	define_max(10, defiler)
+	define_max(100, guardian)
+	define_max(7, devourer)
+	wait(1)
+
+	build(1, hatchery, 150)
+	wait_build(1, hatchery)
+	build(6, drone, 80)
+	wait_buildstart(6, drone)
+	enemyresources_jump(80, 0, ZMCx 0005)
+	build(7, drone, 80)
+	wait_buildstart(7, drone)
+	build(8, drone, 80)
+	wait_buildstart(8, drone)
+	build(9, drone, 80)
+	wait_buildstart(9, drone)
+	rush(0, ZMCx 0006)
+	build(2, overlord, 80)
+	wait_build(2, overlord)
+	build(12, drone, 72)
+	wait_buildstart(12, drone)
+	goto(ZMCx 0007)
+
+
+		--ZMCx 0028--
+	wait(1)
+
+	multirun(ZMCx 0003)
+	multirun(ZMCx 0004)
+	build(2, hatchery, 80)
+	wait_buildstart(2, hatchery)
+	farms_timing()
+	train(4, zergling)
+	multirun(ZMCx 0009)
+	multirun(ZMCx 0010)
+	train(8, zergling)
+	build(1, extractor, 80)
+	wait_buildstart(1, extractor)
+	wait(100)
+
+	train(10, zergling)
+	player_need(1, spawning_pool)
+	build(14, drone, 72)
+	multirun(ZMCx 0012)
+	train(11, zergling)
+	build(16, drone, 60)
+	train(13, zergling)
+	expand(1, ZMCx 0011)
+	defensebuild_gg(1, hydralisk)
+	defenseuse_gg(1, hydralisk)
+	defensebuild_ga(1, hydralisk)
+	defenseuse_ga(1, hydralisk)
+	defensebuild_ag(1, hydralisk)
+	defenseuse_ag(1, hydralisk)
+	defensebuild_aa(1, hydralisk)
+	defenseuse_aa(1, hydralisk)
+	multirun(ZMCx 0013)
+	multirun(ZMCx 0014)
+	build(18, drone, 72)
+	build(3, hatchery, 80)
+	wait_buildstart(3, hatchery)
+	multirun(ZMCx 0018)
+	train(21, zergling)
+	build(20, drone, 72)
+	wait(100)
+
+	multirun(ZMCx 0015)
+	multirun(ZMCx 0016)
+	multirun(ZMCx 0017)
+	wait(1)
+
+	build(22, drone, 72)
+	build(24, drone, 72)
+	wait(1)
+
+	player_need(1, hydralisk_den)
+	check_transports()
+	random_jump(255, ZMCx 0023)
+	stop()
+
+
+		--ZMCx 0031--
+	wait(24)
+
+	start_town()
+	build(1, hatchery, 90)
+	wait_buildstart(1, hatchery)
+	wait_build(1, hatchery)
+	get_oldpeons(9)
+	wait(24)
+
+	multirun(ZMCx 0032)
+	wait(24)
+
+	build(1, drone, 60)
+	wait_buildstart(1, drone)
+	build(4, drone, 60)
+	wait_buildstart(4, drone)
+	build(7, drone, 60)
+	wait_buildstart(7, drone)
+	build(8, drone, 60)
+	wait_buildstart(8, drone)
+	build(10, drone, 60)
+	wait_buildstart(10, drone)
+	build(12, drone, 60)
+	wait_buildstart(12, drone)
+	build(14, drone, 60)
+	wait_buildstart(14, drone)
+	build(16, drone, 60)
+	wait_buildstart(16, drone)
+	build(18, drone, 60)
+	wait_buildstart(18, drone)
+	stop()
+
+
+		--ZMCx 0011--
+	wait(24)
+
+	start_town()
+	build(1, hatchery, 90)
+	wait_buildstart(1, hatchery)
+	wait_build(1, hatchery)
+	get_oldpeons(9)
+	build(2, drone, 60)
+	wait(24)
+
+	multirun(ZMCx 0032)
+	wait(24)
+
+	build(4, drone, 60)
+	wait_buildstart(4, drone)
+	build(7, drone, 60)
+	wait_buildstart(7, drone)
+	build(8, drone, 60)
+	wait_buildstart(8, drone)
+	build(10, drone, 60)
+	wait_buildstart(10, drone)
+	build(12, drone, 60)
+	wait_buildstart(12, drone)
+	build(14, drone, 60)
+	wait_buildstart(14, drone)
+	build(16, drone, 60)
+	wait_buildstart(16, drone)
+	build(18, drone, 60)
+	wait_buildstart(18, drone)
+	wait(100)
+
+	stop()
+
+
+		--ZMCx 0032--
+	wait(100)
+
+	notowns_jump(spawning_pool, ZMCx 0032)
+	wait(24)
+
+	creep(0)
+	build(1, creep_colony, 60)
+	wait_build(1, creep_colony)
+	build(1, sunken_colony, 60)
+	wait_build(1, sunken_colony)
+	build(2, creep_colony, 60)
+	wait_build(2, creep_colony)
+	build(2, sunken_colony, 60)
+	wait_build(2, sunken_colony)
+
+		--sporeexpo--
+	wait(600)
+
+	notowns_jump(evolution_chamber, sporeexpo)
+	wait(10)
+
+	build(3, creep_colony, 60)
+	wait_build(3, creep_colony)
+	build(1, spore_colony, 60)
+	wait_build(1, spore_colony)
+	build(4, creep_colony, 60)
+	wait_build(4, creep_colony)
+	build(2, spore_colony, 60)
+	wait_build(2, spore_colony)
+	wait(10)
+
+	build(5, creep_colony, 60)
+	wait_build(5, creep_colony)
+	build(3, sunken_colony, 60)
+	wait_build(3, sunken_colony)
+	build(6, creep_colony, 60)
+	wait_build(6, creep_colony)
+	build(4, sunken_colony, 60)
+	wait_build(4, sunken_colony)
+
+		--sporeexpo1--
+	wait(600)
+
+	notowns_jump(evolution_chamber, sporeexpo1)
+	wait(10)
+
+	build(7, creep_colony, 60)
+	wait_build(7, creep_colony)
+	build(3, spore_colony, 60)
+	wait_build(3, spore_colony)
+	build(8, creep_colony, 60)
+	wait_build(8, creep_colony)
+	build(4, spore_colony, 60)
+	wait_build(4, spore_colony)
+	build(9, creep_colony, 60)
+	wait_build(9, creep_colony)
+	build(5, sunken_colony, 60)
+	wait_build(5, sunken_colony)
+	stop()
+
+
+		--ZMCx 0009--
+	wait(100)
+
+	notowns_jump(spawning_pool, ZMCx 0009)
+	wait(24)
+
+	creep(4)
+	build(1, creep_colony, 80)
+	wait_build(1, creep_colony)
+	build(1, sunken_colony, 80)
+	wait_build(1, sunken_colony)
+	build(2, creep_colony, 70)
+	wait_build(2, creep_colony)
+	build(2, sunken_colony, 70)
+	wait_build(2, sunken_colony)
+
+		--sporemain--
+	wait(500)
+
+	notowns_jump(evolution_chamber, sporemain)
+	wait(100)
+
+	build(3, creep_colony, 70)
+	wait_build(3, creep_colony)
+	build(1, spore_colony, 70)
+	wait_build(1, spore_colony)
+	build(4, creep_colony, 60)
+	wait_build(4, creep_colony)
+	build(2, spore_colony, 60)
+	wait_build(2, spore_colony)
+	build(5, creep_colony, 50)
+	wait_build(5, creep_colony)
+	build(3, spore_colony, 50)
+	wait_build(3, spore_colony)
+	wait(10)
+
+	build(6, creep_colony, 60)
+	wait_build(6, creep_colony)
+	build(3, sunken_colony, 60)
+	wait_build(3, sunken_colony)
+	build(7, creep_colony, 50)
+	wait_build(7, creep_colony)
+	build(4, sunken_colony, 50)
+	wait_build(4, sunken_colony)
+	build(8, creep_colony, 50)
+	wait_build(8, creep_colony)
+	build(5, sunken_colony, 50)
+	wait_build(5, sunken_colony)
+
+		--sporemain1--
+	wait(500)
+
+	notowns_jump(evolution_chamber, sporemain1)
+	wait(100)
+
+	build(9, creep_colony, 60)
+	wait_build(9, creep_colony)
+	build(4, spore_colony, 60)
+	wait_build(4, spore_colony)
+	build(10, creep_colony, 50)
+	wait_build(10, creep_colony)
+	build(5, spore_colony, 50)
+	wait_build(5, spore_colony)
+	build(11, creep_colony, 50)
+	wait_build(11, creep_colony)
+	build(6, sunken_colony, 50)
+	wait_build(6, sunken_colony)
+	stop()
+
+
+		--ZMCx 0010--
+	wait(10)
+
+	stop()
+
+
+		--ZMCx 0016--
+	wait(500)
+
+	wait_build(1, spawning_pool)
+	wait(500)
+
+	upgrade(1, zergling_speed, 40)
+	wait(3800)
+
+	wait_build(1, hive)
+	upgrade(1, zergling_attack, 40)
+	wait(45)
+
+	stop()
+
+
+		--ZMCx 0017--
+	wait(500)
+
+	wait_build(1, hydralisk_den)
+	wait(120)
+
+	define_max(20, lurker)
+	tech(lurker_aspect, 50)
+	wait(3800)
+
+	defenseuse_gg(1, lurker)
+	defenseuse_ga(1, lurker)
+	defensebuild_gg(1, lurker)
+	defensebuild_ga(1, lurker)
+	wait(100)
+
+	upgrade(1, hydralisk_speed, 40)
+	wait(3500)
+
+	upgrade(1, hydralisk_range, 40)
+	wait(3600)
+
+	stop()
+
+
+		--ZMCx 0003--
+	wait(2750)
+
+	wait_build(1, evolution_chamber)
+	wait(50)
+
+	upgrade(1, z_missile_attack, 40)
+	wait(3600)
+
+	upgrade(1, z_melee_attack, 40)
+	wait(3600)
+
+	upgrade(1, z_carapace, 40)
+	wait(3600)
+
+	wait_build(1, lair)
+	upgrade(2, z_missile_attack, 40)
+	wait(4000)
+
+	upgrade(2, z_melee_attack, 40)
+	wait(4000)
+
+	upgrade(2, z_carapace, 40)
+	wait(4000)
+
+	wait_build(1, hive)
+	upgrade(3, z_melee_attack, 40)
+	wait(4500)
+
+	upgrade(3, z_missile_attack, 40)
+	wait(4500)
+
+	upgrade(3, z_carapace, 40)
+	wait(57)
+
+	stop()
+
+
+		--ZMCx 0015--
+	wait(480)
+
+	enemyowns_jump(starport, overlordstuff)
+	enemyowns_jump(templar_archives, overlordstuff)
+	enemyowns_jump(stargate, overlordstuff)
+	wait(10)
+
+	goto(ZMCx 0015)
+
+
+		--overlordstuff--
+	wait(100)
+
+	build(1, lair, 80)
+	wait_build(1, lair)
+	wait(100)
+
+	upgrade(1, overlord_speed, 50)
+	wait(5000)
+
+	upgrade(1, overlord_capacity, 40)
+	wait(40)
+
+	stop()
+
+
+		--ZMCx 0014--
+	wait(6000)
+
+	expand(2, ZMCx 0031)
+	wait(4050)
+
+	expand(3, ZMCx 0031)
+	wait(5950)
+
+	expand(4, ZMCx 0031)
+	wait(4050)
+
+	expand(5, ZMCx 0031)
+	wait(5950)
+
+	expand(6, ZMCx 0031)
+	wait(4050)
+
+
+		--finalexpand--
+	wait(1)
+
+	expand(99, ZMCx 0031)
+	wait(4400)
+
+	goto(finalexpand)
+
+
+		--ZMCx 0018--
+	wait(100)
+
+	resources_jump(600, 0, ZMCx 0037)
+	wait(900)
+
+	goto(ZMCx 0018)
+
+
+		--ZMCx 0037--
+	wait(100)
+
+	build(4, hatchery, 60)
+	wait_build(4, hatchery)
+	wait(10)
+
+
+		--ZMCx morehatch5--
+	wait(100)
+
+	resources_jump(800, 0, ZMCx 5001)
+	wait(900)
+
+	goto(ZMCx morehatch5)
+
+
+		--ZMCx 5001--
+	wait(100)
+
+	build(5, hatchery, 50)
+	wait_build(5, hatchery)
+	wait(10)
+
+
+		--ZMCx morehatch6--
+	wait(100)
+
+	resources_jump(1000, 0, ZMCx 5002)
+	wait(900)
+
+	goto(ZMCx morehatch6)
+
+
+		--ZMCx 5002--
+	wait(100)
+
+	build(6, hatchery, 5)
+	wait_build(6, hatchery)
+	wait(10)
+
+
+		--mass hatch--
+	resources_jump(1500, 0, build mass hatch)
+	wait(500)
+
+	goto(mass hatch)
+
+
+		--build mass hatch--
+	creep(3)
+	build(7, hatchery, 40)
+	build(8, hatchery, 40)
+	wait_build(8, hatchery)
+
+		--mass hatch 2--
+	resources_jump(2000, 0, build mass hatch 2)
+	wait(500)
+
+	goto(mass hatch 2)
+
+
+		--build mass hatch 2--
+	build(9, hatchery, 40)
+	wait_build(9, hatchery)
+	stop()
+
+
+		--ZMCx 0012--
+	wait(1)
+
+	stop()
+
+
+		--ZMCx 0013--
+	wait(1)
+
+	build(1, evolution_chamber, 80)
+	wait_buildstart(1, evolution_chamber)
+	build(1, hydralisk_den, 80)
+	wait_buildstart(1, hydralisk_den)
+	wait(10)
+
+	stop()
+
+
+		--ZMCx 0005--
+	build(1, spawning_pool, 80)
+	wait_buildstart(1, spawning_pool)
+	train(3, zergling)
+	defenseuse_gg(1, zergling)
+	defenseuse_ga(1, zergling)
+	defensebuild_gg(1, zergling)
+	defensebuild_ga(1, zergling)
+	attack_add(6, zergling)
+	build(7, drone, 70)
+	random_jump(192, ZMCx 0038)
+	attack_prepare()
+	wait(100)
+
+	attack_do()
+	attack_clear()
+	clear_combatdata()
+	attack_add(4, zergling)
+	farms_timing()
+	attack_prepare()
+	wait(50)
+
+	attack_do()
+	attack_clear()
+	clear_combatdata()
+	wait(10)
+
+
+		--ZMCx 0038--
+	wait(10)
+
+	build(9, drone, 80)
+	wait_buildstart(9, drone)
+	build(2, overlord, 80)
+	wait_build(2, overlord)
+	build(12, drone, 80)
+	race_jump(ZMCx 0039, ZMCx 0040, ZMCx 0041)
+
+
+		--ZMCx 0039--
+	wait(1)
+
+	goto(ZMCx 0008)
+
+
+		--ZMCx 0040--
+	wait(1)
+
+	goto(ZMCx 0025)
+
+
+		--ZMCx 0041--
+	wait(1)
+
+	goto(ZMCx 0028)
+
+
+		--ZMCx 0006--
+	build(1, spawning_pool, 80)
+	wait_buildstart(1, spawning_pool)
+	build(11, drone, 60)
+	train(3, zergling)
+	defenseuse_gg(1, zergling)
+	defenseuse_ga(1, zergling)
+	defensebuild_gg(1, zergling)
+	defensebuild_ga(1, zergling)
+	build(2, hatchery, 70)
+	random_jump(192, ZMCx 0042)
+	attack_add(6, zergling)
+	attack_prepare()
+	wait(100)
+
+	attack_do()
+	attack_clear()
+	clear_combatdata()
+	wait(10)
+
+
+		--ZMCx 0042--
+	build(2, overlord, 80)
+	wait_build(2, overlord)
+	build(12, drone, 80)
+	race_jump(ZMCx 0043, ZMCx 0044, ZMCx 0045)
+
+
+		--ZMCx 0043--
+	wait(1)
+
+	goto(ZMCx 0008)
+
+
+		--ZMCx 0044--
+	wait(1)
+
+	goto(ZMCx 0025)
+
+
+		--ZMCx 0045--
+	wait(1)
+
+	goto(ZMCx 0028)
+
+
+		--ZMCx 0007--
+	build(1, spawning_pool, 80)
+	wait_buildstart(1, spawning_pool)
+	build(13, drone, 72)
+	defenseuse_gg(1, zergling)
+	defenseuse_ga(1, zergling)
+	defensebuild_gg(1, zergling)
+	defensebuild_ga(1, zergling)
+	race_jump(ZMCx 0046, ZMCx 0047, ZMCx 0048)
+
+
+		--ZMCx 0046--
+	wait(1)
+
+	goto(ZMCx 0008)
+
+
+		--ZMCx 0047--
+	wait(1)
+
+	goto(ZMCx 0025)
+
+
+		--ZMCx 0048--
+	wait(1)
+
+	goto(ZMCx 0028)
+
+
+		--ZMCx 0004--
+	wait(1)
+
+	enemyowns_jump(spire, ZMCx 0062)
+	enemyowns_jump(starport, ZMCx 0062)
+	enemyowns_jump(stargate, ZMCx 0062)
+	wait(500)
+
+	goto(ZMCx 0004)
+
+
+		--ZMCx 0062--
+	wait(1)
+
+	build(1, hydralisk_den, 80)
+	wait_build(1, hydralisk_den)
+	wait(1)
+
+	defensebuild_gg(1, hydralisk)
+	defensebuild_ga(1, hydralisk)
+	defenseuse_gg(1, hydralisk)
+	defenseuse_ga(1, hydralisk)
+	defenseuse_ag(1, hydralisk)
+	defenseuse_aa(1, hydralisk)
+	defensebuild_ag(1, hydralisk)
+	defensebuild_aa(1, hydralisk)
+	train(8, hydralisk)
+	wait(10)
+
+	stop()
+
+

@@ -1,0 +1,1062 @@
+# M_K III Protoss
+
+PMCx(1343, 101, aiscript):
+	start_town()
+	farms_notiming()
+	transports_off()
+
+#if DEBUG
+    debug(debugmsg, M_K III Protoss)
+    --debugmsg--
+#endif
+
+
+	define_max(100, probe)
+	define_max(100, zealot)
+	define_max(100, dragoon)
+	define_max(100, reaver)
+	define_max(100, scout)
+	define_max(20, shuttle)
+	define_max(100, carrier)
+	define_max(10, observer)
+	define_max(100, corsair)
+	define_max(100, high_templar)
+	define_max(100, dark_archon)
+	define_max(100, archon)
+	define_max(10, arbiter)
+	define_max(100, dark_templar)
+	goto(PMCx 0000)
+
+
+		--PMCx 0001--
+	groundmap_jump(PMCx 0002)
+	multirun(PMCx 0003)
+	multirun(PMCx 0004)
+
+		--PMCx 0002--
+	build(6, probe, 120)
+	wait_buildstart(6, probe)
+	build(1, pylon, 1)
+	multirun(PMCx 0005)
+	multirun(PMCx 0006)
+	multirun(PMCx 0007)
+	multirun(PMCx 0008)
+	multirun(PMCx 0009)
+	multirun(PMCx 0010)
+	multirun(PMCx 0011)
+	multirun(PMCx 0012)
+	multirun(PMCx 0013)
+	give_money()
+	build(2, pylon, 1)
+	farms_timing()
+	creep(3)
+	build(3, assimilator, 1)
+	defensebuild_gg(1, zealot)
+	defenseuse_gg(1, zealot)
+	wait_build(1, pylon)
+	random_jump(32, PMCx 0014)
+	random_jump(96, PMCx 0015)
+	random_jump(128, PMCx 0016)
+	goto(PMCx 0017)
+
+
+		--PMCx 0014--
+	multirun(PMCx 0018)
+	multirun(PMCx 0019)
+	multirun(PMCx 0020)
+	multirun(PMCx 0021)
+	multirun(PMCx 0022)
+	build(1, forge, 1)
+	build(2, gateway, 1)
+	build(4, pylon, 1)
+	wait_build(1, forge)
+	build(3, photon_cannon, 1)
+	wait_build(1, gateway)
+	build(1, cybernetics_core, 1)
+	build(6, photon_cannon, 1)
+	wait_build(1, cybernetics_core)
+	build(1, citadel_of_adun, 1)
+	build(1, stargate, 1)
+	build(1, robotics_facility, 1)
+	wait_build(1, citadel_of_adun)
+	build(1, templar_archives, 1)
+	build(11, pylon, 1)
+	wait_build(1, templar_archives)
+	train(1, dark_templar)
+	defensebuild_gg(1, high_templar)
+	defenseuse_gg(1, high_templar)
+	wait_build(1, robotics_facility)
+	build(1, observatory, 1)
+	build(1, robotics_support_bay, 1)
+	wait_build(1, stargate)
+	defensebuild_aa(1, corsair)
+	defenseuse_aa(1, corsair)
+	defensebuild_gg(1, archon)
+	defenseuse_gg(1, archon)
+	build(1, fleet_beacon, 1)
+	build(1, arbiter_tribunal, 1)
+	build(2, stargate, 1)
+	build(21, pylon, 1)
+	place_guard(observer, 0)
+	wait_build(1, arbiter_tribunal)
+	place_guard(arbiter, 0)
+	train(1, scout)
+	train(1, arbiter)
+	attack_add(1, scout)
+	attack_prepare()
+	attack_do()
+	attack_clear()
+	multirun(PMCx 0023)
+	defensebuild_gg(1, observer)
+	defenseuse_gg(1, observer)
+	defensebuild_gg(1, arbiter)
+	defenseuse_gg(1, arbiter)
+	train(5, arbiter)
+
+		--PMCx 0024--
+	attack_add(12, archon)
+	attack_prepare()
+	expand(99, PMCx 0025)
+	attack_do()
+	attack_clear()
+	wait(1500)
+
+	goto(PMCx 0024)
+
+
+		--PMCx 0025--
+	start_town()
+	train(4, corsair)
+	train(2, dark_templar)
+	train(1, reaver)
+	attack_add(4, corsair)
+	attack_add(2, dark_templar)
+	attack_add(1, reaver)
+	attack_prepare()
+	attack_do()
+	attack_clear()
+	stop()
+
+
+		--PMCx 0015--
+	multirun(PMCx 0026)
+	multirun(PMCx 0027)
+	multirun(PMCx 0028)
+	multirun(PMCx 0029)
+	build(1, forge, 1)
+	build(1, gateway, 1)
+	build(4, pylon, 1)
+	wait_build(1, forge)
+	build(3, photon_cannon, 1)
+	wait_build(1, gateway)
+	build(1, cybernetics_core, 1)
+	build(9, photon_cannon, 1)
+	build(9, pylon, 1)
+	wait_build(1, cybernetics_core)
+	build(2, stargate, 1)
+	build(13, photon_cannon, 1)
+	build(15, pylon, 1)
+	wait_build(1, stargate)
+	defensebuild_aa(1, corsair)
+	defenseuse_aa(1, corsair)
+	build(1, fleet_beacon, 1)
+	defensebuild_gg(1, carrier)
+	defenseuse_gg(1, carrier)
+	build(1, citadel_of_adun, 1)
+	wait_build(1, citadel_of_adun)
+	build(1, templar_archives, 1)
+	build(1, robotics_facility, 1)
+	wait_build(1, robotics_facility)
+	build(1, observatory, 1)
+	build(1, robotics_support_bay, 1)
+	wait_build(1, templar_archives)
+	build(1, arbiter_tribunal, 1)
+	build(21, pylon, 1)
+	place_guard(observer, 0)
+	wait_build(1, arbiter_tribunal)
+	place_guard(arbiter, 0)
+	train(1, scout)
+	train(1, arbiter)
+	attack_add(1, scout)
+	attack_prepare()
+	attack_do()
+	attack_clear()
+	multirun(PMCx 0023)
+	defensebuild_gg(1, observer)
+	defenseuse_gg(1, observer)
+	defensebuild_gg(1, arbiter)
+	defenseuse_gg(1, arbiter)
+	train(5, arbiter)
+
+		--PMCx 0030--
+	attack_add(12, carrier)
+	attack_prepare()
+	expand(99, PMCx 0031)
+	attack_do()
+	attack_clear()
+	wait(1500)
+
+	goto(PMCx 0030)
+
+
+		--PMCx 0031--
+	start_town()
+	train(4, corsair)
+	train(2, dark_templar)
+	train(1, reaver)
+	attack_add(4, corsair)
+	attack_add(2, dark_templar)
+	attack_add(1, reaver)
+	attack_prepare()
+	attack_do()
+	attack_clear()
+	stop()
+
+
+		--PMCx 0016--
+	multirun(PMCx 0018)
+	multirun(PMCx 0019)
+	multirun(PMCx 0032)
+	multirun(PMCx 0033)
+	multirun(PMCx 0034)
+	build(1, forge, 1)
+	build(2, gateway, 1)
+	build(4, pylon, 1)
+	wait_build(1, forge)
+	build(3, photon_cannon, 1)
+	wait_build(1, gateway)
+	build(1, cybernetics_core, 1)
+	build(6, photon_cannon, 1)
+	build(9, pylon, 1)
+	wait_build(1, cybernetics_core)
+	defensebuild_gg(1, dragoon)
+	defenseuse_gg(1, dragoon)
+	build(1, citadel_of_adun, 1)
+	build(1, stargate, 1)
+	build(1, robotics_facility, 1)
+	wait_build(1, citadel_of_adun)
+	build(1, templar_archives, 1)
+	build(15, pylon, 1)
+	wait_build(1, templar_archives)
+	train(1, dark_templar)
+	defensebuild_gg(1, dark_templar)
+	defenseuse_gg(1, dark_templar)
+	wait_build(1, robotics_facility)
+	build(1, observatory, 1)
+	build(1, robotics_support_bay, 1)
+	wait_build(1, stargate)
+	defensebuild_aa(1, corsair)
+	defenseuse_aa(1, corsair)
+	build(1, fleet_beacon, 1)
+	build(1, arbiter_tribunal, 1)
+	build(2, stargate, 1)
+	build(21, pylon, 1)
+	place_guard(observer, 0)
+	wait_build(1, arbiter_tribunal)
+	place_guard(arbiter, 0)
+	train(1, scout)
+	train(1, arbiter)
+	attack_add(1, scout)
+	attack_prepare()
+	attack_do()
+	attack_clear()
+	attack_clear()
+	multirun(PMCx 0023)
+	defensebuild_gg(1, observer)
+	defenseuse_gg(1, observer)
+	defensebuild_gg(1, arbiter)
+	defenseuse_gg(1, arbiter)
+	defensebuild_gg(1, dark_archon)
+	defenseuse_gg(1, dark_archon)
+	train(5, arbiter)
+
+		--PMCx 0035--
+	attack_add(12, zealot)
+	attack_add(18, dragoon)
+	attack_add(6, dark_templar)
+	attack_prepare()
+	expand(99, PMCx 0036)
+	attack_do()
+	attack_clear()
+	wait(1500)
+
+	goto(PMCx 0035)
+
+
+		--PMCx 0036--
+	start_town()
+	train(4, corsair)
+	train(2, scout)
+	train(1, reaver)
+	attack_add(4, corsair)
+	attack_add(2, scout)
+	attack_add(1, reaver)
+	attack_prepare()
+	attack_do()
+	attack_clear()
+	stop()
+
+
+		--PMCx 0017--
+	multirun(PMCx 0037)
+	multirun(PMCx 0038)
+	multirun(PMCx 0039)
+	multirun(PMCx 0040)
+	multirun(PMCx 0041)
+	build(1, forge, 1)
+	build(2, gateway, 1)
+	build(4, pylon, 1)
+	wait_build(1, forge)
+	build(3, photon_cannon, 1)
+	wait_build(1, gateway)
+	build(1, cybernetics_core, 1)
+	build(6, photon_cannon, 1)
+	build(9, pylon, 1)
+	wait_build(1, cybernetics_core)
+	build(1, robotics_facility, 1)
+	build(1, citadel_of_adun, 1)
+	build(1, stargate, 1)
+	wait_build(1, robotics_facility)
+	build(1, robotics_support_bay, 1)
+	defensebuild_gg(1, reaver)
+	defenseuse_gg(1, reaver)
+	build(1, observatory, 1)
+	wait_build(1, citadel_of_adun)
+	build(1, templar_archives, 1)
+	wait_build(1, stargate)
+	defensebuild_aa(1, corsair)
+	defenseuse_aa(1, corsair)
+	build(1, fleet_beacon, 1)
+	build(15, pylon, 1)
+	wait_build(1, templar_archives)
+	build(1, arbiter_tribunal, 1)
+	build(2, stargate, 1)
+	build(21, pylon, 1)
+	place_guard(observer, 0)
+	wait_build(1, arbiter_tribunal)
+	place_guard(arbiter, 0)
+	train(1, scout)
+	train(1, arbiter)
+	attack_add(1, scout)
+	attack_prepare()
+	attack_do()
+	attack_clear()
+	multirun(PMCx 0023)
+	defensebuild_gg(1, observer)
+	defenseuse_gg(1, observer)
+	defensebuild_gg(1, arbiter)
+	defenseuse_gg(1, arbiter)
+	train(5, arbiter)
+
+		--PMCx 0042--
+	attack_add(18, dragoon)
+	attack_add(8, reaver)
+	attack_add(18, scout)
+	attack_prepare()
+	expand(99, PMCx 0043)
+	attack_do()
+	attack_clear()
+	wait(1500)
+
+	goto(PMCx 0042)
+
+
+		--PMCx 0043--
+	start_town()
+	train(4, corsair)
+	train(2, dark_templar)
+	attack_add(4, corsair)
+	attack_add(2, dark_templar)
+	attack_prepare()
+	attack_do()
+	attack_clear()
+	stop()
+
+
+		--PMCx 0005--
+	build(7, probe, 120)
+	wait_build(7, probe)
+	build(8, probe, 120)
+	wait_build(8, probe)
+	build(9, probe, 120)
+	wait_build(9, probe)
+	build(10, probe, 120)
+	wait_build(10, probe)
+	build(11, probe, 120)
+	wait_build(11, probe)
+	build(12, probe, 120)
+	wait_build(12, probe)
+	build(13, probe, 120)
+	wait_build(13, probe)
+	build(14, probe, 120)
+	wait_build(14, probe)
+	build(16, probe, 120)
+	wait_build(16, probe)
+	build(18, probe, 120)
+	wait_build(18, probe)
+	build(20, probe, 120)
+	wait_build(20, probe)
+	build(22, probe, 120)
+	wait_build(22, probe)
+	build(24, probe, 120)
+	wait_build(24, probe)
+	start_town()
+	build(1, nexus, 140)
+	wait_build(1, nexus)
+	build(2, probe, 120)
+	wait_build(2, probe)
+	build(4, probe, 120)
+	wait_build(4, probe)
+	build(6, probe, 120)
+	wait_build(6, probe)
+	build(8, probe, 120)
+	wait_build(8, probe)
+	build(10, probe, 120)
+	wait_build(10, probe)
+	build(12, probe, 120)
+	wait_build(12, probe)
+	build(14, probe, 120)
+	wait_build(14, probe)
+	build(16, probe, 120)
+	wait_build(16, probe)
+	build(18, probe, 120)
+	wait_build(18, probe)
+	build(20, probe, 120)
+	wait_build(20, probe)
+	build(22, probe, 120)
+	wait_build(22, probe)
+	build(24, probe, 120)
+	wait_build(24, probe)
+	stop()
+
+
+		--PMCx 0026--
+	wait_build(1, cybernetics_core)
+	expand(1, PMCx 0044)
+	wait(4500)
+
+	expand(2, PMCx 0044)
+	wait(5500)
+
+	expand(3, PMCx 0044)
+
+		--PMCx 0045--
+	wait(8500)
+
+	expand(99, PMCx 0044)
+	goto(PMCx 0045)
+
+
+		--PMCx 0018--
+	wait_build(1, gateway)
+	expand(1, PMCx 0046)
+	wait(4500)
+
+	expand(2, PMCx 0046)
+	wait(5500)
+
+	expand(3, PMCx 0046)
+
+		--PMCx 0047--
+	wait(8500)
+
+	expand(99, PMCx 0046)
+	goto(PMCx 0047)
+
+
+		--PMCx 0037--
+	wait_build(1, cybernetics_core)
+	expand(1, PMCx 0048)
+	wait(4500)
+
+	expand(2, PMCx 0048)
+	wait(5500)
+
+	expand(3, PMCx 0048)
+
+		--PMCx 0049--
+	wait(8500)
+
+	expand(99, PMCx 0048)
+	goto(PMCx 0049)
+
+
+		--PMCx 0027--
+	wait(500)
+
+	resources_jump(300, 300, PMCx 0050)
+	goto(PMCx 0027)
+
+
+		--PMCx 0050--
+	wait_build(1, cybernetics_core)
+	build(3, stargate, 1)
+	wait_build(3, stargate)
+
+		--PMCx 0051--
+	wait(500)
+
+	resources_jump(700, 500, PMCx 0052)
+	goto(PMCx 0051)
+
+
+		--PMCx 0052--
+	build(1, shield_battery, 1)
+	wait_build(1, shield_battery)
+	build(6, stargate, 1)
+	wait_build(6, stargate)
+
+		--PMCx 0053--
+	wait(500)
+
+	resources_jump(1200, 700, PMCx 0054)
+	goto(PMCx 0053)
+
+
+		--PMCx 0054--
+	build(2, shield_battery, 1)
+	wait_build(2, shield_battery)
+	build(12, stargate, 1)
+	wait_build(12, stargate)
+	stop()
+
+
+		--PMCx 0019--
+	wait(500)
+
+	resources_jump(300, 0, PMCx 0055)
+	goto(PMCx 0019)
+
+
+		--PMCx 0055--
+	wait_build(1, pylon)
+	build(3, gateway, 1)
+	wait_build(3, gateway)
+
+		--PMCx 0056--
+	wait(500)
+
+	resources_jump(700, 0, PMCx 0057)
+	goto(PMCx 0056)
+
+
+		--PMCx 0057--
+	build(7, gateway, 1)
+	wait_build(7, gateway)
+
+		--PMCx 0058--
+	wait(500)
+
+	resources_jump(1200, 0, PMCx 0059)
+	goto(PMCx 0058)
+
+
+		--PMCx 0059--
+	build(12, gateway, 1)
+	wait_build(12, gateway)
+	stop()
+
+
+		--PMCx 0038--
+	wait(500)
+
+	resources_jump(400, 400, PMCx 0060)
+	goto(PMCx 0038)
+
+
+		--PMCx 0060--
+	wait_build(1, pylon)
+	build(3, gateway, 1)
+	wait_build(3, gateway)
+	wait_build(1, cybernetics_core)
+	build(3, robotics_facility, 1)
+	wait_build(3, robotics_facility)
+
+		--PMCx 0061--
+	wait(500)
+
+	resources_jump(800, 600, PMCx 0062)
+	goto(PMCx 0061)
+
+
+		--PMCx 0062--
+	build(1, shield_battery, 1)
+	wait_build(1, shield_battery)
+	build(4, gateway, 1)
+	wait_build(4, gateway)
+	build(4, robotics_facility, 1)
+	wait_build(4, robotics_facility)
+	build(3, stargate, 1)
+	wait_build(3, stargate)
+
+		--PMCx 0063--
+	wait(500)
+
+	resources_jump(1200, 800, PMCx 0064)
+	goto(PMCx 0063)
+
+
+		--PMCx 0064--
+	build(2, shield_battery, 1)
+	wait_build(2, shield_battery)
+	build(4, stargate, 1)
+	wait_build(4, stargate)
+	stop()
+
+
+		--PMCx 0006--
+	wait(500)
+
+	resources_jump(0, 300, PMCx 0006)
+	resources_jump(375, 0, PMCx 0065)
+	goto(PMCx 0006)
+
+
+		--PMCx 0065--
+	give_money()
+	wait(1000)
+
+	goto(PMCx 0006)
+
+
+		--PMCx 0003--
+	wait_build(1, robotics_facility)
+	train(1, shuttle)
+	wait_train(1, shuttle)
+	check_transports()
+	wait_train(2, shuttle)
+	stop()
+
+
+		--PMCx 0032--
+	wait_build(1, gateway)
+	train(12, zealot)
+	wait_train(12, zealot)
+	train(24, zealot)
+	wait_train(24, zealot)
+	wait(500)
+
+	notowns_jump(cybernetics_core, PMCx 0032)
+
+		--PMCx 0066--
+	train(12, dragoon)
+	wait_train(12, dragoon)
+	train(24, dragoon)
+	wait_train(24, dragoon)
+	train(36, dragoon)
+	wait_train(36, dragoon)
+	wait(500)
+
+	notowns_jump(templar_archives, PMCx 0066)
+	train(12, dark_templar)
+	wait_train(12, dark_templar)
+	train(24, dark_templar)
+	wait_train(24, dark_templar)
+	train(36, dark_templar)
+	wait_train(36, dark_templar)
+	wait(500)
+
+	goto(PMCx 0032)
+
+
+		--PMCx 0028--
+	wait_build(1, fleet_beacon)
+	train(6, carrier)
+	wait_train(6, carrier)
+	train(12, carrier)
+	wait_train(12, carrier)
+	train(18, carrier)
+	wait_train(18, carrier)
+	wait(1500)
+
+	goto(PMCx 0028)
+
+
+		--PMCx 0013--
+	wait_build(1, observatory)
+	wait_train(1, observer)
+	train(3, observer)
+	wait_train(3, observer)
+	train(5, observer)
+	wait_train(5, observer)
+	wait(1500)
+
+	goto(PMCx 0013)
+
+
+		--PMCx 0004--
+	wait_build(1, robotics_facility)
+	train(1, shuttle)
+	wait_train(1, shuttle)
+	train(3, shuttle)
+	wait_train(3, shuttle)
+	train(6, shuttle)
+	wait_train(6, shuttle)
+	wait(1500)
+
+	goto(PMCx 0004)
+
+
+		--PMCx 0039--
+	wait_build(1, cybernetics_core)
+	train(8, dragoon)
+	wait_train(8, dragoon)
+	train(16, dragoon)
+	wait_train(16, dragoon)
+	wait_build(1, robotics_support_bay)
+	train(8, reaver)
+	wait_train(8, reaver)
+	train(12, reaver)
+	wait_train(12, reaver)
+	wait(1500)
+
+	goto(PMCx 0039)
+
+
+		--PMCx 0040--
+	wait_build(1, stargate)
+	train(8, scout)
+	wait_train(8, scout)
+	train(16, scout)
+	wait_train(16, scout)
+	train(24, scout)
+	wait_train(24, scout)
+	wait(1500)
+
+	goto(PMCx 0040)
+
+
+		--PMCx 0021--
+	wait_build(1, templar_archives)
+	train(6, archon)
+	wait_train(6, archon)
+	train(12, archon)
+	wait_train(12, archon)
+	train(18, archon)
+	wait_train(18, archon)
+	wait(1500)
+
+	goto(PMCx 0021)
+
+
+		--PMCx 0033--
+	wait_build(1, templar_archives)
+	train(6, dark_archon)
+	wait_train(6, dark_archon)
+	train(12, dark_archon)
+	wait_train(12, dark_archon)
+	train(18, dark_archon)
+	wait_train(18, dark_archon)
+	wait(1500)
+
+	goto(PMCx 0033)
+
+
+		--PMCx 0020--
+	wait_build(1, templar_archives)
+	train(12, high_templar)
+	wait_train(12, high_templar)
+	train(24, high_templar)
+	wait_train(24, high_templar)
+	wait(1500)
+
+	goto(PMCx 0020)
+
+
+		--PMCx 0029--
+	wait_train(3, carrier)
+	wait_train(1, observer)
+
+		--PMCx 0067--
+	wait(1500)
+
+	send_suicide(0)
+	wait(3000)
+
+	goto(PMCx 0067)
+
+
+		--PMCx 0022--
+	wait_train(1, archon)
+	wait_train(1, observer)
+
+		--PMCx 0068--
+	wait(1500)
+
+	send_suicide(0)
+	wait(3000)
+
+	goto(PMCx 0068)
+
+
+		--PMCx 0034--
+	wait_train(1, dragoon)
+	wait_train(1, observer)
+
+		--PMCx 0069--
+	wait(1500)
+
+	send_suicide(0)
+	wait(3000)
+
+	goto(PMCx 0069)
+
+
+		--PMCx 0041--
+	wait_train(5, reaver)
+	wait_train(1, observer)
+
+		--PMCx 0070--
+	wait(1500)
+
+	send_suicide(0)
+	wait(2500)
+
+	goto(PMCx 0070)
+
+
+		--PMCx 0023--
+	wait_build(1, arbiter_tribunal)
+	wait(3500)
+
+	send_suicide(0)
+	wait(3500)
+
+	goto(PMCx 0023)
+
+
+		--PMCx 0044--
+	start_town()
+	build(1, nexus, 180)
+	wait_buildstart(1, nexus)
+	build(2, pylon, 100)
+	wait_build(2, pylon)
+	player_need(1, forge)
+	build(6, photon_cannon, 1)
+	wait_build(6, photon_cannon)
+	build(7, probe, 100)
+	wait_build(7, probe)
+	build(1, assimilator, 1)
+	player_need(1, gateway)
+	build(1, shield_battery, 1)
+	wait_build(1, shield_battery)
+	build(3, pylon, 1)
+	wait_build(3, pylon)
+	build(12, probe, 100)
+	wait_build(12, probe)
+	build(15, probe, 100)
+	wait_build(15, probe)
+	player_need(1, cybernetics_core)
+	build(1, stargate, 1)
+	wait_build(1, stargate)
+	multirun(PMCx 0027)
+	multirun(PMCx 0028)
+	player_need(1, robotics_facility)
+	player_need(1, robotics_support_bay)
+	player_need(1, observatory)
+	player_need(1, fleet_beacon)
+	player_need(1, citadel_of_adun)
+	build(4, pylon, 1)
+	wait_build(4, pylon)
+	player_need(1, templar_archives)
+	player_need(1, arbiter_tribunal)
+	build(5, pylon, 1)
+	wait_build(5, pylon)
+	stop()
+
+
+		--PMCx 0046--
+	start_town()
+	build(1, nexus, 180)
+	wait_buildstart(1, nexus)
+	build(2, pylon, 100)
+	wait_build(2, pylon)
+	player_need(1, forge)
+	build(6, photon_cannon, 1)
+	wait_build(6, photon_cannon)
+	build(7, probe, 100)
+	wait_build(7, probe)
+	build(1, assimilator, 1)
+	player_need(1, gateway)
+	build(1, shield_battery, 1)
+	wait_build(1, shield_battery)
+	build(3, pylon, 1)
+	wait_build(3, pylon)
+	build(1, gateway, 1)
+	wait_build(1, gateway)
+	multirun(PMCx 0019)
+	multirun(PMCx 0032)
+	build(12, probe, 100)
+	wait_build(12, probe)
+	build(15, probe, 100)
+	wait_build(15, probe)
+	player_need(1, cybernetics_core)
+	player_need(1, robotics_facility)
+	player_need(1, robotics_support_bay)
+	player_need(1, observatory)
+	player_need(1, fleet_beacon)
+	player_need(1, citadel_of_adun)
+	build(4, pylon, 1)
+	wait_build(4, pylon)
+	player_need(1, templar_archives)
+	player_need(1, arbiter_tribunal)
+	build(5, pylon, 1)
+	wait_build(5, pylon)
+	stop()
+
+
+		--PMCx 0048--
+	start_town()
+	build(1, nexus, 180)
+	wait_buildstart(1, nexus)
+	build(2, pylon, 100)
+	wait_build(2, pylon)
+	player_need(1, forge)
+	build(6, photon_cannon, 1)
+	wait_build(6, photon_cannon)
+	build(7, probe, 100)
+	wait_build(7, probe)
+	build(1, assimilator, 1)
+	player_need(1, gateway)
+	build(1, shield_battery, 1)
+	wait_build(1, shield_battery)
+	build(3, pylon, 1)
+	wait_build(3, pylon)
+	build(12, probe, 100)
+	wait_build(12, probe)
+	build(15, probe, 100)
+	wait_build(15, probe)
+	player_need(1, cybernetics_core)
+	build(1, robotics_facility, 1)
+	wait_build(1, robotics_facility)
+	multirun(PMCx 0038)
+	multirun(PMCx 0039)
+	player_need(1, robotics_support_bay)
+	player_need(1, observatory)
+	player_need(1, fleet_beacon)
+	player_need(1, citadel_of_adun)
+	build(4, pylon, 1)
+	wait_build(4, pylon)
+	player_need(1, templar_archives)
+	player_need(1, arbiter_tribunal)
+	build(5, pylon, 1)
+	wait_build(5, pylon)
+	stop()
+
+
+		--PMCx 0007--
+	wait_build(1, robotics_support_bay)
+	upgrade(1, shuttle_speed, 70)
+	wait(3600)
+
+	upgrade(1, scarab_damage, 70)
+	wait(3600)
+
+	upgrade(1, reaver_capacity, 70)
+	stop()
+
+
+		--PMCx 0008--
+	wait_build(1, observatory)
+	upgrade(1, observer_speed, 70)
+	wait(3600)
+
+	upgrade(1, observer_sight, 70)
+	stop()
+
+
+		--PMCx 0012--
+	wait_build(1, templar_archives)
+	tech(hallucination, 70)
+	wait(3600)
+
+	tech(mind_control, 70)
+	wait(3600)
+
+	upgrade(1, dark_archon_mana, 70)
+	wait(3600)
+
+	upgrade(1, templar_mana, 70)
+	stop()
+
+
+		--PMCx 0009--
+	wait_build(1, forge)
+	upgrade(1, p_ground_weapon, 70)
+	wait(2700)
+
+	wait_build(1, citadel_of_adun)
+	upgrade(1, zealot_speed, 70)
+	upgrade(1, p_plasma_shield, 70)
+	wait(3600)
+
+	wait_build(1, templar_archives)
+	upgrade(2, p_ground_weapon, 70)
+	wait(3600)
+
+	upgrade(2, p_plasma_shield, 70)
+	wait(4500)
+
+	upgrade(3, p_ground_weapon, 70)
+	wait(4500)
+
+	upgrade(3, p_plasma_shield, 70)
+	wait(4500)
+
+	upgrade(1, p_armor, 70)
+	wait(4500)
+
+	upgrade(2, p_armor, 70)
+	wait(3600)
+
+	upgrade(3, p_armor, 70)
+	stop()
+
+
+		--PMCx 0011--
+	wait_build(1, cybernetics_core)
+	upgrade(1, dragoon_range, 70)
+	wait(3600)
+
+	upgrade(1, p_air_weapon, 70)
+	wait_build(1, fleet_beacon)
+	upgrade(1, carrier_capacity, 70)
+	wait(3600)
+
+	upgrade(2, p_air_weapon, 70)
+	tech(disruption_web, 70)
+	wait(3600)
+
+	upgrade(3, p_air_weapon, 70)
+	upgrade(1, scout_speed, 70)
+	wait(3600)
+
+	upgrade(1, p_plating, 70)
+	upgrade(1, corsair_mana, 70)
+	wait(4500)
+
+	upgrade(2, p_plating, 70)
+	upgrade(1, scout_sight, 70)
+	wait(3600)
+
+	upgrade(3, p_plating, 70)
+	stop()
+
+
+		--PMCx 0010--
+	wait_build(1, arbiter_tribunal)
+	tech(stasis_field, 70)
+	wait(4500)
+
+	upgrade(1, arbiter_mana, 70)
+	stop()
+
+
+		--PMCx 0000--
+	defenseclear_gg()
+	defenseclear_ag()
+	defenseclear_ga()
+	defenseclear_aa()
+	goto(PMCx 0001)
+
+

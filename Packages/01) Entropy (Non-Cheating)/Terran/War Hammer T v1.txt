@@ -1,0 +1,394 @@
+# stat_txt.tbl entry 1342: Terran Expansion Custom Level<0>
+TMCx(1342, 101, aiscript):
+	start_town()
+	transports_off()
+	farms_notiming()
+#if DEBUG
+	debug(WH Start, Standard War Hammer AI Loaded)
+#endif
+
+		--WH Start--
+	build(1, command_center, 150)
+	wait_buildstart(1, command_center)
+	build(4, scv, 130)
+	wait_buildstart(4, scv)
+	build(7, scv, 80)
+	wait_buildstart(7, scv)
+	build(1, barracks, 80)
+	wait_buildstart(1, barracks)
+	build(8, scv, 80)
+	wait_buildstart(8, scv)
+	build(1, supply_depot, 80)
+	wait_buildstart(1, supply_depot)
+	build(10, scv, 80)
+	farms_timing()
+	defenseuse_gg(1, marine)
+	defensebuild_gg(1, marine)
+	train(5, marine)
+	build(14, scv, 80)
+	wait_buildstart(14, scv)
+	multirun(scv)
+	build(1, refinery, 80)
+	wait_buildstart(1, refinery)
+	wait_build(1, barracks)
+	multirun(Rine Attack)
+	build(1, academy, 80)
+	wait_buildstart(1, academy)
+	multirun(SCANSCANSCANSCANSCANSCANSCANSCANSCANSCANSCAN!!!!!!!!!!!!!!!!)
+	multirun(For the Rines)
+	build(1, engineering_bay, 80)
+	wait_buildstart(1, engineering_bay)
+	multirun(Air?)
+	multirun(tech up 1)
+	build(2, barracks, 80)
+	wait_buildstart(2, barracks)
+	wait(200)
+	goto(WH Rep)
+
+		--WH Rep--
+	build(3, barracks, 80)
+	wait_build(3, barracks)
+	wait(200)
+
+	build(2, factory, 80)
+	wait_build(1, factory)
+	wait(200)
+
+	build(1, armory, 80)
+	wait_buildstart(1, armory)
+	multirun(ArmUp)
+	train(5, vulture)
+	build(2, machine_shop, 80)
+	wait_build(2, machine_shop)
+	wait(200)
+
+	defenseuse_gg(1, siege_tank)
+	defensebuild_gg(1, siege_tank)
+	defenseuse_gg(1, goliath)
+	defensebuild_gg(1, goliath)
+	multirun(Vultanks)
+	train(10, siege_tank)
+	train(10, marine)
+	train(8, goliath)
+	goto(WH Prep)
+
+		--WH Prep--
+	attack_add(5, vulture)
+	attack_add(6, siege_tank)
+	attack_add(5, goliath)
+	attack_add(10, marine)
+	clear_combatdata()
+	attack_prepare()
+	wait(2000)
+	goto(WH Nom)
+
+		--WH Nom--
+	clear_combatdata()
+	attack_do()
+	attack_clear()
+	clear_combatdata()
+	wait(50)
+	multirun(WH Fwiiing)
+	wait(2500)
+	multirun(Exposition)
+	multirun(WH MoarBuildins)
+	goto(WH Continue)
+
+		--WH Continue--
+	expand(1, WH ExpoRun1)
+	stop()
+
+		--WH ExpoRun1--
+	start_town()
+	build(1, command_center, 200)
+	wait_buildstart(1, command_center)
+	wait(1200)
+	build(1, refinery, 120)
+	stop()
+
+		--WH MoarBuildins--
+	build(1, starport, 75)
+	wait_buildstart(1, starport)
+	multirun(WH AirAssault)
+	build(1,science_facility, 65)
+	wait_buildstart(1, science_facility)
+	wait(200)
+	multirun(Exposition)
+	wait(9800)
+	goto(FTW)
+	
+		--SCANSCANSCANSCANSCANSCANSCANSCANSCANSCANSCAN!!!!!!!!!!!!!!!!--
+	build(1, comsat_station, 100)
+	wait_buildstart(1, comsat_station)
+	stop()
+
+		--For the Rines--
+	wait_build(1, academy)
+	tech(stim_packs, 120)
+	wait(1500)
+
+	upgrade(1, marine_range, 120)
+	stop()
+
+		--Air?--
+	wait(100)
+	enemyowns_jump(starport, Turrets)
+	enemyowns_jump(stargate, Turrets)
+	enemyowns_jump(spire, Turrets)
+	enemyowns_jump(greater_spire, Turrets)
+	goto(Air?)
+
+		--Turrets--
+	notowns_jump(engineering_bay, get bay for turts)
+	wait_build(1, engineering_bay)
+	build(10, missile_turret, 120)
+	wait_buildstart(10, missile_turret)
+	stop()
+
+		--get bay for turts--
+	build(1, engineering_bay, 235)
+	wait_buildstart(1, engineering_bay)
+	goto(Turrets)
+
+		--tech up 1--
+	wait_build(1, engineering_bay)
+	upgrade(1, t_infantry_weapon, 80)
+	wait(4500)
+
+	upgrade(1, t_infantry_armor, 80)
+	stop()
+
+
+		--Rine Attack--
+	train(25, marine)
+	attack_add(20, marine)
+	clear_combatdata()
+	attack_prepare()
+	wait(1500)
+	
+	clear_combatdata()
+	attack_do()
+	attack_clear()
+	wait(50)
+	
+	clear_combatdata()
+	stop()
+
+
+		--Vultanks--
+	wait_build(1, machine_shop)
+	upgrade(1, vulture_speed, 75)
+	wait(2000)
+
+	tech(siege_mode, 120)
+	stop()
+
+
+		--ArmUp--
+	wait_build(1, armory)
+	upgrade(1, t_vehicle_plating, 80)
+	wait(4500)
+
+	upgrade(1, t_vehicle_weapon, 80)
+	wait(4500)
+
+	wait_build(1, science_facility)
+	upgrade(2, t_infantry_weapon, 80)
+	wait(5000)
+
+	upgrade(2, t_infantry_armor, 80)
+	wait(5000)
+
+	upgrade(1, t_ship_weapon, 80)
+	wait(5500)
+
+	goto(Moar Armoar)
+
+
+		--Moar Armoar--
+	upgrade(1, t_ship_plating, 80)
+	wait(3500)
+
+	upgrade(2, t_vehicle_plating, 80)
+	wait(3500)
+
+	upgrade(3, t_infantry_weapon, 80)
+	wait(4000)
+
+	upgrade(2, t_ship_weapon, 80)
+	wait(5000)
+
+	upgrade(3, t_infantry_armor, 80)
+	stop()
+
+		--WH AirAssault--
+	wait_build(1, starport)
+	train(7, wraith)
+	attack_add(7, wraith)
+	wait(45)
+	multirun(WH Attack)
+	wait(120)
+	goto(WH AirAssault)
+
+
+		--WH Fwiiing--
+	train(5, vulture)
+	wait(200)
+	defenseuse_gg(1, siege_tank)
+	defensebuild_gg(1, siege_tank)
+	defenseuse_gg(1, goliath)
+	defensebuild_gg(1, goliath)
+	multirun(Vultanks)
+	train(10, siege_tank)
+	train(10, marine)
+	train(8, goliath)
+	attack_add(5, vulture)
+	attack_add(6, siege_tank)
+	attack_add(5, goliath)
+	attack_add(10, marine)
+	clear_combatdata()
+	attack_prepare()
+	wait(2000)
+	clear_combatdata()
+	attack_do()
+	attack_clear()
+	clear_combatdata()
+	wait(50)
+	goto(WH Fwiiing)
+
+		--Exposition--
+	expand(99, Exposition Part 2)
+	stop()
+	
+		--Exposition Part 2--
+	start_town()
+	build(1, command_center, 200)
+	wait_buildstart(1, command_center)
+	wait(1200)
+	build(1, refinery, 120)
+	stop()
+
+		--FTW--
+	train(25, marine)
+	train(12, siege_tank)
+	train(18, vulture)
+	train(8, goliath)
+	attack_add(25, marine)
+	attack_add(12, siege_tank)
+	attack_add(18, vulture)
+	attack_add(8, goliath)
+	send_suicide(1)
+	wait(400)
+	multirun(scv)
+	wait(12000)
+	goto(FTW)
+
+		--scv--
+	wait_build(1, command_center)
+	build(1, scv, 100)
+	wait_buildstart(1, scv)
+	build(2, scv, 90)
+	wait_buildstart(2, scv)
+	build(3, scv, 90)
+	wait_buildstart(3, scv)
+	build(4, scv, 90)
+	wait_buildstart(4, scv)
+	wait(220)
+
+	build(5, scv, 80)
+	wait_buildstart(5, scv)
+	wait(220)
+
+	build(6, scv, 80)
+	wait_buildstart(6, scv)
+	wait(220)
+
+	build(7, scv, 80)
+	wait_buildstart(7, scv)
+	wait(220)
+
+	build(8, scv, 80)
+	wait_buildstart(8, scv)
+	wait(220)
+
+	build(9, scv, 80)
+	wait_buildstart(9, scv)
+	wait(220)
+
+	build(10, scv, 80)
+	wait_buildstart(10, scv)
+	wait(220)
+
+	build(11, scv, 80)
+	wait_buildstart(11, scv)
+	wait(220)
+
+	build(12, scv, 80)
+	wait_buildstart(12, scv)
+	wait(220)
+
+	build(13, scv, 80)
+	wait_buildstart(13, scv)
+	wait(220)
+
+	build(14, scv, 80)
+	wait_buildstart(14, scv)
+	wait(220)
+
+	build(15, scv, 80)
+	wait_buildstart(15, scv)
+	wait(220)
+
+	build(16, scv, 80)
+	wait_buildstart(16, scv)
+	wait(220)
+
+	build(17, scv, 80)
+	wait_buildstart(17, scv)
+	wait(220)
+
+	build(18, scv, 80)
+	wait_buildstart(18, scv)
+	wait(220)
+
+	build(19, scv, 80)
+	wait_buildstart(19, scv)
+	wait(220)
+
+	build(20, scv, 80)
+	wait_buildstart(20, scv)
+	wait(220)
+
+	build(21, scv, 80)
+	wait_buildstart(21, scv)
+	wait(220)
+
+	build(22, scv, 80)
+	wait_buildstart(22, scv)
+	wait(220)
+
+	build(23, scv, 80)
+	wait_buildstart(23, scv)
+	wait(220)
+
+	build(24, scv, 80)
+	wait_buildstart(24, scv)
+	wait(220)
+
+	build(25, scv, 80)
+	wait_buildstart(25, scv)
+	stop()
+	
+		--WH Attack--
+	clear_combatdata()
+	attack_prepare()
+	wait(2000)
+
+	clear_combatdata()
+	attack_do()
+	attack_clear()
+	clear_combatdata()
+	wait(50)
+	stop()
+
+

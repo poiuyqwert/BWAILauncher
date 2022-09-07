@@ -1,0 +1,839 @@
+#AccelZerg
+#By Myk
+#Inspired by Equalizer's AccelT
+# stat_txt.tbl entry 1344: Zerg Expansion Custom Level<0>
+ZMCx(1344, 101, aiscript):
+	start_town()
+	transports_off()
+	farms_notiming()
+#if DEBUG
+	debug(null, AccelZerg)
+	--null--
+#endif
+	define_max(50, Zerg Drone)
+	build(1, Zerg Hatchery, 80)
+	wait_build(1, Zerg Hatchery)
+	build(4, Zerg Drone, 80)
+	wait_buildstart(4, Zerg Drone)
+	#4poolhere
+	#random_jump(32, 4_5_pool)
+	build(5, Zerg Drone, 80)
+	wait_buildstart(5, Zerg Drone)
+	#5poolhere
+	#random_jump(32, 4_5_pool)
+	goto(skip_4_5_pool)
+	--4_5_pool--
+	build(1, Zerg Spawning Pool, 80)
+	wait_buildstart(1, Zerg Spawning Pool)
+	wait_build(1, Zerg Spawning Pool)
+	defenseuse_gg(2, Zerg Zergling)
+	defenseuse_ga(2, Zerg Zergling)
+	#--4_5_pool_loop--
+	train(8, Zerg Zergling)
+	wait_train(8, Zerg Zergling)
+	enemyowns_jump(Terran Bunker, post_4_5_pool)
+	enemyowns_jump(Terran Academy, post_4_5_pool)
+	enemyowns_jump(Protoss Gateway, post_4_5_pool)
+	enemyowns_jump(Zerg Spawning Pool, post_4_5_pool)
+	send_suicide(0)
+	build(2, Zerg Overlord, 80)
+	wait_build(2, Zerg Overlord)
+	enemyowns_jump(Terran Bunker, post_4_5_pool)
+	enemyowns_jump(Terran Academy, post_4_5_pool)
+	enemyowns_jump(Protoss Gateway, post_4_5_pool)
+	enemyowns_jump(Zerg Spawning Pool, post_4_5_pool)
+	train(10, Zerg Zergling)
+	wait_train(10, Zerg Zergling)
+	send_suicide(0)
+	wait(100)
+	goto(post_4_5_pool)
+	--post_4_5_pool--
+	--skip_4_5_pool--
+	build(6, Zerg Drone, 80)
+	wait_buildstart(6, Zerg Drone)
+	build(7, Zerg Drone, 80)
+	wait_buildstart(7, Zerg Drone)
+	build(8, Zerg Drone, 80)
+	wait_buildstart(8, Zerg Drone)
+	build(9, Zerg Drone, 80)
+	wait_buildstart(9, Zerg Drone)
+	rush(0, 9_pool)
+	goto(post_9_pool)
+	--9_pool--
+	build(1, Zerg Spawning Pool, 150)
+	wait_buildstart(1, Zerg Spawning Pool)
+	build(9, Zerg Drone, 80)
+	wait_buildstart(9, Zerg Drone)
+	build(2, Zerg Overlord, 80)
+	wait_build(2, Zerg Overlord)
+	#enemyowns_jump(Protoss Gateway, v_gateway_protoss)
+	#enemyowns_jump(Protoss Pylon, v_FE_protoss)
+	wait_build(1, Zerg Spawning Pool)
+	defenseuse_gg(2, Zerg Zergling)
+	defenseuse_ga(2, Zerg Zergling)
+	--9_pool_loop--
+	train(6, Zerg Zergling)
+	wait_train(6, Zerg Zergling)
+	enemyowns_jump(Terran Bunker, post_9_pool)
+	enemyowns_jump(Terran Academy, post_9_pool)
+	enemyowns_jump(Protoss Gateway, post_9_pool)
+	enemyowns_jump(Zerg Spawning Pool, post_9_pool)
+	send_suicide(0)
+	train(10, Zerg Zergling)
+	wait_train(10, Zerg Zergling)
+	enemyowns_jump(Terran Bunker, post_9_pool)
+	enemyowns_jump(Terran Academy, post_9_pool)
+	enemyowns_jump(Protoss Gateway, post_9_pool)
+	enemyowns_jump(Zerg Spawning Pool, post_9_pool)
+	send_suicide(0)
+--post_9_pool--	
+	build(9, Zerg Drone, 80)
+	wait_buildstart(9, Zerg Drone)
+	build(2, Zerg Overlord, 80)
+	wait_build(2, Zerg Overlord)
+	build(10, Zerg Drone, 80)
+	wait_buildstart(10, Zerg Drone)
+	build(11, Zerg Drone, 80)
+	wait_buildstart(11, Zerg Drone)
+	build(12, Zerg Drone, 80)
+	wait_buildstart(12, Zerg Drone)
+	expand(99, nat_expo)
+	wait(100)
+	build(1, Zerg Spawning Pool, 80)
+	wait_buildstart(1, Zerg Spawning Pool)
+	build(13, Zerg Drone, 80)
+	wait_buildstart(13, Zerg Drone)
+	build(2, Zerg Hatchery, 80)
+	wait_buildstart(2, Zerg Hatchery)
+	wait_build(1, Zerg Spawning Pool)
+	train(6, Zerg Zergling)
+	defenseuse_gg(2, Zerg Zergling)
+	defenseuse_ga(2, Zerg Zergling)
+	build(1, Zerg Extractor, 80)
+	wait_buildstart(1, Zerg Extractor)
+	farms_timing()
+	train(12, Zerg Zergling)
+	defensebuild_gg(2, Zerg Zergling)
+	multirun(build_expo_drones)
+	wait_build(1, Zerg Extractor)
+	place_guard(Zerg Drone, 0)
+	multirun(main_spore_check)
+	multirun(accel_zerg_tech)
+	#multirun(extra_hatch_check)
+	build(1, Zerg Lair, 80)
+	wait_buildstart(1, Zerg Lair)
+	upgrade(1, Metabolic Boost, 80)
+	wait(200)
+	build(1, Zerg Hydralisk Den, 80)
+	wait_build(1, Zerg Hydralisk Den)
+	wait_build(1, Zerg Lair)
+	tech(Lurker Aspect, 80)
+	multirun(r_evo_carapace)
+	train(3, Zerg Lurker)
+	defenseuse_gg(1, Zerg Lurker)
+	defensebuild_gg(1, Zerg Lurker)
+	multirun(t_ling)
+	multirun(t_lurker)
+	expand(99, nat_expo)
+	wait_train(9, Zerg Lurker)
+	multirun(zerg_attack)
+	--qnest_wait--
+	resources_jump(150, 100, qnest_build)
+	wait(100)
+	goto(qnest_wait)
+	--qnest_build--
+	build(1, Zerg Queen's Nest, 80)
+	wait_buildstart(1, Zerg Queen's Nest)
+	wait_build(1, Zerg Queen's Nest)
+	--hive_wait--
+	resources_jump(200, 150, hive_build)
+	wait(100)
+	goto(hive_wait)
+	--hive_build--
+	build(1, Zerg Hive, 80)
+	wait_buildstart(1, Zerg Hive)
+	--expand_wait2--
+	resources_jump(400, 0, expand_build2)
+	wait(100)
+	goto(expand_wait2)
+	--expand_build2--
+	#expand(99, nat_expo)
+	multirun(expander)
+	wait_build(1, Zerg Hive)
+	--adrenal_wait--
+	resources_jump(200, 200, adrenal_build)
+	wait(100)
+	goto(adrenal_wait)
+	--adrenal_build--
+	upgrade(1, Adrenal Glands, 80)
+	--defiler_wait--
+	resources_jump(50, 100, defiler_build)
+	wait(100)
+	goto(defiler_wait)
+	--defiler_build--
+	build(1, Zerg Defiler Mound, 80)
+	wait_build(1, Zerg Defiler Mound)
+	define_max(6, Zerg Defiler)
+	place_guard(Zerg Defiler, 0)
+	place_guard(Zerg Defiler, 1)
+	place_guard(Zerg Defiler, 2)
+	place_guard(Zerg Defiler, 3)
+	place_guard(Zerg Defiler, 4)
+	multirun(t_defiler)
+	#wait_train(3, Zerg Defiler)
+	#multirun(zerg_attack)
+	define_max(255, Zerg Hydralisk)
+	--ultra_wait--
+	resources_jump(150, 200, ultra_build)
+	wait(100)
+	goto(ultra_wait)
+	--ultra_build--
+	build(1, Zerg Ultralisk Cavern, 80)
+	wait_buildstart(1, Zerg Ultralisk Cavern)
+	multirun(r_evo_melee)
+	wait_build(1, Zerg Ultralisk Cavern)
+	multirun(r_ultralisk_upgrades)
+	defenseuse_gg(1, Zerg Ultralisk)
+	defensebuild_gg(1, Zerg Ultralisk)
+	multirun(t_ultra)
+	wait_train(6, Zerg Ultralisk)
+	--z_loop--
+	multirun(zerg_attack)
+	wait(4500)
+	goto(z_loop)
+	
+	--zerg_attack--
+	clear_combatdata()
+	attack_prepare()
+	clear_combatdata()
+	attack_do()
+	attack_clear()
+	stop()
+
+#Main loops:
+--expander--
+	expand(99, nat_expo)
+	wait(7000)
+	goto(expander)
+#Tech loops?:
+	--accel_zerg_tech--
+	stop()
+#Research & Upgrades
+--r_evo_carapace--
+	resources_jump(125, 0, r_evo_carapace_1)
+	wait(100)
+	goto(r_evo_carapace)
+	--r_evo_carapace_1--
+	build(1, Zerg Evolution Chamber, 80)
+	wait_build(1, Zerg Evolution Chamber)
+	goto(r_evo_carapace_2)
+	--r_evo_carapace_2--
+	resources_jump(150, 150, r_evo_carapace_3)
+	wait(100)
+	goto(r_evo_carapace_2)
+	--r_evo_carapace_3--
+	upgrade(1, Zerg Carapace, 80)
+	wait(4500)
+	--r_evo_carapace_4--
+	resources_jump(225, 225, r_evo_carapace_5)
+	wait(100)
+	goto(r_evo_carapace_4)
+	--r_evo_carapace_5--
+	wait_build(1, Zerg Lair)
+	upgrade(2, Zerg Carapace, 80)
+	wait(5000)
+	--r_evo_carapace_6--
+	resources_jump(300, 300, r_evo_carapace_7)
+	wait(100)
+	goto(r_evo_carapace_6)
+	--r_evo_carapace_7--
+	wait_build(1, Zerg Hive)
+	upgrade(3, Zerg Carapace, 80)
+	stop()
+	
+--r_evo_melee--
+	resources_jump(125, 0, r_evo_melee_1)
+	wait(100)
+	goto(r_evo_melee)
+	--r_evo_melee_1--
+	build(2, Zerg Evolution Chamber, 80)
+	wait_build(2, Zerg Evolution Chamber)
+	goto(r_evo_melee_2)
+	--r_evo_melee_2--
+	resources_jump(100, 100, r_evo_melee_3)
+	wait(100)
+	goto(r_evo_melee_2)
+	--r_evo_melee_3--
+	upgrade(1, Zerg Melee Attacks, 80)
+	wait(4500)
+	--r_evo_melee_4--
+	resources_jump(150, 150, r_evo_melee_5)
+	wait(100)
+	goto(r_evo_melee_4)
+	--r_evo_melee_5--
+	wait_build(1, Zerg Lair)
+	upgrade(2, Zerg Melee Attacks, 80)
+	wait(5000)
+	--r_evo_melee_6--
+	resources_jump(200, 200, r_evo_melee_7)
+	wait(100)
+	goto(r_evo_melee_6)
+	--r_evo_melee_7--
+	wait_build(1, Zerg Hive)
+	upgrade(3, Zerg Melee Attacks, 80)
+	stop()
+	
+--r_ultralisk_upgrades--
+	wait_build(1, Zerg Ultralisk Cavern)
+	race_jump(ultraups1, ultraups3, ultraups1)
+		--ultraups1--
+	resources_jump(150, 150, ultraups1a)
+	wait(100)
+	goto(ultraups1)
+		--ultraups1a--
+	upgrade(1, Chitinous Plating, 80)
+	wait(3000)
+		--ultraups2--
+	resources_jump(200, 200, ultraups2a)
+	wait(100)
+	goto(ultraups2)
+		--ultraups2a--
+	upgrade(1, Anabolic Synthesis, 80)
+	stop()
+		--ultraups3--
+	resources_jump(200, 200, ultraups3a)
+	wait(100)
+	goto(ultraups3)
+		--ultraups3a--
+	upgrade(1, Anabolic Synthesis, 80)
+	wait(3000)
+		--ultraups4--
+	resources_jump(200, 200, ultraups4a)
+	wait(100)
+	goto(ultraups4)
+		--ultraups4a--
+	upgrade(1, Chitinous Plating, 80)
+	stop()
+#Unit loops:
+--t_ling--
+	wait(100)
+	notowns_jump(Zerg Spawning Pool, t_ling)
+	train(6, Zerg Zergling)
+	attack_add(6, Zerg Zergling)
+	wait(100)
+	train(12, Zerg Zergling)
+	attack_add(6, Zerg Zergling)
+	wait(100)
+	train(18, Zerg Zergling)
+	attack_add(6, Zerg Zergling)
+	wait(100)
+	train(24, Zerg Zergling)
+	attack_add(6, Zerg Zergling)
+	wait(100)
+	train(30, Zerg Zergling)
+	attack_add(6, Zerg Zergling)
+	wait(100)
+	train(36, Zerg Zergling)
+	attack_add(6, Zerg Zergling)
+	wait(100)
+	train(42, Zerg Zergling)
+	attack_add(6, Zerg Zergling)
+	wait(100)
+	train(48, Zerg Zergling)
+	wait(1000)
+	goto(t_ling)
+	
+--t_lurker--
+	wait(100)
+	notowns_jump(Zerg Hydralisk Den, t_lurker)
+	if_owned(Zerg Ultralisk Cavern, t_lurker)
+	train(3, Zerg Lurker)
+	attack_add(3, Zerg Lurker)
+	wait(100)
+	train(6, Zerg Lurker)
+	attack_add(3, Zerg Lurker)
+	wait(100)
+	train(9, Zerg Lurker)
+	attack_add(3, Zerg Lurker)
+	wait(100)
+	train(12, Zerg Lurker)
+	attack_add(3, Zerg Lurker)
+	wait(1000)
+	goto(t_lurker)
+	
+--t_defiler--
+	wait(100)
+	notowns_jump(Zerg Defiler Mound, t_defiler)
+	train(1, Zerg Defiler)
+	attack_add(1, Zerg Defiler)
+	wait(100)
+	train(2, Zerg Defiler)
+	attack_add(1, Zerg Defiler)
+	wait(100)
+	train(3, Zerg Defiler)
+	attack_add(1, Zerg Defiler)
+	wait(1000)
+	goto(t_defiler)
+	
+--t_ultra--
+	wait(100)
+	notowns_jump(Zerg Ultralisk Cavern, t_ultra)
+	train(1, Zerg Ultralisk)
+	attack_add(1, Zerg Ultralisk)
+	wait(100)
+	train(2, Zerg Ultralisk)
+	attack_add(1, Zerg Ultralisk)
+	wait(100)
+	train(3, Zerg Ultralisk)
+	attack_add(1, Zerg Ultralisk)
+	wait(100)
+	train(4, Zerg Ultralisk)
+	attack_add(1, Zerg Ultralisk)
+	wait(100)
+	train(5, Zerg Ultralisk)
+	attack_add(1, Zerg Ultralisk)
+	wait(100)
+	train(6, Zerg Ultralisk)
+	attack_add(1, Zerg Ultralisk)
+	wait(100)
+	train(7, Zerg Ultralisk)
+	attack_add(1, Zerg Ultralisk)
+	wait(100)
+	train(8, Zerg Ultralisk)
+	attack_add(1, Zerg Ultralisk)
+	wait(100)
+	train(9, Zerg Ultralisk)
+	attack_add(1, Zerg Ultralisk)
+	wait(100)
+	train(10, Zerg Ultralisk)
+	attack_add(1, Zerg Ultralisk)
+	wait(100)
+	train(11, Zerg Ultralisk)
+	attack_add(1, Zerg Ultralisk)
+	wait(100)
+	train(12, Zerg Ultralisk)
+	attack_add(1, Zerg Ultralisk)
+	wait(100)
+	train(13, Zerg Ultralisk)
+	attack_add(1, Zerg Ultralisk)
+	wait(1000)
+	goto(t_ultra)	
+	
+#AA spores:
+		--main_spore_check--
+	enemyowns_jump(Terran Starport, main_spore_build)
+	enemyowns_jump(Protoss Stargate, main_spore_build)
+	wait(300)
+	goto(main_spore_check)
+		--main_spore_build--
+	if_owned(Zerg Evolution Chamber, main_spore_1)
+	resources_jump(75, 0, main_spore_builda)
+	wait(100)
+	goto(main_spore_build)
+	--main_spore_builda--
+	build(1, Zerg Evolution Chamber, 80)
+	wait_build(1, Zerg Evolution Chamber)
+	--main_spore_1--
+	resources_jump(100, 0, main_spore_1a)
+	wait(100)
+	goto(main_spore_1)
+	--main_spore_1a--
+	creep(4)
+	build(1, Zerg Creep Colony, 80)
+	wait_build(1, Zerg Creep Colony)
+	--main_spore_2--
+	resources_jump(100, 0, main_spore_2a)
+	wait(100)
+	goto(main_spore_2)
+	--main_spore_2a--
+	build(1, Zerg Spore Colony, 80)
+	wait_buildstart(1, Zerg Spore Colony)
+	--main_spore_3--
+	resources_jump(100, 0, main_spore_3a)
+	wait(100)
+	goto(main_spore_3)
+	--main_spore_3a--
+	creep(4)
+	build(2, Zerg Creep Colony, 80)
+	wait_build(2, Zerg Creep Colony)
+	--main_spore_4--
+	resources_jump(100, 0, main_spore_4a)
+	wait(100)
+	goto(main_spore_4)
+	--main_spore_4a--
+	build(2, Zerg Spore Colony, 70)
+	wait_build(2, Zerg Spore Colony)
+	stop()
+#Expansion stuff
+	--nat_expo--
+	start_town()
+	build(1, Zerg Hatchery, 150)
+	wait_build(1, Zerg Hatchery)
+	place_guard(Zerg Drone, 0)
+	get_oldpeons(4)
+	defenseuse_gg(2, Zerg Zergling)
+	defensebuild_gg(2, Zerg Zergling)
+	#multirun(light_defense)
+	multirun(heavy_defense)
+	multirun(build_expo_drones)
+	multirun(gas_timing)
+	#multirun(extra_hatch_check)
+	stop()
+	--gas_timing--
+	if_owned(Zerg Lair, build_expo_gas)
+	wait(300)
+	goto(gas_timing)
+	--build_expo_gas--
+	build(1, Zerg Extractor, 70)
+	wait_build(1, Zerg Extractor)
+	stop()
+	--build_expo_drones--
+	wait_build(1, Zerg Hatchery)
+	build(1, Zerg Drone, 80)
+	wait_buildstart(1, Zerg Drone)
+	build(2, Zerg Drone, 80)
+	wait_buildstart(2, Zerg Drone)
+	build(3, Zerg Drone, 80)
+	wait_buildstart(3, Zerg Drone)
+	build(4, Zerg Drone, 80)
+	wait_buildstart(4, Zerg Drone)
+	build(5, Zerg Drone, 80)
+	wait_buildstart(5, Zerg Drone)
+	build(6, Zerg Drone, 80)
+	wait_buildstart(6, Zerg Drone)
+	#
+	build(7, Zerg Drone, 80)
+	wait_buildstart(7, Zerg Drone)
+	build(8, Zerg Drone, 80)
+	wait_buildstart(8, Zerg Drone)
+	build(9, Zerg Drone, 80)
+	wait_buildstart(9, Zerg Drone)
+	build(10, Zerg Drone, 80)
+	wait_buildstart(10, Zerg Drone)
+	build(11, Zerg Drone, 80)
+	wait_buildstart(11, Zerg Drone)
+	build(12, Zerg Drone, 80)
+	wait_buildstart(12, Zerg Drone)
+	build(13, Zerg Drone, 80)
+	wait_buildstart(13, Zerg Drone)
+	build(14, Zerg Drone, 80)
+	wait_buildstart(14, Zerg Drone)
+	build(15, Zerg Drone, 80)
+	wait_buildstart(15, Zerg Drone)
+	build(16, Zerg Drone, 80)
+	wait_buildstart(16, Zerg Drone)
+	build(17, Zerg Drone, 80)
+	wait_buildstart(17, Zerg Drone)
+	build(18, Zerg Drone, 80)
+	wait_buildstart(18, Zerg Drone)
+	build(19, Zerg Drone, 80)
+	wait_buildstart(19, Zerg Drone)
+	build(20, Zerg Drone, 80)
+	wait_buildstart(20, Zerg Drone)
+	build(21, Zerg Drone, 80)
+	wait_buildstart(21, Zerg Drone)
+	build(22, Zerg Drone, 80)
+	wait_buildstart(22, Zerg Drone)
+	build(23, Zerg Drone, 80)
+	wait_buildstart(23, Zerg Drone)
+	build(24, Zerg Drone, 80)
+	wait_buildstart(24, Zerg Drone)
+	build(25, Zerg Drone, 80)
+	wait_buildstart(25, Zerg Drone)
+	stop()
+	--extra_hatch_check--
+	resources_jump(900, 0, extra_hatch_build)
+	wait(100)
+	goto(extra_hatch_check)
+	--extra_hatch_build--
+	build(3, Zerg Hatchery, 80)
+	wait_build(3, Zerg Hatchery)
+	stop()
+#Light defense outer expansions
+--light_defense--
+	enemyowns_jump(Terran Starport, light_spore_1)
+	enemyowns_jump(Protoss Stargate, light_spore_1)
+	enemyowns_jump(Terran Academy, light_sunken_1)
+	enemyowns_jump(Terran Vulture, light_sunken_1)
+	enemyowns_jump(Protoss Citadel of Adun, light_sunken_1)
+	enemyowns_jump(Protoss Gateway, light_sunken_1)
+	wait(300)
+	goto(light_defense)
+#Build 1 Spore+2 Sunkens
+		--light_spore_1--
+	resources_jump(100, 0, light_spore_1a)
+	wait(50)
+	goto(light_spore_1)
+		--light_spore_1a--
+	build(1, Zerg Creep Colony, 80)
+	wait_build(1, Zerg Creep Colony)
+		--light_spore_2--
+	wait(25)
+	resources_jump(100, 0, light_spore_2a)
+	wait(25)
+	goto(light_spore_2)
+		--light_spore_2a--
+	notowns_jump(Zerg Evolution Chamber, light_spore_2)
+	build(1, Zerg Spore Colony, 80)
+	wait_buildstart(1, Zerg Spore Colony)
+	#
+		--light_spore_3--
+	resources_jump(100, 0, light_spore_3a)
+	wait(50)
+	goto(light_spore_3)
+		--light_spore_3a--
+	build(2, Zerg Creep Colony, 80)
+	wait_build(2, Zerg Creep Colony)
+		--light_spore_4--
+	wait(25)
+	resources_jump(100, 0, light_spore_4a)
+	wait(25)
+	goto(light_spore_4)
+		--light_spore_4a--
+	notowns_jump(Zerg Spawning Pool, light_spore_4)
+	build(1, Zerg Sunken Colony, 80)
+	wait_buildstart(1, Zerg Sunken Colony)
+	#
+		--light_spore_5--
+	resources_jump(100, 0, light_spore_5a)
+	wait(50)
+	goto(light_spore_5)
+		--light_spore_5a--
+	build(3, Zerg Creep Colony, 80)
+	wait_build(3, Zerg Creep Colony)
+		--light_spore_6--
+	resources_jump(100, 0, light_spore_6a)
+	wait(50)
+	goto(light_spore_6)
+		--light_spore_6a--
+	build(2, Zerg Sunken Colony, 80)
+	wait_build(2, Zerg Sunken Colony)
+	stop()
+#Build 2 Sunkens+1 Spore
+		--light_sunken_1--
+	resources_jump(100, 0, light_sunken_1a)
+	wait(50)
+	goto(light_sunken_1)
+	--light_sunken_1a--
+	build(1, Zerg Creep Colony, 80)
+	wait_buildstart(1, Zerg Creep Colony)
+	--light_sunken_2--
+	wait(25)
+	resources_jump(100, 0, light_sunken_2a)
+	wait(25)
+	goto(light_sunken_2)
+	--light_sunken_2a--
+	notowns_jump(Zerg Spawning Pool, light_sunken_2)
+	build(1, Zerg Sunken Colony, 80)
+	wait_buildstart(1, Zerg Sunken Colony)
+	#
+	--light_sunken_3--
+	resources_jump(100, 0, light_sunken_3a)
+	wait(50)
+	goto(light_sunken_3)
+	--light_sunken_3a--
+	build(2, Zerg Creep Colony, 80)
+	wait_buildstart(2, Zerg Creep Colony)
+	--light_sunken_4--
+	wait(25)
+	resources_jump(100, 0, light_sunken_4a)
+	wait(25)
+	goto(light_sunken_4)
+	--light_sunken_4a--
+	build(2, Zerg Sunken Colony, 80)
+	wait_buildstart(2, Zerg Sunken Colony)
+	#
+	--light_sunken_5--
+	resources_jump(100, 0, light_sunken_5a)
+	wait(50)
+	goto(light_sunken_5)
+	--light_sunken_5a--
+	build(3, Zerg Creep Colony, 80)
+	wait_buildstart(3, Zerg Creep Colony)
+	--light_sunken_6--
+	wait(25)
+	resources_jump(100, 0, light_sunken_6a)
+	wait(25)
+	goto(light_sunken_6)
+	--light_sunken_6a--
+	#notowns_jump(Zerg Evolution Chamber, light_sunken_6)
+	build(3, Zerg Sunken Colony, 80)
+	wait_build(3, Zerg Sunken Colony)
+	stop()
+#Heavy defense natural
+--heavy_defense--
+	goto(heavy_sunken_1)
+	--heavy_sunken_1--
+	resources_jump(100, 0, heavy_sunken_1a)
+	wait(50)
+	goto(heavy_sunken_1)
+	--heavy_sunken_1a--
+	creep(3)
+	build(1, Zerg Creep Colony, 80)
+	wait_buildstart(1, Zerg Creep Colony)
+	--heavy_sunken_2--
+	wait(50)
+	resources_jump(100, 0, heavy_sunken_2a)
+	wait(50)
+	goto(heavy_sunken_2)
+	--heavy_sunken_2a--
+	notowns_jump(Zerg Spawning Pool, heavy_sunken_2)
+	build(1, Zerg Sunken Colony, 80)
+	wait_buildstart(1, Zerg Sunken Colony)
+	#
+	--heavy_sunken_3--
+	resources_jump(100, 0, heavy_sunken_3a)
+	wait(50)
+	goto(heavy_sunken_3)
+	--heavy_sunken_3a--
+	build(2, Zerg Creep Colony, 80)
+	wait_buildstart(2, Zerg Creep Colony)
+	--heavy_sunken_4--
+	wait(50)
+	resources_jump(100, 0, heavy_sunken_4a)
+	wait(50)
+	goto(heavy_sunken_4)
+	--heavy_sunken_4a--
+	build(2, Zerg Sunken Colony, 80)
+	wait_buildstart(2, Zerg Sunken Colony)
+	#
+	--heavy_sunken_5--
+	resources_jump(100, 0, heavy_sunken_5a)
+	wait(50)
+	goto(heavy_sunken_5)
+	--heavy_sunken_5a--
+	build(3, Zerg Creep Colony, 80)
+	wait_buildstart(3, Zerg Creep Colony)
+	--heavy_sunken_6--
+	wait(25)
+	resources_jump(100, 0, heavy_sunken_6a)
+	wait(25)
+	goto(heavy_sunken_6)
+	--heavy_sunken_6a--
+	build(3, Zerg Sunken Colony, 80)
+	wait_buildstart(3, Zerg Sunken Colony)
+	goto(heavy_defense_check)
+#Checks Terran/Protoss tech after 3 sunkens#
+	--heavy_defense_check--
+	wait(200)
+	enemyowns_jump(Terran Starport, heavy_spore_7)
+	enemyowns_jump(Protoss Stargate, heavy_spore_7)
+	enemyowns_jump(Terran Academy, heavy_sunken_7)
+	enemyowns_jump(Protoss Citadel of Adun, heavy_sunken_7)
+	enemyowns_jump(Protoss Gateway, heavy_sunken_7)
+	#enemyowns_jump(Terran Vulture, halt)
+	wait(200)
+	goto(heavy_defense_check)
+#Builds 2 Spore Colonies and stops#
+	--heavy_spore_7--
+	resources_jump(100, 0, heavy_spore_7a)
+	wait(50)
+	goto(heavy_spore_7)
+	--heavy_spore_7a--
+	creep(4)
+	build(4, Zerg Creep Colony, 80)
+	wait_buildstart(4, Zerg Creep Colony)
+	--heavy_spore_8--
+	wait(25)
+	resources_jump(100, 0, heavy_spore_8a)
+	wait(25)
+	goto(heavy_spore_8)
+	--heavy_spore_8a--
+	notowns_jump(Zerg Evolution Chamber, heavy_spore_8)
+	build(1, Zerg Spore Colony, 80)
+	wait_buildstart(1, Zerg Spore Colony)
+	--heavy_spore_9--
+	resources_jump(100, 0, heavy_spore_9a)
+	wait(50)
+	goto(heavy_spore_9)
+	--heavy_spore_9a--
+	creep(4)
+	build(5, Zerg Creep Colony, 80)
+	wait_buildstart(5, Zerg Creep Colony)
+	--heavy_spore_10--
+	wait(25)
+	resources_jump(100, 0, heavy_spore_10a)
+	wait(25)
+	goto(heavy_spore_10)
+	--heavy_spore_10a--
+	notowns_jump(Zerg Evolution Chamber, heavy_spore_10)
+	build(2, Zerg Spore Colony, 80)
+	wait_buildstart(2, Zerg Spore Colony)
+	stop()
+#Builds 2 more sunkens and waits for air defense#
+--heavy_sunken_7--	
+	resources_jump(100, 0, heavy_sunken_7a)
+	wait(50)
+	goto(heavy_sunken_7)
+	--heavy_sunken_7a--
+	creep(4)
+	build(4, Zerg Creep Colony, 80)
+	wait_buildstart(4, Zerg Creep Colony)
+	--heavy_sunken_8--
+	wait(25)
+	resources_jump(100, 0, heavy_sunken_8a)
+	wait(25)
+	goto(heavy_sunken_8)
+	--heavy_sunken_8a--
+	build(4, Zerg Sunken Colony, 80)
+	wait_buildstart(4, Zerg Sunken Colony)	
+	--heavy_sunken_9--
+	resources_jump(100, 0, heavy_sunken_9a)
+	wait(50)
+	goto(heavy_sunken_9)
+	--heavy_sunken_9a--
+	creep(4)
+	build(5, Zerg Creep Colony, 80)
+	wait_buildstart(5, Zerg Creep Colony)
+	--heavy_sunken_10--
+	wait(25)
+	resources_jump(100, 0, heavy_sunken_10a)
+	wait(25)
+	goto(heavy_sunken_10)
+	--heavy_sunken_10a--
+	build(5, Zerg Sunken Colony, 80)
+	wait_buildstart(5, Zerg Sunken Colony)	
+	--heavy_sunken_spore_check--
+	enemyowns_jump(Terran Starport, heavy_sunken_spore_11)
+	enemyowns_jump(Protoss Stargate, heavy_sunken_spore_11)
+	wait(300)
+	goto(heavy_sunken_spore_check)
+		--heavy_sunken_spore_11--
+	resources_jump(100, 0, heavy_sunken_spore_11a)
+	wait(50)
+	goto(heavy_sunken_spore_11)
+	--heavy_sunken_spore_11a--
+	creep(4)
+	build(6, Zerg Creep Colony, 80)
+	wait_buildstart(6, Zerg Creep Colony)
+	--heavy_sunken_spore_12--
+	wait(25)
+	resources_jump(100, 0, heavy_sunken_spore_12a)
+	wait(25)
+	goto(heavy_sunken_spore_12)
+	--heavy_sunken_spore_12a--
+	notowns_jump(Zerg Evolution Chamber, heavy_sunken_spore_11)
+	build(1, Zerg Spore Colony, 80)
+	wait_buildstart(1, Zerg Spore Colony)
+	--halt--
+	stop()
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	

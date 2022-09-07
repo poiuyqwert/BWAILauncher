@@ -1,0 +1,564 @@
+# stat_txt.tbl entry 1343: Protoss Expansion Custom Level<0>
+PMCx(1343, 101, aiscript):
+	start_town()
+	farms_notiming()
+#if DEBUG	
+	debug(null, M_K Protoss IV)
+	--null--
+#endif	
+	define_max(7, shuttle)
+	define_max(5, observer)
+	multirun(m_build_1_7_probe)
+	multirun(m_cheat_loop)
+	build(5, pylon, 80)
+	send_suicide(1)
+	wait_build(1, pylon)
+	farms_timing()
+	build(1, assimilator, 110)
+	build(2, gateway, 120)
+	build(7, pylon, 80)
+	wait_build(2, gateway)
+	multirun(m_multi_12_gateway)
+	multirun(r_zealot_archon_upgrades)
+	multirun(m_10_gateway_repeat_train)
+	multirun(m_gateway_mini_attack)
+	build(1, cybernetics_core, 90)
+	build(1, forge, 150)
+	wait_buildstart(1, forge)
+	multirun(m_cannonbuild)
+	wait_build(1, cybernetics_core)
+	build(1, citadel_of_adun, 90)
+	multirun(m_gateway_small_attack)
+	multirun(r_cyb_upgrades)
+	wait_build(1, citadel_of_adun)
+	build(1, templar_archives, 150)
+	wait_build(1, templar_archives)
+	build(2, forge, 120)
+	multirun(r_mindcontrol_upgrades)
+	build(9, pylon, 0)
+	build(2, robotics_facility, 0)
+	build(13, pylon, 0)
+	wait_build(1, robotics_facility)
+	build(1, observatory, 0)
+	build(1, robotics_support_bay, 0)
+	wait_build(1, observatory)
+	multirun(r_observatoryupgrades)
+	wait_build(1, robotics_support_bay)
+	defensebuild_gg(1, reaver)
+	defenseuse_gg(1, reaver)
+	multirun(m_gateway_big_attack)
+	multirun(r_bayupgrades)
+	defensebuild_gg(1, observer)
+	defenseuse_gg(1, observer)
+	build(17, pylon, 0)
+	multirun(m_sendsuicide)
+	build(2, stargate, 80)
+	wait_build(1, stargate)
+	build(1, arbiter_tribunal, 150)
+	wait_build(1, arbiter_tribunal)
+	place_guard(arbiter, 190)
+	defensebuild_aa(1, scout)
+	defenseuse_aa(1, scout)
+	train(1, scout)
+	train(1, arbiter)
+	attack_add(1, scout)
+	attack_prepare()
+	wait(550)
+
+	attack_do()
+	attack_clear()
+	wait_train(1, arbiter)
+	multirun(r_arbiter_statis_upgrades)
+	build(2, shield_battery, 0)
+	defensebuild_gg(1, scout)
+	defenseuse_gg(1, scout)
+
+		--fme_gateway_repeat_loop--
+	multirun(m_gateway_big_attack)
+	train(2, arbiter)
+	wait(50)
+
+	train(3, observer)
+	wait(50)
+
+	train(1, corsair)
+	wait(50)
+
+	wait(1000)
+
+	expand(99, fme_gateway_expand)
+	wait(5000)
+
+	goto(fme_gateway_repeat_loop)
+
+
+		--fme_gateway_expand--
+	start_town()
+	build(1, nexus, 180)
+	wait_build(1, nexus)
+	multirun(m_cheat_loop)
+	build(1, probe, 150)
+	wait_build(1, probe)
+	build(4, pylon, 150)
+	wait_build(1, pylon)
+	build(1, gateway, 150)
+	multirun(m_10_gateway_repeat_train)
+	wait(1000)
+
+	stop()
+
+
+		--m_cheat_loop--
+	wait(125)
+
+	resources_jump(1500, 1500, m_cheat_loop)
+	give_money()
+	wait(125)
+
+	goto(m_cheat_loop)
+
+
+		--m_sendsuicide--
+	wait(2000)
+
+	send_suicide(0)
+	wait(5000)
+
+	goto(m_sendsuicide)
+
+
+		--m_10_gateway_repeat_train--
+	wait_build(1, gateway)
+
+		--repeat_10_gateway_zealot_train--
+	defensebuild_gg(1, zealot)
+	defenseuse_gg(1, zealot)
+	train(1, zealot)
+	wait(8)
+
+	train(2, zealot)
+	wait(8)
+
+	train(3, zealot)
+	wait(8)
+
+	train(4, zealot)
+	wait(8)
+
+	train(5, zealot)
+	wait(8)
+
+	train(6, zealot)
+	wait(8)
+
+	train(7, zealot)
+	wait(8)
+
+	train(8, zealot)
+	wait(8)
+
+	train(9, zealot)
+	wait(8)
+
+	train(10, zealot)
+	wait(8)
+
+	train(11, zealot)
+	wait(10)
+
+	train(12, zealot)
+	wait(8)
+
+	train(13, zealot)
+	wait(8)
+
+	train(14, zealot)
+	wait(8)
+
+	train(15, zealot)
+	wait(8)
+
+	notowns_jump(cybernetics_core, repeat_10_gateway_zealot_train)
+	defensebuild_gg(1, dragoon)
+	defenseuse_gg(1, dragoon)
+	defensebuild_ga(1, dragoon)
+	defenseuse_ga(1, dragoon)
+	train(1, dragoon)
+	wait(16)
+
+	train(2, dragoon)
+	wait(16)
+
+	train(3, dragoon)
+	wait(16)
+
+	train(4, dragoon)
+	wait(16)
+
+	train(5, dragoon)
+	wait(16)
+
+	train(6, dragoon)
+	wait(16)
+
+	train(7, dragoon)
+	wait(16)
+
+	train(8, dragoon)
+	wait(16)
+
+	train(9, dragoon)
+	wait(16)
+
+	train(10, dragoon)
+	wait(16)
+
+	train(11, dragoon)
+	wait(16)
+
+	define_max(255, zealot)
+	define_max(255, dragoon)
+
+		--m_10_gateway_repeat_archon_train--
+	defensebuild_gg(1, high_templar)
+	defenseuse_gg(1, high_templar)
+	train(1, high_templar)
+	wait(25)
+
+	train(2, high_templar)
+	wait(25)
+
+	train(3, high_templar)
+	wait(25)
+
+	defensebuild_gg(1, archon)
+	defenseuse_gg(1, archon)
+	train(1, archon)
+	wait(25)
+
+	train(4, high_templar)
+	wait(25)
+
+	train(5, high_templar)
+	wait(25)
+
+	train(2, archon)
+	wait(25)
+
+	train(6, high_templar)
+	wait(25)
+
+	train(7, high_templar)
+	wait(25)
+
+	train(3, archon)
+	wait(25)
+
+	train(8, high_templar)
+	wait(25)
+
+	train(9, high_templar)
+	wait(25)
+
+	train(4, archon)
+	wait(25)
+
+	defensebuild_gg(1, dark_templar)
+	defenseuse_gg(1, dark_templar)
+	train(1, dark_templar)
+	wait(25)
+
+	train(10, high_templar)
+	wait(25)
+
+	train(11, high_templar)
+	wait(25)
+
+	train(5, archon)
+	wait(25)
+
+	train(12, high_templar)
+	wait(25)
+
+	train(13, high_templar)
+	wait(25)
+
+	train(6, archon)
+	wait(25)
+
+	train(14, high_templar)
+	wait(25)
+
+	train(15, high_templar)
+	wait(25)
+
+	train(7, archon)
+	wait(25)
+
+	train(16, high_templar)
+	wait(25)
+
+	train(17, high_templar)
+	wait(25)
+
+	train(8, archon)
+	wait(25)
+
+	train(2, dark_templar)
+	wait(25)
+
+	train(18, high_templar)
+	wait(25)
+
+	train(19, high_templar)
+	wait(25)
+
+	train(9, archon)
+	wait(25)
+
+	train(20, high_templar)
+	wait(25)
+
+	train(21, high_templar)
+	wait(25)
+
+	train(10, archon)
+	wait(25)
+
+	train(22, high_templar)
+	wait(25)
+
+	train(23, high_templar)
+	wait(25)
+
+	train(11, archon)
+	wait(25)
+
+	train(24, high_templar)
+	wait(25)
+
+	train(12, archon)
+	wait(25)
+
+	train(3, dark_templar)
+	wait(25)
+
+	train(4, dark_templar)
+	wait(25)
+
+	train(5, dark_templar)
+	wait(25)
+
+	train(6, dark_templar)
+	wait(25)
+
+	train(7, dark_templar)
+	wait(25)
+
+	train(1, dark_archon)
+	wait(25)
+
+	train(2, dark_archon)
+	wait(25)
+
+	notowns_jump(reaver, repeat_10_gateway_zealot_train)
+	defensebuild_gg(1, shuttle)
+	defenseuse_gg(1, shuttle)
+	train(1, shuttle)
+	wait(15)
+
+	train(2, shuttle)
+	wait(15)
+
+	train(2, reaver)
+	wait(15)
+
+	train(3, reaver)
+	wait(15)
+
+	train(3, shuttle)
+	wait(15)
+
+	train(4, shuttle)
+	wait(15)
+
+	train(5, shuttle)
+	wait(15)
+
+	train(4, reaver)
+	wait(15)
+
+	train(6, shuttle)
+	wait(15)
+
+	goto(m_10_gateway_repeat_archon_train)
+
+
+		--m_gateway_big_attack--
+	attack_add(16, zealot)
+	attack_add(12, dragoon)
+	attack_add(5, dark_templar)
+	attack_add(3, dark_archon)
+	attack_add(2, observer)
+	attack_add(4, reaver)
+	attack_add(13, archon)
+	attack_add(11, shuttle)
+	attack_prepare()
+	wait(500)
+
+	attack_do()
+	attack_clear()
+	stop()
+
+
+		--m_gateway_small_attack--
+	attack_add(14, zealot)
+	attack_add(10, dragoon)
+	attack_prepare()
+	wait(500)
+
+	attack_do()
+	attack_clear()
+	stop()
+
+
+		--m_gateway_mini_attack--
+	attack_add(1, zealot)
+	attack_prepare()
+	attack_do()
+	attack_clear()
+	stop()
+
+
+		--m_multi_12_gateway--
+	wait_build(1, gateway)
+	build(3, gateway, 120)
+	wait_build(3, gateway)
+	build(5, gateway, 90)
+	wait_build(5, gateway)
+	build(7, gateway, 80)
+	wait_build(7, gateway)
+	build(10, gateway, 0)
+	wait_build(10, gateway)
+	build(13, gateway, 0)
+	wait_build(13, gateway)
+	stop()
+
+
+		--m_build_1_7_probe--
+	build(1, nexus, 140)
+	wait_build(1, nexus)
+	build(1, probe, 120)
+	wait_build(1, probe)
+	build(2, probe, 120)
+	wait_build(2, probe)
+	build(3, probe, 120)
+	wait_build(3, probe)
+	build(4, probe, 120)
+	wait_build(4, probe)
+	build(5, probe, 120)
+	wait_build(5, probe)
+	build(6, probe, 120)
+	wait_build(6, probe)
+	build(7, probe, 120)
+	wait_build(7, probe)
+	stop()
+
+
+		--m_cannonbuild--
+	build(2, photon_cannon, 120)
+	wait_build(2, photon_cannon)
+	build(4, photon_cannon, 120)
+	wait_build(4, photon_cannon)
+	build(5, photon_cannon, 120)
+	wait_build(5, photon_cannon)
+	build(6, photon_cannon, 0)
+	wait_build(6, photon_cannon)
+	stop()
+
+
+		--r_bayupgrades--
+	wait_build(1, robotics_support_bay)
+	upgrade(1, scarab_damage, 70)
+	wait(3600)
+
+	upgrade(1, shuttle_speed, 70)
+	wait(3600)
+
+	upgrade(1, reaver_capacity, 70)
+	wait(3600)
+
+	stop()
+
+
+		--r_observatoryupgrades--
+	wait_build(1, observatory)
+	upgrade(1, observer_speed, 70)
+	wait(3600)
+
+	upgrade(1, observer_sight, 70)
+	stop()
+
+
+		--r_mindcontrol_upgrades--
+	wait_build(1, templar_archives)
+	tech(hallucination, 150)
+	wait(4500)
+
+	upgrade(1, templar_mana, 150)
+	wait(4500)
+
+	tech(mind_control, 150)
+	wait(4500)
+
+	upgrade(1, dark_archon_mana, 110)
+	defensebuild_gg(1, dark_archon)
+	defenseuse_gg(1, dark_archon)
+	wait(4500)
+
+	stop()
+
+
+		--r_cyb_upgrades--
+	wait_build(1, cybernetics_core)
+	upgrade(1, dragoon_range, 70)
+	stop()
+
+
+		--r_arbiter_statis_upgrades--
+	wait_build(1, arbiter_tribunal)
+	tech(stasis_field, 150)
+	wait(4500)
+
+	upgrade(1, arbiter_mana, 150)
+	stop()
+
+
+		--r_zealot_archon_upgrades--
+	wait_build(1, forge)
+	upgrade(1, p_ground_weapon, 70)
+	wait(3600)
+
+	wait_build(1, citadel_of_adun)
+	upgrade(1, zealot_speed, 70)
+	upgrade(1, p_armor, 70)
+	wait(3600)
+
+	wait_build(1, templar_archives)
+	wait_build(2, forge)
+	upgrade(2, p_ground_weapon, 70)
+	upgrade(1, p_plasma_shield, 70)
+	wait(4500)
+
+	upgrade(3, p_ground_weapon, 70)
+	upgrade(2, p_plasma_shield, 70)
+	wait(4500)
+
+	upgrade(3, p_plasma_shield, 70)
+	upgrade(2, p_armor, 70)
+	wait(4500)
+
+	upgrade(3, p_armor, 70)
+	stop()
+
+

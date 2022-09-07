@@ -1,0 +1,4 @@
+{\
+	'info':'The following "extreme" mods were written specifically to fully exploit the use of the give_money command at the small cost of  realism.  These scripts have a simple agenda; Destroy you as quickly as possible!\n\nMost of these scripts will probably be far too unfair for standard resource maps and you can expect relentless hordes of units from a furious computer. Some scripts will be so unbelievably fast to attack, that you may cry foul. We simply don\'t care! \n\nAs with our pro scripts, there are varying levels of difficulty with each of these as well and some may be damn near impossible. \nWhile we at BWAI are more interested in emulating a human-like opponent for standard resource play, we rose to the challenge to accommodate for these off-center setups. Good Luck.. you\'re gonna need it!',\
+	'targetmpq':u"APPDIR:Libs\\Data\\RRebels.exe",\
+}

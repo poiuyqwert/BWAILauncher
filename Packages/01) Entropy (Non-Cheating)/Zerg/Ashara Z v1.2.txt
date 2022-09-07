@@ -1,0 +1,1831 @@
+# Ashara Zerg v1.2
+
+ZMCx(1344, 101, aiscript):
+	start_town()
+	transports_off()
+	farms_notiming()
+
+#if DEBUG
+	debug(null, Ashara Zerg 1.2)
+	--null--
+#endif
+
+	creep(3)
+	define_max(60, drone)
+	define_max(70, hydralisk)
+	define_max(30, zergling)
+	define_max(18, mutalisk)
+	define_max(10, scourge)
+	define_max(255, lurker)
+	define_max(5, queen)
+	define_max(255, defiler)
+	define_max(5, guardian)
+	define_max(255, devourer)
+	define_max(6, ultralisk)
+	build(1, drone, 2)
+	wait_buildstart(1, drone)
+	build(1, hatchery, 2)
+	wait_buildstart(1, hatchery)
+	build(1, overlord, 2)
+	wait_buildstart(1, overlord)
+	build(2, drone, 2)
+	wait_buildstart(2, drone)
+	build(3, drone, 2)
+	wait_buildstart(3, drone)
+	build(4, drone, 2)
+	wait_buildstart(4, drone)
+	build(5, drone, 2)
+	wait_buildstart(5, drone)
+	build(6, drone, 2)
+	wait_buildstart(6, drone)
+	race_jump(ASHZ 0001, ASHZ 0002, ASHZ 0003)
+
+
+		--ASHZ 0001--
+	random_jump(85, ASHZ 0004)
+	random_jump(85, ASHZ 0005)
+	random_jump(85, ASHZ 0006)
+	goto(ASHZ 0007)
+
+
+		--ASHZ 0002--
+	random_jump(128, ASHZ 0004)
+	random_jump(85, ASHZ 0005)
+	goto(ASHZ 0007)
+
+
+		--ASHZ 0003--
+	random_jump(64, ASHZ 0004)
+	random_jump(85, ASHZ 0007)
+	random_jump(128, ASHZ 0005)
+	goto(ASHZ 0006)
+
+
+		--ASHZ 0004--
+	build(1, spawning_pool, 2)
+	wait_buildstart(1, spawning_pool)
+	multirun(ASHZ 0008)
+	build(6, drone, 2)
+	wait_buildstart(6, drone)
+	build(2, overlord, 2)
+	wait_buildstart(2, overlord)
+	build(7, drone, 2)
+	wait_buildstart(7, drone)
+
+		--ASHZ 0009--
+	wait(100)
+
+	time_jump(4, ASHZ 0010)
+	goto(ASHZ 0009)
+
+
+		--ASHZ 0010--
+	wait(1)
+
+	expand(99, ASHZ 0011)
+	wait(1)
+
+	build(8, drone, 2)
+	wait_buildstart(8, drone)
+	build(9, drone, 2)
+	wait_buildstart(9, drone)
+	build(10, drone, 2)
+	wait_buildstart(10, drone)
+	farms_timing()
+	build(11, drone, 2)
+	wait_buildstart(11, drone)
+	wait(100)
+
+	expand(99, ASHZ 0011)
+	wait(100)
+
+	build(12, drone, 2)
+	wait(100)
+
+	wait_buildstart(12, drone)
+	build(1, extractor, 1)
+	build(13, drone, 2)
+	wait_buildstart(13, drone)
+	wait(100)
+
+	build(1, creep_colony, 2)
+	wait(100)
+
+	build(1, sunken_colony, 2)
+	build(14, drone, 2)
+	wait_buildstart(14, drone)
+	wait(100)
+
+	wait_buildstart(1, sunken_colony)
+	build(2, creep_colony, 2)
+	wait(100)
+
+	build(2, sunken_colony, 2)
+	build(15, drone, 2)
+	wait_buildstart(15, drone)
+	build(1, hydralisk_den, 2)
+	defenseclear_gg()
+	defenseuse_gg(1, zergling)
+	defensebuild_gg(1, hydralisk)
+	defenseuse_gg(1, hydralisk)
+	defenseclear_ag()
+	defensebuild_ag(1, hydralisk)
+	defenseuse_ag(1, hydralisk)
+	build(16, drone, 2)
+	wait_buildstart(16, drone)
+	build(17, drone, 2)
+	wait_buildstart(17, drone)
+	build(2, hatchery, 2)
+	build(18, drone, 2)
+	wait_buildstart(18, drone)
+	upgrade(1, hydralisk_speed, 1)
+	wait(1500)
+
+	upgrade(1, hydralisk_range, 1)
+	wait(1000)
+
+	build(1, lair, 2)
+	wait_buildstart(1, lair)
+	wait(500)
+
+	build(5, overlord, 2)
+	wait(500)
+
+	build(3, hatchery, 2)
+	wait(500)
+
+	upgrade(1, overlord_speed, 1)
+	wait(1800)
+
+	build(8, overlord, 2)
+	wait(1700)
+
+	goto(ASHZ 0012)
+
+
+		--ASHZ 0008--
+	wait(150)
+
+	notowns_jump(spawning_pool, ASHZ 0008)
+	train(6, zergling)
+	wait(1)
+
+	multirun(ASHZ 0013)
+	wait(1)
+
+	train(8, zergling)
+	wait(2000)
+
+
+		--ASHZ 0014--
+	wait(150)
+
+	notowns_jump(hydralisk_den, ASHZ 0014)
+	train(3, hydralisk)
+	multirun(ASHZ 0015)
+	wait(10)
+
+	defensebuild_gg(1, hydralisk)
+	defenseuse_gg(1, hydralisk)
+	train(10, hydralisk)
+	wait(2700)
+
+	train(60, hydralisk)
+	wait(500)
+
+	multirun(ASHZ 0016)
+	wait(1000)
+
+	stop()
+
+
+		--ASHZ 0013--
+	wait(1)
+
+	multirun(ASHZ 0016)
+	wait(690)
+
+	multirun(ASHZ 0017)
+	wait(1000)
+
+	stop()
+
+
+		--ASHZ 0017--
+	attack_clear()
+	attack_add(4, zergling)
+	attack_do()
+	attack_clear()
+	stop()
+
+
+		--ASHZ 0011--
+	start_town()
+	creep(3)
+	build(1, hatchery, 2)
+	wait(400)
+
+	wait_buildstart(1, hatchery)
+	wait_build(1, hatchery)
+	build(1, drone, 2)
+	wait_buildstart(1, drone)
+	build(2, drone, 2)
+	wait_buildstart(2, drone)
+	build(3, drone, 2)
+	wait_buildstart(3, drone)
+	build(4, drone, 2)
+	wait_buildstart(4, drone)
+	build(1, creep_colony, 2)
+	wait(100)
+
+	build(1, sunken_colony, 2)
+	wait(100)
+
+	build(5, drone, 2)
+	wait_buildstart(5, drone)
+	wait_buildstart(1, sunken_colony)
+	build(2, creep_colony, 2)
+	wait(100)
+
+	build(2, sunken_colony, 2)
+	build(6, drone, 2)
+	wait_buildstart(6, drone)
+	build(1, overlord, 2)
+	wait_buildstart(1, overlord)
+	build(7, drone, 2)
+	wait_buildstart(7, drone)
+	wait(100)
+
+	build(8, drone, 2)
+	wait_buildstart(8, drone)
+	wait(100)
+
+	build(9, drone, 2)
+	wait_buildstart(9, drone)
+	wait(100)
+
+	build(10, drone, 2)
+	wait_buildstart(10, drone)
+	wait(100)
+
+	build(11, drone, 2)
+	wait_buildstart(11, drone)
+	build(2, hatchery, 2)
+	build(12, drone, 2)
+	wait_buildstart(12, drone)
+	wait(100)
+
+	build(13, drone, 2)
+	wait_buildstart(13, drone)
+	wait(100)
+
+	build(14, drone, 2)
+	wait_buildstart(14, drone)
+	wait(100)
+
+	build(15, drone, 2)
+	wait_buildstart(15, drone)
+	wait(100)
+
+	build(16, drone, 2)
+	wait_buildstart(16, drone)
+	build(1, extractor, 1)
+	build(17, drone, 2)
+	wait_buildstart(17, drone)
+	wait(100)
+
+	build(18, drone, 2)
+	wait_buildstart(18, drone)
+	wait(100)
+
+	build(19, drone, 2)
+	wait_buildstart(19, drone)
+	goto(ASHZ 0018)
+
+
+		--ASHZ 0007--
+	build(6, drone, 2)
+	wait_buildstart(6, drone)
+	build(7, drone, 2)
+	wait_buildstart(7, drone)
+	build(8, drone, 2)
+	wait_buildstart(8, drone)
+	build(9, drone, 2)
+	wait_buildstart(9, drone)
+	build(2, overlord, 2)
+	wait_buildstart(2, overlord)
+	build(2, hatchery, 2)
+	wait_buildstart(2, hatchery)
+	wait_buildstart(9, drone)
+	build(1, spawning_pool, 2)
+	wait_buildstart(1, spawning_pool)
+	multirun(ASHZ 0019)
+	build(11, drone, 2)
+	wait_buildstart(11, drone)
+
+		--ASHZ 0020--
+	wait(100)
+
+	time_jump(5, ASHZ 0021)
+	goto(ASHZ 0020)
+
+
+		--ASHZ 0021--
+	wait(240)
+
+	expand(99, ASHZ 0022)
+	wait(1)
+
+	farms_timing()
+	build(11, drone, 2)
+	wait_buildstart(11, drone)
+	wait(100)
+
+	build(12, drone, 2)
+	wait(100)
+
+	wait_buildstart(12, drone)
+	build(1, creep_colony, 2)
+	build(13, drone, 2)
+	wait_buildstart(13, drone)
+	wait(100)
+
+	build(1, extractor, 1)
+	wait(100)
+
+	build(1, sunken_colony, 2)
+	build(14, drone, 2)
+	wait_buildstart(14, drone)
+	wait(100)
+
+	wait_buildstart(1, sunken_colony)
+	build(15, drone, 2)
+	wait_buildstart(15, drone)
+	build(16, drone, 2)
+	wait_buildstart(16, drone)
+	upgrade(1, zergling_speed, 1)
+	defenseclear_gg()
+	defenseuse_gg(1, zergling)
+	defensebuild_gg(1, zergling)
+	wait(1500)
+
+	build(1, lair, 2)
+	wait_buildstart(1, lair)
+	wait(200)
+
+	expand(99, ASHZ 0022)
+	wait(300)
+
+	build(19, drone, 2)
+	build(5, overlord, 2)
+	wait(500)
+
+	upgrade(1, overlord_speed, 1)
+	wait(800)
+
+	goto(ASHZ 0012)
+
+
+		--ASHZ 0019--
+	wait(150)
+
+	notowns_jump(spawning_pool, ASHZ 0019)
+	multirun(ASHZ 0015)
+	train(12, zergling)
+	wait(300)
+
+	multirun(ASHZ 0015)
+	train(26, zergling)
+	stop()
+
+
+		--ASHZ 0022--
+	start_town()
+	creep(3)
+	build(1, hatchery, 2)
+	wait(400)
+
+	wait_buildstart(1, hatchery)
+	wait_build(1, hatchery)
+	build(1, drone, 2)
+	wait_buildstart(1, drone)
+	build(2, drone, 2)
+	wait_buildstart(2, drone)
+	build(3, drone, 2)
+	wait_buildstart(3, drone)
+	wait(900)
+
+	build(1, creep_colony, 2)
+	wait(100)
+
+	build(1, sunken_colony, 2)
+	build(4, drone, 2)
+	wait_buildstart(4, drone)
+	build(5, drone, 2)
+	wait_buildstart(5, drone)
+	wait_buildstart(1, sunken_colony)
+	build(2, creep_colony, 2)
+	wait(100)
+
+	build(2, sunken_colony, 2)
+	build(6, drone, 2)
+	wait_buildstart(6, drone)
+	build(1, overlord, 2)
+	wait_buildstart(1, overlord)
+	build(7, drone, 2)
+	wait_buildstart(7, drone)
+	wait(100)
+
+	build(8, drone, 2)
+	wait_buildstart(8, drone)
+	wait(100)
+
+	build(9, drone, 2)
+	wait_buildstart(9, drone)
+	wait(100)
+
+	build(10, drone, 2)
+	wait_buildstart(10, drone)
+	wait(100)
+
+	build(11, drone, 2)
+	wait_buildstart(11, drone)
+	build(2, hatchery, 2)
+	build(12, drone, 2)
+	wait_buildstart(12, drone)
+	wait(100)
+
+	build(13, drone, 2)
+	wait_buildstart(13, drone)
+	wait(100)
+
+	build(14, drone, 2)
+	wait_buildstart(14, drone)
+	wait(100)
+
+	build(15, drone, 2)
+	wait_buildstart(15, drone)
+	wait(100)
+
+	build(16, drone, 2)
+	wait_buildstart(16, drone)
+	build(1, extractor, 1)
+	build(17, drone, 2)
+	wait_buildstart(17, drone)
+	wait(100)
+
+	build(18, drone, 2)
+	wait_buildstart(18, drone)
+	wait(100)
+
+	build(19, drone, 2)
+	wait_buildstart(19, drone)
+	goto(ASHZ 0018)
+
+
+		--ASHZ 0005--
+	build(6, drone, 2)
+	wait_buildstart(6, drone)
+	build(7, drone, 2)
+	wait_buildstart(7, drone)
+	build(8, drone, 2)
+	wait_buildstart(8, drone)
+	build(9, drone, 2)
+	wait_buildstart(9, drone)
+	build(2, overlord, 2)
+	wait_buildstart(2, overlord)
+	build(10, drone, 2)
+	wait_buildstart(10, drone)
+	build(11, drone, 1)
+	wait_buildstart(11, drone)
+	build(12, drone, 1)
+	wait_buildstart(12, drone)
+	wait(1)
+
+	expand(99, ASHZ 0023)
+	wait(1)
+
+	build(1, spawning_pool, 2)
+	wait_buildstart(1, spawning_pool)
+	build(11, drone, 2)
+	wait_buildstart(11, drone)
+	build(12, drone, 2)
+	wait_buildstart(12, drone)
+	build(13, drone, 1)
+	wait_buildstart(13, drone)
+	build(2, hatchery, 2)
+	wait_buildstart(2, hatchery)
+	wait(1)
+
+	build(1, extractor, 2)
+	wait(1)
+
+	train(1, zergling)
+	wait(1)
+
+	upgrade(1, z_flyer_attack, 1)
+	wait(1)
+
+	build(13, drone, 2)
+	wait(10)
+
+	wait_buildstart(13, drone)
+	build(1, lair, 2)
+	wait_buildstart(1, lair)
+	build(3, overlord, 2)
+	wait(1)
+
+	wait_buildstart(3, overlord)
+	build(14, drone, 2)
+	wait(10)
+
+	wait_buildstart(14, drone)
+	build(15, drone, 2)
+	wait(10)
+
+	wait_buildstart(15, drone)
+	build(16, drone, 2)
+	wait(10)
+
+	build(17, drone, 2)
+	wait(10)
+
+	build(1, spire, 2)
+	wait(100)
+
+	build(1, creep_colony, 2)
+	wait(100)
+
+	build(1, sunken_colony, 2)
+	wait_buildstart(1, spire)
+	multirun(ASHZ 0024)
+	build(4, overlord, 2)
+	wait_buildstart(4, overlord)
+	build(18, drone, 2)
+	wait(100)
+
+	build(23, drone, 2)
+	wait_buildstart(19, drone)
+	wait(100)
+
+	build(5, overlord, 2)
+	wait_buildstart(5, overlord)
+	build(6, overlord, 2)
+	wait_buildstart(6, overlord)
+	farms_timing()
+	defenseclear_gg()
+	defensebuild_gg(1, mutalisk)
+	defensebuild_gg(1, zergling)
+	defenseuse_gg(1, zergling)
+	defenseclear_ag()
+	defensebuild_ag(1, mutalisk)
+	defenseclear_aa()
+	defensebuild_aa(1, mutalisk)
+	defenseclear_ga()
+	defensebuild_ga(1, mutalisk)
+	wait(3000)
+
+	build(3, hatchery, 2)
+	wait(1000)
+
+	wait(1)
+
+	expand(99, ASHZ 0025)
+	wait(1)
+
+	build(18, drone, 2)
+	wait_buildstart(18, drone)
+	build(19, drone, 2)
+	wait_buildstart(19, drone)
+	upgrade(1, overlord_speed, 1)
+	wait(1)
+
+	upgrade(1, zergling_speed, 1)
+	wait(1000)
+
+	goto(ASHZ 0012)
+
+
+		--ASHZ 0023--
+	start_town()
+	creep(3)
+	build(1, hatchery, 2)
+	wait(400)
+
+	wait_buildstart(1, hatchery)
+	wait_build(1, hatchery)
+	build(1, drone, 2)
+	wait_buildstart(1, drone)
+	build(2, drone, 2)
+	wait(40)
+
+	wait_buildstart(2, drone)
+	build(3, drone, 2)
+	wait(40)
+
+	wait_buildstart(3, drone)
+	build(1, extractor, 2)
+	wait(200)
+
+	build(3, drone, 2)
+	wait(40)
+
+	wait_buildstart(3, drone)
+	build(1, creep_colony, 2)
+	build(4, drone, 2)
+	wait(10)
+
+	wait_buildstart(1, creep_colony)
+	wait(100)
+
+	build(1, sunken_colony, 2)
+	wait(50)
+
+	wait_buildstart(4, drone)
+	wait(50)
+
+	build(5, drone, 2)
+	wait(10)
+
+	wait_buildstart(5, drone)
+	build(6, drone, 2)
+	wait(10)
+
+	build(2, creep_colony, 2)
+	wait(150)
+
+	wait_buildstart(2, creep_colony)
+	build(6, drone, 2)
+	wait(10)
+
+	build(2, sunken_colony, 2)
+	wait_buildstart(6, drone)
+	build(7, drone, 2)
+	wait(10)
+
+	wait_buildstart(7, drone)
+	build(8, drone, 2)
+	wait(10)
+
+	wait_buildstart(8, drone)
+	build(9, drone, 2)
+	wait(10)
+
+	wait_buildstart(9, drone)
+	build(10, drone, 2)
+	wait(10)
+
+	build(3, creep_colony, 2)
+	wait(10)
+
+	build(3, sunken_colony, 2)
+	wait(10)
+
+	build(10, drone, 2)
+	wait(10)
+
+	wait_buildstart(10, drone)
+	build(11, drone, 2)
+	wait(10)
+
+	wait_buildstart(11, drone)
+	wait(4000)
+
+	build(12, drone, 2)
+	wait(10)
+
+	wait_buildstart(12, drone)
+	build(13, drone, 2)
+	wait(10)
+
+	wait_buildstart(13, drone)
+	build(14, drone, 2)
+	wait(10)
+
+	wait_buildstart(14, drone)
+	build(15, drone, 2)
+	wait_buildstart(15, drone)
+	build(16, drone, 2)
+	wait_buildstart(16, drone)
+	build(17, drone, 2)
+	wait_buildstart(17, drone)
+	build(18, drone, 2)
+	wait_buildstart(18, drone)
+	build(19, drone, 2)
+	wait_buildstart(19, drone)
+	goto(ASHZ 0018)
+
+
+		--ASHZ 0025--
+	start_town()
+	creep(3)
+	build(1, hatchery, 2)
+	wait(400)
+
+	wait_buildstart(1, hatchery)
+	wait_build(1, hatchery)
+	build(1, drone, 2)
+	wait_buildstart(1, drone)
+	build(2, drone, 2)
+	wait(40)
+
+	wait_buildstart(2, drone)
+	build(3, drone, 2)
+	wait(40)
+
+	wait_buildstart(3, drone)
+	build(3, drone, 2)
+	wait(40)
+
+	wait_buildstart(3, drone)
+	build(1, creep_colony, 2)
+	build(4, drone, 2)
+	wait(10)
+
+	wait_buildstart(1, creep_colony)
+	wait(100)
+
+	build(1, sunken_colony, 2)
+	wait(50)
+
+	wait_buildstart(4, drone)
+	wait(50)
+
+	build(5, drone, 2)
+	wait(10)
+
+	wait_buildstart(5, drone)
+	build(6, drone, 2)
+	wait(10)
+
+	build(2, creep_colony, 2)
+	wait(150)
+
+	wait_buildstart(2, creep_colony)
+	build(6, drone, 2)
+	wait(10)
+
+	build(2, sunken_colony, 2)
+	wait_buildstart(6, drone)
+	build(7, drone, 2)
+	wait(10)
+
+	wait_buildstart(7, drone)
+	build(1, extractor, 2)
+	wait(100)
+
+	build(8, drone, 2)
+	wait(10)
+
+	wait_buildstart(8, drone)
+	build(9, drone, 2)
+	wait(10)
+
+	wait_buildstart(9, drone)
+	build(10, drone, 2)
+	wait(10)
+
+	build(3, creep_colony, 2)
+	wait(10)
+
+	build(3, sunken_colony, 2)
+	wait(10)
+
+	build(10, drone, 2)
+	wait(10)
+
+	wait_buildstart(10, drone)
+	build(11, drone, 2)
+	wait(10)
+
+	wait_buildstart(11, drone)
+	build(12, drone, 2)
+	wait(10)
+
+	wait_buildstart(12, drone)
+	build(13, drone, 2)
+	wait(10)
+
+	wait_buildstart(13, drone)
+	build(14, drone, 2)
+	wait(10)
+
+	wait_buildstart(14, drone)
+	build(15, drone, 2)
+	wait_buildstart(15, drone)
+	build(16, drone, 2)
+	wait_buildstart(16, drone)
+	build(17, drone, 2)
+	wait_buildstart(17, drone)
+	build(18, drone, 2)
+	wait_buildstart(18, drone)
+	build(19, drone, 2)
+	wait_buildstart(19, drone)
+	goto(ASHZ 0018)
+
+
+		--ASHZ 0024--
+	wait(150)
+
+	notowns_jump(spire, ASHZ 0024)
+	wait(1)
+
+	train(12, mutalisk)
+	wait(250)
+
+	multirun(ASHZ 0015)
+	wait(100)
+
+	train(14, mutalisk)
+	wait(1)
+
+	train(14, zergling)
+	wait(1)
+
+	train(14, mutalisk)
+	wait(1)
+
+	train(30, zergling)
+	wait(250)
+
+	wait(1000)
+
+	stop()
+
+
+		--ASHZ 0006--
+	build(6, drone, 2)
+	wait_buildstart(6, drone)
+	build(7, drone, 2)
+	wait_buildstart(7, drone)
+	build(8, drone, 2)
+	wait_buildstart(8, drone)
+	build(9, drone, 2)
+	wait_buildstart(9, drone)
+	build(2, overlord, 2)
+	wait_buildstart(2, overlord)
+	build(10, drone, 2)
+	wait_buildstart(10, drone)
+	build(11, drone, 1)
+	wait_buildstart(11, drone)
+	build(12, drone, 1)
+	wait_buildstart(12, drone)
+	build(2, hatchery, 2)
+	wait_buildstart(2, hatchery)
+	build(1, spawning_pool, 2)
+	wait_buildstart(1, spawning_pool)
+	build(11, drone, 2)
+	wait_buildstart(11, drone)
+	build(12, drone, 2)
+	wait(150)
+
+	wait_buildstart(12, drone)
+	build(13, drone, 1)
+	build(1, extractor, 1)
+	wait_buildstart(13, drone)
+	wait(1)
+
+	train(1, zergling)
+	wait(1)
+
+	build(13, drone, 2)
+	wait(10)
+
+	expand(99, ASHZ 0026)
+	wait(10)
+
+	wait_buildstart(13, drone)
+	build(14, drone, 2)
+	wait(150)
+
+	wait_buildstart(14, drone)
+	build(15, drone, 2)
+	wait(150)
+
+	wait_buildstart(15, drone)
+	build(16, drone, 2)
+	wait(150)
+
+	build(3, hatchery, 2)
+	wait_buildstart(3, hatchery)
+	wait(10)
+
+	defensebuild_gg(1, zergling)
+	defenseuse_gg(1, zergling)
+	farms_timing()
+	build(17, drone, 2)
+	wait(10)
+
+	multirun(ASHZ 0027)
+	wait(10)
+
+	build(1, hydralisk_den, 2)
+	defenseclear_gg()
+	defensebuild_gg(1, zergling)
+	defenseuse_gg(1, zergling)
+	build(1, creep_colony, 2)
+	wait(100)
+
+	build(1, sunken_colony, 2)
+	wait(10)
+
+	build(1, lair, 2)
+	wait_buildstart(1, lair)
+	build(18, drone, 2)
+	wait(100)
+
+	upgrade(1, hydralisk_speed, 1)
+	build(19, drone, 2)
+	wait_buildstart(19, drone)
+	wait(500)
+
+	upgrade(1, hydralisk_range, 1)
+	wait(1000)
+
+	upgrade(1, overlord_speed, 1)
+	build(20, drone, 2)
+
+		--ASHZ 0028--
+	wait(250)
+
+	time_jump(17, ASHZ 0029)
+	goto(ASHZ 0028)
+
+
+		--ASHZ 0029--
+	build(23, drone, 1)
+	wait(10)
+
+	send_suicide(0)
+	wait(100)
+
+	expand(99, ASHZ 0026)
+	wait(10)
+
+	goto(ASHZ 0012)
+
+
+		--ASHZ 0026--
+	start_town()
+	creep(3)
+	build(1, hatchery, 2)
+	wait(400)
+
+	wait_buildstart(1, hatchery)
+	wait_build(1, hatchery)
+	build(1, drone, 2)
+	wait_buildstart(1, drone)
+	build(2, drone, 2)
+	wait(40)
+
+	wait_buildstart(2, drone)
+	build(3, drone, 2)
+	wait(40)
+
+	wait_buildstart(3, drone)
+	build(1, creep_colony, 2)
+	build(4, drone, 2)
+	wait(10)
+
+	wait_buildstart(1, creep_colony)
+	wait(100)
+
+	build(1, sunken_colony, 2)
+	wait(250)
+
+	wait_buildstart(4, drone)
+	wait(50)
+
+	build(5, drone, 2)
+	wait(300)
+
+	wait_buildstart(5, drone)
+	build(6, drone, 2)
+	wait(300)
+
+	build(7, drone, 2)
+	wait(300)
+
+	wait_buildstart(7, drone)
+	build(2, creep_colony, 2)
+	wait(150)
+
+	wait_buildstart(2, creep_colony)
+	build(7, drone, 2)
+	wait(300)
+
+	wait_buildstart(7, drone)
+	build(2, sunken_colony, 2)
+	build(8, drone, 2)
+	wait(300)
+
+	wait_buildstart(8, drone)
+	build(9, drone, 2)
+	wait(300)
+
+	wait_buildstart(9, drone)
+	build(10, drone, 2)
+	wait(300)
+
+	wait_buildstart(10, drone)
+	build(11, drone, 2)
+	wait(300)
+
+	wait_buildstart(11, drone)
+	wait(10)
+
+	build(12, drone, 2)
+	wait(300)
+
+	wait_buildstart(12, drone)
+	build(13, drone, 2)
+	wait(300)
+
+	wait_buildstart(13, drone)
+	build(14, drone, 2)
+	wait(10)
+
+	wait_buildstart(14, drone)
+	build(2, hatchery, 2)
+	wait_buildstart(2, hatchery)
+	build(15, drone, 2)
+	wait_buildstart(15, drone)
+	build(16, drone, 2)
+	wait_buildstart(16, drone)
+	build(17, drone, 2)
+	wait_buildstart(17, drone)
+	build(1, extractor, 1)
+	build(18, drone, 2)
+	wait_buildstart(18, drone)
+	build(19, drone, 2)
+	wait_buildstart(19, drone)
+	goto(ASHZ 0018)
+
+
+		--ASHZ 0027--
+	train(1, zergling)
+	multirun(ASHZ 0015)
+	train(16, zergling)
+
+		--ASHZ 0030--
+	wait(200)
+
+	notowns_jump(hydralisk_den, ASHZ 0030)
+	train(10, hydralisk)
+	defensebuild_gg(1, hydralisk)
+	defenseuse_gg(1, hydralisk)
+	defenseclear_ag()
+	defensebuild_ag(1, hydralisk)
+	defenseuse_ag(1, hydralisk)
+	defenseclear_aa()
+	defensebuild_aa(1, hydralisk)
+	defenseuse_aa(1, hydralisk)
+	defenseclear_ga()
+	defensebuild_ga(1, hydralisk)
+	defenseuse_ga(1, hydralisk)
+	wait(100)
+
+	multirun(ASHZ 0015)
+	train(10, zergling)
+	wait(10)
+
+	train(20, hydralisk)
+	wait(10)
+
+	train(20, zergling)
+	wait(10)
+
+	train(40, hydralisk)
+	stop()
+
+
+		--ASHZ 0012--
+	random_jump(128, ASHZ 0031)
+	goto(ASHZ 0032)
+
+
+		--ASHZ 0031--
+	define_max(99, hydralisk)
+	define_max(35, zergling)
+	define_max(14, mutalisk)
+	define_max(10, scourge)
+	define_max(5, queen)
+	define_max(255, guardian)
+	define_max(20, ultralisk)
+	defenseclear_gg()
+	defenseuse_gg(1, mutalisk)
+	defenseuse_gg(1, zergling)
+	defensebuild_gg(1, hydralisk)
+	defenseuse_gg(1, hydralisk)
+	defensebuild_gg(1, ultralisk)
+	defenseuse_gg(1, ultralisk)
+	defenseclear_ag()
+	defensebuild_ag(1, hydralisk)
+	defenseuse_ag(1, hydralisk)
+	defenseuse_ag(1, mutalisk)
+	defenseclear_aa()
+	defenseuse_aa(1, mutalisk)
+	defenseuse_aa(1, scourge)
+	defenseclear_ga()
+	defenseuse_ga(1, mutalisk)
+	wait(50)
+
+	multirun(ASHZ 0033)
+	wait(50)
+
+	multirun(ASHZ 0034)
+	wait(700)
+
+	build(1, hydralisk_den, 2)
+	wait(1600)
+
+	build(1, queen_nest, 2)
+	wait(1500)
+
+	build(1, hive, 2)
+	wait(1200)
+
+	build(1, ultralisk_cavern, 2)
+	wait(100)
+
+	build(1, evolution_chamber, 2)
+	wait(100)
+
+	build(2, evolution_chamber, 2)
+	wait(850)
+
+	send_suicide(0)
+	wait(500)
+
+	expand(99, ASHZ 0035)
+	wait(1000)
+
+	define_max(255, zergling)
+	define_max(255, mutalisk)
+	goto(ASHZ 0036)
+
+
+		--ASHZ 0033--
+	wait(150)
+
+	notowns_jump(hydralisk_den, ASHZ 0033)
+	train(10, hydralisk)
+	wait(500)
+
+	train(50, hydralisk)
+	wait(500)
+
+	goto(ASHZ 0037)
+
+
+		--ASHZ 0037--
+	train(10, hydralisk)
+	wait(150)
+
+	notowns_jump(ultralisk_cavern, ASHZ 0037)
+	goto(ASHZ 0038)
+
+
+		--ASHZ 0038--
+	train(3, ultralisk)
+	wait(100)
+
+	train(15, hydralisk)
+	wait(100)
+
+	train(6, ultralisk)
+	wait(100)
+
+	train(30, hydralisk)
+	wait(100)
+
+	train(9, ultralisk)
+	wait(100)
+
+	train(45, hydralisk)
+	wait(100)
+
+	train(12, ultralisk)
+	wait(100)
+
+	train(60, hydralisk)
+	wait(100)
+
+	train(15, ultralisk)
+	wait(100)
+
+	train(70, hydralisk)
+	wait(1000)
+
+	goto(ASHZ 0038)
+
+
+		--ASHZ 0036--
+	wait(7000)
+
+	send_suicide(0)
+	wait(500)
+
+	expand(99, ASHZ 0035)
+	goto(ASHZ 0036)
+
+
+		--ASHZ 0035--
+	start_town()
+	creep(3)
+	build(1, hatchery, 2)
+	wait(600)
+
+	wait_buildstart(1, hatchery)
+	wait_build(1, hatchery)
+	build(1, drone, 2)
+	wait_buildstart(1, drone)
+	build(2, drone, 2)
+	wait(40)
+
+	wait_buildstart(2, drone)
+	build(3, drone, 2)
+	wait(40)
+
+	wait_buildstart(3, drone)
+	build(3, drone, 2)
+	wait(40)
+
+	wait_buildstart(3, drone)
+	build(1, creep_colony, 2)
+	build(4, drone, 2)
+	wait(10)
+
+	wait_buildstart(1, creep_colony)
+	wait(100)
+
+	build(1, sunken_colony, 2)
+	wait(50)
+
+	wait_buildstart(4, drone)
+	wait(50)
+
+	build(5, drone, 2)
+	wait(10)
+
+	wait_buildstart(5, drone)
+	build(6, drone, 2)
+	wait(10)
+
+	build(2, creep_colony, 2)
+	wait(150)
+
+	wait_buildstart(2, creep_colony)
+	build(6, drone, 2)
+	wait(10)
+
+	build(2, sunken_colony, 2)
+	wait_buildstart(6, drone)
+	build(7, drone, 2)
+	wait(10)
+
+	wait_buildstart(7, drone)
+	build(3, creep_colony, 2)
+	wait(10)
+
+	build(3, sunken_colony, 2)
+	wait(100)
+
+	build(8, drone, 2)
+	wait(10)
+
+	wait_buildstart(8, drone)
+	build(9, drone, 2)
+	wait(10)
+
+	wait_buildstart(9, drone)
+	build(10, drone, 2)
+	wait(10)
+
+	build(4, creep_colony, 2)
+	wait(10)
+
+	build(1, spore_colony, 2)
+	wait(10)
+
+	build(10, drone, 2)
+	wait(10)
+
+	wait_buildstart(10, drone)
+	build(2, hatchery, 2)
+	build(11, drone, 2)
+	wait(10)
+
+	wait_buildstart(11, drone)
+	build(12, drone, 2)
+	wait(10)
+
+	wait_buildstart(12, drone)
+	build(13, drone, 2)
+	wait(10)
+
+	wait_buildstart(13, drone)
+	build(1, extractor, 2)
+	build(14, drone, 2)
+	wait(10)
+
+	wait_buildstart(14, drone)
+	build(15, drone, 2)
+	wait_buildstart(15, drone)
+	wait(100)
+
+	build(16, drone, 2)
+	wait_buildstart(16, drone)
+	wait(100)
+
+	build(17, drone, 2)
+	wait_buildstart(17, drone)
+	wait(100)
+
+	build(18, drone, 2)
+	wait_buildstart(18, drone)
+	wait(100)
+
+	build(19, drone, 2)
+	wait_buildstart(19, drone)
+	wait(100)
+
+	goto(ASHZ 0018)
+
+
+		--ASHZ 0032--
+	define_max(80, zergling)
+	define_max(40, mutalisk)
+	define_max(10, scourge)
+	define_max(15, guardian)
+	defenseclear_gg()
+	defensebuild_gg(1, mutalisk)
+	defenseuse_gg(1, mutalisk)
+	defensebuild_gg(1, zergling)
+	defenseuse_gg(1, zergling)
+	defenseuse_gg(1, hydralisk)
+	defenseuse_gg(1, guardian)
+	defenseclear_ag()
+	defensebuild_ag(1, mutalisk)
+	defenseuse_ag(1, mutalisk)
+	defenseuse_ag(1, hydralisk)
+	defenseclear_aa()
+	defenseuse_aa(1, mutalisk)
+	defensebuild_aa(1, scourge)
+	defenseuse_aa(1, scourge)
+	defenseclear_ga()
+	defensebuild_ga(1, mutalisk)
+	defenseuse_ga(1, mutalisk)
+	wait(50)
+
+	multirun(ASHZ 0039)
+	wait(50)
+
+	multirun(ASHZ 0040)
+	wait(100)
+
+	build(1, spire, 2)
+	wait(3000)
+
+	build(1, queen_nest, 2)
+	wait(1200)
+
+	expand(99, ASHZ 0041)
+	wait(500)
+
+	build(1, hive, 2)
+	wait(1000)
+
+	build(2, spire, 2)
+	define_max(255, hydralisk)
+	wait(1000)
+
+	build(1, greater_spire, 2)
+	goto(ASHZ 0042)
+
+
+		--ASHZ 0040--
+	train(20, zergling)
+	wait(100)
+
+	train(7, mutalisk)
+	wait(100)
+
+	train(30, zergling)
+	wait(100)
+
+	train(11, mutalisk)
+	wait(100)
+
+	train(2, scourge)
+	wait(100)
+
+	train(40, zergling)
+	wait(100)
+
+	train(15, mutalisk)
+	wait(100)
+
+	train(45, zergling)
+	wait(300)
+
+	multirun(ASHZ 0016)
+	wait(500)
+
+	multirun(ASHZ 0043)
+	wait(50)
+
+	goto(ASHZ 0044)
+
+
+		--ASHZ 0044--
+	train(20, zergling)
+	wait(100)
+
+	train(7, mutalisk)
+	wait(100)
+
+	train(30, zergling)
+	wait(100)
+
+	train(11, mutalisk)
+	wait(100)
+
+	train(4, scourge)
+	wait(100)
+
+	train(40, zergling)
+	wait(100)
+
+	train(15, mutalisk)
+	wait(100)
+
+	train(50, zergling)
+	wait(100)
+
+	train(20, mutalisk)
+	wait(100)
+
+	train(65, zergling)
+	wait(100)
+
+	train(8, scourge)
+	wait(600)
+
+	goto(ASHZ 0044)
+
+
+		--ASHZ 0043--
+	wait(2000)
+
+	train(4, guardian)
+	wait(2000)
+
+	train(8, guardian)
+	wait(1000)
+
+	goto(ASHZ 0043)
+
+
+		--ASHZ 0042--
+	wait(3000)
+
+	send_suicide(0)
+	wait(500)
+
+	expand(99, ASHZ 0041)
+	wait(3400)
+
+	goto(ASHZ 0042)
+
+
+		--ASHZ 0041--
+	start_town()
+	creep(3)
+	build(1, hatchery, 2)
+	wait(600)
+
+	wait_buildstart(1, hatchery)
+	wait_build(1, hatchery)
+	build(1, drone, 2)
+	wait_buildstart(1, drone)
+	build(2, drone, 2)
+	wait(40)
+
+	wait_buildstart(2, drone)
+	build(3, drone, 2)
+	wait(40)
+
+	wait_buildstart(3, drone)
+	build(3, drone, 2)
+	wait(40)
+
+	wait_buildstart(3, drone)
+	build(1, creep_colony, 2)
+	build(4, drone, 2)
+	wait(10)
+
+	wait_buildstart(1, creep_colony)
+	wait(100)
+
+	build(1, sunken_colony, 2)
+	wait(50)
+
+	wait_buildstart(4, drone)
+	wait(50)
+
+	build(5, drone, 2)
+	wait(10)
+
+	wait_buildstart(5, drone)
+	build(6, drone, 2)
+	wait(10)
+
+	build(2, creep_colony, 2)
+	wait(150)
+
+	wait_buildstart(2, creep_colony)
+	build(6, drone, 2)
+	wait(10)
+
+	build(2, sunken_colony, 2)
+	wait_buildstart(6, drone)
+	build(7, drone, 2)
+	wait(10)
+
+	wait_buildstart(7, drone)
+	build(1, extractor, 2)
+	wait(100)
+
+	build(8, drone, 2)
+	wait(10)
+
+	wait_buildstart(8, drone)
+	build(9, drone, 2)
+	wait(10)
+
+	wait_buildstart(9, drone)
+	build(10, drone, 2)
+	wait(10)
+
+	build(3, creep_colony, 2)
+	wait(10)
+
+	build(3, sunken_colony, 2)
+	wait(10)
+
+	build(10, drone, 2)
+	wait(10)
+
+	wait_buildstart(10, drone)
+	build(2, hatchery, 2)
+	build(11, drone, 2)
+	wait(10)
+
+	wait_buildstart(11, drone)
+	build(12, drone, 2)
+	wait(10)
+
+	wait_buildstart(12, drone)
+	build(13, drone, 2)
+	wait(10)
+
+	wait_buildstart(13, drone)
+	build(14, drone, 2)
+	wait(10)
+
+	wait_buildstart(14, drone)
+	build(15, drone, 2)
+	wait_buildstart(15, drone)
+	wait(100)
+
+	build(16, drone, 2)
+	wait_buildstart(16, drone)
+	wait(100)
+
+	build(17, drone, 2)
+	wait_buildstart(17, drone)
+	wait(100)
+
+	build(18, drone, 2)
+	wait_buildstart(18, drone)
+	wait(100)
+
+	build(19, drone, 2)
+	wait_buildstart(19, drone)
+	wait(100)
+
+	goto(ASHZ 0018)
+
+
+		--ASHZ 0034--
+	upgrade(1, overlord_speed, 1)
+	wait(1000)
+
+	upgrade(1, hydralisk_speed, 1)
+	wait(1500)
+
+	upgrade(1, hydralisk_range, 1)
+	wait(1000)
+
+	goto(ASHZ 0045)
+
+
+		--ASHZ 0045--
+	wait(450)
+
+	notowns_jump(ultralisk_cavern, ASHZ 0045)
+	upgrade(1, z_missile_attack, 1)
+	wait(100)
+
+	upgrade(1, z_carapace, 1)
+	wait(500)
+
+	upgrade(1, ultralisk_speed, 1)
+	wait(1500)
+
+	upgrade(1, overlord_capacity, 1)
+	wait(2000)
+
+	upgrade(2, z_missile_attack, 1)
+	wait(100)
+
+	upgrade(2, z_carapace, 1)
+	wait(500)
+
+	upgrade(1, ultralisk_armor, 1)
+	wait(4000)
+
+	upgrade(1, z_melee_attack, 1)
+	wait(100)
+
+	upgrade(3, z_carapace, 1)
+	wait(5000)
+
+	upgrade(2, z_melee_attack, 1)
+	wait(100)
+
+	upgrade(3, z_missile_attack, 1)
+	wait(5000)
+
+	upgrade(3, z_melee_attack, 1)
+	stop()
+
+
+		--ASHZ 0039--
+	upgrade(1, overlord_speed, 1)
+	wait(2000)
+
+	upgrade(1, zergling_speed, 1)
+	wait(500)
+
+	upgrade(1, z_flyer_attack, 1)
+	wait(3000)
+
+	upgrade(1, z_flyer_carapace, 1)
+	goto(ASHZ 0046)
+
+
+		--ASHZ 0046--
+	wait(450)
+
+	notowns_jump(greater_spire, ASHZ 0046)
+	upgrade(2, z_flyer_attack, 1)
+	wait(100)
+
+	upgrade(1, zergling_attack, 1)
+	wait(1500)
+
+	upgrade(2, z_flyer_carapace, 1)
+	wait(500)
+
+	upgrade(1, overlord_capacity, 1)
+	wait(2500)
+
+	upgrade(3, z_flyer_attack, 1)
+	wait(2500)
+
+	upgrade(3, z_flyer_carapace, 1)
+	wait(100)
+
+	stop()
+
+
+		--ASHZ 0016--
+	wait(1)
+
+	send_suicide(0)
+	wait(1000)
+
+	stop()
+
+
+		--ASHZ 0018--
+	wait(30000)
+
+	goto(ASHZ 0018)
+
+
+#		--ASHZ 0047--
+#	give_money()
+#	wait(1500)
+
+#	goto(ASHZ 0047)
+
+#	multirun(ASHZ 0047)
+#	build(3, drone, 2)
+#	wait_buildstart(3, drone)
+#	build(1, spawning_pool, 2)
+#	wait(100)
+#
+#	build(3, hatchery, 2)
+#	wait(100)
+#
+#	build(2, creep_colony, 2)
+##
+	#build(2, sunken_colony, 2)
+#	wait(100)
+#
+#	build(5, creep_colony, 2)
+#	wait(200)
+#
+#	build(5, sunken_colony, 2)
+#	wait(100)
+#
+#	build(8, creep_colony, 2)
+#	wait(200)
+#
+#	build(8, sunken_colony, 2)
+#	wait(200)
+#
+#	build(1, hydralisk_den, 2)
+#	wait(200)
+#
+#	build(5, hatchery, 2)
+#	train(22, hydralisk)
+#	defensebuild_gg(1, zergling)
+#	defensebuild_gg(1, hydralisk)
+#	build(1, lair, 2)
+#	wait(2000)
+#
+#	build(1, spire, 2)
+#	wait(1000)
+#
+#	train(40, scourge)
+#	defensebuild_aa(1, scourge)
+#	defensebuild_aa(1, scourge)
+#	goto(ASHZ 0018)
+#
+#
+		--ASHZ 0015--
+	time_jump(45, ASHZ 0050)
+	wait(1)
+
+	time_jump(9, ASHZ 0051)
+	wait(1)
+
+	time_jump(5, ASHZ 0052)
+	wait(1)
+
+
+
+		--ASHZ 0050--
+	stop()
+
+		--ASHZ 0051--
+	wait(150)
+
+	time_jump(13, ASHZ 0054)
+	goto(ASHZ 0051)
+
+
+		--ASHZ 0054--
+	wait(650)
+
+	goto(ASHZ 0016)
+
+
+		--ASHZ 0052--
+	wait(150)
+
+	time_jump(8, ASHZ 0055)
+	goto(ASHZ 0052)
+
+
+		--ASHZ 0055--
+	wait(900)
+
+	goto(ASHZ 0016)
+
+
+		--ASHZ 0053--
+	wait(150)
+
+	time_jump(5, ASHZ 0056)
+	goto(ASHZ 0053)
+
+
+		--ASHZ 0056--
+	wait(540)
+
+	goto(ASHZ 0016)

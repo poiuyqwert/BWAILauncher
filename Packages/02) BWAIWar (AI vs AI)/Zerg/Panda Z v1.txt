@@ -1,0 +1,386 @@
+# Panda Z v1.0
+
+# Zerg Expansion Custom Level<0>
+ZMCx(1344, 101, aiscript):
+
+	start_town()
+	transports_off()
+	farms_notiming()
+
+#if DEBUG
+	debug(null, Panda Z v1.0)
+	--null--
+#endif
+
+	defaultbuild_off()
+	define_max(100, Zerg Drone)
+	define_max(250, Zerg Zergling)
+	define_max(24, Zerg Hydralisk)
+	define_max(18, Zerg Lurker)
+	define_max(8, Zerg Scourge)
+	define_max(255, Zerg Queen)
+	define_max(99, Zerg Mutalisk)
+	define_max(3, Zerg Defiler)
+	define_max(200, Zerg Ultralisk)
+	define_max(100, Zerg Guardian)
+	multirun(defstuff)
+	race_jump(vs_human, vs_toss, vs_toss)
+	
+		--vs_human--
+	wait_build(1, Zerg Hatchery)
+	build(13, Zerg Drone, 80)
+	wait_buildstart(13, Zerg Drone)
+	expand(1, expansion_1)
+	wait(5)
+
+	build(1, Zerg Spawning Pool, 100)
+	wait_buildstart(1, Zerg Spawning Pool)
+	expand(2, expansion_1)
+	wait_buildstart(12, Zerg Drone)
+	build(1, Zerg Extractor, 100)
+	wait_build(1, Zerg Spawning Pool)
+	upgrade(1, Metabolic Boost, 150)
+	farms_timing()
+	build(14, Zerg Drone, 80)
+	multirun(m_hat)
+	train(60, Zerg Zergling)
+	wait_buildstart(4, Zerg Hatchery)
+
+	multirun(att_def)
+
+		--dev--
+	resources_jump(500, 200, start_lair)
+	wait(50)
+
+	goto(dev)
+
+		--start_lair--
+	multirun(techs)
+	wait_buildstart(1, Zerg Lair)
+
+	wait(50)
+	multirun(SX)
+
+	
+	wait_buildstart(1, Zerg Hive)
+	
+	
+	build(6, Zerg Hatchery, 80)
+	train(4, Zerg Ultralisk)
+	multirun(SX)
+	
+	wait_train(1, Zerg Ultralisk)
+	wait_force(4, Zerg Ultralisk)
+	
+	attack_add(4, Zerg Ultralisk)
+	attack_add(120, Zerg Zergling)
+	attack_prepare()
+	expand(3, expansion_2)
+	attack_do()
+	attack_clear()
+	clear_combatdata()
+	wait(50)
+
+	multirun(att_loop)
+	wait(8000)
+
+	multirun(expand_loop)
+
+		--att_loop--
+	multirun(SX)
+	train(8, Zerg Ultralisk)
+	
+	attack_add(12, Zerg Ultralisk)
+	attack_add(100, Zerg Zergling)
+	wait_train(8, Zerg Ultralisk)
+	attack_prepare()
+	attack_do()
+	attack_clear()
+	clear_combatdata()
+	wait(100)
+
+	goto(att_loop)
+
+
+		--SX--
+	train(24, Zerg Zergling)
+	wait_train(24, Zerg Zergling)
+	wait(10)
+	train(48, Zerg Zergling)
+	wait_train(48, Zerg Zergling)
+	wait(10)
+	train(72, Zerg Zergling)
+	wait_train(72, Zerg Zergling)
+	wait(10)
+	train(96, Zerg Zergling)
+	wait_train(96, Zerg Zergling)
+	wait(10)
+	train(120, Zerg Zergling)
+	wait_train(120, Zerg Zergling)
+	wait(10)
+	train(144, Zerg Zergling)
+	wait_train(144, Zerg Zergling)
+	wait(10)
+	train(200, Zerg Zergling)
+	wait_train(200, Zerg Zergling)
+	wait(10)
+	stop()
+
+
+		--techs--
+	resources_jump(200, 120, lair)
+	wait(5)
+
+	goto(techs)
+
+
+		--lair--
+
+	build(1, Zerg Lair, 100)
+	wait_build(1, Zerg Lair)
+
+		--n_nest--
+	resources_jump(150, 100, build_nest)
+	wait(5)
+
+	goto(n_nest)
+
+
+		--build_nest--
+	build(1, Zerg Queen's Nest, 100)
+	wait_build(1, Zerg Queen's Nest)
+
+		--n_hive--
+	resources_jump(200, 150, build_hive)
+	wait(5)
+
+	goto(n_hive)
+
+
+		--build_hive--
+	build(1, Zerg Hive, 100)
+	wait_build(1, Zerg Hive)
+	wait(50)
+
+	upgrade(1, Adrenal Glands, 70)
+
+		--n_cavern--
+	resources_jump(300, 200, build_ultra)
+	wait(5)
+
+	goto(n_cavern)
+
+
+		--build_ultra--
+	build(1, Zerg Ultralisk Cavern, 100)
+	wait_train(1, Zerg Ultralisk)
+	upgrade(1, Chitinous Plating, 70)
+	wait(4000)
+
+	upgrade(1, Anabolic Synthesis, 70)
+	stop()
+
+
+		--att_def--
+
+	build(2, Zerg Evolution Chamber, 80)
+	wait_build(1, Zerg Evolution Chamber)
+	upgrade(1, Zerg Carapace, 60)
+	wait(50)
+
+	upgrade(1, Zerg Melee Attacks, 60)
+	wait(4500)
+
+	upgrade(2, Zerg Carapace, 50)
+	wait(50)
+
+	upgrade(2, Zerg Melee Attacks, 50)
+	wait(4800)
+	
+	wait_build(1, Zerg Hive)
+	upgrade(3, Zerg Carapace, 50)
+	wait(50)
+
+	upgrade(3, Zerg Melee Attacks, 50)
+	stop()
+
+
+		--expansion_1--
+	start_town()
+	build(1, Zerg Hatchery, 90)
+	wait_build(1, Zerg Hatchery)
+	get_oldpeons(3)
+	build(11, Zerg Drone, 80)
+	wait_build(11, Zerg Drone)
+	multirun(gas)
+	wait(50)
+
+	creep(3)
+	build(1, Zerg Creep Colony, 70)
+	wait_build(1, Zerg Creep Colony)
+	build(1, Zerg Sunken Colony, 70)
+	wait(100)
+	build(11, Zerg Drone, 70)
+	
+	wait(5000)
+	
+	creep(3)
+	build(9, Zerg Sunken Colony, 100)
+	wait_build(1, Zerg Creep Colony)
+	build(9, Zerg Sunken Colony, 100)
+	wait(100)
+	get_oldpeons(3)
+	build(11, Zerg Drone, 70)
+	stop()
+
+
+		--expansion_2--
+	start_town()
+	build(1, Zerg Hatchery, 90)
+	wait_build(1, Zerg Hatchery)
+	get_oldpeons(2)
+	multirun(gas)
+	build(4, Zerg Drone, 90)
+	wait_build(4, Zerg Drone)
+	creep(3)
+	build(3, Zerg Creep Colony, 80)
+	wait_build(1, Zerg Creep Colony)
+	build(3, Zerg Sunken Colony, 80)
+	build(9, Zerg Drone, 50)
+	stop()
+
+
+		--expand_loop--
+	wait(5000)
+
+	expand(99, expansion_2)
+	goto(expand_loop)
+
+
+		--gas--
+	build(1, Zerg Extractor, 100)
+	stop()
+
+
+		--defstuff--
+	defenseuse_gg(1, Zerg Zergling)
+	defenseuse_gg(1, Zerg Hydralisk)
+	defenseuse_ag(1, Zerg Hydralisk)
+	defenseuse_gg(1, Zerg Lurker)
+	defenseuse_gg(1, Zerg Mutalisk)
+	defenseuse_ag(1, Zerg Mutalisk)
+	defenseuse_ga(1, Zerg Mutalisk)
+	defenseuse_aa(1, Zerg Mutalisk)
+	defenseuse_aa(1, Zerg Devourer)
+	defenseuse_gg(1, Zerg Guardian)
+	defenseuse_ga(1, Zerg Guardian)
+	defenseuse_aa(1, Zerg Scourge)
+	defenseuse_gg(1, Zerg Ultralisk)
+	stop()
+
+
+		--m_hat--
+	resources_jump(300, 0, 2_hatch)
+	wait(10)
+
+	goto(m_hat)
+
+
+		--2_hatch--
+	build(2, Zerg Hatchery, 70)
+	wait_buildstart(2, Zerg Hatchery)
+
+		--w3--
+	resources_jump(400, 0, 3_hatch)
+	wait(100)
+
+	goto(w3)
+
+
+		--3_hatch--
+	build(3, Zerg Hatchery, 70)
+	wait_buildstart(3, Zerg Hatchery)
+
+		--w4--
+	resources_jump(450, 0, 4_hatch)
+	wait(100)
+
+	goto(w4)
+
+
+		--4_hatch--
+	build(4, Zerg Hatchery, 70)
+	wait_buildstart(4, Zerg Hatchery)
+	stop()
+
+
+#------------------------#
+		--vs_toss--
+	wait_build(1, hatchery)
+	build(9, drone, 80)
+	wait_buildstart(9, drone)
+	wait(50)
+	build(2, overlord, 80)
+	wait_buildstart(2, overlord)
+	build(1, spawning_pool, 80)
+	wait_buildstart(1, spawning_pool)
+	build(12, drone, 80)
+	wait_buildstart(12, drone)
+	build(3, hatchery, 80)
+	wait_buildstart(3, hatchery)
+	wait_build(12, drone)
+	train(6, zergling)
+	wait_train(6, zergling)
+	wait(5)
+	train(18, zergling)
+	wait_train(12, zergling)
+	farms_timing()
+	build(1, Zerg Extractor, 100)
+	wait_buildstart(1, Zerg Extractor)
+	build(1, Zerg Evolution Chamber, 90)
+	wait_buildstart(1, Zerg Evolution Chamber)
+	multirun(att)
+	multirun(t_ling)
+	multirun(vP_tech)
+	stop()
+	
+		--t_ling--
+	train(200, zergling)
+	wait(20)
+	goto(t_ling)
+	
+		--att--
+	wait(100)
+	wait_train(30, zergling)
+	send_suicide(0)
+	goto(att)
+	
+		--vP_tech--
+	resources_jump(0, 100, m_attack)
+	wait(10)
+	goto(vP_tech)
+	
+		--m_attack--
+	upgrade(1, z_melee_attack, 80)
+	wait(5)
+	
+		--w_att--
+	resources_jump(100, 100, speedling)
+	wait(10)
+	goto(w_att)
+	
+
+			--speedling--
+	upgrade(1, zergling_speed, 80)
+	wait(4000)
+	
+	upgrade(1, z_carapace, 80)
+	stop()	
+
+
+
+
+
+
+
+

@@ -1,0 +1,1126 @@
+# JH24 T v1.0
+
+# Terran Expansion Custom Level
+TMCx(1342, 101, aiscript):
+
+	start_town()
+	transports_off()
+	farms_notiming()
+
+#if DEBUG
+	debug(null, JH24 T v1.0)
+	--null--
+#endif
+
+	wait(1)
+	multirun(TMCx 0000)
+	race_jump(TMCx 0001, TMCx 0002, TMCx 0003)
+
+
+		--TMCx 0001--
+	wait(1)
+
+	define_max(80, scv)
+	define_max(100, siege_tank)
+	define_max(100, goliath)
+	define_max(10, marine)
+	define_max(255, medic)
+	define_max(255, firebat)
+	define_max(255, ghost)
+	define_max(255, battlecruiser)
+	define_max(50, vulture)
+	define_max(6, science_vessel)
+	define_max(255, wraith)
+	define_max(255, nuclear_missile)
+	define_max(4, dropship)
+	build(1, command_center, 150)
+	wait_build(1, command_center)
+	build(6, scv, 80)
+	wait_build(6, scv)
+	build(8, scv, 80)
+	wait_buildstart(8, scv)
+	build(1, supply_depot, 80)
+	wait_buildstart(1, supply_depot)
+	build(9, scv, 80)
+	wait_buildstart(9, scv)
+	build(1, barracks, 80)
+	wait_buildstart(1, barracks)
+	build(10, scv, 80)
+	wait_buildstart(1, scv)
+	wait_build(1, supply_depot)
+	build(12, scv, 80)
+	wait_buildstart(12, scv)
+	build(1, refinery, 100)
+	wait_buildstart(1, refinery)
+	wait_build(1, barracks)
+	train(2, marine)
+	defensebuild_gg(1, marine)
+	defenseuse_gg(1, marine)
+	defensebuild_ga(1, marine)
+	defenseuse_ga(1, marine)
+	build(2, supply_depot, 80)
+	wait(1)
+
+	multirun(TMCx 0006)
+	train(3, marine)
+	build(2, factory, 80)
+	wait_buildstart(2, factory)
+	train(6, marine)
+	build(1, engineering_bay, 80)
+	multirun(TMCx 0007)
+	multirun(TMCx 0008)
+	farms_timing()
+	define_max(80, scv)
+	define_max(100, siege_tank)
+	define_max(100, goliath)
+	define_max(10, marine)
+	define_max(4, firebat)
+	define_max(15, medic)
+	define_max(255, ghost)
+	define_max(100, battlecruiser)
+	define_max(100, vulture)
+	define_max(10, science_vessel)
+	define_max(255, wraith)
+	define_max(1, nuclear_missile)
+	define_max(4, dropship)
+	build(2, barracks, 80)
+	train(2, vulture)
+	build(2, machine_shop, 80)
+	defenseuse_gg(1, vulture)
+	defenseuse_ga(1, vulture)
+	defensebuild_gg(1, vulture)
+	defensebuild_ga(1, vulture)
+	defensebuild_gg(1, siege_tank)
+	defensebuild_ga(1, siege_tank)
+	defenseuse_gg(1, siege_tank)
+	defenseuse_ga(1, siege_tank)
+	multirun(Siege)
+	train(2, siege_tank)
+	train(8, vulture)
+	build(3, factory, 80)
+	wait_buildstart(3, factory)
+	train(4, siege_tank)
+	wait(5)
+
+	expand(1, TMCx 0010)
+	wait(100)
+
+	multirun(TMCx 0011)
+	build(1, armory, 80)
+	build(2, machine_shop, 80)
+	train(6, siege_tank)
+	player_need(1, engineering_bay)
+	player_need(1, armory)
+	wait(10)
+
+	multirun(TMCx 9999)
+	train(8, siege_tank)
+	random_jump(160, norush)
+	wait(1)
+
+	attack_add(8, siege_tank)
+	attack_add(8, vulture)
+	train(2, siege_tank)
+	wait(100)
+
+	attack_prepare()
+	wait(250)
+
+	attack_do()
+	attack_clear()
+	clear_combatdata()
+	wait(50)
+
+
+		--norush--
+	build(1, academy, 80)
+	define_max(100, marine)
+	defensebuild_ag(1, marine)
+	defenseuse_ag(1, marine)
+	defensebuild_aa(1, marine)
+	defenseuse_aa(1, marine)
+	defenseuse_ag(1, goliath)
+	defenseuse_aa(1, goliath)
+	defenseuse_gg(1, goliath)
+	defenseuse_ga(1, goliath)
+	defensebuild_ag(1, goliath)
+	defensebuild_aa(1, goliath)
+	build(3, machine_shop, 80)
+	build(4, factory, 80)
+	wait_buildstart(4, factory)
+	train(10, siege_tank)
+	wait(10)
+
+	multirun(TMCx 0005)
+	player_need(1, academy)
+	wait(10)
+
+	player_need(1, factory)
+	player_need(1, machine_shop)
+	train(12, siege_tank)
+	wait(1)
+
+	multirun(TMCx 0999)
+	wait(1)
+
+
+		--TMCx 0019--
+	wait(1)
+
+	attack_add(30, siege_tank)
+	train(1, siege_tank)
+	wait(100)
+
+	attack_prepare()
+	wait(550)
+
+	attack_do()
+	attack_clear()
+	clear_combatdata()
+	wait(100)
+
+	enemyowns_jump(starport, TMCx 0998)
+	enemyowns_jump(stargate, TMCx 0998)
+	enemyowns_jump(spire, TMCx 0998)
+	wait(10)
+
+	goto(TMCx 0019)
+
+
+		--TMCx 0998--
+	wait(1)
+
+	notowns_jump(armory, TMCx 0019)
+	wait(12)
+
+	attack_add(60, siege_tank)
+	attack_add(20, goliath)
+	train(1, siege_tank)
+	train(1, goliath)
+	wait(100)
+
+	attack_prepare()
+	wait(550)
+
+	attack_do()
+	attack_clear()
+	clear_combatdata()
+	wait(100)
+
+	enemyowns_jump(physics_lab, stage3)
+	enemyowns_jump(fleet_beacon, stage3)
+	enemyowns_jump(arbiter_tribunal, stage3)
+	enemyowns_jump(hive, stage3)
+	wait(10)
+
+	goto(TMCx 0998)
+
+
+		--stage3--
+	wait(1)
+
+	build(2, starport, 70)
+	wait_buildstart(2, starport)
+	multirun(Battlecruiser)
+
+		--loopchoice--
+	attack_add(60, siege_tank)
+	attack_add(20, goliath)
+	train(1, siege_tank)
+	train(1, goliath)
+	wait(100)
+
+	attack_prepare()
+	wait(550)
+
+	attack_do()
+	attack_clear()
+	clear_combatdata()
+	wait(100)
+
+
+		--check--
+	notowns_jump(physics_lab, loopchoice)
+	wait(10)
+
+	defenseuse_gg(1, battlecruiser)
+	defenseuse_ga(1, battlecruiser)
+	defenseuse_aa(1, battlecruiser)
+	defenseuse_ag(1, battlecruiser)
+	attack_add(60, siege_tank)
+	attack_add(25, goliath)
+	attack_add(60, battlecruiser)
+	train(1, siege_tank)
+	wait(100)
+
+	attack_prepare()
+	wait(550)
+
+	attack_do()
+	attack_clear()
+	clear_combatdata()
+	wait(100)
+
+	goto(check)
+
+
+		--TMCx 0006--
+	wait(10)
+
+	build(14, scv, 80)
+	wait_buildstart(14, scv)
+	build(16, scv, 80)
+	wait_buildstart(16, scv)
+	build(18, scv, 80)
+	wait_buildstart(18, scv)
+	build(20, scv, 80)
+	wait_buildstart(20, scv)
+	build(22, scv, 80)
+	wait_buildstart(22, scv)
+	build(24, scv, 40)
+	wait_buildstart(24, scv)
+	build(26, scv, 40)
+	wait_buildstart(26, scv)
+	build(28, scv, 40)
+	wait_buildstart(28, scv)
+	wait(10)
+
+
+		--TMCx 0021--
+	wait(1)
+
+	notowns_jump(academy, TMCx 0021)
+	wait(100)
+
+	build(1, comsat_station, 60)
+	wait_build(1, comsat_station)
+	wait(10)
+
+	stop()
+
+
+		--TMCx 0002--
+	wait(1)
+
+	define_max(80, scv)
+	define_max(100, siege_tank)
+	define_max(12, goliath)
+	define_max(8, marine)
+	define_max(12, medic)
+	define_max(12, firebat)
+	define_max(255, ghost)
+	define_max(255, battlecruiser)
+	define_max(15, vulture)
+	define_max(10, science_vessel)
+	define_max(255, wraith)
+	define_max(255, nuclear_missile)
+	define_max(2, dropship)
+	build(1, command_center, 150)
+	wait_build(1, command_center)
+	build(6, scv, 80)
+	wait_build(6, scv)
+	multirun(TMCx 0022)
+	build(8, scv, 80)
+	wait_build(8, scv)
+	build(1, supply_depot, 80)
+	wait_buildstart(1, supply_depot)
+	build(10, scv, 80)
+	wait_build(10, scv)
+	build(1, barracks, 80)
+	wait_buildstart(1, barracks)
+	build(12, scv, 80)
+	wait_build(1, barracks)
+	train(2, marine)
+	defensebuild_gg(1, marine)
+	defenseuse_gg(1, marine)
+	defensebuild_ga(1, marine)
+	defenseuse_ga(1, marine)
+	build(1, bunker, 80)
+	train(4, marine)
+	build(2, supply_depot, 80)
+	wait_buildstart(2, supply_depot)
+	wait(10)
+
+	multirun(TMCx 0006)
+	build(2, barracks, 80)
+	wait_buildstart(2, barracks)
+	train(6, marine)
+	build(2, bunker, 80)
+	train(8, marine)
+	build(1, refinery, 100)
+	wait_buildstart(1, refinery)
+	farms_timing()
+	goto(TMCx Marinemass)
+
+		--TMCx 0003--
+	wait(1)
+
+	define_max(80, scv)
+	define_max(100, siege_tank)
+	define_max(15, goliath)
+	define_max(6, marine)
+	define_max(12, medic)
+	define_max(14, firebat)
+	define_max(255, ghost)
+	define_max(255, battlecruiser)
+	define_max(20, vulture)
+	define_max(10, science_vessel)
+	define_max(255, wraith)
+	define_max(255, nuclear_missile)
+	define_max(2, dropship)
+	build(1, command_center, 150)
+	wait_build(1, command_center)
+	build(6, scv, 80)
+	wait_build(6, scv)
+	multirun(TMCx 0022)
+	build(7, scv, 80)
+	wait_buildstart(7, scv)
+	build(1, supply_depot, 80)
+	wait_buildstart(1, supply_depot)
+	build(8, scv, 80)
+	wait_buildstart(8, scv)
+	build(1, barracks, 80)
+	wait_buildstart(1, barracks)
+	build(9, scv, 80)
+	wait_buildstart(9, scv)
+	build(10, scv, 80)
+	wait_buildstart(10, scv)
+	wait_build(1, supply_depot)
+	wait_build(1, barracks)
+	build(1, academy, 80)
+	wait_buildstart(1, academy)
+	train(2, marine)
+	defensebuild_gg(1, marine)
+	defenseuse_gg(1, marine)
+	defensebuild_ga(1, marine)
+	defenseuse_ga(1, marine)
+	defensebuild_gg(1, firebat)
+	defenseuse_gg(1, firebat)
+	build(1, bunker, 80)
+	build(12, scv, 80)
+	wait_buildstart(12, scv)
+	build(1, refinery, 100)
+	wait_buildstart(1, refinery)
+	build(2, barracks, 80)
+	wait_buildstart(2, barracks)
+	train(4, marine)
+	multirun(TMCx 0006)
+	wait(1)
+
+	build(2, bunker, 80)
+	train(2, firebat)
+	build(2, supply_depot, 80)
+	wait_buildstart(2, supply_depot)
+	farms_timing()
+	train(4, firebat)
+	train(5, marine)
+	goto(TMCx Marinemass)
+
+		--TMCx 0039--
+	wait(1)
+
+	start_town()
+	build(1, command_center, 90)
+	wait_build(1, command_center)
+
+		--TMCx 0040--
+	wait(240)
+
+	notowns_jump(academy, TMCx 0040)
+	wait(1)
+
+	get_oldpeons(8)
+	build(1, comsat_station, 80)
+	wait_build(1, comsat_station)
+	wait(1)
+
+	multirun(TMCx 0041)
+	wait(50)
+
+	build(9, scv, 60)
+	wait_buildstart(9, scv)
+	wait(50)
+
+	build(10, scv, 60)
+	wait_buildstart(10, scv)
+	build(12, scv, 60)
+	wait_buildstart(12, scv)
+	build(14, scv, 60)
+	wait_buildstart(14, scv)
+	build(16, scv, 60)
+	wait_buildstart(16, scv)
+	build(18, scv, 60)
+	wait_buildstart(18, scv)
+	wait(500)
+
+	build(1, factory, 60)
+	wait_build(1, factory)
+	build(1, machine_shop, 60)
+	wait(150)
+
+	stop()
+
+
+		--TMCx 0007--
+	wait(24)
+
+	notowns_jump(barracks, TMCx 0007)
+	wait(24)
+
+	creep(4)
+	build(1, bunker, 80)
+	wait_build(1, bunker)
+	wait(500)
+
+	build(2, bunker, 70)
+	wait_build(2, bunker)
+	wait(250)
+
+	stop()
+
+
+		--TMCx 0008--
+	wait(500)
+
+	notowns_jump(engineering_bay, TMCx 0008)
+	wait(1)
+
+	creep(4)
+	build(1, missile_turret, 80)
+	wait_build(1, missile_turret)
+	build(2, missile_turret, 70)
+	wait_build(2, missile_turret)
+	build(3, missile_turret, 60)
+	wait_build(3, missile_turret)
+	build(4, missile_turret, 60)
+	wait_build(4, missile_turret)
+	build(5, missile_turret, 50)
+	wait_build(5, missile_turret)
+	build(6, missile_turret, 50)
+	wait_build(6, missile_turret)
+	wait(100)
+
+	stop()
+
+
+		--TMCx 0041--
+	wait(200)
+
+	notowns_jump(barracks, TMCx 0041)
+	wait(24)
+
+	creep(4)
+	build(1, bunker, 60)
+	wait_build(1, bunker)
+	wait(500)
+
+	build(2, bunker, 60)
+	wait_build(2, bunker)
+	wait(240)
+
+
+		--Enginturretcheck--
+	wait(700)
+
+	notowns_jump(engineering_bay, Enginturretcheck)
+	wait(10)
+
+	creep(4)
+	build(1, missile_turret, 60)
+	wait_build(1, missile_turret)
+	build(2, missile_turret, 60)
+	wait_build(2, missile_turret)
+	build(3, missile_turret, 60)
+	wait_build(3, missile_turret)
+	build(4, missile_turret, 60)
+	wait_build(4, missile_turret)
+	build(5, missile_turret, 60)
+	wait_build(5, missile_turret)
+	wait(100)
+
+	stop()
+
+
+		--TMCx 0004--
+	wait(1200)
+
+	notowns_jump(academy, TMCx 0004)
+	wait(100)
+
+	tech(stim_packs, 40)
+	wait(4000)
+
+	upgrade(1, marine_range, 40)
+	wait(4000)
+
+	stop()
+
+
+		--TMCx 0005--
+	wait(1500)
+
+	notowns_jump(armory, TMCx 0005)
+	wait(100)
+
+	upgrade(1, t_vehicle_weapon, 40)
+	wait(3600)
+
+	upgrade(1, t_vehicle_plating, 40)
+	wait(3500)
+
+	build(1, starport, 60)
+	wait_build(1, starport)
+	wait(100)
+
+	multirun(transports)
+	build(1, science_facility, 60)
+	wait_build(1, science_facility)
+	wait(1)
+
+	upgrade(2, t_vehicle_weapon, 40)
+	wait(4000)
+
+	upgrade(3, t_vehicle_weapon, 40)
+	wait(4500)
+
+	upgrade(2, t_vehicle_plating, 40)
+	wait(3500)
+
+	upgrade(3, t_vehicle_plating, 40)
+	wait(4500)
+
+
+		--infantryupgr.--
+	wait(700)
+
+	notowns_jump(engineering_bay, infantryupgr.)
+	upgrade(1, t_infantry_weapon, 40)
+	wait(3500)
+
+	upgrade(2, t_infantry_weapon, 40)
+	wait(4000)
+
+	upgrade(3, t_infantry_weapon, 40)
+	wait(4300)
+
+	stop()
+
+
+		--TMCx 00055--
+	wait(750)
+
+	notowns_jump(engineering_bay, TMCx 00055)
+	wait(100)
+
+	upgrade(1, t_infantry_weapon, 40)
+	wait(3600)
+
+	upgrade(1, t_infantry_armor, 40)
+	wait(3500)
+
+	build(1, starport, 60)
+	wait_build(1, starport)
+	wait(100)
+
+	multirun(transports)
+	build(1, science_facility, 60)
+	wait_build(1, science_facility)
+	wait(1)
+
+	upgrade(2, t_infantry_weapon, 40)
+	wait(4000)
+
+	upgrade(3, t_infantry_weapon, 40)
+	wait(4500)
+
+	upgrade(2, t_infantry_armor, 40)
+	wait(3900)
+
+	upgrade(3, t_infantry_armor, 40)
+	wait(4200)
+
+	wait_build(1, armory)
+	upgrade(1, t_vehicle_weapon, 40)
+	wait(3600)
+
+	upgrade(2, t_vehicle_weapon, 40)
+	wait(4000)
+
+	upgrade(3, t_vehicle_weapon, 40)
+	wait(42)
+
+	stop()
+
+
+		--TMCx 9999--
+	wait(100)
+
+	stop()
+
+
+		--TMCx 0011--
+	wait(6000)
+
+	expand(2, TMCx 0039)
+	wait(4050)
+
+	expand(3, TMCx 0039)
+	wait(5950)
+
+
+		--expoloop--
+	expand(99, TMCx 0039)
+	wait(4400)
+
+	goto(expoloop)
+
+
+		--TMCx 0010--
+	wait(1)
+
+	start_town()
+	build(1, command_center, 90)
+	wait_build(1, command_center)
+
+		--TMCx 0053--
+	wait(240)
+
+	notowns_jump(academy, TMCx 0053)
+	wait(1)
+
+	get_oldpeons(8)
+	build(1, comsat_station, 80)
+	wait_build(1, comsat_station)
+	wait(1)
+
+	multirun(TMCx 0041)
+	wait(50)
+
+	build(6, scv, 60)
+	wait_buildstart(6, scv)
+	build(10, scv, 60)
+	wait_buildstart(10, scv)
+	build(12, scv, 60)
+	wait_buildstart(12, scv)
+	build(13, scv, 60)
+	wait_buildstart(13, scv)
+	build(14, scv, 60)
+	wait_buildstart(14, scv)
+	build(15, scv, 60)
+	wait_buildstart(15, scv)
+	build(17, scv, 60)
+	wait_buildstart(17, scv)
+	wait(500)
+
+	build(1, factory, 60)
+	wait_build(1, factory)
+	build(1, machine_shop, 60)
+	wait(3)
+
+	stop()
+
+
+		--TMCx 0022--
+	enemyowns_jump(spawning_pool, TMCx 0064)
+	enemyowns_jump(gateway, TMCx 0064)
+	wait(60)
+
+	goto(TMCx 0022)
+
+
+		--TMCx 0064--
+	player_need(1, barracks)
+	wait_build(1, barracks)
+	train(1, marine)
+	player_need(1, bunker)
+	defenseuse_gg(1, marine)
+	train(2, marine)
+	stop()
+
+
+		--TMCx 0000--
+	enemyowns_jump(templar_archives, TMCx 0065)
+	enemyowns_jump(lurker, TMCx 0065)
+	enemyowns_jump(control_tower, TMCx 0065)
+	enemyowns_jump(covert_ops, TMCx 0065)
+	enemyowns_jump(stargate, TMCx 0065)
+	enemyowns_jump(spire, TMCx 0065)
+	wait(500)
+
+	goto(TMCx 0000)
+
+
+		--TMCx 0065--
+	build(1, barracks, 80)
+	wait_build(1, barracks)
+	build(1, engineering_bay, 80)
+	wait_build(1, engineering_bay)
+	build(2, missile_turret, 80)
+	wait_build(2, missile_turret)
+	wait(100)
+
+	build(3, missile_turret, 80)
+	wait_build(3, missile_turret)
+	build(4, missile_turret, 80)
+	wait_build(4, missile_turret)
+	wait(75)
+
+	stop()
+
+
+		--TMCx 0999--
+	wait(90)
+
+	wait_build(1, machine_shop)
+	upgrade(1, goliath_range, 40)
+	wait(100)
+
+	stop()
+
+
+		--TMCx Marinemass--
+	define_max(80, scv)
+	define_max(100, siege_tank)
+	define_max(100, goliath)
+	define_max(100, marine)
+	define_max(25, firebat)
+	define_max(25, medic)
+	define_max(255, ghost)
+	define_max(100, battlecruiser)
+	define_max(100, vulture)
+	define_max(10, science_vessel)
+	define_max(100, wraith)
+	define_max(1, nuclear_missile)
+	define_max(255, wraith)
+	define_max(4, dropship)
+	train(8, marine)
+	build(3, barracks, 80)
+	build(1, academy, 80)
+	train(10, marine)
+	train(12, marine)
+	defensebuild_gg(1, firebat)
+	defenseuse_gg(1, firebat)
+	defenseuse_ga(1, firebat)
+	build(1, engineering_bay, 80)
+	wait(5)
+
+	expand(1, TMCx 00109)
+	wait(100)
+
+	multirun(TMCx 00111)
+	train(14, marine)
+	build(5, barracks, 80)
+	multirun(barracksmore)
+	multirun(TMCx 0004)
+	attack_add(24, marine)
+	attack_add(10, firebat)
+	attack_add(10, medic)
+	train(12, marine)
+	train(5, firebat)
+	train(5, medic)
+	attack_prepare()
+	wait(500)
+
+	attack_do()
+	attack_clear()
+	clear_combatdata()
+	wait(100)
+
+	build(1, factory, 80)
+	multirun(machineshop)
+	defenseuse_ag(1, goliath)
+	defenseuse_aa(1, goliath)
+	defenseuse_gg(1, goliath)
+	defenseuse_ga(1, goliath)
+	defensebuild_ag(1, goliath)
+	defensebuild_aa(1, goliath)
+	multirun(TMCx 00055)
+
+		--TMCx 00191--
+	wait(10)
+
+	attack_add(60, marine)
+	attack_add(15, medic)
+	attack_add(15, firebat)
+	train(12, marine)
+	train(6, firebat)
+	train(6, medic)
+	attack_prepare()
+	wait(550)
+
+	attack_do()
+	attack_clear()
+	clear_combatdata()
+	wait(100)
+
+	enemyowns_jump(fleet_beacon, stage3inf)
+	enemyowns_jump(arbiter_tribunal, stage3inf)
+	enemyowns_jump(hive, stage3inf)
+	enemyowns_jump(physics_lab, stage3inf)
+	wait(10)
+
+	goto(TMCx 00191)
+
+
+		--stage3inf--
+	wait(1)
+
+	notowns_jump(factory, TMCx 00191)
+	build(2, starport, 70)
+	attack_add(60, marine)
+	attack_add(15, medic)
+	attack_add(12, firebat)
+	train(20, marine)
+	train(6, medic)
+	train(6, firebat)
+	attack_prepare()
+	wait(550)
+
+	attack_do()
+	attack_clear()
+	clear_combatdata()
+	wait(100)
+
+	multirun(Battlecruiser)
+
+		--loopchoiceinf--
+	attack_add(60, marine)
+	attack_add(15, medic)
+	attack_add(15, firebat)
+	train(12, marine)
+	train(6, medic)
+	train(6, firebat)
+	attack_prepare()
+	wait(550)
+
+	attack_do()
+	attack_clear()
+	clear_combatdata()
+	wait(100)
+
+
+		--checkinf--
+	notowns_jump(physics_lab, loopchoiceinf)
+	notowns_jump(control_tower, loopchoiceinf)
+	wait(10)
+
+	attack_add(60, marine)
+	attack_add(15, medic)
+	attack_add(60, battlecruiser)
+	train(20, marine)
+	train(6, medic)
+	train(1, battlecruiser)
+	wait(100)
+
+	attack_prepare()
+	wait(550)
+
+	attack_do()
+	attack_clear()
+	clear_combatdata()
+	wait(100)
+
+	goto(checkinf)
+
+
+		--TMCx 00109--
+	wait(1)
+
+	start_town()
+	build(1, command_center, 90)
+	wait_build(1, command_center)
+
+		--TMCx 00539--
+	wait(240)
+
+	notowns_jump(academy, TMCx 00539)
+	wait(1)
+
+	get_oldpeons(8)
+	build(1, comsat_station, 80)
+	wait_build(1, comsat_station)
+	wait(1)
+
+	multirun(TMCx 0041)
+	wait(50)
+
+	build(6, scv, 60)
+	wait_buildstart(6, scv)
+	build(10, scv, 60)
+	wait_buildstart(10, scv)
+	build(12, scv, 60)
+	wait_buildstart(12, scv)
+	build(13, scv, 60)
+	wait_buildstart(13, scv)
+	build(14, scv, 60)
+	wait_buildstart(14, scv)
+	build(15, scv, 60)
+	wait_buildstart(15, scv)
+	build(17, scv, 60)
+	wait_buildstart(17, scv)
+	wait(500)
+
+	build(1, barracks, 60)
+	wait(40)
+
+	stop()
+
+
+		--TMCx 00111--
+	wait(6000)
+
+	expand(2, TMCx 00109)
+	wait(4100)
+
+	expand(3, TMCx 00109)
+	wait(5900)
+
+
+		--expoloop1--
+	expand(99, TMCx 00109)
+	wait(4950)
+
+	goto(expoloop1)
+
+
+		--Siege--
+	wait(1250)
+
+	notowns_jump(machine_shop, Siege)
+	wait(1)
+
+	tech(siege_mode, 50)
+	wait(3600)
+
+	tech(spider_mines, 40)
+	wait(3700)
+
+	upgrade(1, vulture_speed, 40)
+	wait(1)
+
+	stop()
+
+
+		--transports--
+	wait(1000)
+
+	wait_build(1, starport)
+	build(1, control_tower, 60)
+	wait_build(1, control_tower)
+	wait(1000)
+
+	define_max(4, dropship)
+	check_transports()
+	stop()
+
+
+		--Battlecruiser--
+	wait(600)
+
+	build(1, science_facility, 70)
+	wait_build(1, science_facility)
+	wait(10)
+
+	build(1, physics_lab, 70)
+	wait_build(1, physics_lab)
+	defenseuse_gg(1, battlecruiser)
+	defenseuse_ga(1, battlecruiser)
+	defenseuse_aa(1, battlecruiser)
+	defenseuse_ag(1, battlecruiser)
+	defensebuild_gg(1, battlecruiser)
+	defensebuild_ga(1, battlecruiser)
+	defensebuild_aa(1, battlecruiser)
+	defensebuild_ag(1, battlecruiser)
+	build(2, starport, 70)
+	wait_build(2, starport)
+	build(2, control_tower, 70)
+	wait(10)
+
+	build(2, armory, 60)
+	wait_build(2, armory)
+	upgrade(1, t_ship_weapon, 40)
+	wait(3500)
+
+	upgrade(1, t_ship_plating, 40)
+	wait(3500)
+
+	wait_build(1, science_facility)
+	upgrade(2, t_ship_weapon, 40)
+	wait(3500)
+
+	upgrade(2, t_ship_plating, 40)
+	wait(3500)
+
+	upgrade(3, t_ship_weapon, 40)
+	wait(3500)
+
+	upgrade(3, t_ship_plating, 40)
+	wait(3500)
+
+	stop()
+
+
+		--barracksmore--
+	wait(1)
+
+	resources_jump(400, 0, barracks6)
+	wait(400)
+
+	goto(barracksmore)
+
+
+		--barracks6--
+	wait(1000)
+
+	build(6, barracks, 60)
+	wait_build(6, barracks)
+
+		--barracksmore1--
+	wait(1)
+
+	resources_jump(600, 0, barracks7)
+	wait(400)
+
+	goto(barracksmore1)
+
+
+		--barracks7--
+	wait(1)
+
+	build(7, barracks, 60)
+	wait_build(7, barracks)
+
+		--barracksmore2--
+	wait(1)
+
+	resources_jump(800, 0, barracks8)
+	wait(400)
+
+	goto(barracksmore2)
+
+
+		--barracks8--
+	wait(1)
+
+	build(8, barracks, 60)
+	wait_build(8, barracks)
+	stop()
+
+
+		--machineshop--
+	wait(1)
+
+	wait_build(1, factory)
+	build(1, machine_shop, 70)
+	wait(10)
+
+	wait_build(1, machine_shop)
+	wait(100)
+
+	tech(siege_mode, 50)
+	wait(360)
+
+	stop()
+
+
+

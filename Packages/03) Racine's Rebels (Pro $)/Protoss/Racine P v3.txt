@@ -1,0 +1,1156 @@
+# Racine 3.0.1 Protoss
+# March 18, 2013
+
+PMCx(1343, 101, aiscript):
+	#start_campaign()
+	start_town()
+	transports_off()
+	farms_notiming()
+
+#if DEBUG
+    debug(debugmsg, Racine 3 Protoss)
+    --debugmsg--
+#endif
+
+	race_jump(vs_t_air, vs_z_air, vs_p_air)
+#tzp
+
+		--vs_t_air--
+	groundmap_jump(vs_t_ground)
+	define_max(255, reaver)
+	build(1, nexus, 20)
+	wait_build(1, nexus)
+	build(7, probe, 20)
+	wait_buildstart(7, probe)
+	build(1, pylon, 20)
+	wait_buildstart(1, pylon)
+	build(9, probe, 20)
+	wait_buildstart(9, probe)
+	build(1, gateway, 20)
+	wait_buildstart(1, gateway)
+	define_max(255, zealot)
+	define_max(2, dragoon)
+	multirun(cheats)
+	build(1, assimilator, 20)
+	wait_buildstart(1, assimilator)
+	build(12, probe, 20)
+	wait_buildstart(12, probe)
+	build(1, cybernetics_core, 20)
+	wait_buildstart(1, cybernetics_core)
+	farms_timing()
+	build(15, probe, 20)
+	wait_buildstart(15, probe)
+	build(1, robotics_facility, 20)
+	wait_buildstart(1, robotics_facility)
+	build(1, citadel_of_adun, 20)
+	wait_buildstart(1, citadel_of_adun)
+	build(2, gateway, 20)
+	wait_buildstart(2, gateway)
+	train(1, dragoon)
+	defenseuse_gg(1, dragoon)
+	defenseuse_ga(1, dragoon)
+	build(1, templar_archives, 20)
+	wait_buildstart(1, templar_archives)
+	train(2, dragoon)
+	train(1, shuttle)
+	train(4, dark_templar)
+	train(2, shuttle)
+	wait_train(4, dark_templar)
+	attack_do()
+	attack_clear()
+	attack_add(4, dark_templar)
+	attack_prepare()
+	wait(500)
+
+	define_max(60, zealot)
+	define_max(60, dragoon)
+	train(2, shuttle)
+	guard_resources(dark_templar)
+	build(4, gateway, 20)
+	wait_buildstart(4, gateway)
+	upgrade(1, dragoon_range, 15)
+	upgrade(1, zealot_speed, 15)
+	build(1, observatory, 20)
+	multirun(vta_3forge_upgrades) # 3 forges + upgrades
+	multirun(vta_expo_loop)
+	wait_buildstart(1, observatory)
+	build(15, probe, 20)
+	wait_buildstart(15, probe)
+	train(2, observer)
+	train(8, dragoon)
+	train(4, shuttle)
+	defensebuild_gg(1, dragoon)
+	defensebuild_ga(1, dragoon)
+	train(6, dark_templar)
+	build(1, robotics_support_bay, 20)
+	wait_buildstart(1, robotics_support_bay)
+	multirun(vta_attack_loop)
+	train(10, dragoon)
+	upgrade(1, shuttle_speed, 15)
+	defensebuild_gg(1, zealot)
+	train(6, zealot)
+	defensebuild_gg(1, dark_templar)
+	defenseuse_gg(1, dark_templar)
+	train(6, shuttle)
+	build(5, gateway, 20)
+	wait_buildstart(5, gateway)
+	train(12, zealot)
+	train(10, dragoon)
+	train(20, zealot)
+	train(20, dragoon)
+	train(26, dragoon)
+	stop()
+
+
+		--vta_attack_loop--
+	attack_do()
+	attack_clear()
+	attack_add(14, zealot)
+	attack_add(14, dragoon)
+	attack_prepare()
+	train(6, shuttle)
+	train(4, observer)
+	wait(500)
+
+	goto(vta_attack_loop)
+
+
+		--vta_expo_loop--
+	expand(99, vta_expo)
+	wait(7500)
+
+	goto(vta_expo_loop)
+
+
+		--vta_expo--
+	start_town()
+	build(1, nexus, 20)
+	wait_buildstart(1, nexus)
+	build(2, pylon, 20)
+	wait_build(1, pylon)
+	defenseuse_gg(1, dragoon)
+	defenseuse_ga(1, dragoon)
+	defenseuse_gg(1, zealot)
+	build(4, photon_cannon, 20)
+	build(10, probe, 20)
+	build(1, assimilator, 20)
+	build(1, gateway, 20)
+	stop()
+
+
+		--vta_3forge_upgrades--
+	build(3, forge, 20)
+	wait_build(3, forge)
+	upgrade(1, p_ground_weapon, 15)
+	upgrade(1, p_armor, 15)
+	upgrade(1, p_plasma_shield, 15)
+	wait(5000) # up from 3000
+
+	upgrade(2, p_ground_weapon, 15)
+	upgrade(2, p_armor, 15)
+	upgrade(2, p_plasma_shield, 15)
+	wait(5000) # up from 3000
+
+	upgrade(3, p_ground_weapon, 15)
+	upgrade(3, p_armor, 15)
+	upgrade(3, p_plasma_shield, 15)
+	stop()
+
+
+		--vs_t_ground--
+	define_max(30, high_templar)
+	define_max(40, dragoon)
+	define_max(40, zealot)
+	build(1, nexus, 80)
+	wait_build(1, nexus)
+	random_jump(64, vtg_2_gate)
+	#1 gate core
+	build(8, probe, 80)
+	wait_buildstart(8, probe)
+	build(1, pylon, 80)
+	wait_buildstart(1, pylon)
+	build(9, probe, 80)
+	wait_buildstart(9, probe)
+	build(1, gateway, 80)
+	wait_buildstart(1, gateway)
+	defensebuild_gg(1, zealot)
+	defenseuse_gg(1, zealot)
+	build(10, probe, 80)
+	wait_buildstart(10, probe)
+	build(1, assimilator, 80)
+	wait_buildstart(1, assimilator)
+	build(12, probe, 80)
+	wait_buildstart(12, probe)
+
+		--vtg_2gate_return--
+	defenseuse_gg(1, zealot) # New. Without this, Zealots won't defend after a 2 gate!
+	build(1, cybernetics_core, 80)
+	wait_buildstart(1, cybernetics_core)
+	defenseuse_gg(1, dragoon)
+	defenseuse_ag(1, dragoon)
+	multirun(cheats)
+	train(1, zealot)
+	build(2, gateway, 80)
+	wait_buildstart(2, gateway)
+	farms_timing()
+	random_jump(64, vtg_dt_rush)
+	
+	build(14, probe, 80)
+	wait_buildstart(14, probe)
+	multirun(vtg_training)
+	build(15, probe, 80)
+	wait_buildstart(15, probe)
+	build(1, forge, 80)
+	wait_buildstart(1, forge)
+	random_jump(128, vtg_skip_attack)
+	send_suicide(0)
+
+		--vtg_skip_attack--
+	expand(1, vtg_expo)
+	expand(2, vtg_expo)
+	build(1, citadel_of_adun, 80)
+	wait_buildstart(1, citadel_of_adun)
+	multirun(vtg_robo_obs)
+	upgrade(1, dragoon_range, 80)
+	upgrade(1, p_ground_weapon, 80)
+	build(1, templar_archives, 80)
+	wait_buildstart(1, templar_archives)
+	upgrade(1, zealot_speed, 80)
+	train(10, zealot)
+	train(8, dragoon)
+	wait_train(8, dragoon)
+	send_suicide(0)
+	tech(psionic_storm, 170)
+	build(5, gateway, 80)
+	wait_buildstart(5, gateway)
+	train(8, high_templar)
+	multirun(vtg_grnd_upgrades)
+	multirun(vtg_attack)
+	multirun(vtg_expo_loop)
+	train(10, zealot)
+	train(14, dragoon)
+	train(20, zealot)
+	send_suicide(0)
+	random_jump(85, vtg_carrier_jump)
+
+		--vtg_attack_loop--
+	multirun(vtg_attack2)
+	train(6, high_templar)
+	train(20, zealot)
+	train(20, dragoon)
+	random_jump(80, vtg_carrier_jump)
+	send_suicide(0)
+	train(2, shuttle)
+	multirun(vtg_attack3)
+	train(8, dark_templar)
+	train(6, high_templar)
+	train(25, zealot)
+	random_jump(80, vtg_carrier_jump)
+	send_suicide(0)
+	wait(100) # added
+	goto(vtg_attack_loop)
+
+
+		--vtg_attack2--
+	attack_add(6, high_templar)
+	attack_add(4, dark_templar)
+	attack_add(15, zealot)
+	attack_add(15, dragoon)
+	attack_do()
+	attack_prepare()
+	attack_clear()
+	stop()
+
+
+		--vtg_attack3--
+	attack_add(25, zealot)
+	attack_add(4, dragoon)
+	attack_add(8, dark_templar)
+	attack_do()
+	attack_prepare()
+	attack_clear()
+	stop()
+
+
+		--vtg_2_gate--
+	multirun(cheats)
+	build(7, probe, 80)
+	wait_buildstart(7, probe)
+	build(1, pylon, 80)
+	wait_buildstart(1, pylon)
+	build(10, probe, 80)
+	wait_buildstart(10, probe)
+	build(1, gateway, 80)
+	build(2, gateway, 80)
+	build(12, probe, 80)
+	wait_buildstart(12, probe)
+	farms_timing()
+	train(2, zealot)
+	build(13, probe, 80)
+	train(4, zealot)
+	wait_train(2, zealot)
+	send_suicide(0)
+	train(6, zealot)
+	attack_add(6, zealot)
+	attack_do()
+	attack_clear()
+	goto(vtg_2gate_return)
+
+
+		--vtg_attack--
+	attack_add(4, high_templar)
+	attack_add(20, zealot)
+	attack_add(10, dragoon)
+	attack_do()
+	attack_prepare()
+	attack_clear()
+	stop()
+
+		--vtg_grnd_upgrades--
+	upgrade(2, p_ground_weapon, 80)
+	wait(5000) # down from 6000
+
+	upgrade(3, p_ground_weapon, 80)
+	stop()
+
+
+		--vzg_upgrades--
+	upgrade(1, p_ground_weapon, 5)
+
+		--vzg_upgrades_wait--
+	wait(500)
+
+	notowns_jump(templar_archives, vzg_upgrades_wait)
+	build(3, forge, 80)
+	wait_buildstart(3, forge)
+	upgrade(2, p_ground_weapon, 5)
+	upgrade(1, p_plasma_shield, 5)
+	upgrade(1, p_armor, 5)
+	wait(5000) # up from 4500
+
+	upgrade(3, p_ground_weapon, 5)
+	upgrade(2, p_plasma_shield, 5)
+	upgrade(2, p_armor, 5)
+	wait(5000) # up from 4500
+
+	upgrade(3, p_plasma_shield, 5)
+	upgrade(3, p_armor, 5)
+	stop()
+
+
+		--vtg_training--
+	train(2, zealot)
+	train(2, dragoon)
+	train(4, dragoon)
+	train(4, zealot)
+	train(6, dragoon)
+	train(8, zealot)
+	train(10, dragoon)
+	train(12, zealot)
+	train(15, dragoon)
+	train(20, zealot)
+	train(4, dark_templar)
+	train(2, high_templar)
+	train(15, zealot)
+	train(20, dragoon)
+	stop()
+
+
+		--vtg_dt_rush--
+	define_max(2, dragoon)
+	define_max(2, zealot)
+	build(1, citadel_of_adun, 80)
+	wait_buildstart(1, citadel_of_adun)
+	send_suicide(0)
+	build(14, probe, 80)
+	wait_buildstart(14, probe)
+	build(1, forge, 80)
+	wait_buildstart(1, forge)
+	build(1, templar_archives, 80)
+	wait_buildstart(1, templar_archives)
+	build(15, probe, 80)
+	wait_buildstart(15, probe)
+	build(1, photon_cannon, 80)
+	wait_buildstart(1, photon_cannon)
+	train(2, dark_templar)
+	upgrade(1, p_ground_weapon, 30)
+	multirun(vtg_expo_loop)
+	wait_train(2, dark_templar)
+	send_suicide(0)
+	upgrade(1, dragoon_range, 70)
+	train(2, dragoon)
+	build(3, gateway, 80)
+	wait_buildstart(3, gateway)
+	multirun(vtg_robo_obs2)
+	train(6, high_templar)
+	tech(psionic_storm, 70)
+	train(4, dark_templar)
+	defenseuse_gg(1, dark_templar)
+	upgrade(1, zealot_speed, 70)
+	build(5, gateway, 80)
+	wait_buildstart(5, gateway)
+	define_max(40, zealot)
+	define_max(30, dragoon)
+	multirun(vtg_expo_attack)
+	multirun(vtg_grnd_upgrades)
+	wait(2000)
+
+	goto(vtg_attack_loop)
+
+
+		--vtg_expo_attack--
+	#start_town()
+	train(8, zealot)
+	train(2, high_templar)
+	train(10, dragoon)
+	train(10, zealot)
+	train(12, dragoon)
+	wait_train(12, dragoon)
+	send_suicide(0)
+	expand(99, vtg_expo)
+	stop()
+
+
+		--vtg_robo_obs2--
+	build(1, robotics_facility, 80)
+	wait_build(1, robotics_facility)
+	train(1, shuttle)
+	build(1, observatory, 80)
+	wait_build(1, observatory)
+	train(2, observer)
+	wait_train(2, observer)
+	train(3, shuttle)
+	stop()
+
+
+		--vtg_carrier_jump--
+	send_suicide(0)
+	upgrade(1, p_air_weapon, 80)
+	multirun(vtg_stargates)
+	train(15, zealot)
+	train(15, dragoon)
+	train(5, high_templar)
+	multirun(vtg_carrier_ups)
+	wait(3000)
+
+	send_suicide(0)
+	goto(vtg_carrier_atk_loop)
+
+
+		--vtg_stargates--
+	define_max(20, carrier)
+	define_max(1, scout)
+	build(2, stargate, 80)
+	wait_buildstart(2, stargate)
+	build(4, stargate, 80)
+	wait_buildstart(4, stargate)
+	build(6, stargate, 80)
+	wait_buildstart(6, stargate)
+	build(1, fleet_beacon, 80)
+	send_suicide(0)
+	stop()
+
+
+		--vtg_carrier_atk_loop--
+	attack_add(10, carrier)
+	attack_add(15, dragoon)
+	attack_add(3, high_templar)
+	attack_prepare()
+	wait(500)
+
+	attack_do()
+	attack_clear()
+	send_suicide(0)
+	train(22, dragoon)
+	train(5, high_templar)
+	train(3, observer)
+	wait(500)
+
+	goto(vtg_carrier_atk_loop)
+
+
+		--vtg_carrier_ups--
+	wait_build(1, fleet_beacon)
+	upgrade(1, carrier_capacity, 70)
+	defensebuild_gg(2, carrier)
+	defenseuse_gg(2, carrier)
+		--vtg_carrier_rebuild-- 
+		# added so it doesn't loop through the upgrades...
+	train(6, carrier)
+	wait_train(6, carrier)
+	train(10, carrier)
+	wait_train(10, carrier)
+	wait(2000)
+
+	goto(vtg_carrier_rebuild)
+
+
+		--vtg_expo_loop--
+	expand(99, vtg_expo)
+	wait(6500)
+
+	send_suicide(0)
+	goto(vtg_expo_loop)
+
+
+		--vtg_expo--
+	start_town()
+	build(1, nexus, 80)
+	wait_buildstart(1, nexus)
+	build(1, pylon, 80)
+	wait_buildstart(1, pylon)
+	build(2, pylon, 80)
+	wait_buildstart(2, pylon)
+	build(2, gateway, 80)
+	wait_buildstart(2, gateway)
+	build(3, photon_cannon, 80)
+	build(5, probe, 80)
+	wait_build(5, probe)
+	defensebuild_gg(1, dark_templar)
+	defenseuse_gg(1, dark_templar)
+	build(12, probe, 80)
+	wait_build(12, probe)
+	build(1, assimilator, 80)
+	stop()
+
+
+		--vs_z_air--
+	groundmap_jump(vs_z_ground)
+	define_max(255, dragoon)
+	define_max(255, carrier)
+	define_max(255, reaver)
+	define_max(38, probe)
+	define_max(255, scout)
+	define_max(255, zealot)
+	build(1, nexus, 20)
+	wait_build(1, nexus)
+	build(8, probe, 20)
+	wait_buildstart(8, probe)
+	build(1, pylon, 20)
+	wait_buildstart(1, pylon)
+	build(10, probe, 20)
+	wait_buildstart(10, probe)
+	build(1, gateway, 20)
+	wait_buildstart(1, gateway)
+	multirun(cheats)
+	build(1, assimilator, 20)
+	wait_buildstart(1, assimilator)
+	build(12, probe, 20)
+	wait_buildstart(12, probe)
+	build(1, cybernetics_core, 20)
+	wait_buildstart(1, cybernetics_core)
+	farms_timing()
+	build(15, probe, 20)
+	wait_buildstart(15, probe)
+	build(2, stargate, 20)
+	wait_buildstart(2, stargate)
+	build(1, forge, 20)
+	wait_buildstart(1, forge)
+	build(17, probe, 20)
+	wait_buildstart(17, probe)
+	defenseuse_aa(1, corsair)
+	build(18, probe, 20)
+	wait_buildstart(18, probe)
+	upgrade(1, dragoon_range, 5)
+	upgrade(1, p_air_weapon, 5)
+	defensebuild_aa(1, corsair)
+	train(2, corsair)
+	multirun(vza_corsair_stuff)
+	upgrade(1, p_ground_weapon, 5)
+	build(2, photon_cannon, 20)
+	wait_buildstart(2, photon_cannon)
+	build(2, gateway, 20)
+	wait_buildstart(2, gateway)
+	define_max(60, zealot)
+	define_max(60, dragoon)
+	build(1, citadel_of_adun, 20)
+	wait_buildstart(1, citadel_of_adun)
+	build(20, probe, 20)
+	wait_buildstart(20, probe)
+	train(8, corsair)
+	train(2, dragoon)
+	build(1, templar_archives, 20)
+	wait_buildstart(1, templar_archives)
+	train(4, dragoon)
+	build(6, photon_cannon, 20)
+	wait_buildstart(6, photon_cannon)
+	tech(psionic_storm, 5) # what's with the priorities here?
+	train(4, high_templar)
+	upgrade(1, zealot_speed, 5)
+	build(3, gateway, 20)
+	wait_buildstart(3, gateway)
+	multirun(vza_attack_loop)
+	train(8, high_templar)
+	build(5, gateway, 20)
+	wait_buildstart(5, gateway)
+	build(3, forge, 20)
+	wait_buildstart(3, forge)
+	train(10, zealot)
+	train(10, corsair)
+	train(10, dragoon)
+	upgrade(2, p_ground_weapon, 5)
+	upgrade(1, p_armor, 5)
+	upgrade(1, p_plasma_shield, 5)
+	wait(5000) # up from 3000
+
+	upgrade(3, p_ground_weapon, 5)
+	upgrade(2, p_armor, 5)
+	upgrade(2, p_plasma_shield, 5)
+	wait(5000) # up from 3000
+
+	upgrade(3, p_armor, 5)
+	upgrade(3, p_plasma_shield, 5)
+	stop()
+
+
+		--vza_attack_loop--
+	attack_do()
+	attack_clear()
+	attack_add(12, zealot)
+	attack_add(10, corsair)
+	attack_add(6, dragoon)
+	attack_add(6, high_templar)
+	attack_prepare()
+	train(6, shuttle)
+	wait(50)
+
+	goto(vza_attack_loop)
+
+
+		--vza_corsair_stuff--
+	train(6, corsair)
+	wait_train(6, corsair)
+	attack_do()
+	attack_clear()
+	attack_add(6, corsair)
+	attack_prepare()
+	wait(100)
+
+	build(1, robotics_facility, 20)
+	wait_build(1, robotics_facility)
+	build(1, observatory, 20)
+	wait_buildstart(1, observatory)
+	build(1, robotics_support_bay, 20)
+	wait_buildstart(1, robotics_support_bay)
+	train(1, shuttle)
+	train(8, corsair)
+	train(1, observer)
+	upgrade(1, shuttle_speed, 5)
+	multirun(vta_expo_loop)
+	train(2, observer)
+	build(1, fleet_beacon, 20)
+	wait_build(1, fleet_beacon)
+	tech(disruption_web, 5)
+	upgrade(2, p_air_weapon, 5)
+	train(12, corsair)
+	wait(2500)
+
+	upgrade(3, p_air_weapon, 5)
+	train(20, corsair)
+	stop()
+
+
+		--vs_z_ground--
+	random_jump(128, vzg_2_gate)
+	build(1, nexus, 80)
+	wait_build(1, nexus)
+	build(8, probe, 80)
+	wait_buildstart(8, probe)
+	build(1, pylon, 80)
+	wait_buildstart(1, pylon)
+	build(9, probe, 80)
+	wait_buildstart(9, probe)
+	multirun(cheats)
+	build(1, gateway, 80)
+	wait_buildstart(1, gateway)
+	defensebuild_gg(1, zealot)
+	defenseuse_gg(1, zealot)
+	build(10, probe, 80)
+	wait_buildstart(10, probe)
+	build(2, gateway, 80)
+	wait_buildstart(2, gateway)
+	farms_timing()
+	train(1, zealot)
+	build(12, probe, 80)
+	wait_buildstart(12, probe)
+
+		--vzg_2gate_return--
+	train(3, zealot)
+	build(13, probe, 80)
+	wait_buildstart(13, probe)
+	train(5, zealot)
+	build(1, assimilator, 80)
+	wait_buildstart(1, assimilator)
+	build(14, probe, 80)
+	wait_buildstart(14, probe)
+	build(1, forge, 80)
+	wait_buildstart(1, forge)
+	build(1, cybernetics_core, 80)
+	wait_buildstart(1, cybernetics_core)
+	defensebuild_gg(1, zealot)
+	defensebuild_gg(1, dragoon)
+	defensebuild_ga(1, dragoon)
+	defenseuse_gg(1, dragoon)
+	defenseuse_ga(1, dragoon)
+	train(7, zealot)
+	expand(1, vzg_expo)
+	multirun(vzg_upgrades)
+	build(15, probe, 80)
+	wait_buildstart(15, probe)
+	train(9, zealot)
+	multirun(vzg_cannons)
+	build(1, citadel_of_adun, 90)
+	wait_buildstart(1, citadel_of_adun)
+	upgrade(1, dragoon_range, 30)
+	train(2, dragoon)
+	build(16, probe, 80)
+	wait_buildstart(16, probe)
+	multirun(vzg_robo_obs)
+	train(6, dragoon)
+	upgrade(1, zealot_speed, 30)
+	build(1, templar_archives, 80)
+	wait_buildstart(1, templar_archives)
+	build(4, gateway, 80)
+	wait_buildstart(4, gateway)
+	train(10, dragoon)
+	tech(psionic_storm, 80)
+	train(4, high_templar)
+	train(10, zealot)
+	wait_train(10, zealot)
+	multirun(vzg_attack)
+	define_max(35, dragoon)
+	build(5, gateway, 80)
+	wait_buildstart(5, gateway)
+	guard_resources(dark_templar)
+	multirun(vzg_expo_loop)
+	multirun(vzg_attack_loop)
+
+		--vzg_defense_loop--
+	# This is a bit odd. 
+	defenseclear_gg()
+	defenseclear_ga()
+	defensebuild_gg(1, zealot)
+	defenseuse_gg(1, zealot)
+	defensebuild_gg(1, dragoon)
+	defenseuse_gg(1, dragoon)
+	defensebuild_ga(1, dragoon)
+	defenseuse_ga(1, dragoon)
+	defensebuild_gg(1, dark_templar)
+	defenseuse_gg(1, dark_templar)
+	defensebuild_gg(1, archon)
+	defenseuse_gg(1, archon)
+	defensebuild_ga(1, archon)
+	defenseuse_ga(1, archon)
+	wait(400)
+
+	goto(vzg_defense_loop)
+
+
+		--vzg_attack_loop--
+	attack_do()
+	attack_clear()
+	attack_add(8, high_templar)
+	attack_add(1, archon)
+	attack_add(4, dark_templar)
+	attack_add(12, zealot)
+	attack_add(12, dragoon)
+	attack_prepare()
+	wait(400)
+
+	attack_do()
+	attack_clear()
+	attack_add(6, high_templar)
+	attack_add(4, archon)
+	attack_add(16, dragoon)
+	attack_add(8, zealot)
+	attack_add(6, dark_templar)
+	attack_prepare()
+	wait(400)
+
+	goto(vzg_attack_loop)
+
+
+		--vzg_cannons--
+	build(1, photon_cannon, 80)
+	wait_buildstart(1, photon_cannon)
+	build(2, photon_cannon, 80)
+	wait_buildstart(2, photon_cannon)
+	build(3, photon_cannon, 80)
+	wait_buildstart(3, photon_cannon)
+	build(4, photon_cannon, 80)
+	wait_buildstart(4, photon_cannon)
+	build(5, photon_cannon, 80)
+	wait_buildstart(5, photon_cannon)
+	stop()
+
+
+		--vzg_attack--
+	attack_add(14, zealot)
+	attack_add(5, high_templar)
+	attack_add(8, dragoon)
+	attack_do()
+	attack_clear()
+	send_suicide(0)
+	stop()
+
+
+		--vzg_2_gate--
+	build(1, nexus, 80)
+	wait_build(1, nexus)
+	build(7, probe, 80)
+	wait_buildstart(7, probe)
+	build(1, pylon, 80)
+	wait_buildstart(1, pylon)
+	multirun(cheats)
+	build(8, probe, 80)
+	wait_buildstart(8, probe)
+	build(1, gateway, 80)
+	wait_buildstart(1, gateway)
+	build(2, gateway, 80)
+	wait_buildstart(2, gateway)
+	build(9, probe, 80)
+	wait_buildstart(9, probe)
+	build(3, gateway, 80)
+	wait_buildstart(3, gateway)
+	farms_timing()
+	train(2, zealot)
+	defensebuild_gg(1, zealot)
+	defenseuse_gg(1, zealot)
+	build(10, probe, 80)
+	wait_buildstart(10, probe)
+	train(4, zealot)
+	wait_train(2, zealot)
+	multirun(vtg_zealot_rush)
+	build(12, probe, 80)
+	wait_buildstart(12, probe)
+	goto(vzg_2gate_return)
+
+
+		--vtg_zealot_rush--
+	start_town()
+	attack_add(8, zealot)
+	attack_prepare()
+	wait(100)
+
+	attack_do()
+	attack_clear()
+	stop()
+
+
+		--vtg_robo_obs--
+	build(1, robotics_facility, 80)
+	wait(2500)
+
+	train(1, shuttle)
+	build(1, observatory, 80)
+	wait_build(1, observatory)
+	train(1, observer)
+	train(2, shuttle)
+	train(2, observer)
+	train(3, shuttle)
+	train(4, observer)
+	stop()
+
+
+		--vzg_robo_obs--
+	build(1, robotics_facility, 80)
+	wait_build(1, robotics_facility)
+	build(1, observatory, 90)
+	wait_build(1, observatory)
+	train(1, observer)
+	wait(300)
+
+	train(1, shuttle)
+
+		--vzg_obs_shuttle_loop--
+	train(5, observer)
+	wait(600)
+
+	train(4, shuttle)
+	wait(600)
+
+	goto(vzg_obs_shuttle_loop)
+
+
+		--vzg_expo_loop--
+	wait(7000)
+
+	expand(99, vzg_expo)
+	goto(vzg_expo_loop)
+
+
+		--vzg_expo--
+	start_town()
+	build(1, nexus, 80)
+	wait_buildstart(1, nexus)
+	build(1, pylon, 80)
+	wait_build(1, pylon)
+	build(1, photon_cannon, 80)
+	wait_buildstart(1, photon_cannon)
+	build(1, gateway, 80)
+	wait_buildstart(1, gateway)
+	build(3, photon_cannon, 80)
+	wait_buildstart(3, photon_cannon)
+	build(5, probe, 80)
+	wait_build(5, probe)
+	build(12, probe, 80)
+	wait_build(12, probe)
+	build(1, assimilator, 80)
+	stop()
+
+
+		--vs_p_air--
+	groundmap_jump(vs_p_ground)
+	goto(vs_t_air)
+
+
+		--vs_p_ground--
+	random_jump(128, vpg_norush) # 192
+	# 2 gate rush
+	build(1, nexus, 80)
+	wait_build(1, nexus)
+	build(8, probe, 80)
+	wait_buildstart(8, probe)
+	build(1, pylon, 80)
+	wait_buildstart(1, pylon)
+	build(9, probe, 80)
+	wait_buildstart(9, probe)
+	build(10, probe, 80)
+	wait_buildstart(10, probe)
+	multirun(cheats)
+	build(2, gateway, 80)
+	wait_buildstart(1, gateway)
+	build(11, probe, 80)
+	wait_buildstart(11, probe)
+	farms_timing()
+	train(1, zealot)
+	defensebuild_gg(1, zealot)
+	defenseuse_gg(1, zealot)
+	build(12, probe, 80)
+	wait_buildstart(12, probe)
+	train(2, zealot)
+	build(3, gateway, 80)
+	wait_buildstart(3, gateway)
+	build(13, probe, 80)
+	wait_buildstart(13, probe)
+	train(4, zealot)
+	build(14, probe, 80)
+	wait_buildstart(14, probe)
+	wait_train(4, zealot)
+	send_suicide(0)
+	enemyowns_jump(citadel_of_adun, vpg_quit_rush)
+	build(4, gateway, 80)
+	wait_buildstart(4, gateway)
+	train(7, zealot)
+	build(15, probe, 80)
+	wait_buildstart(15, probe)
+	train(10, zealot)
+	wait_train(10, zealot)
+	# multirun(vpg_train_zealots)
+	# quick_attack()
+
+	#	--vpg_rush_loop--
+	attack_add(10, zealot)
+	# attack_prepare()
+	# wait(50)
+	attack_do()
+	attack_clear()
+	
+	goto(vpg_quit_rush)
+	# send_suicide(0)
+	# enemyowns_jump(templar_archives, vpg_quit_rush)
+	# time_jump(13, vpg_quit_rush)
+	# goto(vpg_rush_loop)
+
+
+		# --vpg_train_zealots--
+	# train(14, zealot)
+	# wait_train(14, zealot)
+	# train(18, zealot)
+	# time_jump(15, vpg_suicide)
+	# train(22, zealot)
+	# time_jump(15, vpg_suicide)
+	# train(26, zealot)
+
+		# --vpg_suicide--
+	# send_suicide(0)
+	# stop()
+
+
+		--vpg_norush--
+	build(1, nexus, 80)
+	wait_build(1, nexus)
+	build(8, probe, 80)
+	wait_buildstart(8, probe)
+	build(1, pylon, 80)
+	wait_buildstart(1, pylon)
+	build(10, probe, 80)
+	wait_buildstart(10, probe)
+	multirun(cheats)
+	build(1, gateway, 80)
+	wait_buildstart(1, gateway)
+	build(11, probe, 80)
+	wait_buildstart(11, probe)
+	build(1, assimilator, 80)
+	wait_buildstart(1, assimilator)
+	build(2, gateway, 80)
+	wait_buildstart(2, gateway)
+
+		--vpg_quit_rush--
+	build(1, cybernetics_core, 130)
+	wait_buildstart(1, cybernetics_core)
+	build(12, probe, 80)
+	wait_buildstart(12, probe)
+	farms_timing()
+	build(13, probe, 80)
+	wait_buildstart(13, probe)
+	defensebuild_gg(3, dragoon)
+	defenseuse_gg(3, dragoon)
+	defenseuse_gg(1, zealot)
+	upgrade(1, dragoon_range, 70)
+	train(2, dragoon)
+	build(1, forge, 80)
+	wait_buildstart(1, forge)
+	build(1, robotics_facility, 80)
+	wait_buildstart(1, robotics_facility)
+	random_jump(128, vpg_skip_attack)
+	#wait_train(2, dragoon)
+	wait_force(2, dragoon) #
+	send_suicide(0)
+
+		--vpg_skip_attack--
+	upgrade(1, p_ground_weapon, 70)
+	build(1, photon_cannon, 80)
+	wait_buildstart(1, photon_cannon)
+	train(4, dragoon)
+	build(15, probe, 80)
+	wait_buildstart(15, probe)
+	multirun(vpg_expo_init)
+	train(6, dragoon)
+	build(1, observatory, 150)
+	wait_buildstart(1, observatory)
+	train(2, observer)
+	build(4, gateway, 80)
+	wait_buildstart(4, gateway)
+	multirun(vpg_robo_stuff)
+	train(20, dragoon)
+	wait_force(20, dragoon) # wait_train
+	#send_suicide(0)
+	multirun(vpg_upgrades)
+	
+	attack_add(20, dragoon)
+	attack_add(5, reaver)
+	attack_prepare()
+	train(5, shuttle)
+	wait(200)
+
+	attack_do()
+	attack_clear()
+
+		--vpg_attack_loop--
+	attack_add(20, dragoon)
+	attack_add(4, reaver)
+	attack_prepare()
+	wait(200)
+
+	attack_do()
+	attack_clear()
+	#send_suicide(0)
+	train(40, dragoon)
+	attack_add(40, dragoon)
+	attack_prepare()
+	wait(400)
+
+	attack_do()
+	attack_clear()
+	multirun(vpg_expo_init)
+	goto(vpg_attack_loop)
+
+
+		--vpg_expo_init--
+	expand(99, vpg_expo)
+	stop()
+
+
+		--vpg_upgrades--
+	build(1, citadel_of_adun, 80)
+	wait_build(1, citadel_of_adun)
+	build(1, templar_archives, 80)
+	wait_buildstart(1, templar_archives)
+	build(3, forge, 80)
+	wait_build(3, forge)
+	upgrade(2, p_ground_weapon, 70)
+	upgrade(1, p_armor, 70)
+	upgrade(1, p_plasma_shield, 70)
+	wait(5000) # up from 3000
+
+	upgrade(3, p_ground_weapon, 70)
+	upgrade(2, p_armor, 70)
+	upgrade(2, p_plasma_shield, 70)
+	wait(5000) # up from 3000
+
+	upgrade(3, p_armor, 70)
+	upgrade(3, p_plasma_shield, 70)
+	
+	stop()
+
+
+		--vpg_robo_stuff--
+	build(4, robotics_facility, 80)
+	wait_buildstart(4, robotics_facility)
+	check_transports()
+	build(1, robotics_support_bay, 80)
+	wait_buildstart(1, robotics_support_bay)
+	defensebuild_gg(1, reaver)
+	defenseuse_gg(1, reaver)
+	upgrade(1, shuttle_speed, 80)
+	define_max(10, shuttle)
+	train(2, shuttle)
+	train(2, reaver)
+	train(4, shuttle)
+	train(4, reaver)
+	upgrade(1, scarab_damage, 80)
+	train(6, shuttle)
+	train(6, reaver)
+	upgrade(1, reaver_capacity, 80)
+	
+	--vpg_maintain_shuttlereaver-- # new
+	train(5, shuttle)
+	wait(500)
+	train(5, reaver)
+	wait(500)
+	train(2, observer) # New
+	wait(500)
+	goto(vpg_maintain_shuttlereaver)
+	#stop()
+
+
+		--vpg_expo--
+	start_town()
+	build(1, nexus, 80)
+	wait_buildstart(1, nexus)
+	defenseuse_gg(1, zealot)
+	defenseuse_gg(1, dragoon)
+	build(1, pylon, 80)
+	wait_buildstart(1, pylon)
+	build(2, pylon, 80)
+	wait_build(2, pylon)
+	build(3, photon_cannon, 80)
+	wait_buildstart(3, photon_cannon)
+	build(12, probe, 80)
+	build(1, gateway, 80)
+	wait_buildstart(1, gateway)
+	build(1, assimilator, 80)
+	build(4, photon_cannon, 80)
+	stop()
+
+
+		--cheats--
+	give_money()
+	wait(1500)
+
+	goto(cheats)
+
+	
+	
+	

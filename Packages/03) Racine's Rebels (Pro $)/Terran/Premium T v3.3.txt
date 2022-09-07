@@ -1,0 +1,3084 @@
+# Premium Terran 3.3 , by Archon_Wing
+# Courtesy of Broodwarai.com
+# Table of Contents
+# Much thanks to Equalizer for the "accelerated" script concept
+# =====Cheese=====
+# =====TvT=====
+#- 2 fact
+#- 1 fact expo	
+#- Wraith Rush
+#- TvT Misc
+# =====TvZ=====
+#- Fast Expand
+#- 7 rax push
+#- 1 base TvZ
+#- TvZ Bio Misc
+#- TvZ Mech
+#- TvZ Mech Misc
+#- TvZ Misc
+# =====TvP=====
+#- 1 fact expo
+#- TvP Mech Misc
+#- TvP Bio 
+#- 1 fact expo to mech
+#- TvP Bio Misc
+# =====Reactive Defense=====
+# =====Misc Tech/Buildings=====
+# =====Expansions=====
+#- Expanding for Mech Builds
+#- Expanding for Bio Builds
+# =====Upgrades=====
+# =====Island Maps=====
+
+TMCx(1342, 101, aiscript):
+	start_town()
+	transports_off()
+	farms_notiming()
+
+
+#if DEBUG
+	debug(null, Premium Terran 3.3 by Archon_Wing)
+	--null--
+	multirun(money)
+#endif
+	defaultbuild_off()
+	define_max(58, marine)
+	define_max(70, scv)
+	define_max(12, medic)
+	define_max(20, siege_tank)
+	define_max(20, goliath)
+	define_max(255, wraith)
+	define_max(2, dropship)
+	define_max(20, battlecruiser)
+	define_max(10, science_vessel)
+	define_max(3, ghost)
+	define_max(1, nuclear_missile)
+	define_max(8, firebat)
+	define_max(20, vulture)
+	build(1, command_center, 150)
+	wait_build(1, command_center)
+	build(7, scv, 80)
+	multirun(comsat)
+	multirun(cloak_detect)
+	wait_buildstart(7, scv)
+	multirun(essentials)
+	groundmap_jump(block1)
+
+	goto(island)
+	
+			--money--
+	wait(500)
+	give_money()
+	time_jump(45, terminate)
+	goto(money)
+			--block1--
+# Don't ever BBS if enemy is rushing
+	random_jump(5, bbs)
+	--do stuff--
+
+	race_jump(tvt, tvz, tvp)
+# =====Cheese=====
+#Proxy Raxes
+			--bbs--
+	enemyresources_jump(70, 0, do stuff)
+	rush(0, do stuff)
+	random_jump(140, bbs 2)
+	enemyowns_jump(nexus, tvp)
+	#don't bbs protoss as much	
+		--bbs 2--
+	define_max(9, scv)
+	wait(450)
+	expand(1, blank)
+	expand(2, proxy)
+
+	multirun(force rax)
+	--wait rax--
+	wait(25)
+	notowns_jump(barracks, wait rax)
+	build(1, supply_depot, 80)
+	player_need(1, barracks)
+	multirun(bbs attack)
+	train(6, marine)
+	farms_timing()
+	attack_add(5, marine)
+	define_max(70, scv)
+	multirun(scv)
+	attack_do()
+	attack_clear()
+	defenseuse_gg(1, marine)
+	defenseuse_aa(1, marine)
+	defenseuse_ag(1, marine)
+	defenseuse_ga(1, marine)
+	train(6, marine)
+	attack_add(7, marine)
+	attack_do()
+	attack_clear()
+	clear_combatdata()
+	build(1, refinery, 95)
+	wait_buildstart(1, refinery)
+	race_jump(tvt, tvz follow up, tvp)
+	
+	--tvz follow up--
+	player_need(2, barracks)
+	defensebuild_gg(1, marine)
+	multirun(bunker)
+	multirun(tvz tanks)
+	multirun(ebay_up)
+	multirun(stim_range)
+	define_max(12, siege_tank)
+	define_max(4, vulture)
+	define_max(255, goliath)
+	build(1, academy, 100)
+
+
+	wait_build(1, academy)
+	multirun(medics)
+	player_need(3, barracks)
+	defenseclear_gg()
+	defenseuse_gg(1, marine)
+	defenseuse_gg(1, firebat)
+
+	goto(cheese 2)
+	
+	--bbs attack--
+
+	wait_force(5, marine)
+	target_expansion()
+	send_suicide(0)
+	stop()
+	
+
+	--force rax--
+	wait(4400)
+	player_need(1, barracks)
+	stop()
+
+	
+	--proxy--
+	start_town()
+	get_oldpeons(2)
+	build(1, barracks, 100)
+	build(2, barracks, 100)
+	stop()
+	--blank--
+	wait(9000)
+	start_town()
+	race_jump(fact_expo 2, tvz_natural 2, fact_expo 2)
+	
+
+	
+
+
+	
+# =====TvT=====
+
+
+		--tvt--
+	define_max(6, marine)
+	multirun(armory_up)
+	multirun(shop upgrades)
+	multirun(scv)
+	multirun(air detect)
+	wait_build(8, scv)
+	multirun(tvt bunker)
+	multirun(anti fe)
+	build(1, supply_depot, 90)
+	
+	wait_build(10, scv)
+	build(1, barracks, 90)
+	build(1, refinery, 95)
+
+
+	wait_build(1, barracks)
+	defenseuse_gg(1, marine)
+	defenseuse_ga(1, marine)
+	defenseuse_aa(1, marine)
+	defenseuse_ag(1, marine)
+	train(1, marine)
+	multirun(tvt marines)
+	farms_timing()
+	build(1, factory, 80)
+	wait_buildstart(1, factory)
+	defenseuse_gg(1, vulture)
+	defenseuse_ga(1, vulture)
+	multirun(first vulture)
+	random_jump(64, tvt_fe)
+	random_jump(24, wraith_rush)
+#- 2 fact 
+	multirun(2nd factory)
+	wait_build(1, factory)
+
+	multirun(tvt_rush)
+	build(1, machine_shop, 80)
+	wait_build(1, machine_shop)
+	defenseuse_gg(2, siege_tank)
+	defenseuse_ga(2, siege_tank)
+
+	defenseuse_gg(1, marine)
+	defenseuse_ga(1, marine)
+	train(1, siege_tank)
+
+	train(2, vulture)
+	build(2, machine_shop, 80)
+	train(2, siege_tank)
+	expand(1, fact_expo)
+	train(3, vulture)
+	train(4, vulture)
+	train(3, siege_tank)
+	train(6, vulture)
+	train(5, siege_tank)
+	build(1, engineering_bay, 80)
+
+	build(1, armory, 80)
+	build(4, factory, 80)
+	train(9, siege_tank)
+	expand(2, morefact_expo)
+	wait_build(1, armory)
+	defenseuse_ga(1, goliath)
+	defenseuse_gg(1, goliath)
+	defenseuse_aa(1, goliath)
+	defenseuse_ag(1, goliath)
+	defensebuild_gg(1, siege_tank)
+	defensebuild_ga(1, siege_tank)
+	build(1, academy, 80)
+	build(5, factory, 80)
+	train(7, vulture)
+	build(3, machine_shop, 80)
+	train(8, siege_tank)
+
+
+	train(10, siege_tank)
+	train(5, goliath)
+	train(12, siege_tank)
+	multirun(more_expo)
+	build(1, starport, 80)
+	multirun(get_bc)
+	build(2, armory, 80)
+	
+			--bigger tanks--
+#for use before bc production can begin
+	multirun(tvt add tank)
+	multirun(tvt add goliath)
+	attack_add(15, siege_tank)
+	wait(2300)
+	attack_prepare()
+	wait(10)
+	attack_do()
+	attack_clear()
+	clear_combatdata()
+	wait(100)
+	define_max(255, marine)
+	notowns_jump(physics_lab, bigger tanks)
+	wait(1)
+	notowns_jump(control_tower, bigger tanks)
+	train(1, battlecruiser)
+	defenseuse_ag(1, battlecruiser)
+	defenseuse_aa(1, battlecruiser)
+	defenseuse_gg(1, battlecruiser)
+	defenseuse_ga(1, battlecruiser)
+	defensebuild_ag(1, battlecruiser)
+	defensebuild_aa(1, battlecruiser)
+	defensebuild_gg(1, battlecruiser)
+	defensebuild_ga(1, battlecruiser)
+	
+	defensebuild_aa(1, valkyrie)
+
+	--bc_attack--
+
+	multirun(tvt add tank)
+	wait(10)
+	multirun(tvt add goliath)
+	wait(10)
+	multirun(tvt add bcs)
+	attack_add(15, siege_tank)
+	attack_add(7, battlecruiser)
+	wait(3600)
+	expand(3, morefact_expo)
+	attack_prepare()
+	wait(100)
+	attack_do()
+	attack_clear()
+	clear_combatdata()
+	wait(10)
+	goto(bc_attack)
+	
+	--tvt add tank--
+	notowns_jump(machine_shop, terminate)
+
+	--train tanks--
+	train(15, siege_tank)
+
+	wait(2000)
+	wait_force(15, siege_tank)
+	stop()
+	
+	--tvt add goliath--
+	notowns_jump(armory, terminate)
+	attack_add(10, goliath)
+	stop()
+	
+	--tvt add bcs--
+	notowns_jump(physics_lab, terminate)
+	--train bcs--
+	train(3, battlecruiser)
+	train(5, battlecruiser)
+	train(7, battlecruiser)	
+	train(9, battlecruiser)
+	train(10, battlecruiser)
+	train(11, battlecruiser)
+	train(12, battlecruiser)
+	wait(2000)
+	wait_force(12, battlecruiser)
+	stop()
+	
+	#detect early military buildings
+
+	--first vulture--
+	wait_build(1, factory)
+	train(1, vulture)
+	stop()
+
+	--tvt marines--
+	wait_force(1, marine)
+	wait_force(2, marine)
+	wait_buildstart(1, factory)
+	wait_force(3, marine)
+	wait_force(4, marine)
+	wait_force(5, marine)
+	if_owned(siege_tank, terminate)
+	wait(150)
+	goto(tvt marines)
+
+#-: 1 fact expo	
+			--tvt_fe--
+#1 fact expo with siege tank defense
+	wait_build(1, factory)
+	expand(1, fact_expo)
+	build(1, machine_shop, 80)
+	wait_build(1, machine_shop)
+	defenseuse_gg(2, siege_tank)
+	defenseuse_ga(2, siege_tank)
+	defenseuse_gg(1, vulture)
+	defenseuse_ga(1, vulture)
+	train(1, siege_tank)
+	build(2, factory, 80)
+	train(3, siege_tank)
+	train(2, vulture)
+	build(2, machine_shop, 80)
+	train(5, siege_tank)
+	build(3, factory, 80)
+	train(4, vulture)
+	train(7, siege_tank)
+	multirun(more_expo)
+	build(1, armory, 80)
+	train(9, siege_tank)
+
+	wait_build(1, armory)
+	train(2, goliath)
+	defenseuse_ga(1, goliath)
+	defenseuse_gg(1, goliath)
+	defenseuse_aa(1, goliath)
+	defenseuse_ag(1, goliath)
+
+	defensebuild_gg(2, siege_tank)
+	defensebuild_ga(2, siege_tank)
+	build(4, factory, 100)
+	train(10, siege_tank)
+	train(5, goliath)
+	build(5, factory, 100)
+	build(1, starport, 115)
+	wait_buildstart(1, starport)
+	build(4, machine_shop, 100)
+	multirun(get_bc)
+	wait(1)
+	goto(bigger tanks)
+
+#- Wraith Rush
+		--wraith_rush--
+	define_max(10, wraith)
+	multirun(wraith_attack)
+
+	wait_build(1, factory)
+	train(1, vulture)
+	defenseuse_gg(1, vulture)
+	defenseuse_ga(1, vulture)
+	build(2, starport, 80)
+	train(3, vulture)
+
+	wait_build(1, starport)
+	defenseuse_ag(1, wraith)
+	defenseuse_aa(1, wraith)
+	defenseuse_gg(1, wraith)
+	defenseuse_ga(1, wraith)
+	train(2, wraith)
+	build(1, machine_shop, 80)
+	build(1, control_tower, 80)
+	train(3, wraith)
+	wait_build(1, machine_shop)
+	defenseuse_gg(1, wraith)
+	defenseuse_ga(1, wraith)
+	defenseuse_gg(2, siege_tank)
+	defenseuse_ga(2, siege_tank)
+	train(1, siege_tank)
+	defenseuse_gg(2, siege_tank)
+	defenseuse_ga(2, siege_tank)
+	defensebuild_gg(2, siege_tank)
+	defensebuild_ga(2, siege_tank)
+	train(2, siege_tank)
+	expand(1, fact_expo)
+	build(2, factory, 90)
+	train(6, vulture)
+	train(3, siege_tank)
+	build(2, machine_shop, 90)
+	build(1, engineering_bay, 80)
+	build(3, factory, 80)
+	multirun(more_expo)
+	train(6, siege_tank)
+	wait_build(2, factory)
+	build(2, machine_shop, 80)
+	build(1, armory, 80)
+	wait_buildstart(1, armory)
+	build(3, factory, 80)
+	train(8, siege_tank)
+	wait_build(1, armory)
+	defensebuild_gg(2, siege_tank)
+	defensebuild_ga(2, siege_tank)
+	defenseuse_ga(1, goliath)
+	defenseuse_gg(1, goliath)
+	defenseuse_aa(1, goliath)
+	build(4, factory, 100)
+	build(3, machine_shop, 100)
+	train(12, siege_tank)
+	build(5, factory, 100)
+    multirun(get_bc)
+	train(14, siege_tank)
+	build(4, machine_shop, 100)
+
+	goto(bigger tanks)
+	
+
+
+
+		--wraith_attack--
+#attempt to harass until enemy has sufficient antiair
+    wait_build(1, control_tower)
+	tech(cloaking_field, 80)
+	wait(1400)
+	attack_add(3, wraith)
+	attack_do()
+	attack_prepare()
+	attack_clear()
+	clear_combatdata()
+#randomize attack targets
+	enemyowns_jump(goliath, stop wraith)
+	enemyowns_jump(missile_turret, stop wraith)
+	time_jump(13, stop wraith)
+	attack_add(4, wraith)
+	attack_do()
+	attack_clear()
+	clear_combatdata()
+
+
+		--stop wraith--
+	stop()
+#- TvT Misc	
+	--check gas tvt--
+	enemyowns_jump(spawning_pool, bunker)
+	enemyowns_jump(gateway, bunker)
+	enemyowns_jump(refinery, terminate)
+	wait_build(1, barracks)
+	defenseuse_gg(1, marine)
+	train(1, marine)
+	build(1, bunker, 80)
+	train(3, marine)
+	stop()
+
+
+
+
+
+		--tvt_rush--
+# First rush in tvt, can be a feint
+	random_jump(164, terminate)
+
+	wait_build(1, machine_shop)
+	wait(2200)
+	attack_add(3, siege_tank)
+	attack_add(4, vulture)
+	attack_add(4, marine)
+	wait(1000)
+	attack_prepare()
+	random_jump(84, fake out)
+	attack_do()
+	--fake out--
+	wait(400)
+	attack_clear()
+	clear_combatdata()
+	stop()
+	
+	--add shop--
+wait_build(1, factory)
+build(1, machine_shop, 80)
+wait_build(1, machine_shop)
+train(1, siege_tank)
+train(2, siege_tank)
+train(3, siege_tank)
+stop()
+
+
+
+
+
+		--get_bc--
+#get the tech for bcs ready
+	wait_build(1, starport)
+	build(1, science_facility, 80)
+	build(1, control_tower, 80)
+	define_max(2, dropship)
+	
+	wait_build(1, science_facility)
+	wait_build(1, control_tower)
+	check_transports()
+	--get_bc 2--
+	resources_jump(1000, 800, get_bc 3)
+	wait(700)
+	goto(get_bc 2)
+	--get_bc 3--
+	build(1, physics_lab, 90)
+	wait_build(1, physics_lab)
+
+	build(2, starport, 80)
+	wait_build(2, starport)
+	build(2, control_tower, 80)
+	build(3, starport, 80)
+	wait_build(3, starport)
+	build(3, control_tower, 80)
+	wait(10000)
+
+	build(2, science_facility, 25)
+	wait_build(2, science_facility)
+	race_jump(spy, don't get ghost, spy)
+
+
+		--don't get ghost--
+	wait(1)
+
+	stop()
+# =====TvZ=====
+--tvz--
+	#Defend vs 4 pool, 5 pool
+	#enemyowns_jump(spawning_pool, zomg ling rush)
+	#enemyresources_jump(100, 0, zomg ling rush)
+	build(8, scv, 80)
+	wait_build(7, scv)
+	enemyowns_jump(spawning_pool, zomg ling rush)
+	enemyresources_jump(100, 0, zomg ling rush)
+	
+
+	build(9, scv, 80)
+	wait_build(8, scv)
+	#Defend vs 6-7 pool
+	enemyowns_jump(spawning_pool, zomg 9 rax)
+	enemyresources_jump(120, 0, zomg 9 rax)
+	goto(tvz 2)
+	
+
+	--zomg ling rush--
+
+
+	build(1, barracks, 80)
+	wait_buildstart(1, barracks)
+	wait(50)
+	build(2, barracks, 80)
+	wait_buildstart(2, barracks)
+	defenseuse_gg(1, marine)
+	build(1, bunker, 100)
+	multirun(pump marines)
+	farms_timing()
+
+	train(6, marine)
+	multirun(scv)
+	train(8, marine)
+	define_max(255, goliath)
+	build(1, academy, 80)
+	wait_buildstart(1, academy)
+	wait(1)
+	multirun(lair_detect)
+	wait(1)
+	multirun(tvz tanks)
+	wait(1)
+	multirun(ebay_up)
+	goto(skip ebay)
+	
+
+
+	
+	--zomg 9 rax--
+
+	define_max(9, scv)
+	build(1, barracks, 100)
+	wait_buildstart(1, barracks)
+	farms_timing()
+	wait(50)
+	build(2, barracks, 80)
+	multirun(bunker)
+	defenseuse_gg(1, marine)
+	wait_build(1, barracks)
+	train(3, marine)
+	define_max(60, scv)
+	multirun(scv)
+	multirun(lair_detect)
+	define_max(255, goliath)
+	random_jump(128, 2 rax)
+	goto(tvz_cheese)
+		--tvz 2--
+	multirun(pool_detect)
+	build(1, supply_depot, 80)
+	multirun(scv)
+	wait_build(9, scv)
+	wait(165)
+	build(1, barracks, 80)
+	multirun(lair_detect)
+	wait_buildstart(1, barracks)
+	random_jump(42, tvz_cheese)
+#- Fast Expo
+	rush(0, 2 rax)
+	random_jump(30, tvz_mech)
+	wait(450)
+	define_max(255, goliath)
+	random_jump(144, 2 rax)
+
+#1 rax expo
+
+	wait_build(1, barracks)
+	defenseuse_gg(1, marine)
+	defenseuse_ga(1, marine)
+	defenseuse_aa(1, marine)
+	defenseuse_ag(1, marine)
+	multirun(pump marines)
+	build(2, supply_depot, 90)
+	wait_buildstart(2, supply_depot)
+	--getting natural--
+	resources_jump(400, 0, take natural)
+	wait(75)
+	goto(getting natural)
+	
+	--take natural--
+	expand(1, tvz_natural)
+	--fast expo 2nd rax--
+	resources_jump(150, 0, build 2nd rax)
+	wait(75)
+	goto(fast expo 2nd rax)
+	--build 2nd rax--
+	build(2, barracks, 80)
+	wait(550)
+	farms_timing()
+	train(6, marine)
+	
+	--1 rax gas--
+	resources_jump(200, 0, build 1 rax gas)
+	wait(75)
+	goto(1 rax gas)
+	
+	--build 1 rax gas--
+
+	build(1, refinery, 80)
+
+
+
+	multirun(stim_range)
+	--1 rax academy--
+	resources_jump(150,  0, build 1 rax academy)
+	wait(87)
+	goto(1 rax academy)
+	--build 1 rax academy--
+	build(1, academy, 80)
+	wait_build(1, academy)
+	defenseuse_gg(1, firebat)
+	train(2, firebat)
+	multirun(medics)
+	place_guard(medic, 0)
+	
+	--tvz fe add rax--
+	resources_jump(150, 0, fe)
+	wait(75)
+	goto(tvz fe add rax)
+	
+
+	
+
+	
+
+
+		--2 rax--
+	wait(150)
+	build(2, barracks, 80)
+	wait_build(1, barracks)
+	train(1, marine)
+	defenseuse_gg(2, marine)
+	defenseuse_ga(2, marine)
+	defenseuse_aa(2, marine)
+	defenseuse_ag(2, marine)
+	farms_timing()
+	multirun(pump marines)
+	train(4, marine)
+	expand(1, tvz_natural)
+	train(7, marine)
+	goto(1 rax gas)
+
+
+		--fe--
+
+	build(3, barracks, 80)
+	wait_buildstart(3, barracks)
+	multirun(tvz tanks)
+	wait(1)
+	multirun(ebay_up)
+	wait(1)
+	define_max(12, siege_tank)
+	multirun(get_vessel)
+	random_jump(64, 7 rax push)
+	wait(500)
+
+	--tvz fact--
+	resources_jump(200, 100, get tvz fact)
+	wait(75)
+	goto(tvz fact)
+	--get tvz fact--
+	build(1, factory, 100)
+	wait_buildstart(1, factory)
+	multirun(add shop)
+	build(1, engineering_bay, 80)
+	wait_buildstart(1, engineering_bay)
+
+		--tvz_continue--
+	multirun(tvz more structures)
+	wait(1)
+	multirun(add more marines)
+	goto(tvz_push)
+	
+
+	
+	--medics--
+	wait_build(1, academy)
+	wait_force(2, medic)
+	stop()
+	
+#- 7 rax push
+	
+	--7 rax push--
+
+	build(4, barracks, 80)
+	wait_buildstart(4, barracks)
+	wait(100)
+	build(5, barracks, 80)
+	wait_buildstart(5, barracks)
+	wait(100)
+	build(6, barracks, 80)
+	place_guard(medic, 1)
+	build(1, engineering_bay, 80)
+	multirun(add shop)
+	train(25, marine)
+	target_expansion()
+	attack_add(5, medic)
+	attack_add(2, firebat)
+	attack_add(25, marine)
+	wait(100)
+	attack_prepare()
+	attack_do()
+	build(1, factory, 80)
+	multirun(add firebats)
+	multirun(add medics)
+	multirun(add more marines)
+	attack_clear()
+	clear_combatdata()
+	wait_build(1, factory)
+	build(1, machine_shop, 90)
+	goto(tvz_continue)
+#Attack if hive detected	
+	--wait facility--
+	if_owned(science_facility, tvz_push a)
+	time_jump(23, tvz_push b)
+	wait(125)
+	goto(wait facility)
+#TvZ main attack loop
+	
+	
+
+		--tvz_push--
+	attack_add(25, marine)
+	attack_add(6, medic)
+	attack_add(2, firebat)
+	wait_build(1, machine_shop)
+	attack_add(3, siege_tank)
+
+
+	notowns_jump(science_facility, wait facility)
+	--tvz_push a--
+	wait_build(1, science_facility)
+	wait_build(1, control_tower)
+	train(1, science_vessel)
+	time_jump(15, skip hive check)
+	enemyowns_jump(hive, go bcs)
+		--skip hive check--
+	attack_add(1, science_vessel)
+		--tvz_push b--
+	multirun(add more marines)
+	wait_force(1, science_vessel)
+	wait(100)
+	attack_prepare()
+	clear_combatdata()
+	attack_do()
+	wait(10)
+	multirun(add firebats)
+	wait(1)
+	multirun(add medics)
+	attack_clear()
+	clear_combatdata()
+	capt_expand()
+	multirun(tvz_moreexpo)
+	train(35, marine)
+	expand(2, tvz_expo)
+	wait(1)
+	notowns_jump(science_facility, tvz_push)
+	wait(1)
+	notowns_jump(control_tower, tvz_push)
+	resources_jump(800, 800, tvz_end)
+
+
+	--tvz_push 2--
+	multirun(add more marines)
+	wait(10)
+	multirun(add vessels)
+	wait(10)
+	multirun(add siege tanks)
+	wait(10)
+	multirun(add medics)
+	wait(1)
+	multirun(add firebats)
+	attack_add(35, marine)
+	attack_add(8, medic)
+	attack_add(8, firebat)
+	attack_add(5, siege_tank)
+	wait(3600)
+	attack_prepare()
+	clear_combatdata()
+	attack_do()
+	multirun(add more marines)
+	multirun(add medics)
+	multirun(add firebats)
+	attack_clear()
+
+	clear_combatdata()
+	wait(1)
+	resources_jump(1200, 1200, tvz_end)
+	wait(1)
+
+	goto(tvz_push 2)
+	
+			--tvz_end--
+
+	multirun(add more marines)
+	wait(10)
+	multirun(add vessels)
+	wait(10)
+	multirun(add firebats)
+	wait(1)
+	multirun(add medics)
+	wait(10)
+	multirun(more siege tanks)
+	attack_add(36, marine)
+	attack_add(9, medic)
+	attack_add(8, firebat)
+	attack_add(8, siege_tank)
+
+	wait(3200)
+
+	attack_prepare()
+	clear_combatdata()
+	attack_do()
+	multirun(add more marines)
+	multirun(add medics)
+	multirun(add firebats)
+	attack_clear()
+	clear_combatdata()
+	wait(1)
+	goto(tvz_end)
+	
+	#Early hive response
+	--go bcs--
+	attack_clear()
+	define_max(3, siege_tank)
+	define_max(4, science_vessel)
+	define_max(5, battlecruiser)
+	multirun(add more marines)
+	wait(5)
+	multirun(add medics)
+	wait(5)
+	multirun(add firebats)
+	build(1, starport, 120)
+	wait_build(1, starport)
+	build(1, science_facility, 120)
+	wait_build(1, science_facility)
+	build(1, physics_lab, 120)
+	multirun(tvz bc)
+	wait_build(1, physics_lab)
+
+	defenseuse_gg(1, battlecruiser)
+	defenseuse_gg(1, battlecruiser)
+	defenseuse_aa(1, battlecruiser)
+	defenseuse_ag(1, battlecruiser)
+
+	train(1, battlecruiser)
+
+	multirun(tvz_moreexpo 2)
+	multirun(2 port)
+	train(3, battlecruiser)
+	multirun(get ship weapons)
+
+
+	--tvz bc loop--
+	multirun(tvz bc)
+	wait(5)
+	multirun(add more marines)
+	wait(5)
+	multirun(add medics)
+	wait(5)
+	multirun(add firebats)
+	attack_add(24, marine)
+	attack_add(4, battlecruiser)
+	attack_add(3, siege_tank)
+	attack_add(6, medic)
+	attack_add(3, firebat)
+	attack_add(2, science_vessel)
+	wait(2600)
+	attack_prepare()
+	attack_do()
+	multirun(add more marines)
+	multirun(tvz bc)
+	multirun(add firebats)
+	attack_clear()
+	clear_combatdata()
+	goto(tvz bc loop)
+	
+	--tvz bc--
+	wait_build(1, physics_lab)
+	train(4, battlecruiser)
+	wait_force(5, battlecruiser)
+	stop()
+	
+	--2 port--
+	build(2, starport, 80)
+	wait_build(2, starport)
+	build(2, control_tower, 80)
+	stop()
+	
+	
+	
+	
+	--get ship weapons--
+	build(1, armory, 80)
+	wait_build(1, armory)
+	upgrade(1, t_ship_weapon, 80)
+	wait(5000)
+	upgrade(2, t_ship_weapon, 80)
+	wait(5000)
+	upgrade(3, t_ship_weapon, 80)
+	stop()
+	
+
+	
+	--add more marines--
+	train(30, marine)
+	train(36, marine)
+	train(40, marine)
+	train(45, marine)
+	train(50, marine)
+	train(55, marine)
+	wait(1500)
+	wait_force(55, marine)
+	stop()
+	
+	--pump marines--
+	train(2, marine)
+	train(4, marine)
+	train(6, marine)
+	train(10, marine)
+	train(15, marine)
+	train(20, marine)
+	wait_force(20, marine)
+	wait_force(30, marine)
+	stop()
+	
+
+	
+
+
+	
+	
+	
+	--add firebats--
+	notowns_jump(academy, terminate)
+	train(3, firebat)
+	train(5, firebat)
+	train(8, firebat)
+	wait_force(8, firebat)
+	stop()
+
+	
+	--add medics--
+	notowns_jump(academy, terminate)
+	train(4, medic)
+	train(8, medic)
+	train(12, medic)
+	stop()
+	
+	--add siege tanks--
+	notowns_jump(machine_shop, terminate)
+
+	train(1, siege_tank)
+	train(2, siege_tank)
+	train(3, siege_tank)
+	train(4, siege_tank)
+	train(5, siege_tank)
+	wait(2050)
+	wait_force(8, siege_tank)
+	stop()
+	--more siege tanks--
+	notowns_jump(machine_shop, terminate)
+	train(5, siege_tank)
+	train(8, siege_tank)
+	train(12, siege_tank)
+	wait(2000)
+	wait_force(12, siege_tank)
+	stop()
+	
+
+	
+
+	
+	--add vessels--
+	notowns_jump(science_facility, terminate)
+	notowns_jump(control_tower, terminate)
+	attack_add(3, science_vessel)
+	wait_force(10, science_vessel)
+	stop()
+
+	
+
+
+		--tvz tanks--
+	wait_build(1, factory)
+	build(1, machine_shop, 85)
+	wait_build(1, machine_shop)
+	defenseuse_gg(1, siege_tank)
+	defenseuse_ga(1, siege_tank)
+	tech(siege_mode, 80)
+	train(3, siege_tank)
+	wait_force(3, siege_tank)
+	wait_train(7, siege_tank)
+	build(1, armory, 60)
+	upgrade(1, t_vehicle_weapon, 50)
+	wait(4500)
+	wait_build(1, science_facility)
+	upgrade(2, t_vehicle_weapon, 40)
+	wait(5000)
+	upgrade(3, t_vehicle_weapon, 30)
+	
+	stop()
+
+#- 1 base TvZ
+		--tvz_cheese--
+	multirun(tvz tanks)
+	multirun(ebay_up)
+	define_max(12, siege_tank)
+	define_max(4, vulture)
+	define_max(255, goliath)
+	wait_buildstart(1, barracks)
+	wait(100)
+	build(2, barracks, 80)
+	wait_build(1, barracks)
+	train(1, marine)
+	defenseuse_gg(1, marine)
+	defenseuse_ga(1, marine)
+	defenseuse_aa(1, marine)
+	defenseuse_ag(1, marine)
+	farms_timing()
+	train(5, marine)
+	multirun(medics)
+	train(6, marine)
+	build(1, refinery, 85)
+	train(7, marine)
+	build(1, academy, 80)
+	wait_buildstart(1, academy)
+	random_jump(128, skip ebay)
+	build(1, engineering_bay, 80)
+	wait_buildstart(1, engineering_bay)
+	--skip ebay--
+	multirun(stim_range)
+	build(3, barracks, 80)
+	train(12, marine)
+
+
+	--cheese 2--
+	wait_build(1, academy)
+	defenseuse_gg(1, firebat)
+	train(2, firebat)
+	attack_add(4, medic)
+	train(16, marine)
+	attack_add(14, marine)
+	attack_add(2, firebat)
+
+	multirun(add more marines)
+	wait(1)
+	multirun(add medics)
+	wait(1)
+	multirun(add firebats)
+	wait(300)
+	attack_prepare()
+	attack_do()
+	expand(1, tvz_natural)
+
+	random_jump(128, all in rush)
+	goto(cheese 3)
+	#Try to finish it off
+	--all in rush--
+	attack_clear()
+	clear_combatdata()
+	attack_add(18, marine)
+	attack_add(3, firebat)
+	attack_add(3, medic)
+	wait(1000)
+	attack_prepare()
+	attack_do()
+	--cheese 3--
+
+	attack_clear()
+	clear_combatdata()
+	build(1, factory, 85)
+	wait_buildstart(1, factory)
+
+	multirun(get_vessel)
+	train(3, firebat)
+	train(3, medic)
+	train(20, marine)
+
+
+	player_need(1, engineering_bay)
+	expand(1, tvz_natural)
+
+
+	build(4, barracks, 80)
+	train(32, marine)
+	train(4, medic)
+
+
+	goto(tvz_continue)
+#- TvZ bio misc	
+			--tvz more structures--
+	build(1, engineering_bay, 60)
+	wait(2000)
+	build(4, barracks, 80)
+	wait_build(4, barracks)
+	build(5, barracks, 80)
+	wait_buildstart(5, barracks)
+	wait(9200)
+	build(2, factory, 80)
+	wait_build(2, factory)
+	build(2, machine_shop, 80)
+	wait_build(1, control_tower)
+	--tvz transports--
+	resources_jump(1500, 1500, get tvz transports)
+	wait(1500)
+	groundmap_jump(tvz transports)
+	--get tvz transports--
+	check_transports()
+	wait_train(2, dropship)
+	wait(3000)
+	define_max(4, dropship)
+	stop()
+	
+	
+	
+
+	
+			--get_vessel--
+	wait_build(1, factory)
+	build(1, starport, 100)
+	wait_build(1, starport)
+	build(1, control_tower, 100)
+    build(1, science_facility, 100)
+	wait_build(1, science_facility)
+	wait_build(1, control_tower)
+	#don't interfere with bc production
+	time_jump(15, get_vessel 2)
+	enemyowns_jump(hive, are we going bcs?)
+	--get_vessel 2--
+	train(1, science_vessel)
+	place_guard(science_vessel, 0)
+	wait_force(1, science_vessel)
+	tech(irradiate, 90)
+	wait_train(3, science_vessel)
+	place_guard(science_vessel, 1)
+	build(2, starport, 80)
+	wait_build(2, starport)
+	build(2, control_tower, 80)
+	upgrade(1, science_vessel_mana, 80)
+	wait_build(2, control_tower)
+	place_guard(science_vessel, 2)
+
+	stop()
+	
+	--are we going bcs?--
+	wait(600)
+	notowns_jump(physics_lab, get_vessel 2)
+	wait_build(1, physics_lab)
+	wait_force(2, battlecruiser)
+	goto(get_vessel 2)
+	
+
+	
+
+
+#- TvZ Mech
+
+		--tvz_mech--
+	multirun(armory_up)
+	multirun(tvz mech up)
+	multirun(air detect)
+	wait(500)
+	build(1, refinery, 85)
+	wait_build(1, barracks)
+	train(1, marine)
+	defenseuse_gg(2, marine)
+	defenseuse_ga(2, marine)
+	defenseuse_aa(2, marine)
+	defenseuse_ag(2, marine)
+	define_max(5, marine)
+	define_max(25, goliath)
+	define_max(7, vulture)
+	farms_timing()
+	train(2, marine)
+
+	multirun(marine defenders)
+	build(1, factory, 120)
+	wait_buildstart(1, factory)
+
+	build(1, bunker, 80)
+	wait_buildstart(1, bunker)
+	build(2, factory, 80)
+	train(1, vulture)
+	defenseuse_gg(1, vulture)
+	defenseuse_ga(1, vulture)
+	build(1, machine_shop, 80)
+	wait_build(1, machine_shop)
+	defenseuse_gg(1, siege_tank)
+	defenseuse_ga(1, siege_tank)
+	train(1, siege_tank)
+	train(3, vulture)
+	build(1, armory, 80)
+	wait_buildstart(1, armory)
+
+	defenseuse_ga(1, goliath)
+	defenseuse_gg(1, goliath)
+	defenseuse_aa(1, goliath)
+	defenseuse_ag(1, goliath)
+	train(2, siege_tank)
+	wait_build(1, armory)
+	multirun(tvz mech goliath)
+	wait(1)
+	multirun(tvz mech tank)
+	
+	--tvz mech natural--
+	resources_jump(330, 0, get tvz mech natural)
+	wait(75)
+	goto(tvz mech natural)
+	--get tvz mech natural--
+	expand(1, fact_expo)
+	wait(100)
+	
+	--tvz mech 3rd factory--
+	resources_jump(200, 100, get tvz mech 3rd factory)
+	wait(75)
+	goto(tvz mech 3rd factory)
+	
+	--get tvz mech 3rd factory--
+	build(3, factory, 85)
+	wait_build(3, factory)	
+	define_max(255, marine)
+	build(2, machine_shop, 80)
+	wait(1500)
+	build(4, factory, 80)
+	wait_buildstart(4, factory)
+	wait_force(12, goliath)
+	build(1, starport, 80)
+	wait_buildstart(1, starport)
+	multirun(tvz mech air)
+
+
+	wait(1)
+	multirun(mech_stuff)
+	train(16, goliath)
+	train(8, siege_tank)
+
+	expand(99, morefact_expo)
+		--mech_attack--
+	multirun(tvz mech goliath)
+	wait(1)
+	multirun(tvz mech tank)
+
+	attack_add(24, goliath)
+	attack_add(16, siege_tank)
+	multirun(tvz mech vulture)
+	random_jump(128, faster push)
+	train(16, goliath)
+	train(7, siege_tank)
+	--faster push--
+	wait(2200)
+	clear_combatdata()
+	attack_prepare()
+	wait(100)
+	attack_do()
+
+	attack_clear()
+	clear_combatdata()
+	multirun(more_expo)
+	wait(2)
+	goto(mech_attack)
+
+
+	
+	--tvz mech goliath--
+	wait_force(25, goliath)
+	stop()
+	
+	--tvz mech tank--
+	notowns_jump(machine_shop, terminate)
+	wait_force(20, siege_tank)
+	stop()
+	
+	--tvz mech vulture--
+	attack_add(7, vulture)
+	stop()
+
+#- TvZ mech misc
+		--tvz mech up--
+	wait_build(1, machine_shop)
+	tech(siege_mode, 80)
+    wait(1200)
+	enemyowns_jump(spire, goliath range first)
+	tech(spider_mines, 80)
+	wait(1200)
+	wait_train(1, goliath)
+	upgrade(1, goliath_range, 80)
+	
+	stop()	
+		--goliath range first--
+	wait_build(1, armory)
+	upgrade(1, goliath_range, 80)
+	wait(1200)
+	tech(spider_mines, 80)
+	stop()
+	--tvz mech air--
+	wait_build(1, starport)
+	build(1, control_tower, 80)
+	wait_build(1, control_tower)
+	wait_build(1, armory)
+	define_max(2, valkyrie)
+	defensebuild_ag(1, valkyrie)
+	--tvz mech air 2--
+	wait(1000)
+	groundmap_jump(tvz mech air 2)
+	check_transports()
+	stop()
+	
+		--mech_stuff--
+	build(4, factory, 80)
+	wait_buildstart(4, factory)
+	build(1, science_facility, 80)
+	build(5, factory, 80)
+	wait_build(1, science_facility)
+	train(1, science_vessel)
+	build(6, factory, 80)
+	tech(irradiate, 60)
+	build(2, armory, 80)
+	wait(5200)
+	stop()
+
+#- Tvz Misc
+
+
+
+		--lair_detect--
+	enemyowns_jump(lair, lair defense)
+	wait(500)
+
+	goto(lair_detect)
+	
+	--lair defense--
+	wait(500)
+	goto(detection)
+
+	
+
+
+
+# =====TvP=====
+
+		--tvp--
+
+	multirun(scv)
+	multirun(anti fe)
+#bbs joins into here
+	multirun(fleet_beacon_panic)
+	wait_build(8, scv)
+
+	build(1, supply_depot, 80)
+	wait_buildstart(1, supply_depot)
+	multirun(tvp bunker)
+	rush(0, douchebaggery)
+	goto(normal tvp)
+	#If toss built a really early gate...
+	--douchebaggery--
+	build(1, barracks, 80)
+	wait_buildstart(1, barracks)
+	goto(tvp_mm)
+	
+	
+	--normal tvp--
+	wait(450)
+	build(1, barracks, 80)
+
+	random_jump(128, tvp_mm)
+	wait(450)
+	build(1, refinery, 95)
+	rush(0, gas check)
+	goto(tvp 2)
+	--gas check--
+	wait(250)
+	enemyowns_jump(assimilator, tvp 2)
+	#multirun(extra crap)
+	goto(tvp_mm)
+
+
+
+
+	
+	
+	
+	--tvp 2--
+	#- 1 fact expo
+	wait_build(1, barracks)
+	defenseuse_gg(2, marine)
+	defenseuse_ga(2, marine)
+	defenseuse_aa(2, marine)
+	defenseuse_ag(2, marine)
+
+
+	multirun(marine defenders)
+	random_jump(24, tvp bio mech)
+	define_max(10, marine)
+	define_max(8, goliath)
+	define_max(18, siege_tank)
+	train(1, marine)
+	farms_timing()
+	multirun(shop upgrades)	
+	build(1, factory, 80)
+	wait_buildstart(1, factory)
+
+	train(1, marine)
+	farms_timing()
+	multirun(shop upgrades)	
+	build(1, factory, 80)
+	wait_buildstart(1, factory)
+
+	wait_build(1, factory)
+	build(1, machine_shop, 80)
+	wait_build(1, machine_shop)
+	guard_all()
+	defenseuse_gg(2, siege_tank)
+	defenseuse_ga(2, siege_tank)
+	train(1, siege_tank)
+	multirun(expand ffs)
+	multirun(train tanks)
+	defenseuse_gg(1, vulture)
+	defenseuse_ga(1, vulture)
+	multirun(air detect)
+	train(5, siege_tank)
+	multirun(tvp vultures)
+	train(2, vulture)
+
+	train(6, siege_tank)
+	wait(1)
+	multirun(armory_up)
+	multirun(tvp_stuff)
+	#train(4, vulture)
+	#train(7, siege_tank)
+	#train(6, vulture)
+	train(8, siege_tank)
+	multirun(more_expo)
+	#train(8, vulture)
+	#train(9, siege_tank)
+	train(12, vulture)
+	train(10, siege_tank)
+	enemyowns_jump(fleet_beacon, push now)
+	random_jump(128, bigger push)
+	--push now--
+	multirun(train tanks)
+	wait(10)
+	multirun(tvp vultures)
+	wait(1)
+	multirun(tvp goliaths)
+	attack_add(10, siege_tank)
+	attack_add(14, vulture)
+	wait(1000)
+	attack_prepare()
+	attack_do()
+	attack_clear()
+	clear_combatdata()
+	--bigger push--
+	multirun(tvp_support)
+	wait(100)
+
+	multirun(tvp big tanks)
+	wait(10)
+	multirun(tvp vultures)
+
+
+	attack_add(12, siege_tank)
+	attack_add(20, vulture)
+	wait(3000)
+	wait_build(1, armory)
+	multirun(tvp goliaths)
+	attack_prepare()
+	attack_do()
+	attack_clear()
+	#defensebuild_gg(1, siege_tank)
+	#defensebuild_gg(1, vulture)	
+	clear_combatdata()
+	multirun(spy)
+	define_max(1, marine)
+	goto(tvp_mech_attack)
+	
+	--2nd factory--
+	wait_buildstart(1, factory)
+	build(2, factory, 80)
+	stop()
+	
+
+
+	
+	--tvp vultures--
+
+	notowns_jump(factory, terminate)
+	train(20, vulture)
+	wait(2000)
+	wait_force(20, vulture)
+	stop()
+
+
+
+		--tvp_mech_attack--
+
+	multirun(tvp big tanks)
+	wait(10)
+	multirun(tvp vultures)
+	wait(10)
+	multirun(tvp goliaths)
+	attack_add(16, siege_tank)
+	attack_add(20, vulture)
+	multirun(tvp ghost)
+	wait(1)
+	multirun(tvp vessel)
+
+
+	wait(3800)
+	attack_prepare()
+	wait(200)
+	attack_do()
+	attack_clear()
+	clear_combatdata()
+
+	goto(tvp_mech_attack)
+	
+	--tvp big tanks--
+
+	notowns_jump(machine_shop, terminate)
+	train(12, siege_tank)
+	train(18, siege_tank)
+	wait(2000)
+	wait_force(18, siege_tank)
+	stop()
+	--tvp goliaths--
+	wait_build(1, armory)
+	enemyowns_jump(shuttle, more goliath)
+	enemyowns_jump(stargate, more goliath)
+	resources_jump(3000, 900, more goliath 2)
+	attack_add(2, goliath)
+	stop()
+	--more goliath--
+	enemyowns_jump(fleet_beacon, more goliath 2)
+	resources_jump(3000, 900, more goliath 2)
+	attack_add(3, goliath)
+	train(3, goliath)
+	stop()
+	--more goliath 2--
+
+	enemyowns_jump(carrier, more goliath 3)
+	define_max(20, goliath)
+	attack_add(10, goliath)
+	train(6, goliath)
+	stop()
+	--more goliath 3--
+
+	define_max(20, goliath)
+	attack_add(20, goliath)
+	wait_force(20, goliath)
+	stop()
+	
+
+	
+#-- TvP Mech Misc
+	
+	
+	--expand ffs--
+	wait_train(1, siege_tank)
+	#wait(1500)
+	enemyowns_jump(templar_archives, delay expo)
+	enemyowns_jump(robotics_support_bay, delay expo)
+	wait(1500)
+	goto(tvp 1 fact expo)
+	--delay expo--
+	build(2, factory, 80)
+	wait_build(2, factory)
+	train(3, vulture)
+	--tvp 1 fact expo--
+	expand(1, fact_expo)
+	wait(600)
+	build(2, factory, 90)
+	wait(800)
+	build(3, factory, 90)
+
+
+
+
+	wait_build(3, factory)
+	build(2, machine_shop, 90)
+
+	wait(1200)
+	build(4, factory, 90)
+	wait_build(4, factory)
+
+
+	build(5, factory, 70)
+	stop()
+	
+	--expand ffs bio--
+	wait_train(1, siege_tank)
+	wait(1500)
+	enemyowns_jump(templar_archives, wait up)
+	enemyowns_jump(robotics_support_bay, wait up)
+	goto(bio 1 fact expo)
+	--wait up--
+	player_need(1, engineering_bay)
+	wait(1700)
+	
+	--bio 1 fact expo--
+	build(1, academy, 130)
+	expand(1, tvz_natural)
+	wait(200)
+	build(2, barracks, 80)
+	wait_buildstart(2, barracks)
+	build(3, barracks, 80)
+	wait_build(3, barracks)
+	build(4, barracks, 80)
+	wait_build(4, barracks)
+	build(5, barracks, 80)
+	wait(1000)
+	build(6, barracks, 80)
+	wait(1000)
+	build(2, engineering_bay, 80)
+	stop()
+	
+	
+	--marine defenders--
+	wait_build(1, barracks)
+	wait_force(1, marine)
+	wait_force(2, marine)
+
+	wait_buildstart(1, factory)
+	wait_force(3, marine)
+	wait_force(4, marine)
+	wait_force(5, marine)
+	race_jump(marine defenders 2, terminate, marine defenders 2)
+	--marine defenders 2--
+	wait_force(6, marine)
+
+	wait_force(7, marine)
+	wait_force(8, marine)
+	wait_force(9, marine)
+	wait_force(10, marine)
+	wait(100)
+	if_owned(vulture, terminate)
+	if_owned(goliath, terminate)
+	time_jump(15, terminate)
+	goto(marine defenders)
+
+
+
+		--tvp_stuff--
+	wait(1400)
+	build(1, armory, 80)
+	wait_buildstart(1, armory)
+	build(2, armory, 80)
+	wait_build(1, armory)
+	defenseuse_ga(1, goliath)
+	defenseuse_gg(1, goliath)
+	defenseuse_aa(1, goliath)
+	defenseuse_ag(1, goliath)
+	build(1, engineering_bay, 60)
+	build(1, academy, 60)
+	wait(3900)
+	build(1, starport, 80)
+	wait_build(5, factory)
+	build(6, factory, 80)
+	wait_train(1, science_vessel)
+	--tvp transports--
+	wait(1500)
+	resources_jump(2000, 1400,get tvp transports)
+
+	groundmap_jump(tvp transports)
+	--get tvp transports--
+	check_transports()
+	wait(15000)
+	define_max(3, dropship)
+	stop()
+
+
+		--tvp_support--
+	wait_build(1, starport)
+	build(1, science_facility, 80)
+	wait(4500)
+	build(1, control_tower, 80)
+	wait_build(1, science_facility)
+	wait_build(1, control_tower)
+	place_guard(science_vessel, 0)
+	train(1, science_vessel)
+	wait_train(1, science_vessel)
+	tech(emp_shockwave, 60)
+	stop()
+	
+
+
+#- TvP Bio
+		--tvp_mm--
+	multirun(tvz tanks)
+	multirun(stim_range)
+	multirun(ebay_up)
+	define_max(55, marine)
+	define_max(255, goliath)
+	define_max(4, vulture)
+	define_max(16, ghost)
+	define_max(3, firebat)
+	define_max(3, science_vessel)
+	build(2, barracks, 80)
+	wait_build(1, barracks)
+	defenseuse_gg(1, marine)
+	defenseuse_ga(1, marine)
+	defenseuse_aa(1, marine)
+	defenseuse_ag(1, marine)
+	
+	train(1, marine)
+	farms_timing()
+	train(4, marine)
+
+	build(1, refinery, 95)
+	train(6, marine)
+	build(1, academy, 80)
+
+	train(10, marine)
+	multirun(medics)
+	build(3, barracks, 80)
+	train(12, marine)
+	wait_build(1, academy)
+	defenseuse_gg(1, medic)
+	defenseuse_gg(1, firebat)
+	defenseuse_ga(1, firebat)
+	train(2, firebat)
+	random_jump(128, tvp_mm 3)
+	attack_add(16, marine)
+	attack_add(3, medic)
+	attack_add(2, firebat)
+	wait(350)
+	attack_prepare()
+	attack_do()
+	--tvp_mm 3--
+
+	expand(1, tvz_natural)
+	attack_clear()
+	build(1, factory, 85)
+	clear_combatdata()
+	multirun(tvp_mm turrets)
+	multirun(pump marines)
+
+
+	wait_build(1, factory)
+	build(1, engineering_bay, 80)
+	place_guard(medic, 0)
+	wait_build(1, machine_shop)
+	train(2, siege_tank)
+	multirun(add more marines)
+
+	attack_add(2, siege_tank)
+	attack_add(24, marine)
+	attack_add(1, firebat)
+	attack_add(5, medic)
+	--tvp_mm 4--
+	wait_force(2, siege_tank)
+	wait(165)
+	attack_prepare()
+	attack_do()
+	attack_clear()
+	multirun(tvp mm more structures)
+	clear_combatdata()
+	train(35, marine)
+	expand(2, tvz_expo)
+
+	wait(10)
+	multirun(tvp_mm_support)
+	wait(1)
+	multirun(need ghost)
+	wait(1)
+	multirun(add more marines)
+
+	attack_add(28, marine)
+	attack_add(7, medic)
+	attack_add(4, siege_tank)
+	attack_add(1, firebat)
+	multirun(tvp ghost)
+	multirun(tvp vessel)
+	wait(2500)
+	attack_prepare()
+	attack_do()
+	attack_clear()
+	clear_combatdata()
+	multirun(tvz_moreexpo 2)
+
+		--deep 6--
+	multirun(add more marines)
+	wait(5)
+	multirun(add medics)
+	wait(5)
+	multirun(more siege tanks)
+	attack_add(40, marine)
+	attack_add(10, medic)
+	attack_add(6, siege_tank)
+	attack_add(1, firebat)
+	multirun(deep 6 ghost)
+	multirun(tvp vessel)
+	wait(3000)
+	attack_prepare()
+	attack_do()
+	attack_clear()
+	clear_combatdata()
+	goto(deep 6)
+	
+		--tvp bio mech--
+	#- 1 fact expo to mech
+	multirun(tvz tanks)
+	multirun(stim_range)
+	multirun(ebay_up)
+	define_max(55, marine)
+	define_max(255, goliath)
+	define_max(4, vulture)
+	define_max(16, ghost)
+	define_max(3, firebat)
+	define_max(58, marine)
+	train(1, marine)
+	farms_timing()
+	multirun(shop upgrades)	
+	build(1, factory, 80)
+	wait_buildstart(1, factory)
+
+	train(1, marine)
+	farms_timing()
+	multirun(tvz tanks)	
+	build(1, factory, 80)
+
+	wait_build(1, factory)
+	multirun(expand ffs bio)
+	build(1, machine_shop, 80)
+	multirun(pump marines)
+	wait_build(1, machine_shop)
+	train(1, siege_tank)
+	defenseuse_gg(1, siege_tank)
+	defenseuse_ga(1, siege_tank)
+	train(3, siege_tank)
+	multirun(constant tanks)
+	wait(1)
+	multirun(tvp_mm turrets)
+	multirun(medics)
+	wait_build(1, academy)
+	defenseuse_gg(1, firebat)
+	train(7, siege_tank)
+	attack_add(20, marine)
+	attack_add(4, medic)
+	attack_add(1, firebat)
+	attack_add(7, siege_tank)
+	wait(500)
+	goto(tvp_mm 4)
+	
+	--constant tanks--
+	train(8, siege_tank)
+	wait_force(8, siege_tank)
+	stop()
+	
+	
+	
+	
+#- TvP Bio misc	
+
+
+				--tvp mm more structures--
+	build(1, engineering_bay, 80)
+	build(4, barracks, 80)
+	wait_buildstart(4, barracks)
+	player_need(2, engineering_bay)
+	build(5, barracks, 60)
+	wait_build(5, barracks)	
+	build(6, barracks, 80)
+	wait(8500)
+	build(2, factory, 80)
+	wait_build(2, factory)
+	build(2, machine_shop, 80)
+	build(7, barracks, 80)
+	wait_train(1, science_vessel)
+	wait(7300)
+	goto(tvz transports)
+	
+	--tvp vessel--
+	notowns_jump(science_facility, terminate)
+	notowns_jump(control_tower, terminate)
+	attack_add(1, science_vessel)
+	wait_force(1, science_vessel)
+	wait_force(2, science_vessel)
+	wait_force(3, science_vessel)
+	stop()
+	
+	--tvp ghost--
+	notowns_jump(covert_ops, terminate)
+	attack_add(3, ghost)
+	stop()
+	
+	--deep 6 ghost--
+	notowns_jump(covert_ops, terminate)
+	attack_add(9, ghost)
+	stop()
+#- TvP Bio M+M tech	
+				--tvp_mm_support--
+	build(1, starport, 85)
+	wait_build(1, starport)
+	build(1, control_tower, 85)
+	build(1, science_facility, 85)
+	wait(4500)
+	wait_build(1, science_facility)
+	wait_build(1, control_tower)
+	train(1, science_vessel)
+	wait_train(1, science_vessel)
+	tech(irradiate, 70)
+	wait(2500)
+	train(2, science_vessel)
+	wait(3500)
+	train(3, science_vessel)
+	upgrade(1, science_vessel_mana, 60)
+	wait(6000)
+	tech(emp_shockwave, 45)
+	stop()
+
+# =====Reactive Defense=====
+#TvT early defense
+	--tvt bunker--
+	wait_buildstart(9, scv)
+	wait(150)
+	rush(0, bunker)
+	wait_build(12, scv)
+	rush(0, check gas tvt)
+	--terminate--
+	stop()
+#TvZ early defense
+			--pool_detect--
+	rush(0, bunker)
+	wait(50)
+
+	goto(pool_detect)
+	
+
+
+
+		--bunker--
+	time_jump(3, terminate)
+	build(1, barracks, 85)
+	wait_buildstart(1, barracks)
+	wait(150)
+	build(2, barracks, 85)
+	wait_build(1, barracks)
+	defenseuse_gg(1, marine)
+	train(1, marine)
+	build(1, bunker, 80)
+	train(4, marine)
+	stop()
+	
+
+	
+
+#TvP Early defense
+--tvp bunker--
+wait_buildstart(12, scv)
+rush(0, build tvp bunker)
+stop()
+--build tvp bunker--
+wait_buildstart(2, supply_depot)
+wait_build(1, barracks)
+build(1, bunker, 95)
+wait_build(1, bunker)
+enemyowns_jump(cybernetics_core, terminate)
+build(2, bunker, 120)
+stop()
+
+
+#Early rush or faster expand if no early military units (tvp/tvt)
+	--anti fe--
+	wait_buildstart(13, scv)
+	rush(0, terminate)
+	wait_build(1, barracks)
+	if_owned(refinery, expand too)
+	random_jump(144, expand too bio)
+	train(4, marine)
+	wait_train(4, marine)
+	send_suicide(0)
+	clear_combatdata()
+	--expand too bio--
+	wait_force(2, marine)
+	expand(1, tvz_expo)
+	goto(pump marines)
+	--expand too--
+	wait_build(1, machine_shop)
+	train(1, siege_tank)
+	expand(1, fact_expo)
+	train(2, siege_tank)
+	defenseuse_gg(1, siege_tank)
+	train(4, siege_tank)
+	wait_force(4, siege_tank)
+	train(6, siege_tank)
+	wait_force(10, siege_tank)
+	stop()
+	
+
+
+
+		--cloak_detect--
+	enemyowns_jump(templar_archives, detection)
+	enemyowns_jump(lurker, detection)
+	enemyowns_jump(control_tower, detection)
+	enemyowns_jump(spire, detection)
+	wait(400)
+
+	goto(cloak_detect)
+
+
+	--detection--
+	build(1, academy, 85)
+	wait_buildstart(1, academy)
+	goto(turrets)
+
+
+		--air detect--
+	enemyowns_jump(stargate, air counter)
+	enemyowns_jump(starport, air counter)
+	enemyowns_jump(spire, air counter)
+	enemyowns_jump(shuttle, air counter)
+	wait(500)
+
+	goto(air detect)
+
+
+		--air counter--
+	wait(1)
+	wait_build(1, factory)
+
+	build(1, armory, 80)
+	wait_buildstart(1, armory)
+	multirun(turrets)
+	wait_build(1, armory)
+	defenseuse_gg(1, goliath)
+	defenseuse_ga(1, goliath)
+	defenseuse_aa(1, goliath)
+	defenseuse_ag(1, goliath)
+	train(4, goliath)
+	wait_force(4, goliath)
+	race_jump(bc watch, defensebuild goliaths, carrier watch)
+	
+	--bc watch--
+	enemyowns_jump(battlecruiser, mass goliath)
+	wait(800)
+	goto(defensebuild goliaths)
+	
+	--carrier watch--
+	enemyowns_jump(fleet_beacon, carrier watch 2)
+	wait(800)
+	goto(carrier watch)
+	
+	--carrier watch 2--
+	wait(1000)
+	train(8, goliath)
+	wait_force(8, goliath)
+	--carrier watch 3--
+	enemyowns_jump(carrier, mass goliath)
+	wait(800)
+	goto(carrier watch 3)
+	
+	
+	
+	--mass goliath--
+	define_max(20, goliath)
+
+	send_suicide(0)
+	train(12, goliath)
+	wait_force(12, goliath)
+	
+	--defensebuild goliaths--
+	wait_force(20, goliath)
+	defensebuild_ag(1, goliath)
+	stop()
+	
+
+	
+	
+	
+	
+	
+	--tvp_mm turrets--
+	enemyowns_jump(fleet_beacon, turrets)
+	wait(1000)
+	goto(tvp_mm turrets)
+	
+
+		--fleet_beacon_panic--
+	wait_build(4, missile_turret)
+	--mass turret--
+	enemyowns_jump(carrier, prepare_antiair)
+	wait(1000)
+
+	goto(mass turret)
+
+
+
+	
+			--turrets--
+	notowns_jump(engineering_bay, build ebay)
+	goto(turrets 2)
+	--build ebay--
+	build(1, engineering_bay, 80)
+		--turrets 2--
+	wait_build(1, engineering_bay)
+
+	race_jump(tvtp placement,tvz placement, tvtp placement)
+	--tvtp placement--
+	creep(3)
+	build(1, missile_turret, 80)
+	wait(350)
+	build(2, missile_turret, 80)
+	wait(350)
+	build(3, missile_turret, 50)
+	wait(700)
+	build(4, missile_turret, 30)
+	groundmap_jump(terminate)
+	#for islands and capital ships
+		--prepare_antiair--
+	wait(1500)
+	creep(0)
+	build(5, missile_turret, 70)
+	wait(300)
+	build(6, missile_turret, 70)
+	wait(300)
+	build(7, missile_turret, 70)
+	wait(300)
+	build(8, missile_turret, 70)
+	stop()
+	--tvz placement--
+	creep(3)
+	build(1, missile_turret, 80)
+	wait_buildstart(1, missile_turret)
+	wait(130)
+	creep(0)
+	build(2, missile_turret, 80)
+	wait_buildstart(2, missile_turret)
+	
+	
+	--tvz placement 2--
+	enemyowns_jump(spire, place more turrets)
+	wait(500)
+	goto(tvz placement 2)
+	--place more turrets--
+	creep(0)
+	build(3, missile_turret, 70)
+	wait_buildstart(3, missile_turret)
+	wait(130)
+	creep(3)
+	build(4, missile_turret, 70)
+	wait_build(4, missile_turret)
+	creep(0)
+	build(5, missile_turret, 70)
+	stop()
+	
+#=====Misc Tech/Buildings=====
+
+
+		--spy--
+	enemyowns_jump(fleet_beacon, need ghost)
+	resources_jump(0, 2000, need ghost)
+	wait(1000)
+
+	goto(spy)
+
+
+		--need ghost--
+	wait_build(1, science_facility)
+	build(1, covert_ops, 80)
+	wait_build(1, covert_ops)
+
+	notowns_jump(academy, ghost academy)
+	goto(build ghost)
+
+
+		--ghost academy--
+	build(1, academy, 80)
+	wait_build(1, academy)
+
+		--build ghost--
+	tech(lockdown, 80)
+	defenseuse_gg(1, ghost)
+	train(1, ghost)
+	defenseuse_ag(1, ghost)
+	wait(1700)
+
+	tech(personnel_cloaking, 80)
+	wait_train(3, ghost)
+	wait(3000)
+	upgrade(1, ghost_sight, 60)
+
+
+	wait(1250)
+	upgrade(1, ghost_mana, 60)
+
+
+	stop()
+	
+		#Constant Scv production
+
+				--expo scv--
+	wait_build(1, command_center)
+	build(1, scv, 80)
+	wait_build(1, scv)
+	build(2, scv, 80)
+	wait_build(2, scv)
+	build(3, scv, 80)
+	wait_build(3, scv)
+	build(4, scv, 80)
+	wait_build(4, scv)
+	build(5, scv, 80)
+	wait_build(5, scv)
+	build(6, scv, 80)
+	wait_build(6, scv)
+	build(7, scv, 80)
+	wait_build(7, scv)
+	build(8, scv, 80)
+		--scv--
+		
+	build(9, scv, 80)
+	wait_build(9, scv)
+	build(10, scv, 80)
+	wait_buildstart(10, scv)
+	wait(295)
+	#scv 2
+	build(11, scv, 80)
+	wait_buildstart(11, scv)
+	wait(295)
+
+	build(12, scv, 80)
+	wait_buildstart(12, scv)
+	wait(295)
+	build(13, scv, 80)
+	wait_buildstart(13, scv)
+	wait(295)
+	build(14, scv, 80)
+	wait_buildstart(14, scv)
+	wait(295)
+	build(15, scv, 80)
+	wait_buildstart(15, scv)
+	wait(295)
+	build(16, scv, 80)
+	wait_buildstart(16, scv)
+	wait(295)
+	build(17, scv, 80)
+	wait_buildstart(17, scv)
+	wait(295)	
+	build(18, scv, 80)
+	wait_buildstart(18, scv)
+	wait(295)
+	build(19, scv, 80)
+	wait_buildstart(19, scv)
+	wait(295)
+	build(20, scv, 80)
+	wait_buildstart(20, scv)
+	wait(295)
+	build(21, scv, 80)
+	wait_buildstart(21, scv)
+	wait(295)
+	build(22, scv, 80)
+	wait_buildstart(22, scv)
+	wait(295)
+	build(23, scv, 80)
+	wait_buildstart(23, scv)
+	wait(295)
+	build(24, scv, 80)
+	wait_buildstart(24, scv)
+	wait(295)
+	build(25, scv, 80)	
+	stop()
+	
+
+
+
+	--maynard--
+	get_oldpeons(10)
+	stop()
+	
+			--comsat--
+	wait_build(1, academy)
+	build(1, refinery, 95)
+	build(1, comsat_station, 105)
+	stop()
+	
+		--essentials--
+	wait_build(1, barracks)
+	player_need(1, barracks)
+	wait_build(1, factory)
+	player_need(1, factory)
+	wait_build(1, starport)
+	player_need(1, starport)
+	wait_build(1, science_facility)
+	player_need(1, science_facility)
+	stop()
+#=====Expansions=====
+#-Expanding for mech builds	
+			--more_expo--
+	wait(4500)
+	expand(99, morefact_expo)
+	wait(6000)
+	goto(more_expo)
+
+#Natural Expo
+		--fact_expo--
+	start_town()
+	--fact_expo 2--
+	build(1, command_center, 120)
+	get_oldpeons(2)
+	multirun(build expo turrets)
+	wait(800)
+	multirun(mech expo bunker)
+	wait_build(1, command_center)
+
+
+	multirun(expo scv)
+	get_oldpeons(8)
+	multirun(gas)
+	wait(800)
+	multirun(expo_comsat)
+	wait(600)
+	player_need(1, barracks)
+	build(1, factory, 60)
+	wait_build(1, factory)
+	build(1, machine_shop, 30)
+
+	wait_train(1, goliath)
+	player_need(1, factory)
+	wait(10)
+	player_need(1, armory)
+	stop()
+	
+	--mech expo bunker--
+	enemyowns_jump(command_center, terminate)
+	enemyowns_jump(robotics_support_bay, terminate)
+	build(1, bunker, 85)
+	wait_buildstart(1, bunker)
+	defenseuse_gg(1, marine)
+	defenseuse_ga(1, marine)
+	defenseuse_aa(1, marine)
+	defenseuse_ag(1, marine)
+	stop()
+	
+	--wait for ebay--
+	wait(150)
+	goto(build expo turrets)
+
+
+
+	--build expo turrets--
+	notowns_jump(engineering_bay, wait for ebay)
+	player_need(1, engineering_bay)
+	wait_buildstart(1, command_center)
+	wait(200)
+	build(1, missile_turret, 80)
+
+	wait_buildstart(1, missile_turret)
+	build(2, missile_turret, 70)
+	
+	--more expo fact turret--
+	enemyowns_jump(battlecruiser, build more expo fact turret)
+	enemyowns_jump(carrier, build more expo fact turret)
+	wait(1200)
+	groundmap_jump(more expo fact turret)
+	
+	--build more expo fact turret--
+	creep(0)
+	build(3, missile_turret, 80)
+	wait_buildstart(3, missile_turret)
+	build(4, missile_turret, 50)
+	groundmap_jump(terminate)
+	wait_build(4, missile_turret)
+	goto(prepare_antiair)
+	
+#Outer expos
+
+		--morefact_expo--
+	start_town()
+	build(1, command_center, 110)
+	multirun(expo scv)
+	wait_build(1, command_center)
+	multirun(build expo turrets)
+	multirun(maynard)
+
+	wait(800)
+	multirun(expo_addon)
+
+	wait(2100)
+	multirun(gas)
+
+	wait(300)
+	player_need(1, barracks)
+	build(1, factory, 60)
+	wait_build(1, factory)
+	build(1, machine_shop, 30)
+	wait_train(1, goliath)
+	player_need(1, factory)
+	wait(10)
+	player_need(1, armory)
+
+	stop()
+#- Expanding for bio builds	
+			--tvz_moreexpo--
+	wait(9500)
+	expand(99, tvz_expo)
+	wait(6000)
+	--tvz_moreexpo 2--
+	wait(2000)
+	expand(99, tvz_expo)
+	wait(7000)
+
+	goto(tvz_moreexpo 2)
+	
+
+
+
+		--tvz_natural--
+	start_town()
+	defenseuse_gg(2, marine)
+	--tvz_natural 2--
+	build(1, command_center, 120)
+	enemyowns_jump(templar_archives, tvz_natural 3)
+	goto(tvz_natural 4)
+	--tvz_natural 3--
+	get_oldpeons(2)
+
+
+	--tvz_natural 4--
+	multirun(natural turrets)
+	wait_build(1, command_center)
+	get_oldpeons(6)
+	wait(1)
+	multirun(expo scv)
+
+	player_need(1, barracks)
+	build(1, bunker, 120)
+	wait_build(1, bunker)
+	multirun(place medic)
+	build(2, bunker, 80)
+	wait_build(2, bunker)
+	wait(1150)
+	multirun(expo_comsat)
+	wait(1000)
+
+	multirun(natural barracks)
+	stop()
+	
+
+	
+	--gas--
+	build(1, refinery, 35)
+	stop()
+	
+	--place medic--
+	wait_train(1, medic)
+	place_guard(medic, 0)
+	wait_train(4, medic)
+	place_guard(medic, 1)
+	stop()
+
+
+
+
+
+	--natural turrets--
+	enemyowns_jump(lair, build natural turrets)
+	enemyowns_jump(templar_archives, build natural turrets)
+	wait(600)
+	goto(natural turrets)
+	
+
+		--build natural turrets--
+	notowns_jump(engineering_bay, wait natural turrets)
+	player_need(1, engineering_bay)
+	build(1, missile_turret, 80)
+	wait_build(1, missile_turret)
+	build(2, missile_turret, 50)
+	wait_build(2, missile_turret)
+
+
+	--more natural turret--
+	enemyowns_jump(mutalisk, build more natural turret)
+	enemyowns_jump(carrier, build more expo fact turret)
+	wait(1200)
+	goto(more natural turret)
+	--build more natural turret--
+	build(3, missile_turret, 50)
+	wait_buildstart(3, missile_turret)
+	build(4, missile_turret, 50)
+
+
+	stop()
+	
+	--wait natural turrets--
+	wait(450)
+	goto(build natural turrets)
+	
+
+
+		--natural barracks--
+	wait(1000)
+	build(1, barracks, 70)
+	wait(5000)
+	build(2, barracks, 70)
+	wait_build(2, barracks)
+	build(3, barracks, 70)
+	stop()
+
+
+
+		--tvz_expo--
+	start_town()
+
+	build(1, command_center, 115)
+	wait_build(1, command_center)
+	multirun(expo scv)
+	multirun(maynard)
+	multirun(natural turrets)
+
+	wait(800)
+	multirun(expo_addon)
+	multirun(delayed bunk)
+	wait(2400)
+	build(1, barracks, 40)
+	wait_build(1, barracks)
+	build(2, barracks, 40)
+	wait_build(2, barracks)
+	build(3, barracks, 40)
+	stop()
+	
+	--delayed bunk--
+	wait(500)
+	player_need(1, barracks)
+	build(1, bunker, 70)
+	stop()
+
+
+
+		--expo_addon--
+#comsat is default, so nukes are actively discourged til resources are high
+#only have one nuclear silo max, situation must be very good.
+	notowns_jump(comsat_station, expo_comsat)
+	notowns_jump(covert_ops, expo_comsat)
+	if_owned(nuclear_silo, expo_comsat)
+	random_jump(64, expo_comsat)
+	resources_jump(1000, 2000, nuke)
+
+		--expo_comsat--
+	wait_build(1, command_center)
+	notowns_jump(academy, expo academy)
+	player_need(1, academy)
+	build(1, comsat_station, 80)
+	stop()
+	
+	--expo academy--
+	wait(300)
+	goto(expo_comsat)
+
+		--nuke--
+	wait_train(3, ghost)
+	nuke_rate(5)
+	build(1, nuclear_silo, 60)
+	stop()
+	
+# =====Upgrades=====
+
+
+			--stim_range--
+	wait_build(1, academy)
+	tech(stim_packs, 100)
+	wait(1250)
+	upgrade(1, marine_range, 100)
+
+
+
+	stop()
+	
+			--shop upgrades--
+	wait_build(1, machine_shop)
+	train(1, siege_tank)
+	tech(siege_mode, 80)
+	wait(1200)
+	#enemyowns_jump(templar_archives, faster mines)
+	wait_train(1, vulture)
+
+	tech(spider_mines, 80)
+	wait(1200)
+
+	wait_build(1, armory)
+	wait(250)
+	upgrade(1, goliath_range, 80)
+	stop()
+	
+
+		--ebay_up--
+	wait_build(1, engineering_bay)
+	upgrade(1, t_infantry_weapon, 90)
+	wait(2500)
+	multirun(infantry armor)
+	wait(2000)
+	wait_build(1, science_facility)
+	upgrade(2, t_infantry_weapon, 80)
+	wait(4800)
+	upgrade(3, t_infantry_weapon, 80)
+	stop()
+	--infantry armor--
+	build(2, engineering_bay, 80)
+	wait_build(2, engineering_bay)
+	upgrade(1, t_infantry_armor, 80)
+	wait(4500)
+	wait_build(1, science_facility)
+
+
+	upgrade(2, t_infantry_armor, 80)
+	wait(4800)
+
+
+
+	upgrade(3, t_infantry_armor, 80)
+	stop()
+
+
+	
+
+
+
+		--armory_up--
+		
+	wait_build(1, armory)
+	race_jump(tvt up, tvt up, tvp up)
+	--tvt up--
+	upgrade(1, t_vehicle_weapon, 70)
+	wait(4500)
+	upgrade(1, t_vehicle_plating, 70)
+	wait(4500)
+
+	wait_build(1, science_facility)
+
+	upgrade(2, t_vehicle_weapon, 70)
+	build(2, armory, 80)
+	wait_build(2, armory)
+
+	upgrade(2, t_vehicle_plating, 50)
+	wait(4800)
+
+	upgrade(3, t_vehicle_weapon, 40)
+	upgrade(3, t_vehicle_plating, 40)
+    race_jump(ship_up, terminate, terminate)
+	
+	--tvp up--
+	upgrade(1, t_vehicle_weapon, 70)
+	multirun(2nd armory)
+	wait(2700)
+	notowns_jump(starport, get upgrade facility)
+	wait(1800)
+	--tvp up 2--
+	wait_build(1, science_facility)
+	upgrade(2, t_vehicle_weapon, 70)
+	wait(4900)
+	upgrade(3, t_vehicle_weapon, 60)
+	stop()
+	
+	--get upgrade facility--
+	build(1, starport, 80)
+	wait_build(1, starport)
+	build(1, science_facility, 80)
+	goto(tvp up 2)
+	
+	--2nd armory--
+	wait_build(2, armory)
+	upgrade(1, t_vehicle_plating, 70)
+	wait(4500)
+	wait_build(1, science_facility)
+	upgrade(2, t_vehicle_plating, 70)
+	wait(4900)
+	upgrade(3, t_vehicle_plating, 40)
+	stop()
+	
+	
+		--ship_up--
+	wait(5500)
+	wait_build(1, physics_lab)
+
+	upgrade(1, t_ship_weapon, 30)
+
+	upgrade(1, t_ship_plating, 30)
+	wait_build(1, science_facility)
+	wait(5000)
+	wait_train(5, battlecruiser)
+	upgrade(2, t_ship_weapon, 30)
+
+	upgrade(2, t_ship_plating, 30)
+	wait(5000)
+	wait_train(7, battlecruiser)
+
+	upgrade(3, t_ship_weapon, 30)
+
+	upgrade(3, t_ship_plating, 20)
+	stop()
+
+
+#=====Island Maps=====
+		--island--
+	multirun(scv)
+	multirun(get dropship)
+	define_max(28, goliath)
+	define_max(1, dropship)
+	define_max(4, wraith)
+	define_max(3, valkyrie)
+	define_max(5, siege_tank)
+	wait_buildstart(9, scv)
+	build(1, supply_depot, 80)
+	wait_buildstart(10, scv)
+	build(1, refinery, 80)
+	build(1, barracks, 80)
+	wait_build(1, barracks)
+	build(1, factory, 90)
+	wait_buildstart(1, factory)
+	farms_timing()
+	multirun(air detect)
+	train(1, marine)
+	defenseuse_gg(1, marine)
+	defenseuse_ga(1, marine)
+	defenseuse_aa(1, marine)
+	defenseuse_ag(1, marine)
+	wait_build(1, factory)
+	train(1, vulture)
+	defenseuse_gg(1, vulture)
+	defenseuse_ga(1, vulture)
+	random_jump(64, vulture drop)
+	goto(island 2)
+	--vulture drop--
+	define_max(2, dropship)
+	multirun(island vults)
+	build(1, armory, 80)
+	wait_buildstart(1, armory)
+	wait_train(1, dropship)
+
+	attack_add(4, vulture)
+
+	attack_do()
+
+	attack_clear()
+	clear_combatdata()
+	--island 2--
+	build(1, armory, 80)
+	wait_buildstart(1, armory)
+	defenseuse_aa(1, goliath)
+	defenseuse_ag(1, goliath)
+	defensebuild_ga(1, goliath)
+	defensebuild_gg(1, goliath)
+	defensebuild_aa(1, goliath)
+	defensebuild_ag(1, goliath)
+	train(2, vulture)
+	multirun(get airexpo)
+
+	build(1, bunker, 80)
+	train(2, marine)
+	multirun(island up)
+	multirun(2nd factory)
+
+	train(1, goliath)
+	defenseuse_ga(1, goliath)
+	defenseuse_gg(1, goliath)
+
+	train(4, goliath)
+	build(1, machine_shop, 90)
+	train(8, goliath)
+
+	build(3, factory, 90)
+	multirun(island armory)
+	train(1, wraith)
+	defenseuse_ag(1, wraith)
+	defenseuse_aa(1, wraith)
+	defenseuse_gg(1, wraith)
+	defenseuse_ga(1, wraith)
+	define_max(2, dropship)
+	build(2, machine_shop, 90)
+	train(5, vulture)
+	multirun(island stuff)
+	wait(1)
+	multirun(cloaking)
+	define_max(4, dropship)
+	defenseuse_gg(1, siege_tank)
+	defenseuse_ga(1, siege_tank)
+	defensebuild_gg(1, siege_tank)
+	defensebuild_ga(1, siege_tank)
+	multirun(bc defense)
+	wait(1)
+	multirun(island goliath)
+	random_jump(188, delayed)
+	attack_add(10, goliath)
+	attack_add(3, siege_tank)
+	wait(2000)
+	attack_prepare()
+	attack_do()
+	attack_clear()
+	clear_combatdata()
+	--delayed--
+	wait_build(1, physics_lab)
+	define_max(5, dropship)
+
+
+		--bcs--
+	attack_add(4, siege_tank)
+	attack_add(24, goliath)
+	attack_add(6, battlecruiser)
+
+	attack_add(4, wraith)
+	attack_add(3, valkyrie)
+	wait(2800)
+
+	attack_prepare()
+	attack_do()
+	attack_clear()
+	clear_combatdata()
+	wait(1)
+
+	resources_jump(1200, 900, late game)
+	wait(100)
+
+	goto(bcs)
+
+
+		--late game--
+	define_max(6, dropship)
+	attack_add(10, battlecruiser)
+	attack_add(5, siege_tank)
+	attack_add(28, goliath)
+	attack_add(2, wraith)
+	attack_add(3, valkyrie)
+	wait(3100)
+
+	attack_prepare()
+	wait(100)
+
+	attack_do()
+	attack_clear()
+	clear_combatdata()
+	wait(1)
+
+	resources_jump(1200, 900, late game)
+	goto(bcs)
+
+
+		--cloaking--
+	wait_train(3, wraith)
+	wait_build(1, control_tower)
+	tech(cloaking_field, 20)
+	stop()
+	--bc defense--
+	wait_build(1, physics_lab)
+	defenseuse_ag(1, battlecruiser)
+	defenseuse_aa(1, battlecruiser)
+	defenseuse_gg(1, battlecruiser)
+	defenseuse_ga(1, battlecruiser)
+	goto(train bcs)
+
+			--get dropship--
+	wait_build(1, factory)
+	build(1, starport, 90)
+	wait_build(1, starport)
+	build(1, control_tower, 90)
+	wait_build(1, control_tower)
+	check_transports()
+	stop()
+		--get airexpo--
+	wait_train(1, dropship)
+	expand(1, air natural)
+	wait(4400)
+	expand(2, air expo)
+	
+
+
+		--more airexpo--
+	wait(7700)
+	expand(99, air expo)
+
+
+	goto(more airexpo)
+
+
+		--air natural--
+	start_town()
+	build(1, command_center, 130)
+	wait_build(1, command_center)
+	multirun(expo scv)
+	get_oldpeons(8)
+	multirun(airexpo stuff)
+	multirun(expo_addon)
+	wait(700)
+	multirun(build expo turrets)
+	multirun(gas)
+	wait_train(1, goliath)
+	player_need(1, armory)
+	stop()
+	
+		--air expo--
+	start_town()
+	build(1, command_center, 130)
+	wait_build(1, command_center)
+	multirun(expo scv)
+	wait(1)
+	multirun(maynard)
+	multirun(airexpo stuff)
+	wait(1)
+	multirun(build expo turrets)
+	wait(700)
+	multirun(expo_addon)
+	wait(1400)
+	multirun(gas)
+	wait_train(1, goliath)
+	player_need(1, armory)
+	stop()
+
+
+		--airexpo stuff--
+	player_need(1, barracks)
+	wait(1)
+	player_need(1, factory)
+	build(1, factory, 60)
+	wait_build(1, factory)
+	build(1, starport, 60)
+	wait_build(1, starport)
+	build(2, factory, 60)
+	build(1, machine_shop, 60)
+	build(1, control_tower, 60)
+	stop()
+
+
+		--island up--
+	wait_build(1, armory)
+	wait_build(1, machine_shop)
+	upgrade(1, goliath_range, 60)
+	wait(1800)
+
+	tech(siege_mode, 60)
+	wait(1800)
+
+	tech(spider_mines, 60)
+	stop()
+
+
+		--island armory--
+	wait_build(1, armory)
+	upgrade(1, t_vehicle_weapon, 70)
+	wait(4800)
+	upgrade(1, t_vehicle_plating, 70)
+	wait(4000)
+	build(2, armory, 80)
+	wait_build(2, armory)
+
+	upgrade(1, t_ship_weapon, 70)
+	upgrade(1, t_ship_plating, 70)
+	wait(5000)
+
+	wait_build(1, science_facility)
+	upgrade(2, t_vehicle_weapon, 70)
+
+	upgrade(2, t_ship_plating, 70)
+
+	wait(5000)
+	upgrade(3, t_vehicle_weapon, 70)
+
+	upgrade(3, t_ship_plating, 70)
+	wait(5000)
+	upgrade(2, t_ship_weapon, 60)
+
+	upgrade(2, t_vehicle_plating, 60)
+
+	wait(5000)
+	upgrade(3, t_ship_weapon, 50)
+	upgrade(3, t_vehicle_plating, 30)
+	stop()
+
+
+		--island stuff--
+	build(4, factory, 100)
+	wait_build(4, factory)
+	build(2, machine_shop, 90)
+	build(1, science_facility, 90)
+	build(2, starport, 90)
+	wait_build(1, science_facility)
+	train(2, science_vessel)
+	race_jump(get_bc 3, irradiate, emp)
+
+
+		--irradiate--
+	tech(irradiate, 80)
+	train(3, science_vessel)
+	goto(get_bc 3)
+
+
+		--emp--
+	tech(emp_shockwave, 60)
+	goto(get_bc 3)
+	
+	--island goliath--
+	train(28, goliath)
+	wait(2000)
+	wait_force(28, goliath)
+	goto(island goliath)
+	
+	--island vults--
+	train(4, vulture)
+	wait_force(4, vulture)
+	stop()

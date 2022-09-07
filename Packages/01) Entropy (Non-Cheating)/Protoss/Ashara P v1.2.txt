@@ -1,0 +1,1972 @@
+#Ashara P
+PMCx(1343, 101, aiscript):
+	start_town()
+	transports_off()
+	farms_notiming()
+
+#if DEBUG
+	debug(null, Ashara Protoss 1.2)
+	--null--
+#endif
+
+	multirun(essentials)
+	goto(groundmap)
+		--essentials--
+wait_build(1, gateway)
+player_need(1, gateway)
+wait_build(1, cybernetics_core)
+player_need(1, cybernetics_core)
+wait_build(1, citadel_of_adun)
+player_need(1, citadel_of_adun)
+wait_build(1, templar_archives)
+
+player_need(1, templar_archives)
+stop()
+--groundmap--
+	define_max(50, Protoss Probe)
+	define_max(40, Protoss Zealot)
+	define_max(30, Protoss Dragoon)
+	define_max(15, Protoss High Templar)
+	define_max(10, Protoss Archon)
+	define_max(30, Protoss Dark Templar)
+	define_max(6, Protoss Dark Archon)
+	define_max(6, Protoss Shuttle)
+	define_max(255, Protoss Reaver)
+	define_max(6, Protoss Observer)
+	define_max(255, Protoss Scout)
+	define_max(15, Protoss Carrier)
+	define_max(5, Protoss Arbiter)
+	define_max(20, Protoss Corsair)
+	build(1, Protoss Probe, 2)
+	wait_buildstart(1, Protoss Probe)
+	build(2, Protoss Probe, 2)
+	wait_buildstart(2, Protoss Probe)
+	build(3, Protoss Probe, 2)
+	wait_buildstart(3, Protoss Probe)
+	build(4, Protoss Probe, 2)
+	wait_buildstart(4, Protoss Probe)
+	build(5, Protoss Probe, 2)
+	wait_buildstart(5, Protoss Probe)
+	build(6, Protoss Probe, 2)
+	wait_buildstart(6, Protoss Probe)
+	build(7, Protoss Probe, 2)
+	wait_buildstart(7, Protoss Probe)
+	race_jump(ASHP 0001, ASHP 0002, ASHP 0003)
+
+
+		--ASHP 0001--
+	random_jump(85, ASHP 0004)
+	random_jump(128, ASHP 0005)
+	random_jump(128, ASHP 0006)
+	goto(ASHP 0007)
+
+
+		--ASHP 0002--
+	random_jump(128, ASHP 0005)
+	random_jump(128, ASHP 0006)
+	goto(ASHP 0007)
+
+
+		--ASHP 0003--
+	random_jump(85, ASHP 0007)
+	random_jump(128, ASHP 0005)
+	random_jump(85, ASHP 0006)
+	goto(ASHP 0004)
+
+
+		--ASHP 0005--
+	build(8, Protoss Probe, 2)
+	wait_buildstart(8, Protoss Probe)
+	build(1, Protoss Pylon, 2)
+	wait_buildstart(1, Protoss Pylon)
+	build(9, Protoss Probe, 2)
+	wait_buildstart(9, Protoss Probe)
+	build(1, Protoss Gateway, 2)
+	wait_buildstart(1, Protoss Gateway)
+	build(10, Protoss Probe, 2)
+	wait_buildstart(10, Protoss Probe)
+	build(2, Protoss Gateway, 2)
+	wait_buildstart(2, Protoss Gateway)
+	multirun(ASHP 0008)
+	build(11, Protoss Probe, 2)
+	wait_buildstart(11, Protoss Probe)
+	build(12, Protoss Probe, 2)
+	wait_build(1, Protoss Gateway)
+	build(2, Protoss Pylon, 2)
+	wait_buildstart(2, Protoss Pylon)
+	wait_buildstart(12, Protoss Probe)
+	build(13, Protoss Probe, 2)
+	wait(240)
+
+	wait_buildstart(13, Protoss Probe)
+	wait_build(2, Protoss Pylon)
+	build(14, Protoss Probe, 2)
+	wait(240)
+
+	wait_buildstart(14, Protoss Probe)
+	build(3, Protoss Pylon, 2)
+	wait(100)
+
+	wait_buildstart(3, Protoss Pylon)
+	wait(200)
+
+	build(15, Protoss Probe, 2)
+	wait(240)
+
+	wait_buildstart(15, Protoss Probe)
+	build(16, Protoss Probe, 2)
+	wait(240)
+
+	wait_buildstart(16, Protoss Probe)
+	build(17, Protoss Probe, 2)
+	wait(240)
+
+	wait_buildstart(17, Protoss Probe)
+	build(4, Protoss Pylon, 2)
+	wait_buildstart(4, Protoss Pylon)
+	wait(100)
+
+	build(18, Protoss Probe, 2)
+	wait(240)
+
+	wait_buildstart(18, Protoss Probe)
+	build(19, Protoss Probe, 2)
+	wait(240)
+
+	wait_buildstart(19, Protoss Probe)
+	build(21, Protoss Probe, 2)
+	farms_timing()
+	defensebuild_gg(1, Protoss Zealot)
+	defenseuse_gg(1, Protoss Zealot)
+	build(3, Protoss Gateway, 2)
+	wait_buildstart(3, Protoss Gateway)
+
+		--ASHP 0009--
+	wait(200)
+
+	time_jump(5, ASHP 0010)
+	goto(ASHP 0009)
+
+
+		--ASHP 0010--
+	wait(200)
+
+	multirun(ASHP 0011)
+	wait(1300)
+
+	expand(99, ASHP 0012)
+	wait(10)
+
+	multirun(ASHP 0013)
+	wait(1)
+
+	defenseclear_gg()
+	defensebuild_gg(1, Protoss Zealot)
+	defenseuse_gg(1, Protoss Zealot)
+	defenseuse_gg(1, Protoss Dragoon)
+	defenseclear_ag()
+	defensebuild_ag(1, Protoss Dragoon)
+	defenseuse_ag(1, Protoss Dragoon)
+	build(1, Protoss Cybernetics Core, 2)
+	wait(100)
+
+	build(1, Protoss Assimilator, 2)
+	wait(100)
+
+	upgrade(1, Singularity Charge, 1)
+	wait(1000)
+
+	build(1, Protoss Forge, 2)
+	wait(150)
+
+	wait(600)
+
+	build(2, Protoss Photon Cannon, 2)
+
+		--ASHP 0014--
+	wait(200)
+
+	time_jump(15, ASHP 0015)
+	goto(ASHP 0014)
+
+
+		--ASHP 0015--
+	wait(500)
+
+	expand(99, ASHP 0012)
+	wait(100)
+
+	goto(ASHP 0016)
+
+
+		--ASHP 0008--
+	wait(150)
+
+	notowns_jump(Protoss Gateway, ASHP 0008)
+	train(5, Protoss Zealot)
+	wait_force(5, Protoss Zealot)
+	wait(1)
+
+	multirun(ASHP 0017)
+	wait(1)
+
+	train(15, Protoss Zealot)
+	wait(1)
+
+	stop()
+
+
+		--ASHP 0013--
+	train(5, Protoss Zealot)
+	wait(100)
+
+	train(8, Protoss Zealot)
+	wait(100)
+
+	train(3, Protoss Dragoon)
+	wait(100)
+
+	train(11, Protoss Zealot)
+	wait(100)
+
+	train(6, Protoss Dragoon)
+	wait(100)
+
+	train(14, Protoss Zealot)
+	wait(100)
+
+	train(9, Protoss Dragoon)
+	wait(100)
+
+	train(12, Protoss Dragoon)
+	wait(100)
+
+	train(16, Protoss Dragoon)
+	wait(240)
+
+	multirun(ASHP 0017)
+	wait(1)
+
+	stop()
+
+
+		--ASHP 0012--
+	start_town()
+	build(1, Protoss Nexus, 2)
+	wait(500)
+
+	wait_buildstart(1, Protoss Nexus)
+	wait(100)
+
+	wait_build(1, Protoss Nexus)
+	build(1, Protoss Probe, 2)
+	wait_buildstart(1, Protoss Probe)
+	build(1, Protoss Pylon, 2)
+	wait(100)
+
+	wait_buildstart(1, Protoss Pylon)
+	build(2, Protoss Probe, 2)
+	wait(240)
+
+	wait_buildstart(2, Protoss Probe)
+	build(3, Protoss Probe, 2)
+	wait(240)
+
+	wait_buildstart(3, Protoss Probe)
+	build(4, Protoss Probe, 2)
+	wait(240)
+
+	wait_buildstart(4, Protoss Probe)
+	build(1, Protoss Gateway, 2)
+	wait(100)
+
+	wait_buildstart(1, Protoss Gateway)
+	build(5, Protoss Probe, 2)
+	wait_buildstart(5, Protoss Probe)
+	build(6, Protoss Probe, 2)
+	wait(240)
+
+	wait_buildstart(6, Protoss Probe)
+	build(7, Protoss Probe, 2)
+	wait_buildstart(7, Protoss Probe)
+	build(1, Protoss Assimilator, 1)
+	build(8, Protoss Probe, 2)
+	wait_buildstart(8, Protoss Probe)
+	build(2, Protoss Gateway, 2)
+	wait(100)
+
+	wait_buildstart(2, Protoss Gateway)
+	build(9, Protoss Probe, 2)
+	wait_buildstart(9, Protoss Probe)
+	build(10, Protoss Probe, 2)
+	wait(240)
+
+	wait_buildstart(10, Protoss Probe)
+	build(2, Protoss Pylon, 2)
+	wait_buildstart(2, Protoss Pylon)
+	build(11, Protoss Probe, 2)
+	wait(240)
+
+	wait_buildstart(11, Protoss Probe)
+	build(12, Protoss Probe, 2)
+	wait(240)
+
+	wait_buildstart(12, Protoss Probe)
+	build(13, Protoss Probe, 2)
+	wait(240)
+
+	wait_buildstart(13, Protoss Probe)
+	build(14, Protoss Probe, 2)
+	wait(240)
+
+	wait_buildstart(14, Protoss Probe)
+	build(15, Protoss Probe, 2)
+	wait(240)
+
+	wait_buildstart(15, Protoss Probe)
+	build(16, Protoss Probe, 2)
+	wait(240)
+
+	wait_buildstart(16, Protoss Probe)
+	build(17, Protoss Probe, 2)
+	wait(240)
+
+	wait_buildstart(17, Protoss Probe)
+	build(18, Protoss Probe, 2)
+	wait(240)
+
+	wait_buildstart(18, Protoss Probe)
+	build(19, Protoss Probe, 2)
+	wait(240)
+
+	wait_buildstart(19, Protoss Probe)
+	build(20, Protoss Probe, 2)
+	wait(240)
+
+	wait_buildstart(20, Protoss Probe)
+	goto(ASHP 0018)
+
+
+		--ASHP 0006--
+	build(8, Protoss Probe, 2)
+	wait_buildstart(8, Protoss Probe)
+	build(1, Protoss Pylon, 2)
+	wait_buildstart(1, Protoss Pylon)
+	build(9, Protoss Probe, 2)
+	wait(240)
+
+	wait_buildstart(9, Protoss Probe)
+	build(10, Protoss Probe, 2)
+	wait(240)
+
+	wait_buildstart(10, Protoss Probe)
+	build(11, Protoss Probe, 2)
+	wait(240)
+
+	wait_buildstart(11, Protoss Probe)
+	build(12, Protoss Probe, 2)
+	wait_buildstart(12, Protoss Probe)
+	wait(10)
+
+	expand(99, ASHP 0019)
+	wait(10)
+
+	build(12, Protoss Probe, 2)
+	wait_buildstart(12, Protoss Probe)
+	build(1, Protoss Gateway, 2)
+	wait(150)
+
+	wait_buildstart(1, Protoss Gateway)
+	build(2, Protoss Gateway, 2)
+	wait(150)
+
+	wait_buildstart(2, Protoss Gateway)
+	multirun(ASHP 0020)
+	wait(10)
+
+	build(13, Protoss Probe, 2)
+	wait_buildstart(13, Protoss Probe)
+	build(14, Protoss Probe, 2)
+	wait_buildstart(14, Protoss Probe)
+	build(2, Protoss Pylon, 2)
+	wait_buildstart(2, Protoss Pylon)
+	build(15, Protoss Probe, 2)
+	wait_buildstart(15, Protoss Probe)
+	wait(100)
+
+	build(16, Protoss Probe, 2)
+	wait(240)
+
+	wait_buildstart(16, Protoss Probe)
+	wait_build(16, Protoss Probe)
+	wait(50)
+
+	build(1, Protoss Assimilator, 2)
+	build(17, Protoss Probe, 2)
+	wait(240)
+
+	wait_buildstart(17, Protoss Probe)
+	wait(100)
+
+	build(18, Protoss Probe, 2)
+	wait(240)
+
+	wait_buildstart(18, Protoss Probe)
+	build(19, Protoss Probe, 2)
+	wait(240)
+
+	wait_buildstart(19, Protoss Probe)
+	defenseclear_gg()
+	defensebuild_gg(1, Protoss Zealot)
+	defenseuse_gg(1, Protoss Zealot)
+	build(3, Protoss Pylon, 2)
+	wait(100)
+
+	wait_buildstart(3, Protoss Pylon)
+	farms_timing()
+	build(22, Protoss Probe, 2)
+	build(1, Protoss Cybernetics Core, 2)
+	wait(500)
+
+	build(3, Protoss Gateway, 2)
+	wait_buildstart(3, Protoss Gateway)
+	multirun(ASHP 0011)
+	wait(100)
+
+	defenseuse_gg(1, Protoss Dragoon)
+	defenseclear_ag()
+	defensebuild_ag(1, Protoss Dragoon)
+	defenseuse_ag(1, Protoss Dragoon)
+	wait(100)
+
+	upgrade(1, Singularity Charge, 1)
+	wait(3000)
+
+	multirun(ASHP 0011)
+	build(1, Protoss Forge, 2)
+	wait(800)
+
+	build(2, Protoss Photon Cannon, 2)
+	wait(1800)
+
+	wait(200)
+
+	expand(99, ASHP 0019)
+	wait(50)
+
+	goto(ASHP 0016)
+
+
+		--ASHP 0020--
+	wait(150)
+
+	notowns_jump(Protoss Gateway, ASHP 0020)
+	train(8, Protoss Zealot)
+	wait(1)
+
+	train(4, Protoss Dragoon)
+	wait(1)
+
+	train(11, Protoss Zealot)
+	wait(1)
+
+	train(16, Protoss Dragoon)
+	wait(1)
+
+	stop()
+
+
+		--ASHP 0019--
+	start_town()
+	build(1, Protoss Nexus, 2)
+	wait(500)
+
+	wait_buildstart(1, Protoss Nexus)
+	wait(100)
+
+	wait_build(1, Protoss Nexus)
+	build(1, Protoss Probe, 2)
+	wait_buildstart(1, Protoss Probe)
+	build(2, Protoss Probe, 2)
+	wait(240)
+
+	wait_buildstart(2, Protoss Probe)
+	build(1, Protoss Pylon, 2)
+	wait(100)
+
+	wait_buildstart(1, Protoss Pylon)
+	build(3, Protoss Probe, 2)
+	wait(240)
+
+	wait_buildstart(3, Protoss Probe)
+	build(4, Protoss Probe, 2)
+	wait(240)
+
+	wait_buildstart(4, Protoss Probe)
+	build(5, Protoss Probe, 2)
+	wait_buildstart(5, Protoss Probe)
+	build(6, Protoss Probe, 2)
+	wait(240)
+
+	wait_buildstart(6, Protoss Probe)
+	build(1, Protoss Gateway, 2)
+	wait(100)
+
+	wait_buildstart(1, Protoss Gateway)
+	build(7, Protoss Probe, 2)
+	wait_buildstart(7, Protoss Probe)
+	build(8, Protoss Probe, 2)
+	wait(240)
+
+	wait_buildstart(8, Protoss Probe)
+	build(9, Protoss Probe, 2)
+	wait_buildstart(9, Protoss Probe)
+	build(2, Protoss Gateway, 2)
+	wait(100)
+
+	wait_buildstart(2, Protoss Gateway)
+	build(10, Protoss Probe, 2)
+	wait(240)
+
+	wait_buildstart(10, Protoss Probe)
+	build(2, Protoss Pylon, 2)
+	wait_buildstart(2, Protoss Pylon)
+	build(11, Protoss Probe, 2)
+	wait(240)
+
+	wait_buildstart(11, Protoss Probe)
+	build(12, Protoss Probe, 2)
+	wait(240)
+
+	wait_buildstart(12, Protoss Probe)
+	build(13, Protoss Probe, 2)
+	wait(240)
+
+	wait_buildstart(13, Protoss Probe)
+	build(14, Protoss Probe, 2)
+	wait(240)
+
+	wait_buildstart(14, Protoss Probe)
+	build(15, Protoss Probe, 2)
+	wait(240)
+
+	wait_buildstart(15, Protoss Probe)
+	build(16, Protoss Probe, 2)
+	wait(240)
+
+	wait_buildstart(16, Protoss Probe)
+	build(17, Protoss Probe, 2)
+	wait(240)
+
+	wait_buildstart(17, Protoss Probe)
+	build(1, Protoss Assimilator, 1)
+	build(18, Protoss Probe, 2)
+	wait(240)
+
+	wait_buildstart(18, Protoss Probe)
+	build(19, Protoss Probe, 2)
+	wait(240)
+
+	wait_buildstart(19, Protoss Probe)
+	build(20, Protoss Probe, 2)
+	wait(240)
+
+	wait_buildstart(20, Protoss Probe)
+	build(2, Protoss Photon Cannon, 1)
+	goto(ASHP 0018)
+
+
+		--ASHP 0004--
+	build(8, Protoss Probe, 2)
+	wait_buildstart(8, Protoss Probe)
+	build(1, Protoss Pylon, 2)
+	wait_buildstart(1, Protoss Pylon)
+	build(9, Protoss Probe, 2)
+	wait_buildstart(9, Protoss Probe)
+	build(10, Protoss Probe, 2)
+	wait_buildstart(10, Protoss Probe)
+	build(1, Protoss Gateway, 2)
+	wait_buildstart(1, Protoss Gateway)
+	build(11, Protoss Probe, 2)
+	wait_buildstart(11, Protoss Probe)
+	build(12, Protoss Probe, 2)
+	wait_buildstart(12, Protoss Probe)
+	wait(1)
+
+	multirun(ASHP 0021)
+	wait(1)
+
+	build(2, Protoss Pylon, 2)
+	wait_buildstart(2, Protoss Pylon)
+	build(13, Protoss Probe, 2)
+	wait_buildstart(13, Protoss Probe)
+	wait_build(13, Protoss Probe)
+	build(14, Protoss Probe, 2)
+	wait(10)
+
+	build(1, Protoss Assimilator, 2)
+	wait_buildstart(14, Protoss Probe)
+	build(15, Protoss Probe, 2)
+	wait(240)
+
+	wait_buildstart(15, Protoss Probe)
+	build(16, Protoss Probe, 2)
+	wait(200)
+
+	wait_buildstart(16, Protoss Probe)
+	build(1, Protoss Cybernetics Core, 2)
+	wait(250)
+
+	wait_buildstart(1, Protoss Cybernetics Core)
+	build(17, Protoss Probe, 2)
+	wait(240)
+
+	wait_buildstart(17, Protoss Probe)
+	build(3, Protoss Pylon, 2)
+	wait_buildstart(3, Protoss Pylon)
+	build(18, Protoss Probe, 2)
+	wait(240)
+
+	wait_buildstart(18, Protoss Probe)
+	wait_build(1, Protoss Cybernetics Core)
+	build(1, Protoss Citadel of Adun, 2)
+	wait_buildstart(1, Protoss Citadel of Adun)
+	build(19, Protoss Probe, 2)
+	build(20, Protoss Probe, 2)
+	build(21, Protoss Probe, 2)
+	wait_build(1, Protoss Citadel of Adun)
+	build(1, Protoss Templar Archives, 2)
+	wait_buildstart(1, Protoss Templar Archives)
+	wait(100)
+
+	build(2, Protoss Gateway, 2)
+	build(4, Protoss Pylon, 2)
+	wait_buildstart(4, Protoss Pylon)
+	multirun(ASHP 0011)
+	farms_timing()
+	wait(250)
+
+	build(3, Protoss Gateway, 2)
+
+		--ASHP 0022--
+	wait(200)
+
+	time_jump(8, ASHP 0023)
+	goto(ASHP 0022)
+
+
+		--ASHP 0023--
+	defenseclear_gg()
+	defensebuild_gg(1, Protoss Zealot)
+	defenseuse_gg(1, Protoss Zealot)
+	defenseuse_gg(1, Protoss Dragoon)
+	defensebuild_gg(1, Protoss Dark Templar)
+	defenseuse_gg(1, Protoss Dark Templar)
+	defenseclear_ag()
+	defensebuild_ag(1, Protoss Dragoon)
+	defenseuse_ag(1, Protoss Dragoon)
+	wait(480)
+
+	expand(99, ASHP 0024)
+	wait(100)
+
+	goto(ASHP 0016)
+
+
+		--ASHP 0021--
+	wait(1)
+
+	train(3, Protoss Zealot)
+	wait(1)
+
+	train(2, Protoss Dragoon)
+	wait(1)
+
+
+		--ASHP 0025--
+	wait(200)
+
+	notowns_jump(Protoss Templar Archives, ASHP 0025)
+	train(3, Protoss Dark Templar)
+	wait(10)
+
+	train(4, Protoss Zealot)
+	wait(10)
+
+	train(4, Protoss Dark Templar)
+	wait(10)
+
+	train(7, Protoss Zealot)
+	wait(10)
+
+	train(5, Protoss Dragoon)
+	wait(10)
+
+	train(6, Protoss Dark Templar)
+	wait(10)
+
+	train(9, Protoss Zealot)
+	wait(10)
+
+	train(12, Protoss Zealot)
+	stop()
+
+
+		--ASHP 0024--
+	start_town()
+	build(1, Protoss Nexus, 2)
+	wait(500)
+
+	wait_buildstart(1, Protoss Nexus)
+	wait_build(1, Protoss Nexus)
+	build(1, Protoss Probe, 2)
+	wait_buildstart(1, Protoss Probe)
+	wait(100)
+
+	build(1, Protoss Pylon, 2)
+	wait_buildstart(1, Protoss Pylon)
+	build(2, Protoss Probe, 2)
+	wait(240)
+
+	wait_buildstart(2, Protoss Probe)
+	build(3, Protoss Probe, 2)
+	wait(240)
+
+	wait_buildstart(3, Protoss Probe)
+	build(4, Protoss Probe, 2)
+	wait_buildstart(4, Protoss Probe)
+	build(1, Protoss Assimilator, 1)
+	build(5, Protoss Probe, 2)
+	wait_buildstart(5, Protoss Probe)
+	build(2, Protoss Pylon, 2)
+	wait_buildstart(2, Protoss Pylon)
+	build(1, Protoss Photon Cannon, 1)
+	wait(100)
+
+	build(6, Protoss Probe, 2)
+	wait(240)
+
+	wait_buildstart(6, Protoss Probe)
+	build(7, Protoss Probe, 2)
+	wait_buildstart(7, Protoss Probe)
+	build(8, Protoss Probe, 2)
+	wait_buildstart(8, Protoss Probe)
+	build(1, Protoss Gateway, 2)
+	wait(100)
+
+	wait_buildstart(1, Protoss Gateway)
+	build(9, Protoss Probe, 2)
+	wait_buildstart(9, Protoss Probe)
+	build(3, Protoss Photon Cannon, 1)
+	build(10, Protoss Probe, 2)
+	wait(240)
+
+	wait_buildstart(10, Protoss Probe)
+	build(11, Protoss Probe, 2)
+	wait(240)
+
+	wait_buildstart(11, Protoss Probe)
+	build(12, Protoss Probe, 2)
+	wait(240)
+
+	wait_buildstart(12, Protoss Probe)
+	build(13, Protoss Probe, 2)
+	wait(240)
+
+	wait_buildstart(13, Protoss Probe)
+	build(14, Protoss Probe, 2)
+	wait(240)
+
+	wait_buildstart(14, Protoss Probe)
+	build(15, Protoss Probe, 2)
+	wait(240)
+
+	wait_buildstart(15, Protoss Probe)
+	build(16, Protoss Probe, 2)
+	wait(240)
+
+	wait_buildstart(16, Protoss Probe)
+	build(17, Protoss Probe, 2)
+	wait(240)
+
+	wait_buildstart(17, Protoss Probe)
+	build(18, Protoss Probe, 2)
+	wait(240)
+
+	wait_buildstart(18, Protoss Probe)
+	build(19, Protoss Probe, 2)
+	wait(240)
+
+	wait_buildstart(19, Protoss Probe)
+	build(20, Protoss Probe, 2)
+	wait(240)
+
+	wait_buildstart(20, Protoss Probe)
+	goto(ASHP 0018)
+
+
+		--ASHP 0007--
+	build(8, Protoss Probe, 2)
+	wait_buildstart(8, Protoss Probe)
+	build(1, Protoss Pylon, 2)
+	wait_buildstart(1, Protoss Pylon)
+	build(9, Protoss Probe, 2)
+	wait_buildstart(9, Protoss Probe)
+	build(10, Protoss Probe, 2)
+	wait_buildstart(10, Protoss Probe)
+	build(1, Protoss Gateway, 2)
+	wait_buildstart(1, Protoss Gateway)
+	build(11, Protoss Probe, 2)
+	wait_buildstart(11, Protoss Probe)
+	build(12, Protoss Probe, 2)
+	wait(240)
+
+	wait_buildstart(12, Protoss Probe)
+	multirun(ASHP 0026)
+	defenseuse_gg(1, Protoss Zealot)
+	defenseuse_gg(1, Protoss Dragoon)
+	build(13, Protoss Probe, 2)
+	wait(240)
+
+	wait_buildstart(13, Protoss Probe)
+	build(2, Protoss Gateway, 2)
+	wait_buildstart(2, Protoss Gateway)
+	build(14, Protoss Probe, 2)
+	wait(240)
+
+	wait_buildstart(14, Protoss Probe)
+	wait(50)
+
+	build(2, Protoss Pylon, 2)
+	wait_buildstart(2, Protoss Pylon)
+	build(15, Protoss Probe, 2)
+	wait(240)
+
+	wait_buildstart(15, Protoss Probe)
+	build(16, Protoss Probe, 2)
+	wait(200)
+
+	wait_buildstart(16, Protoss Probe)
+	build(17, Protoss Probe, 2)
+	wait(160)
+
+	wait_buildstart(17, Protoss Probe)
+	build(1, Protoss Assimilator, 2)
+	wait(80)
+
+	build(3, Protoss Pylon, 2)
+	wait_buildstart(3, Protoss Pylon)
+	wait(150)
+
+	build(1, Protoss Cybernetics Core, 2)
+	wait_buildstart(1, Protoss Cybernetics Core)
+	farms_timing()
+
+		--ASHP 0027--
+	wait(200)
+
+	time_jump(6, ASHP 0028)
+	goto(ASHP 0027)
+
+
+		--ASHP 0028--
+	build(3, Protoss Gateway, 2)
+	wait_buildstart(3, Protoss Gateway)
+	build(18, Protoss Probe, 2)
+	wait(300)
+
+	build(19, Protoss Probe, 2)
+	wait(100)
+
+	upgrade(1, Singularity Charge, 1)
+	wait(200)
+
+	build(20, Protoss Probe, 2)
+	wait(300)
+
+	build(23, Protoss Probe, 2)
+	multirun(ASHP 0011)
+
+		--ASHP 0029--
+	wait(200)
+
+	time_jump(8, ASHP 0030)
+	goto(ASHP 0029)
+
+
+		--ASHP 0030--
+	defenseclear_gg()
+	defensebuild_gg(1, Protoss Zealot)
+	defenseclear_ag()
+	defensebuild_ag(1, Protoss Dragoon)
+	defenseuse_ag(1, Protoss Dragoon)
+	wait(700)
+
+	wait(480)
+
+	expand(99, ASHP 0031)
+	wait(100)
+
+	wait(2000)
+
+	build(1, Protoss Forge, 2)
+	wait_buildstart(1, Protoss Forge)
+	wait(300)
+
+	multirun(ASHP 0011)
+	build(4, Protoss Gateway, 2)
+	wait_buildstart(4, Protoss Gateway)
+	wait(500)
+
+	build(1, Protoss Photon Cannon, 1)
+	wait(500)
+
+	build(2, Protoss Photon Cannon, 1)
+	wait(500)
+
+	build(3, Protoss Photon Cannon, 1)
+	goto(ASHP 0016)
+
+
+		--ASHP 0026--
+	wait(1)
+
+	train(5, Protoss Zealot)
+	wait(1)
+
+	train(4, Protoss Dragoon)
+	wait(1)
+
+	train(5, Protoss Zealot)
+	wait(1)
+
+	train(12, Protoss Dragoon)
+	wait(1)
+
+	train(8, Protoss Zealot)
+	wait(1)
+
+	train(16, Protoss Dragoon)
+	wait(1)
+
+	train(10, Protoss Zealot)
+	wait(1)
+
+	train(18, Protoss Dragoon)
+	wait(1)
+
+	train(12, Protoss Zealot)
+	wait(1500)
+
+	train(10, Protoss Dragoon)
+	wait(1)
+
+	train(8, Protoss Zealot)
+	stop()
+
+
+		--ASHP 0031--
+	start_town()
+	build(1, Protoss Nexus, 2)
+	wait(500)
+
+	wait_buildstart(1, Protoss Nexus)
+	wait_build(1, Protoss Nexus)
+	build(1, Protoss Probe, 2)
+	wait_buildstart(1, Protoss Probe)
+	wait(100)
+
+	build(1, Protoss Pylon, 2)
+	wait_buildstart(1, Protoss Pylon)
+	build(2, Protoss Probe, 2)
+	wait(240)
+
+	wait_buildstart(2, Protoss Probe)
+	build(3, Protoss Probe, 2)
+	wait(240)
+
+	wait_buildstart(3, Protoss Probe)
+	build(4, Protoss Probe, 2)
+	wait_buildstart(4, Protoss Probe)
+	build(5, Protoss Probe, 2)
+	wait_buildstart(5, Protoss Probe)
+	build(2, Protoss Pylon, 2)
+	wait_buildstart(2, Protoss Pylon)
+	build(2, Protoss Photon Cannon, 1)
+	wait(100)
+
+	build(6, Protoss Probe, 2)
+	wait(240)
+
+	wait_buildstart(6, Protoss Probe)
+	build(7, Protoss Probe, 2)
+	wait(100)
+
+	wait_buildstart(7, Protoss Probe)
+	build(1, Protoss Assimilator, 1)
+	build(8, Protoss Probe, 2)
+	wait_buildstart(8, Protoss Probe)
+	build(1, Protoss Gateway, 2)
+	wait(100)
+
+	wait_buildstart(1, Protoss Gateway)
+	build(9, Protoss Probe, 2)
+	wait_buildstart(9, Protoss Probe)
+	build(10, Protoss Probe, 2)
+	wait(240)
+
+	wait_buildstart(10, Protoss Probe)
+	build(11, Protoss Probe, 2)
+	wait(240)
+
+	wait_buildstart(11, Protoss Probe)
+	build(12, Protoss Probe, 2)
+	wait(240)
+
+	wait_buildstart(12, Protoss Probe)
+	build(13, Protoss Probe, 2)
+	wait(240)
+
+	wait_buildstart(13, Protoss Probe)
+	build(14, Protoss Probe, 2)
+	wait(240)
+
+	wait_buildstart(14, Protoss Probe)
+	build(15, Protoss Probe, 2)
+	wait(240)
+
+	wait_buildstart(15, Protoss Probe)
+	build(16, Protoss Probe, 2)
+	wait(240)
+
+	wait_buildstart(16, Protoss Probe)
+	build(17, Protoss Probe, 2)
+	wait(240)
+
+	wait_buildstart(17, Protoss Probe)
+	build(18, Protoss Probe, 2)
+	wait(240)
+
+	wait_buildstart(18, Protoss Probe)
+	build(19, Protoss Probe, 2)
+	wait(240)
+
+	wait_buildstart(19, Protoss Probe)
+	build(20, Protoss Probe, 2)
+	wait(240)
+
+	wait_buildstart(20, Protoss Probe)
+	goto(ASHP 0018)
+
+
+		--ASHP 0016--
+	random_jump(128, ASHP 0032)
+	goto(ASHP 0033)
+
+
+		--ASHP 0032--
+	defenseclear_gg()
+	defensebuild_gg(1, Protoss Zealot)
+	defenseuse_gg(1, Protoss Zealot)
+	defenseuse_gg(1, Protoss Dragoon)
+	defensebuild_gg(1, Protoss Dark Templar)
+	defenseuse_gg(1, Protoss Dark Templar)
+	defenseuse_gg(1, Protoss Archon)
+	defenseclear_ag()
+	defensebuild_ag(1, Protoss Dragoon)
+	defenseuse_ag(1, Protoss Dragoon)
+	defenseuse_ag(1, Protoss Archon)
+	wait(50)
+
+	multirun(ASHP 0034)
+	wait(50)
+
+	multirun(ASHP 0035)
+	wait(100)
+
+	build(1, Protoss Citadel of Adun, 2)
+	wait(150)
+
+	build(3, Protoss Gateway, 2)
+	wait(150)
+
+	build(1, Protoss Templar Archives, 2)
+	wait(150)
+
+	build(1, Protoss Robotics Facility, 2)
+	wait(150)
+
+	build(4, Protoss Gateway, 2)
+	wait(150)
+
+	build(1, Protoss Observatory, 2)
+	wait(150)
+
+	multirun(ASHP 0036)
+	wait(150)
+
+	build(5, Protoss Gateway, 2)
+	wait(500)
+
+	build(1, Protoss Forge, 2)
+	wait(900)
+
+	build(3, Protoss Photon Cannon, 2)
+	wait(1000)
+
+	build(2, Protoss Forge, 2)
+	goto(ASHP 0037)
+
+
+		--ASHP 0037--
+	wait(3000)
+
+	expand(99, ASHP 0038)
+	wait(3200)
+
+	goto(ASHP 0039)
+
+
+		--ASHP 0039--
+	wait(2500)
+
+	send_suicide(0)
+	wait(500)
+
+	expand(99, ASHP 0038)
+	wait(3500)
+
+	goto(ASHP 0039)
+
+
+		--ASHP 0036--
+	train(2, Protoss Observer)
+	wait(1)
+
+	train(1, Protoss Shuttle)
+	wait(1)
+
+	train(4, Protoss Observer)
+	wait(1)
+
+	train(2, Protoss Shuttle)
+	wait(1000)
+
+	goto(ASHP 0036)
+
+
+		--ASHP 0040--
+	train(2, Protoss Observer)
+	wait(1)
+
+	train(1, Protoss Shuttle)
+	wait(1)
+
+	train(4, Protoss Observer)
+	wait(1)
+
+	wait(1000)
+
+	goto(ASHP 0040)
+
+
+		--ASHP 0035--
+	train(5, Protoss Zealot)
+	wait(1)
+
+	train(4, Protoss Dragoon)
+	wait(1)
+
+	train(2, Protoss Dark Templar)
+	wait(1)
+
+	train(1, Protoss High Templar)
+	wait(1)
+
+	train(9, Protoss Zealot)
+	wait(1)
+
+	train(6, Protoss Dragoon)
+	wait(1)
+
+	train(5, Protoss Dark Templar)
+	wait(1)
+
+	train(2, Protoss High Templar)
+	wait(1)
+
+	train(13, Protoss Zealot)
+	wait(1)
+
+	train(8, Protoss Dragoon)
+	wait(1)
+
+	train(7, Protoss Dark Templar)
+	wait(1)
+
+	train(3, Protoss High Templar)
+	wait(1)
+
+	train(20, Protoss Zealot)
+	wait(1)
+
+	train(10, Protoss Dragoon)
+	wait(1)
+
+	train(8, Protoss Dark Templar)
+	wait(1)
+
+	train(3, Protoss High Templar)
+	wait(1)
+
+	train(23, Protoss Zealot)
+	wait(1)
+
+	train(12, Protoss Dragoon)
+	wait(1)
+
+	train(9, Protoss Dark Templar)
+	wait(1)
+
+	train(3, Protoss High Templar)
+	wait(1)
+
+	send_suicide(0)
+	wait(2000)
+
+	multirun(ASHP 0041)
+	wait(500)
+
+	goto(ASHP 0042)
+
+
+		--ASHP 0042--
+	train(4, Protoss Zealot)
+	wait(1)
+
+	train(5, Protoss Dragoon)
+	wait(1)
+
+	train(2, Protoss Dark Templar)
+	wait(1)
+
+	train(1, Protoss High Templar)
+	wait(1)
+
+	train(7, Protoss Zealot)
+	wait(1)
+
+	train(9, Protoss Dragoon)
+	wait(1)
+
+	train(4, Protoss Dark Templar)
+	wait(1)
+
+	train(9, Protoss Zealot)
+	wait(1)
+
+	train(2, Protoss High Templar)
+	wait(1)
+
+	train(13, Protoss Zealot)
+	wait(1)
+
+	train(12, Protoss Dragoon)
+	wait(1)
+
+	train(6, Protoss Dark Templar)
+	wait(1)
+
+	train(17, Protoss Zealot)
+	wait(1)
+
+	train(3, Protoss High Templar)
+	wait(1)
+
+	train(23, Protoss Zealot)
+	wait(1)
+
+	train(14, Protoss Dragoon)
+	wait(1)
+
+	train(7, Protoss Dark Templar)
+	wait(1)
+
+	train(4, Protoss High Templar)
+	wait(1)
+
+	train(26, Protoss Zealot)
+	wait(1)
+
+	train(16, Protoss Dragoon)
+	wait(1)
+
+	train(8, Protoss Dark Templar)
+	wait(1)
+
+	train(5, Protoss High Templar)
+	wait(1)
+
+	train(30, Protoss Zealot)
+	wait(800)
+
+	goto(ASHP 0042)
+
+
+		--ASHP 0041--
+	train(1, Protoss Archon)
+	wait(1)
+
+	train(1, Protoss Dark Archon)
+	wait(1)
+
+	train(2, Protoss Archon)
+	wait(1)
+
+	train(2, Protoss Dark Archon)
+	wait(1)
+
+	train(4, Protoss Archon)
+	wait(1500)
+
+	goto(ASHP 0041)
+
+
+		--ASHP 0038--
+	start_town()
+	build(1, Protoss Nexus, 2)
+	wait(500)
+
+	wait_buildstart(1, Protoss Nexus)
+	wait_build(1, Protoss Nexus)
+	build(1, Protoss Probe, 2)
+	wait_buildstart(1, Protoss Probe)
+	wait(100)
+
+	build(1, Protoss Pylon, 2)
+	wait_buildstart(1, Protoss Pylon)
+	build(2, Protoss Probe, 2)
+	wait(240)
+
+	wait_buildstart(2, Protoss Probe)
+	build(2, Protoss Pylon, 2)
+	wait_buildstart(2, Protoss Pylon)
+	build(3, Protoss Probe, 2)
+	wait(240)
+
+	wait_buildstart(3, Protoss Probe)
+	build(4, Protoss Probe, 2)
+	wait_buildstart(4, Protoss Probe)
+	build(1, Protoss Gateway, 2)
+	wait(100)
+
+	wait_buildstart(1, Protoss Gateway)
+	build(5, Protoss Probe, 2)
+	wait_buildstart(5, Protoss Probe)
+	build(3, Protoss Photon Cannon, 1)
+	wait(100)
+
+	build(6, Protoss Probe, 2)
+	wait(240)
+
+	wait_buildstart(6, Protoss Probe)
+	build(7, Protoss Probe, 2)
+	wait_buildstart(7, Protoss Probe)
+	build(1, Protoss Assimilator, 1)
+	build(8, Protoss Probe, 2)
+	wait_buildstart(8, Protoss Probe)
+	build(2, Protoss Gateway, 2)
+	wait(100)
+
+	wait_buildstart(2, Protoss Gateway)
+	build(9, Protoss Probe, 2)
+	wait_buildstart(9, Protoss Probe)
+	build(10, Protoss Probe, 2)
+	wait(240)
+
+	wait_buildstart(10, Protoss Probe)
+	build(3, Protoss Pylon, 2)
+	wait_buildstart(3, Protoss Pylon)
+	build(11, Protoss Probe, 2)
+	wait(240)
+
+	wait_buildstart(11, Protoss Probe)
+	build(12, Protoss Probe, 2)
+	wait(240)
+
+	wait_buildstart(12, Protoss Probe)
+	build(13, Protoss Probe, 2)
+	wait(240)
+
+	wait_buildstart(13, Protoss Probe)
+	build(14, Protoss Probe, 2)
+	wait(240)
+
+	wait_buildstart(14, Protoss Probe)
+	build(15, Protoss Probe, 2)
+	wait(240)
+
+	wait_buildstart(15, Protoss Probe)
+	build(16, Protoss Probe, 2)
+	wait(240)
+
+	wait_buildstart(16, Protoss Probe)
+	build(17, Protoss Probe, 2)
+	wait(240)
+
+	wait_buildstart(17, Protoss Probe)
+	build(18, Protoss Probe, 2)
+	wait(240)
+
+	wait_buildstart(18, Protoss Probe)
+	goto(ASHP 0018)
+
+
+		--ASHP 0034--
+	wait(4000)
+
+	upgrade(1, Protoss Ground Weapons, 1)
+	wait(300)
+
+	upgrade(1, Singularity Charge, 1)
+	wait(300)
+
+	tech(Psionic Storm, 1)
+	wait(1000)
+
+	upgrade(1, Protoss Armor, 1)
+	wait(700)
+
+	tech(Mind Control, 1)
+	wait(1500)
+
+	upgrade(2, Protoss Ground Weapons, 1)
+	wait(1500)
+
+	upgrade(2, Protoss Armor, 1)
+	wait(4500)
+
+	upgrade(1, Protoss Plasma Shields, 1)
+	wait(1000)
+
+	upgrade(1, Gravitic Boosters, 1)
+	wait(1200)
+
+	upgrade(1, Leg Enhancements, 1)
+	wait(700)
+
+	upgrade(3, Protoss Ground Weapons, 1)
+	wait(3000)
+
+	upgrade(2, Protoss Plasma Shields, 1)
+	wait(2000)
+
+	upgrade(3, Protoss Armor, 1)
+	wait(3500)
+
+	upgrade(3, Protoss Plasma Shields, 1)
+	wait(500)
+
+	stop()
+
+
+		--ASHP 0033--
+	define_max(60, Protoss Probe)
+	define_max(14, Protoss Zealot)
+	define_max(14, Protoss Dragoon)
+	define_max(3, Protoss High Templar)
+	define_max(2, Protoss Archon)
+	define_max(10, Protoss Dark Templar)
+	define_max(2, Protoss Dark Archon)
+	define_max(2, Protoss Shuttle)
+	define_max(255, Protoss Reaver)
+	define_max(6, Protoss Observer)
+	define_max(255, Protoss Scout)
+	define_max(15, Protoss Carrier)
+	define_max(5, Protoss Arbiter)
+	define_max(20, Protoss Corsair)
+	defenseclear_gg()
+	defensebuild_gg(1, Protoss Zealot)
+	defenseuse_gg(1, Protoss Zealot)
+	defenseuse_gg(1, Protoss Dragoon)
+	defensebuild_gg(1, Protoss Dark Templar)
+	defenseuse_gg(1, Protoss Dark Templar)
+	defensebuild_gg(1, Protoss Carrier)
+	defenseuse_gg(1, Protoss Carrier)
+	defenseclear_ag()
+	defensebuild_ag(1, Protoss Dragoon)
+	defenseuse_ag(1, Protoss Dragoon)
+	defensebuild_ag(1, Protoss Carrier)
+	defenseuse_ag(1, Protoss Carrier)
+	defenseclear_aa()
+	defensebuild_aa(1, Protoss Corsair)
+	defenseuse_aa(1, Protoss Corsair)
+	defensebuild_aa(1, Protoss Carrier)
+	defenseuse_aa(1, Protoss Carrier)
+	defenseclear_ga()
+	defensebuild_ga(1, Protoss Carrier)
+	defenseuse_ga(1, Protoss Carrier)
+	wait(50)
+
+	multirun(ASHP 0043)
+	wait(50)
+
+	multirun(ASHP 0044)
+	wait(100)
+
+	build(1, Protoss Stargate, 2)
+	wait(150)
+
+	build(1, Protoss Robotics Facility, 2)
+	wait(150)
+
+	build(1, Protoss Observatory, 2)
+	wait(150)
+
+	multirun(ASHP 0040)
+	wait(150)
+
+	build(2, Protoss Stargate, 2)
+	wait(150)
+
+	build(1, Protoss Fleet Beacon, 2)
+	wait(1200)
+
+	build(1, Protoss Forge, 2)
+	wait(900)
+
+	build(3, Protoss Photon Cannon, 2)
+	goto(ASHP 0045)
+
+
+		--ASHP 0045--
+	wait(3000)
+
+	expand(99, ASHP 0046)
+	wait(6000)
+
+	expand(99, ASHP 0046)
+	wait(500)
+
+
+		--ASHP 0047--
+	wait(300)
+
+	resources_jump(700, 500, ASHP 0048)
+	goto(ASHP 0047)
+
+
+		--ASHP 0048--
+	build(1, Protoss Citadel of Adun, 2)
+	wait(950)
+
+	build(1, Protoss Templar Archives, 2)
+	wait(950)
+
+	build(1, Protoss Arbiter Tribunal, 2)
+	wait(200)
+
+	build(3, Protoss Stargate, 2)
+	wait(800)
+
+	goto(ASHP 0049)
+
+
+		--ASHP 0049--
+	wait(3000)
+
+	expand(99, ASHP 0046)
+	wait(6500)
+
+	send_suicide(0)
+	wait(500)
+
+	expand(99, ASHP 0046)
+	wait(3200)
+
+	goto(ASHP 0049)
+
+
+		--ASHP 0044--
+	train(5, Protoss Zealot)
+	wait(1)
+
+	train(4, Protoss Dragoon)
+	wait(1000)
+
+	train(6, Protoss Zealot)
+	wait(1)
+
+	train(5, Protoss Dragoon)
+	wait(1)
+
+	train(2, Protoss Corsair)
+	wait(1)
+
+	train(7, Protoss Zealot)
+	wait(1)
+
+	train(5, Protoss Corsair)
+	wait(1)
+
+	train(6, Protoss Dragoon)
+	wait(1)
+
+	train(4, Protoss Corsair)
+	wait(1)
+
+	train(9, Protoss Zealot)
+	wait(1)
+
+	train(8, Protoss Corsair)
+	wait(1)
+
+	train(9, Protoss Zealot)
+	wait(1)
+
+	train(3, Protoss Carrier)
+	wait(1)
+
+	train(6, Protoss Dragoon)
+	wait(1)
+
+	train(10, Protoss Corsair)
+	wait(1)
+
+	train(8, Protoss Carrier)
+	wait(1)
+
+	train(12, Protoss Corsair)
+	wait(1)
+
+	train(6, Protoss Dragoon)
+	wait(700)
+
+	send_suicide(0)
+	wait(1000)
+
+	goto(ASHP 0050)
+
+
+		--ASHP 0050--
+	train(2, Protoss Zealot)
+	wait(1)
+
+	train(3, Protoss Corsair)
+	wait(1)
+
+	train(4, Protoss Zealot)
+	wait(1)
+
+	train(5, Protoss Corsair)
+	wait(1)
+
+	train(2, Protoss Dragoon)
+	wait(1)
+
+	train(6, Protoss Carrier)
+	wait(1)
+
+	train(4, Protoss Dragoon)
+	wait(1)
+
+	train(3, Protoss Arbiter)
+	wait(1)
+
+	train(3, Protoss Dark Templar)
+	wait(1)
+
+	train(8, Protoss Corsair)
+	wait(1)
+
+	train(12, Protoss Carrier)
+	wait(1)
+
+	train(14, Protoss Corsair)
+	wait(1)
+
+	train(8, Protoss Zealot)
+	wait(500)
+
+	goto(ASHP 0050)
+
+
+		--ASHP 0046--
+	start_town()
+	build(1, Protoss Nexus, 2)
+	wait(500)
+
+	wait_buildstart(1, Protoss Nexus)
+	wait_build(1, Protoss Nexus)
+	build(1, Protoss Probe, 2)
+	wait_buildstart(1, Protoss Probe)
+	wait(100)
+
+	build(1, Protoss Pylon, 2)
+	wait_buildstart(1, Protoss Pylon)
+	build(2, Protoss Probe, 2)
+	wait(240)
+
+	wait_buildstart(2, Protoss Probe)
+	build(2, Protoss Pylon, 2)
+	wait_buildstart(2, Protoss Pylon)
+	build(3, Protoss Probe, 2)
+	wait(240)
+
+	wait_buildstart(3, Protoss Probe)
+	build(4, Protoss Probe, 2)
+	wait_buildstart(4, Protoss Probe)
+	build(1, Protoss Stargate, 2)
+	wait(100)
+
+	wait_buildstart(1, Protoss Stargate)
+	build(5, Protoss Probe, 2)
+	wait_buildstart(5, Protoss Probe)
+	build(2, Protoss Photon Cannon, 1)
+	wait(100)
+
+	build(6, Protoss Probe, 2)
+	wait(240)
+
+	wait_buildstart(6, Protoss Probe)
+	build(7, Protoss Probe, 2)
+	wait_buildstart(7, Protoss Probe)
+	build(1, Protoss Assimilator, 1)
+	build(8, Protoss Probe, 2)
+	wait(240)
+
+	wait_buildstart(8, Protoss Probe)
+	build(9, Protoss Probe, 2)
+	wait(240)
+
+	wait_buildstart(9, Protoss Probe)
+	build(10, Protoss Probe, 2)
+	wait(240)
+
+	wait_buildstart(10, Protoss Probe)
+	build(3, Protoss Pylon, 2)
+	wait_buildstart(3, Protoss Pylon)
+	build(11, Protoss Probe, 2)
+	wait(240)
+
+	wait_buildstart(11, Protoss Probe)
+	build(12, Protoss Probe, 2)
+	wait(240)
+
+	wait_buildstart(12, Protoss Probe)
+	build(4, Protoss Photon Cannon, 1)
+	wait(100)
+
+	build(13, Protoss Probe, 2)
+	wait(240)
+
+	wait_buildstart(13, Protoss Probe)
+	build(1, Protoss Gateway, 2)
+	wait(100)
+
+	wait_buildstart(1, Protoss Gateway)
+	build(14, Protoss Probe, 2)
+	wait(240)
+
+	wait_buildstart(14, Protoss Probe)
+	build(15, Protoss Probe, 2)
+	wait(240)
+
+	wait_buildstart(15, Protoss Probe)
+	build(16, Protoss Probe, 2)
+	wait(240)
+
+	wait_buildstart(16, Protoss Probe)
+	build(17, Protoss Probe, 2)
+	wait(240)
+
+	wait_buildstart(17, Protoss Probe)
+	build(18, Protoss Probe, 2)
+	wait(240)
+
+	wait_buildstart(18, Protoss Probe)
+	goto(ASHP 0018)
+
+
+		--ASHP 0043--
+	wait(4500)
+
+	upgrade(1, Protoss Air Weapons, 1)
+	wait(300)
+
+	upgrade(1, Protoss Plasma Shields, 1)
+	wait(800)
+
+	tech(Disruption Web, 1)
+	wait(1500)
+
+	upgrade(1, Carrier Capacity, 1)
+	wait(1700)
+
+	upgrade(1, Gravitic Boosters, 1)
+
+		--ASHP 0051--
+	wait(400)
+
+	notowns_jump(Protoss Arbiter Tribunal, ASHP 0051)
+	upgrade(2, Protoss Air Weapons, 1)
+	wait(500)
+
+	upgrade(2, Protoss Plasma Shields, 1)
+	wait(500)
+
+	tech(Stasis Field, 1)
+	wait(4000)
+
+	upgrade(3, Protoss Air Weapons, 1)
+	wait(500)
+
+	upgrade(3, Protoss Plasma Shields, 1)
+	wait(5100)
+
+	upgrade(1, Protoss Plating, 1)
+	wait(4500)
+
+	upgrade(2, Protoss Plating, 1)
+	wait(5000)
+
+	upgrade(3, Protoss Plating, 1)
+	wait(5000)
+
+	stop()
+
+
+		--ASHP 0017--
+	wait(1)
+
+	send_suicide(0)
+	wait(1000)
+
+	stop()
+
+
+		--ASHP 0018--
+	wait(30000)
+
+	goto(ASHP 0018)
+
+
+#		--ASHP 0052--
+#	give_money()
+#	wait(1500)
+
+#	goto(ASHP 0052)
+
+#	multirun(ASHP 0052)
+#	define_max(10, Protoss Zealot)
+#	define_max(10, Protoss Dragoon)
+#	define_max(10, Protoss Corsair)
+#	define_max(10, Protoss Reaver)
+#	build(1, Protoss Pylon, 2)
+#	wait(100)
+
+#	build(2, Protoss Pylon, 2)
+#	wait(100)
+#
+#	build(3, Protoss Pylon, 2)
+#	wait(100)
+#
+#	build(1, Protoss Gateway, 2)
+#	wait(100)
+#
+#	build(2, Protoss Gateway, 2)
+##
+#	build(3, Protoss Gateway, 2)
+#	wait(100)
+#
+#	build(4, Protoss Gateway, 2)
+#	wait(100)
+#
+#	build(5, Protoss Gateway, 2)
+#	wait(100)
+#
+#	train(10, Protoss Zealot)
+#	defensebuild_gg(1, Protoss Zealot)
+#	farms_timing()
+#	build(1, Protoss Forge, 2)
+#	wait(100)
+#
+#	build(1, Protoss Photon Cannon, 2)
+#	wait(100)
+#
+#	build(2, Protoss Photon Cannon, 2)
+#	wait(100)
+#
+#	build(3, Protoss Photon Cannon, 2)
+#	wait(100)
+#
+#	build(4, Protoss Photon Cannon, 2)
+#	wait(100)
+#
+#	build(5, Protoss Photon Cannon, 2)
+#	wait(100)
+#
+#	build(1, Protoss Cybernetics Core, 2)
+#	wait(100)
+#
+#	wait(3000)
+#
+#	train(10, Protoss Dragoon)
+#	defensebuild_gg(1, Protoss Dragoon)
+#	build(2, Protoss Stargate, 2)
+#	wait(100)
+#
+#	build(2, Protoss Robotics Facility, 2)
+#	train(10, Protoss Corsair)
+#	defensebuild_aa(1, Protoss Corsair)
+#	build(1, Protoss Robotics Support Bay, 2)
+#	train(10, Protoss Reaver)
+#	defensebuild_gg(1, Protoss Reaver)
+#	goto(ASHP 0018)
+
+
+		--ASHP 0011--
+	time_jump(45, ASHP 0053)
+	wait(1)
+
+	time_jump(9, ASHP 0054)
+	wait(1)
+
+	time_jump(5, ASHP 0055)
+	wait(1)
+
+	goto(ASHP 0056)
+
+
+		--ASHP 0053--
+	stop()
+
+
+		--ASHP 0054--
+	wait(150)
+
+	time_jump(13, ASHP 0057)
+	goto(ASHP 0054)
+
+
+		--ASHP 0057--
+	wait(440)
+
+	goto(ASHP 0017)
+
+
+		--ASHP 0055--
+	wait(150)
+
+	time_jump(8, ASHP 0058)
+	goto(ASHP 0055)
+
+
+		--ASHP 0058--
+	wait(480)
+
+	goto(ASHP 0017)
+
+
+		--ASHP 0056--
+	stop()

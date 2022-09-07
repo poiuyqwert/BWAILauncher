@@ -1,0 +1,52 @@
+# Racine 1.0 Zerg
+
+ZMCx(1344, 101, aiscript):
+	start_town()
+	transports_off()
+	multirun(ZMCx 0000)
+	build(4, drone, 150)
+	build(1, hatchery, 150)
+
+#if DEBUG
+    debug(debugmsg, Racine 1.0 Zerg)
+    --debugmsg--
+#endif
+
+
+	goto(ZMCx 0001)
+
+		--ZMCx 0008--
+	wait(1500)
+
+	goto(ZMCx 0008)
+
+		--ZMCx 0010--
+	train(60, zergling)
+	attack_add(60, zergling)
+	call(ZMCx 0009)
+	goto(ZMCx 0010)
+
+
+		--ZMCx 0009--
+	attack_prepare()
+	wait(400)
+
+	attack_do()
+	attack_clear()
+	return()
+
+
+		--ZMCx 0000--
+	start_town()
+	give_money()
+	wait(500)
+
+	goto(ZMCx 0000)
+
+
+		--ZMCx 0001--
+	wait(1500)
+
+	goto(ZMCx 0001)
+
+

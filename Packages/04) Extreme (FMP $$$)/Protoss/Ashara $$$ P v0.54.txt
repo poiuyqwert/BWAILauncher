@@ -1,0 +1,1875 @@
+# Ashara$Pv0.54 cheating PVTPZ AI
+   
+PMCx(1343, 101, aiscript):
+
+	start_town()
+
+#if DEBUG
+    debug(debugmsg, Ashara $$$ Protoss)
+    --debugmsg--
+#endif
+
+    race_jump(vs_Terran, vs_Zerg, vs_Protoss)
+
+# ################ VTERRAN PART #########
+
+        --vs_Terran--
+
+
+    transports_off()
+    farms_notiming()
+    define_max(15, probe)
+    define_max(20, zealot)
+    define_max(255, dragoon)
+    define_max(45, dark_templar)
+    define_max(255, high_templar)
+    define_max(255, archon)
+    define_max(12, dark_archon)
+    define_max(255, shuttle)
+    define_max(5, observer)
+    define_max(7, reaver)
+    define_max(5, scout)
+    define_max(20, corsair)
+    define_max(12, carrier)
+#define_max 4 arbiter
+    define_max(255, arbiter)
+
+    multirun(m_attack_manager_t)
+    multirun(m_income)
+    multirun(m_game_timing_t)
+    multirun(m_research_t)
+
+    farms_timing()
+    multirun(m_expand1_t)
+    multirun(m_expand2_t)
+
+
+# ################# VTerran main, town definition
+    multirun(b_nexus1)
+    wait(1)
+    multirun(b_probes3)
+    wait(10)
+    multirun(b_gateway1+)
+    wait(10)
+    multirun(b_pylon5)
+    wait(10)
+    multirun(b_gateway4)
+    wait(100)
+    wait(1200)
+    multirun(b_cyber1+)
+    wait(10)
+    multirun(b_pylon10)
+    wait(1)
+    wait(1)
+    multirun(b_forge1)
+    wait(700)
+    multirun(b_stargate1+)
+    wait(1)
+    multirun(b_adun1+)
+    wait(1)
+    multirun(b_robotic1+)
+    wait(500)
+    multirun(b_archive1+)
+    wait(1)
+    multirun(b_bay1)
+    wait(1)
+    multirun(b_fleet1+)
+    wait(1)
+    multirun(b_obs1)
+    wait(1)
+    multirun(b_stargate4)
+    wait(2520)
+    multirun(b_pylon16)
+    wait(1)
+#multirun b_tribunal1+
+    wait_buildstart(1, robotics_facility)
+    wait(700)
+    multirun(b_cannon5)
+    wait(1)
+    multirun(b_robotic2)
+    wait(1)
+    multirun(b_gateway4)
+    wait(1)
+    multirun(b_cyber2)
+    wait(1800)
+    multirun(b_forge3_)
+    wait(1)
+#call c_need_t
+    goto(end_loop)
+
+################# VTerran Expanding, town definition ##################
+
+        --m_expand1_t--
+    wait(300)
+    expand(4, start_expand1_t)
+    stop()
+
+        --m_expand2_t--
+    wait(530)
+    expand(4, start_expand2_t)
+    stop()
+
+        --m_expand3_t--
+    expand(99, start_expand3_t)
+    stop()
+
+        --m_expand4_t--
+    expand(99, start_expand4_t)
+    stop()
+
+        --start_expand1_t--
+    start_town()
+    multirun(b_nexus1)
+    wait(550)
+    goto(start_exp1_t)
+
+        --start_expand2_t--
+    start_town()
+    multirun(b_nexus1)
+    wait(750)
+    goto(start_exp2_t)
+
+        --start_expand3_t--
+    start_town()
+    multirun(b_nexus1)
+    wait(950)
+    goto(start_exp3_t)
+
+        --start_expand4_t--
+    start_town()
+    multirun(b_nexus1)
+    wait(950)
+    goto(start_exp4_t)
+
+        --start_exp1_t--
+    multirun(b_pylon5)
+    wait(1)
+    multirun(b_probes2)
+    wait(1000)
+    multirun(b_gateway4)
+    wait(1200)
+    multirun(b_pylon10)
+    wait(3220)
+    multirun(b_stargate4)
+    wait(1)
+    multirun(b_cannon5)
+    wait(1)
+    multirun(b_robotic2)
+    multirun(m_attack_manager_t)
+    wait(4000)
+    goto(end_loop)
+
+
+
+        --start_exp2_t--
+    multirun(b_pylon4)
+    wait(1)
+    multirun(b_probes2)
+    wait(1000)
+    multirun(b_gateway4)
+    wait(1600)
+    wait(1)
+    multirun(b_pylon10)
+    wait(1820)
+    multirun(b_stargate4)
+    wait(1)
+    multirun(b_robotic2)
+    wait(1)
+    multirun(b_cannon5)
+    multirun(m_attack_manager_t)
+    wait(3500)
+    goto(end_loop)
+
+        --start_exp3_t--
+    multirun(b_pylon4)
+    wait(1)
+    multirun(b_probes2)
+    wait(500)
+    multirun(b_cannon4)
+    wait(1)
+    multirun(b_gateway2)
+    wait(1)
+    multirun(b_stargate2)
+    goto(end_loop)
+
+
+        --start_exp4_t--
+    multirun(b_pylon4)
+    wait(1)
+    multirun(b_probes2)
+    wait(1000)
+    multirun(b_cannon5)
+    wait(1)
+    multirun(b_gateway2)
+    wait(1)
+    multirun(b_robotic2)
+    goto(end_loop)
+
+
+# ############## VTerran Rebuilding ############
+
+        --c_need_t--
+    wait(2000)
+    player_need(1, nexus)
+    wait(1)
+    player_need(3, gateway)
+    wait(1)
+    player_need(1, cybernetics_core)
+    wait(1)
+    player_need(1, robotics_facility)
+    wait(1)
+    player_need(1, templar_archives)
+    wait(1)
+    player_need(1, observatory)
+    wait(1)
+    player_need(1, robotics_support_bay)
+    wait(1)
+    player_need(2, stargate)
+    wait(1)
+    player_need(1, fleet_beacon)
+    wait(1)
+    return()
+
+
+################ VTerran Attack and Expand Timing ######
+        --m_game_timing_t--
+
+    multirun(m_expand_timing_t)
+
+    wait(3500)
+    send_suicide(0)
+    wait(6600)
+    send_suicide(0)
+        --timing_loop_t--
+    wait(4500)
+    send_suicide(0)
+    goto(timing_loop_t)
+
+
+
+# main expand timings
+        --m_expand_timing_t--
+    wait(3000)
+    defensebuild_gg(1, zealot)
+    defenseuse_gg(1, zealot)
+    wait(1000)
+    call(c_def_vs_t)
+    wait(4000)
+    wait(3000)
+        --expand_loop_t--
+    multirun(m_expand3_t)
+    wait(4000)
+    goto(expand_loop_t)
+
+
+
+################### VTerran Attack ######
+
+        --m_attack_manager_t--
+    wait(600)
+
+        --m_attack_step0_t--
+    wait(100)
+    time_jump(3, m_attack_step0_t)
+        --m_attack_step1_t--
+    wait(100)
+    notowns_jump(gateway, m_attack_step1_t)
+    multirun(t_zeal20)
+        --m_attack_step2_t--
+    wait(100)
+    notowns_jump(templar_archives, m_attack_step2_t)
+    multirun(t_dt25)
+    wait(10)
+    multirun(t_zeal20)
+    wait(10)
+    multirun(t_corsair12)
+    wait(10)
+    guard_resources(dark_templar)
+        --m_attack_step3_t--
+    wait(200)
+    notowns_jump(fleet_beacon, m_attack_step3_t)
+        --m_attack_step4_t--
+    multirun(t_dt25)
+    wait(2)
+    multirun(t_darkarch10_)
+    wait(2)
+    multirun(t_carrier10)
+    wait(2)
+    multirun(t_obs4)
+    wait(2)
+    notowns_jump(robotics_support_bay, m_attack_del4_t)
+    multirun(t_reav6)
+    wait(2)
+#notowns_jump arbiter_tribunal m_attack_del4_t
+#multirun t_arb3
+    wait(3500)
+    goto(m_attack_step4_t)
+
+        --m_attack_del4_t--
+    wait(3500)
+    goto(m_attack_step4_t)
+
+################# VTerran DEFENSE #########
+
+        --c_def_vs_t--
+    wait(1)
+    defensebuild_gg(1, zealot)
+    defenseuse_gg(1, zealot)
+    defensebuild_gg(1, reaver)
+    defenseuse_gg(1, reaver)
+    defensebuild_gg(1, dark_templar)
+    defenseuse_gg(1, dark_templar)
+    defensebuild_gg(1, scout)
+    defenseuse_gg(1, scout)
+    defensebuild_gg(1, carrier)
+    defenseuse_gg(1, carrier)
+
+
+    defensebuild_ag(1, scout)
+    defenseuse_ag(1, scout)
+    defensebuild_ag(1, carrier)
+    defenseuse_ag(1, carrier)
+
+
+    defensebuild_aa(1, scout)
+    defenseuse_aa(1, scout)
+    defensebuild_aa(1, carrier)
+    defenseuse_aa(1, carrier)
+    defensebuild_aa(1, corsair)
+    defenseuse_aa(1, corsair)
+    wait(1)
+    return()
+
+
+############# VTerran Upgrading  #############
+
+        --m_research_t--
+    wait(6500)
+    multirun(r_aweapon)
+    wait(100)
+    multirun(r_da)
+    wait(100)
+    multirun(r_plate)
+    wait(4000)
+    multirun(r_shield)
+    wait(100)
+    multirun(r_carrier)
+    wait(100)
+    multirun(r_obs)
+#wait 100
+#multirun r_arb
+    wait(3000)
+    multirun(r_gweapon)
+    wait(100)
+    multirun(r_armor)
+    wait(100)
+    multirun(r_corsair)
+    wait(3000)
+    multirun(r_scarab)
+    wait(100)
+    stop()
+
+
+    goto(end_loop)
+
+# ################ VPROTOSS PART #########
+
+        --vs_Protoss--
+
+    transports_off()
+    farms_notiming()
+    define_max(15, probe)
+    define_max(50, zealot)
+    define_max(255, dragoon)
+    define_max(50, dark_templar)
+    define_max(255, high_templar)
+    define_max(255, archon)
+    define_max(14, dark_archon)
+    define_max(255, shuttle)
+    define_max(7, observer)
+    define_max(11, reaver)
+    define_max(255, scout)
+    define_max(255, corsair)
+    define_max(255, carrier)
+    define_max(255, arbiter)
+
+    multirun(m_attack_manager_p)
+    multirun(m_income)
+    multirun(m_game_timing_p)
+    multirun(m_research_p)
+
+    farms_timing()
+    multirun(m_expand1_p)
+    multirun(m_expand2_p)
+
+
+# ################# VProtoss main, town definition
+    multirun(b_nexus1)
+    wait(1)
+    multirun(b_probes3)
+    wait(1)
+    multirun(b_gateway1+)
+    wait(1)
+    multirun(b_pylon5)
+    wait(1)
+    multirun(b_gateway4)
+    wait(1)
+    multirun(b_cyber1+)
+    wait(1300)
+    multirun(b_pylon10)
+    wait(1)
+    multirun(b_adun1+)
+    wait(1)
+    multirun(b_robotic1+)
+    wait(1)
+    multirun(b_forge1+)
+    wait(1)
+    multirun(b_cannon5)
+    wait(500)
+    multirun(b_archive1+)
+    wait(1)
+    multirun(b_bay1+)
+    wait(1)
+    multirun(b_obs1+)
+    wait(2520)
+    multirun(b_pylon16)
+    wait_buildstart(1, robotics_facility)
+    wait(700)
+    multirun(b_robotic4)
+    wait(1)
+    multirun(b_gateway6)
+    wait(1800)
+    multirun(b_forge3_)
+    wait(1)
+    call(c_need_p)
+    goto(end_loop)
+
+################# VProtoss Expanding, town definition ##################
+
+        --m_expand1_p--
+    wait(300)
+    expand(4, start_expand1_p)
+    stop()
+
+        --m_expand2_p--
+    wait(530)
+    expand(4, start_expand2_p)
+    stop()
+
+        --m_expand3_p--
+    expand(40, start_expand3_p)
+    stop()
+
+        --m_expand4_p--
+    expand(99, start_expand4_p)
+    stop()
+
+        --start_expand1_p--
+    start_town()
+    multirun(b_nexus1)
+    wait(550)
+    goto(start_exp1_p)
+
+        --start_expand2_p--
+    start_town()
+    multirun(b_nexus1)
+    wait(750)
+    goto(start_exp2_p)
+
+        --start_expand3_p--
+    start_town()
+    multirun(b_nexus1)
+    wait(950)
+    goto(start_exp3_p)
+
+        --start_expand4_p--
+    start_town()
+    multirun(b_nexus1)
+    wait(950)
+    goto(start_exp4_p)
+
+        --start_exp1_p--
+    multirun(b_pylon5)
+    wait(1)
+    multirun(b_probes2)
+    wait(1000)
+    multirun(b_gateway6)
+    wait(1200)
+    multirun(b_pylon10)
+    wait(1)
+    multirun(b_cannon5)
+    wait(3220)
+    multirun(b_robotic2)
+    wait(4000)
+    call(c_need_p)
+    multirun(m_attack_manager_p)
+    goto(end_loop)
+
+
+
+        --start_exp2_p--
+    multirun(b_pylon4)
+    wait(1)
+    multirun(b_probes2)
+    wait(1000)
+    multirun(b_gateway4)
+    wait(1600)
+    multirun(b_cannon5)
+    wait(1)
+    multirun(b_pylon10)
+    wait(1820)
+    multirun(b_robotic4)
+    wait(3500)
+    call(c_need_p)
+    multirun(m_attack_manager_p)
+    goto(end_loop)
+
+        --start_exp3_p--
+    multirun(b_pylon4)
+    wait(1)
+    multirun(b_probes2)
+    wait(500)
+    multirun(b_cannon4)
+    wait(1)
+    multirun(b_gateway4)
+    call(c_need_p)
+    multirun(m_attack_manager_p)
+    goto(end_loop)
+
+
+        --start_exp4_p--
+    multirun(b_pylon4)
+    wait(1)
+    multirun(b_probes2)
+    wait(1000)
+    multirun(b_cannon5)
+    wait(1)
+    multirun(b_gateway2)
+    wait(1)
+    multirun(b_robotic2)
+    multirun(m_attack_manager_p)
+    goto(end_loop)
+
+
+# ############## VProtoss Rebuilding ############
+
+        --c_need_p--
+    wait(2000)
+    player_need(1, nexus)
+    wait(1)
+    player_need(18, pylon)
+    wait(1)
+    player_need(4, gateway)
+    wait(1)
+    player_need(1, cybernetics_core)
+    wait(1)
+    player_need(2, robotics_facility)
+    wait(1)
+    player_need(1, templar_archives)
+    wait(1)
+    player_need(1, observatory)
+    wait(1)
+    player_need(1, robotics_support_bay)
+    wait(1)
+    player_need(5, probe)
+    wait(1)
+    return()
+
+
+################ VProtoss Attack and Expand Timing ######
+        --m_game_timing_p--
+    multirun(m_expand_timing_p)
+
+    wait(8000)
+    send_suicide(0)
+        --timing_loop_p--
+    wait(2300)
+    send_suicide(0)
+    goto(timing_loop_p)
+
+
+
+# main expand timings
+        --m_expand_timing_p--
+    wait(7000)
+    define_max(45, dragoon)
+    call(c_def_vs_p)
+    wait(3000)
+        --expand_loop_p--
+    multirun(m_expand3_p)
+    wait(3800)
+    goto(expand_loop_p)
+
+
+        --side_end_loop_p--
+    wait(2000)
+    multirun(m_expand4_p)
+    wait(4000)
+    goto(side_end_loop_p)
+
+
+################### VProtoss Attack ######
+
+        --m_attack_manager_p--
+    wait(600)
+
+        --m_attack_step1_p--
+    wait(100)
+    notowns_jump(gateway, m_attack_step1_p)
+    multirun(t_zeal40)
+        --m_attack_step2_p--
+    wait(100)
+    notowns_jump(templar_archives, m_attack_step2_p)
+    multirun(t_dt25)
+    wait(10)
+    guard_resources(dark_templar)
+        --m_attack_step3_p--
+    wait(100)
+    notowns_jump(robotics_support_bay, m_attack_step3_p)
+        --m_attack_step4_p--
+    multirun(t_dt50)
+    wait(2)
+    multirun(t_reav10)
+    wait(2)
+    multirun(t_darkarch10_)
+    wait(2)
+    multirun(t_obs4)
+    wait(2)
+    time_jump(5, m_attack_step5_p)
+    wait(2300)
+    goto(m_attack_step4_p)
+
+        --m_attack_step5_p--
+    wait(2400)
+    multirun(t_dt50)
+    wait(2)
+    multirun(t_reav10)
+    wait(2)
+    multirun(t_goon30)
+    wait(2)
+    multirun(t_darkarch10_)
+    wait(2)
+    multirun(t_obs4)
+    wait(2)
+    goto(m_attack_step5_p)
+
+
+################# VProtoss DEFENSE #########
+
+        --c_def_vs_p--
+    wait(1)
+    defensebuild_gg(1, zealot)
+    defenseuse_gg(1, zealot)
+    defensebuild_gg(1, reaver)
+    defenseuse_gg(1, reaver)
+    defensebuild_gg(1, dark_templar)
+    defenseuse_gg(1, dark_templar)
+    defensebuild_ga(1, zealot)
+    defenseuse_ga(1, zealot)
+    defensebuild_ga(1, reaver)
+    defenseuse_ga(1, reaver)
+    defensebuild_ga(1, dark_templar)
+    defenseuse_ga(1, dark_templar)
+    defensebuild_ag(1, dragoon)
+    defenseuse_ag(1, dragoon)
+    defensebuild_aa(1, dragoon)
+    defenseuse_aa(1, dragoon)
+    wait(1)
+    return()
+
+############# VProtoss Upgrading  #############
+
+        --m_research_p--
+    wait(5500)
+    multirun(r_goon)
+    wait(100)
+    multirun(r_da)
+    wait(3000)
+    multirun(r_scarab)
+    wait(100)
+    multirun(r_obs)
+    wait(2000)
+    multirun(r_shield)
+    wait(100)
+    multirun(r_gweapon)
+    wait(100)
+    multirun(r_armor)
+    wait(1)
+    stop()
+
+
+# ################ VZERG PART #############
+
+        --vs_Zerg--
+
+#start_town
+    transports_off()
+    farms_notiming()
+    define_max(15, probe)
+    define_max(45, zealot)
+    define_max(255, dragoon)
+    define_max(70, dark_templar)
+    define_max(255, high_templar)
+    define_max(255, archon)
+    define_max(255, dark_archon)
+    define_max(255, shuttle)
+    define_max(5, observer)
+    define_max(20, reaver)
+    define_max(255, scout)
+    define_max(30, corsair)
+    define_max(255, carrier)
+    define_max(255, arbiter)
+
+    multirun(m_attack_manager_z)
+    multirun(m_income)
+    multirun(m_game_timing_z)
+    multirun(m_research_z)
+
+    farms_timing()
+    multirun(m_expand1_z)
+    multirun(m_expand2_z)
+
+
+# ################# VZerg main, town definition
+    multirun(b_nexus1)
+    multirun(b_probes3)
+    multirun(b_gateway1+)
+    multirun(b_pylon5)
+    multirun(b_gateway4)
+    multirun(b_cyber1+)
+    wait_buildstart(3, gateway)
+    multirun(b_pylon10)
+    multirun(b_adun1+)
+    multirun(b_robotic1+)
+    multirun(b_archive1+)
+    multirun(b_bay1+)
+    multirun(b_stargate1+)
+    wait(4320)
+    multirun(b_forge1)
+    multirun(b_stargate4)
+    multirun(b_pylon16)
+    wait_buildstart(1, robotics_facility)
+    multirun(b_fleet1)
+    multirun(b_obs1)
+    wait(700)
+    multirun(b_robotic2)
+    wait(1800)
+    multirun(b_forge3_)
+    multirun(b_cyber2)
+    multirun(b_cannon5)
+    wait(1)
+    call(c_need_z)
+    goto(end_loop)
+
+################# VZerg Expanding, town definition ##################
+
+        --m_expand1_z--
+    wait(300)
+    expand(4, start_expand1_z)
+    stop()
+
+        --m_expand2_z--
+    wait(530)
+    expand(4, start_expand2_z)
+    stop()
+
+        --m_expand3_z--
+    expand(50, start_expand3_z)
+    stop()
+
+        --m_expand4_z--
+    expand(45, start_expand4_z)
+    stop()
+
+        --start_expand1_z--
+    start_town()
+    multirun(b_nexus1)
+    wait(550)
+    goto(start_exp1_z)
+
+        --start_expand2_z--
+    start_town()
+    multirun(b_nexus1)
+    wait(850)
+    goto(start_exp2_z)
+
+        --start_expand3_z--
+    start_town()
+    wait(1)
+    multirun(b_nexus1)
+    wait(1050)
+    goto(start_exp3_z)
+
+        --start_expand4_z--
+    start_town()
+    multirun(b_nexus1)
+    wait(1050)
+    goto(start_exp4_z)
+
+        --start_exp1_z--
+    multirun(b_pylon5)
+    multirun(b_probes2)
+    wait(1000)
+    multirun(b_gateway6)
+    wait(1200)
+    multirun(b_pylon10)
+    multirun(b_stargate2)
+    wait(2220)
+    wait(1000)
+    multirun(b_robotic2)
+    wait(1500)
+    multirun(b_bay1_)
+    wait(2500)
+    multirun(b_cannon5)
+    multirun(m_attack_manager_z)
+    call(c_need_z)
+    goto(side_end_loop_z)
+
+
+
+        --start_exp2_z--
+    multirun(b_pylon4)
+    multirun(b_probes2)
+    wait(1000)
+    multirun(b_gateway4)
+    wait(1600)
+    multirun(b_pylon10)
+    multirun(b_stargate2)
+    wait(1820)
+    multirun(b_robotic4)
+    wait(3500)
+    multirun(b_cannon5)
+    multirun(m_attack_manager_z)
+    call(c_need_z)
+    goto(side_end_loop_z)
+
+
+        --start_exp3_z--
+    multirun(b_pylon4)
+    wait(1)
+    multirun(b_probes2)
+    wait(500)
+    multirun(b_cannon4)
+    wait(1)
+    multirun(b_gateway2)
+    wait(1)
+    multirun(b_robotic2)
+    wait(1)
+    multirun(b_stargate2)
+    multirun(m_attack_manager_z)
+    goto(end_loop)
+
+
+        --start_exp4_z--
+    multirun(b_pylon4)
+    wait(1)
+    multirun(b_probes2)
+    wait(500)
+    multirun(b_cannon5)
+    wait(1)
+    multirun(b_gateway2)
+    multirun(m_attack_manager_z)
+    goto(end_loop)
+
+
+# ############## VZerg Rebuilding ############
+
+        --c_need_z--
+    wait(2000)
+    player_need(1, nexus)
+    wait(1)
+    player_need(18, pylon)
+    wait(1)
+    player_need(3, gateway)
+    wait(1)
+    player_need(1, cybernetics_core)
+    wait(1)
+    player_need(2, robotics_facility)
+    wait(1)
+    player_need(2, stargate)
+    wait(1)
+    player_need(1, citadel_of_adun)
+    wait(1)
+    player_need(1, templar_archives)
+    wait(1)
+    player_need(1, observatory)
+    wait(1)
+    player_need(1, robotics_support_bay)
+    wait(1)
+    player_need(1, forge)
+    wait(1)
+    player_need(1, fleet_beacon)
+    wait(1)
+    player_need(5, probe)
+    wait(1)
+    return()
+
+
+################ VZerg Attack and Expand Timing ######
+        --m_game_timing_z--
+
+    multirun(m_expand_timing_z)
+
+    wait(3800)
+    send_suicide(0)
+    wait(3800)
+    send_suicide(0)
+
+        --timing_loop_z--
+    wait(2100)
+    send_suicide(0)
+    goto(timing_loop_z)
+
+
+# main expand timings
+        --m_expand_timing_z--
+    wait(10000)
+    call(c_def_vs_z)
+    wait(1)
+        --expand_loop_z--
+    wait(1)
+    multirun(m_expand3_z)
+    wait(3000)
+    goto(expand_loop_z)
+
+
+        --side_end_loop_z--
+    wait(1900)
+    multirun(t_dt50)
+    wait(2)
+    multirun(t_corsair24)
+    wait(2)
+    multirun(t_reav14)
+    wait(2)
+    multirun(m_expand4_z)
+    wait(3900)
+    goto(side_end_loop_z)
+
+
+################### VZerg Attack ######
+
+        --m_attack_manager_z--
+    wait(600)
+
+        --m_attack_step1_z--
+    wait(10)
+    notowns_jump(gateway, m_attack_step1_z)
+    multirun(t_zeal40)
+
+
+        --m_attack_step2_z--
+    wait(10)
+    notowns_jump(cybernetics_core, m_attack_step2_z)
+
+    multirun(t_zeal45)
+
+        --m_attack_step3_z--
+    wait(10)
+    notowns_jump(stargate, m_attack_step3_z)
+    multirun(t_corsair12)
+
+
+        --m_attack_step4_z--
+    wait(10)
+    notowns_jump(templar_archives, m_attack_step4_z)
+    multirun(t_dt25)
+    wait(10)
+    multirun(t_corsair12)
+
+    guard_resources(dark_templar)
+        --m_attack_step5_z--
+    wait(10)
+    notowns_jump(robotics_support_bay, m_attack_step5_z)
+
+
+        --m_attack_step6_z--
+    multirun(t_dt50)
+    wait(2)
+    multirun(t_corsair24)
+    wait(2)
+    multirun(t_reav14)
+    wait(2)
+    multirun(t_obs4)
+    wait(2)
+    wait(2000)
+    goto(m_attack_step6_z)
+
+
+
+################# VZerg DEFENSE #########
+# defense build can create some problems with unit normal training
+
+        --c_def_vs_z--
+    wait(1)
+    defensebuild_gg(1, zealot)
+    defenseuse_gg(1, zealot)
+    defensebuild_gg(1, reaver)
+    defenseuse_gg(1, reaver)
+    defensebuild_gg(1, dark_templar)
+    defenseuse_gg(1, dark_templar)
+    defensebuild_ga(1, zealot)
+    defenseuse_ga(1, zealot)
+    defensebuild_ga(1, reaver)
+    defenseuse_ga(1, reaver)
+    defensebuild_ga(1, dark_templar)
+    defenseuse_ga(1, dark_templar)
+    defensebuild_ag(1, corsair)
+    defenseuse_ag(1, corsair)
+    defensebuild_aa(1, corsair)
+    defenseuse_aa(1, corsair)
+    wait(1)
+    return()
+
+        --m_defense_manager--
+    call(c_def_clear)
+        --m_defense_step1--
+    wait(20)
+    notowns_jump(gateway, m_defense_step1)
+    call(c_def_zeal)
+    wait(500)
+        --m_defense_step2--
+    wait(20)
+    notowns_jump(templar_archives, m_defense_step2)
+    call(c_def_clear)
+    call(c_def_dt)
+    wait(500)
+        --m_defense_step3--
+    wait(20)
+    notowns_jump(robotics_support_bay, m_defense_step3)
+    call(c_def_reaver)
+    wait(500)
+    goto(m_defense_step3)
+
+        --c_def_clear--
+    defenseclear_gg()
+    defenseclear_ag()
+    defenseclear_ga()
+    defenseclear_aa()
+    return()
+
+        --c_def_zeal--
+    player_need(1, gateway)
+    defensebuild_gg(1, zealot)
+    defenseuse_gg(1, zealot)
+    return()
+
+        --c_def_dt--
+    player_need(1, gateway)
+    player_need(1, templar_archives)
+    defensebuild_gg(1, dark_templar)
+    defenseuse_gg(1, dark_templar)
+    return()
+
+        --c_def_reaver--
+    player_need(1, robotics_facility)
+    defensebuild_gg(1, reaver)
+    defenseuse_gg(1, reaver)
+    place_guard(reaver, 1)
+    return()
+
+############# VZerg Upgrading  #############
+
+# All research at once didn't work, probably too much multirun
+        --m_research_z--
+    wait(6500)
+    multirun(r_aweapon)
+    wait(1000)
+    multirun(r_shield)
+    wait(100)
+    multirun(r_corsair)
+    wait(500)
+    multirun(r_armor)
+    wait(2000)
+    multirun(r_plate)
+    wait(2000)
+    multirun(r_gweapon)
+    wait(2000)
+    multirun(r_scarab)
+    wait(100)
+    multirun(r_obs)
+    wait(100)
+    multirun(r_goon)
+    wait(1)
+    stop()
+
+
+
+
+
+
+# ############### COMMON STUFF ###############
+
+################# Give Money ################
+
+        --m_income--
+    give_money()
+    wait(60)
+    goto(m_income)
+
+
+# ########### Building  #########################
+
+        --b_nexus1--
+    build(1, nexus, 2)
+    wait_buildstart(1, nexus)
+    stop()
+
+        --b_pylon2--
+    build(1, pylon, 2)
+    wait_buildstart(2, pylon)
+    build(2, pylon, 2)
+    wait_buildstart(2, pylon)
+    stop()
+
+
+        --b_pylon4--
+    build(1, pylon, 2)
+    wait_buildstart(1, pylon)
+    build(2, pylon, 2)
+    wait_buildstart(2, pylon)
+    build(3, pylon, 2)
+    wait_buildstart(3, pylon)
+    build(4, pylon, 2)
+    wait_buildstart(4, pylon)
+    stop()
+
+
+        --b_pylon5--
+    build(1, pylon, 2)
+    wait_buildstart(1, pylon)
+    build(2, pylon, 2)
+    wait_buildstart(2, pylon)
+    build(3, pylon, 2)
+    wait_buildstart(3, pylon)
+    build(4, pylon, 1)
+    wait_buildstart(4, pylon)
+    build(5, pylon, 1)
+    wait_buildstart(5, pylon)
+    stop()
+
+
+        --b_pylon10--
+    build(1, pylon, 2)
+    wait_buildstart(1, pylon)
+    build(2, pylon, 2)
+    wait_buildstart(2, pylon)
+    build(3, pylon, 2)
+    wait_buildstart(3, pylon)
+    build(4, pylon, 2)
+    wait_buildstart(4, pylon)
+    build(5, pylon, 2)
+    wait_buildstart(5, pylon)
+    build(6, pylon, 2)
+    wait_buildstart(6, pylon)
+    build(7, pylon, 2)
+    wait_buildstart(7, pylon)
+    build(8, pylon, 2)
+    wait_buildstart(8, pylon)
+    build(9, pylon, 2)
+    wait_buildstart(9, pylon)
+    build(10, pylon, 2)
+    wait_buildstart(10, pylon)
+    stop()
+
+
+        --b_pylon12--
+    build(1, pylon, 2)
+    wait_buildstart(1, pylon)
+    build(2, pylon, 2)
+    wait_buildstart(2, pylon)
+    build(3, pylon, 2)
+    wait_buildstart(3, pylon)
+    build(4, pylon, 2)
+    wait_buildstart(4, pylon)
+    build(5, pylon, 2)
+    wait_buildstart(5, pylon)
+    build(6, pylon, 2)
+    wait_buildstart(6, pylon)
+    build(7, pylon, 2)
+    wait_buildstart(7, pylon)
+    build(8, pylon, 2)
+    wait_buildstart(8, pylon)
+    build(9, pylon, 2)
+    wait_buildstart(9, pylon)
+    build(10, pylon, 2)
+    wait_buildstart(10, pylon)
+    build(11, pylon, 2)
+    wait_buildstart(11, pylon)
+    build(12, pylon, 2)
+    wait_buildstart(12, pylon)
+    stop()
+
+
+        --b_pylon16--
+    build(1, pylon, 2)
+    wait_buildstart(1, pylon)
+    build(2, pylon, 2)
+    wait_buildstart(2, pylon)
+    build(3, pylon, 2)
+    wait_buildstart(3, pylon)
+    build(4, pylon, 2)
+    wait_buildstart(4, pylon)
+    build(5, pylon, 2)
+    wait_buildstart(5, pylon)
+    build(6, pylon, 2)
+    wait_buildstart(6, pylon)
+    build(7, pylon, 2)
+    wait_buildstart(7, pylon)
+    build(8, pylon, 2)
+    wait_buildstart(8, pylon)
+    build(9, pylon, 2)
+    wait_buildstart(9, pylon)
+    build(10, pylon, 2)
+    wait_buildstart(10, pylon)
+    build(11, pylon, 2)
+    wait_buildstart(11, pylon)
+    build(12, pylon, 2)
+    wait_buildstart(12, pylon)
+    build(13, pylon, 2)
+    wait_buildstart(13, pylon)
+    build(14, pylon, 2)
+    wait_buildstart(14, pylon)
+    build(15, pylon, 2)
+    wait_buildstart(15, pylon)
+    build(16, pylon, 2)
+    wait_buildstart(16, pylon)
+    stop()
+
+
+        --b_gateway1+--
+    wait(15)
+    notowns_jump(pylon, b_gateway1+)
+    wait_build(1, pylon)
+    build(1, gateway, 3)
+    wait_buildstart(1, gateway)
+    stop()
+
+        --b_gateway2--
+    wait(20)
+    notowns_jump(pylon, b_gateway2)
+    wait_build(1, pylon)
+    build(1, gateway, 2)
+    wait_buildstart(1, gateway)
+    build(2, gateway, 2)
+    wait_buildstart(2, gateway)
+    stop()
+
+        --b_gateway4--
+    wait(20)
+    notowns_jump(pylon, b_gateway4)
+    build(1, gateway, 2)
+    wait_buildstart(1, gateway)
+    build(2, gateway, 2)
+    wait_buildstart(2, gateway)
+    build(3, gateway, 2)
+    wait_buildstart(3, gateway)
+    build(4, gateway, 2)
+    wait_buildstart(4, gateway)
+    stop()
+
+
+        --b_gateway6--
+    wait(20)
+    notowns_jump(pylon, b_gateway6)
+    build(1, gateway, 2)
+    wait_buildstart(1, gateway)
+    build(2, gateway, 2)
+    wait_buildstart(2, gateway)
+    build(3, gateway, 2)
+    wait_buildstart(3, gateway)
+    build(4, gateway, 2)
+    wait_buildstart(4, gateway)
+    build(5, gateway, 1)
+    wait_buildstart(5, gateway)
+    build(6, gateway, 1)
+    wait_buildstart(6, gateway)
+    stop()
+
+
+        --b_forge1--
+    wait(20)
+    notowns_jump(pylon, b_forge1)
+    build(1, forge, 2)
+    wait_buildstart(1, forge)
+    stop()
+
+        --b_forge1+--
+    wait(15)
+    notowns_jump(pylon, b_forge1+)
+    wait_build(1, pylon)
+    build(1, forge, 3)
+    wait_buildstart(1, forge)
+    stop()
+
+        --b_forge3_--
+    wait(20)
+    notowns_jump(pylon, b_forge3_)
+    build(1, forge, 1)
+    wait_buildstart(1, forge)
+    build(2, forge, 1)
+    wait_buildstart(2, forge)
+    build(3, forge, 1)
+    wait_buildstart(3, forge)
+    stop()
+
+
+        --b_cannon4--
+    wait(20)
+    notowns_jump(forge, b_cannon4)
+    build(1, photon_cannon, 2)
+    wait_buildstart(1, photon_cannon)
+    build(2, photon_cannon, 2)
+    wait_buildstart(2, photon_cannon)
+    build(3, photon_cannon, 1)
+    wait_buildstart(3, photon_cannon)
+    build(4, photon_cannon, 1)
+    wait_buildstart(4, photon_cannon)
+    stop()
+
+        --b_cannon5--
+    wait(20)
+    notowns_jump(forge, b_cannon5)
+    build(1, photon_cannon, 2)
+    wait_buildstart(1, photon_cannon)
+    build(2, photon_cannon, 2)
+    wait_buildstart(2, photon_cannon)
+    build(3, photon_cannon, 2)
+    wait_buildstart(3, photon_cannon)
+    build(4, photon_cannon, 1)
+    wait_buildstart(4, photon_cannon)
+    build(5, photon_cannon, 1)
+    wait_buildstart(5, photon_cannon)
+    stop()
+
+        --b_probes3--
+    wait_build(1, nexus)
+    build(1, probe, 2)
+    wait_buildstart(1, probe)
+    build(2, probe, 1)
+    wait_buildstart(2, probe)
+    build(3, probe, 1)
+    wait_buildstart(3, probe)
+    stop()
+
+        --b_probes2--
+    wait_build(1, nexus)
+    build(1, probe, 2)
+    wait_buildstart(1, probe)
+    build(2, probe, 1)
+    wait_buildstart(2, probe)
+    stop()
+
+        --b_cyber1+--
+    wait(15)
+    notowns_jump(gateway, b_cyber1+)
+    wait_build(1, gateway)
+    build(1, cybernetics_core, 3)
+    wait_buildstart(1, cybernetics_core)
+    stop()
+
+
+        --b_cyber1_--
+    wait(20)
+    notowns_jump(gateway, b_cyber1_)
+    build(1, cybernetics_core, 1)
+    wait_buildstart(1, cybernetics_core)
+    stop()
+
+
+        --b_cyber2--
+    wait(20)
+    notowns_jump(gateway, b_cyber2)
+    build(1, cybernetics_core, 2)
+    wait_buildstart(1, cybernetics_core)
+    build(2, cybernetics_core, 2)
+    wait_buildstart(2, cybernetics_core)
+    stop()
+
+
+        --b_stargate1+--
+    wait(15)
+    notowns_jump(cybernetics_core, b_stargate1+)
+    wait_build(1, cybernetics_core)
+    build(1, stargate, 3)
+    wait_buildstart(1, stargate)
+    stop()
+
+
+        --b_stargate2--
+    wait(20)
+    notowns_jump(cybernetics_core, b_stargate2)
+    build(1, stargate, 2)
+    wait_buildstart(1, stargate)
+    build(2, stargate, 2)
+    wait_buildstart(2, stargate)
+    stop()
+
+
+        --b_stargate4--
+    wait(20)
+    notowns_jump(cybernetics_core, b_stargate4)
+    build(1, stargate, 2)
+    wait_buildstart(1, stargate)
+    build(2, stargate, 2)
+    wait_buildstart(2, stargate)
+    build(3, stargate, 2)
+    wait_buildstart(3, stargate)
+    build(4, stargate, 1)
+    wait_buildstart(4, stargate)
+    stop()
+
+
+        --b_fleet1+--
+    wait(15)
+    notowns_jump(stargate, b_fleet1+)
+    wait_build(1, stargate)
+    build(1, fleet_beacon, 3)
+    wait_buildstart(1, fleet_beacon)
+    stop()
+
+        --b_fleet1--
+    wait(20)
+    notowns_jump(stargate, b_fleet1)
+    build(1, fleet_beacon, 2)
+    wait_buildstart(1, fleet_beacon)
+    stop()
+
+        --b_adun1+--
+    wait(15)
+    notowns_jump(cybernetics_core, b_adun1+)
+    wait_build(1, cybernetics_core)
+    build(1, citadel_of_adun, 3)
+    wait_buildstart(1, citadel_of_adun)
+    stop()
+
+
+        --b_adun1--
+    wait(20)
+    notowns_jump(cybernetics_core, b_adun1)
+    build(1, citadel_of_adun, 2)
+    wait_buildstart(1, citadel_of_adun)
+    stop()
+
+
+        --b_archive1+--
+    wait(15)
+    notowns_jump(citadel_of_adun, b_archive1+)
+    wait_build(1, citadel_of_adun)
+    build(1, templar_archives, 3)
+    wait_buildstart(1, templar_archives)
+    stop()
+
+
+        --b_archive1--
+    wait(20)
+    notowns_jump(citadel_of_adun, b_archive1)
+    build(1, templar_archives, 2)
+    wait_buildstart(1, templar_archives)
+    stop()
+
+
+        --b_robotic1+--
+    wait(15)
+    notowns_jump(cybernetics_core, b_robotic1+)
+    wait_build(1, cybernetics_core)
+    build(1, robotics_facility, 3)
+    wait_buildstart(1, robotics_facility)
+    stop()
+
+        --b_robotic2--
+    wait(20)
+    notowns_jump(cybernetics_core, b_robotic2)
+    build(1, robotics_facility, 2)
+    wait_buildstart(1, robotics_facility)
+    build(2, robotics_facility, 2)
+    wait_buildstart(2, robotics_facility)
+    stop()
+
+        --b_robotic4--
+    wait(20)
+    notowns_jump(cybernetics_core, b_robotic4)
+    build(1, robotics_facility, 2)
+    wait_buildstart(1, robotics_facility)
+    build(2, robotics_facility, 2)
+    wait_buildstart(2, robotics_facility)
+    build(3, robotics_facility, 1)
+    wait_buildstart(3, robotics_facility)
+    build(4, robotics_facility, 1)
+    wait_buildstart(4, robotics_facility)
+    stop()
+
+        --b_bay1+--
+    wait(15)
+    notowns_jump(robotics_facility, b_bay1+)
+    wait_build(1, robotics_facility)
+    build(1, robotics_support_bay, 3)
+    wait_buildstart(1, robotics_support_bay)
+    stop()
+
+        --b_bay1--
+    wait(20)
+    notowns_jump(robotics_facility, b_bay1)
+    build(1, robotics_support_bay, 2)
+    wait_buildstart(1, robotics_support_bay)
+    stop()
+
+        --b_bay1_--
+    wait(20)
+    notowns_jump(robotics_facility, b_bay1_)
+    build(1, robotics_support_bay, 1)
+    wait_buildstart(1, robotics_support_bay)
+    stop()
+
+        --b_obs1--
+    wait(20)
+    notowns_jump(robotics_facility, b_obs1)
+    build(1, observatory, 2)
+    wait_buildstart(1, observatory)
+    stop()
+
+        --b_obs1+--
+    wait(20)
+    notowns_jump(robotics_facility, b_obs1+)
+    wait_build(1, robotics_facility)
+    build(1, observatory, 3)
+    wait_buildstart(1, observatory)
+    stop()
+
+        --b_tribunal1+--
+    wait(15)
+    notowns_jump(templar_archives, b_tribunal1+)
+    notowns_jump(stargate, b_tribunal1+)
+    wait_build(1, stargate)
+    wait_build(1, templar_archives)
+    build(1, arbiter_tribunal, 3)
+    wait_buildstart(1, arbiter_tribunal)
+    stop()
+
+# ####################### Training ##############
+
+
+        --t_zeal20--
+    train(20, zealot)
+    attack_add(20, zealot)
+    stop()
+
+        --t_zeal40--
+    train(40, zealot)
+    attack_add(40, zealot)
+    stop()
+
+        --t_zeal45--
+    train(45, zealot)
+    attack_add(45, zealot)
+    stop()
+
+        --t_goon10--
+    wait(60)
+    notowns_jump(cybernetics_core, t_goon10)
+    train(10, dragoon)
+    attack_add(10, dragoon)
+    stop()
+
+        --t_goon15--
+    wait(60)
+    notowns_jump(cybernetics_core, t_goon15)
+    train(15, dragoon)
+    attack_add(15, dragoon)
+    stop()
+
+        --t_goon20--
+    wait(60)
+    notowns_jump(cybernetics_core, t_goon20)
+    train(20, dragoon)
+    attack_add(20, dragoon)
+    stop()
+
+        --t_goon30--
+    wait(60)
+    notowns_jump(cybernetics_core, t_goon30)
+    train(30, dragoon)
+    attack_add(30, dragoon)
+    stop()
+
+
+        --t_dt25--
+    wait(60)
+    notowns_jump(templar_archives, t_dt25)
+    train(25, dark_templar)
+    attack_add(25, dark_templar)
+    stop()
+
+        --t_dt50--
+    wait(60)
+    notowns_jump(templar_archives, t_dt50)
+    train(50, dark_templar)
+    attack_add(50, dark_templar)
+    stop()
+
+        --t_darkarch10_--
+    wait(60)
+    notowns_jump(templar_archives, t_darkarch10_)
+    wait(2200)
+    train(10, dark_archon)
+    attack_add(10, dark_archon)
+    stop()
+
+        --t_reav6--
+    wait(60)
+    notowns_jump(robotics_support_bay, t_reav6)
+    train(6, reaver)
+    attack_add(6, reaver)
+    stop()
+
+        --t_reav10--
+    wait(60)
+    notowns_jump(robotics_support_bay, t_reav10)
+    train(10, reaver)
+    attack_add(10, reaver)
+    stop()
+
+        --t_reav14--
+    wait(60)
+    notowns_jump(robotics_support_bay, t_reav14)
+    train(14, reaver)
+    attack_add(14, reaver)
+    stop()
+
+        --t_obs4--
+    wait(60)
+    notowns_jump(observatory, t_obs4)
+    train(4, observer)
+    attack_add(4, observer)
+    stop()
+
+        --t_corsair12--
+    wait(60)
+    notowns_jump(stargate, t_corsair12)
+    train(12, corsair)
+    attack_add(12, corsair)
+    stop()
+
+        --t_corsair24--
+    wait(60)
+    notowns_jump(stargate, t_corsair24)
+    train(24, corsair)
+    attack_add(24, corsair)
+    stop()
+
+        --t_carrier10--
+    wait(60)
+    notowns_jump(fleet_beacon, t_carrier10)
+    train(10, carrier)
+    attack_add(10, carrier)
+    stop()
+
+        --t_arb3--
+    wait(60)
+    notowns_jump(arbiter_tribunal, t_arb3)
+    place_guard(arbiter, 3)
+    train(3, arbiter)
+    attack_add(3, arbiter)
+    stop()
+
+        --t_shuttle4--
+    wait(30)
+    notowns_jump(robotics_facility, t_shuttle4)
+    train(4, shuttle)
+    wait_force(4, shuttle)
+    stop()
+
+    multirun(t_dt50)
+    wait(2)
+    multirun(t_reav10)
+    wait(2)
+    multirun(t_goon30)
+    wait(2)
+    multirun(t_darkarch10_)
+    wait(2)
+    multirun(t_obs4)
+
+# ################### Research ###############
+
+
+        --r_shield--
+    wait(350)
+    notowns_jump(forge, r_shield)
+    upgrade(1, p_plasma_shield, 1)
+    wait(4100)
+        --r_shield2--
+    wait(350)
+    notowns_jump(cybernetics_core, r_shield2)
+    upgrade(2, p_plasma_shield, 1)
+    wait(4600)
+        --r_shield3--
+    wait(350)
+    notowns_jump(cybernetics_core, r_shield3)
+    upgrade(3, p_plasma_shield, 1)
+    wait(5100)
+    stop()
+
+        --r_armor--
+    wait(350)
+    notowns_jump(forge, r_armor)
+    upgrade(1, p_armor, 1)
+    wait(4100)
+        --r_armor2--
+    wait(350)
+    notowns_jump(templar_archives, r_armor2)
+    upgrade(2, p_armor, 1)
+    wait(4600)
+        --r_armor3--
+    wait(350)
+    notowns_jump(templar_archives, r_armor3)
+    upgrade(3, p_armor, 1)
+    wait(5100)
+    stop()
+
+        --r_gweapon--
+    wait(350)
+    notowns_jump(forge, r_gweapon)
+    upgrade(1, p_ground_weapon, 1)
+    wait(4100)
+        --r_gweapon2--
+    wait(350)
+    notowns_jump(templar_archives, r_gweapon2)
+    upgrade(2, p_ground_weapon, 1)
+    wait(4600)
+        --r_gweapon3--
+    wait(350)
+    notowns_jump(templar_archives, r_gweapon3)
+    upgrade(3, p_ground_weapon, 1)
+    wait(5100)
+    stop()
+
+        --r_plate--
+    wait(750)
+    notowns_jump(cybernetics_core, r_plate)
+    upgrade(1, p_plating, 1)
+    wait(4100)
+        --r_plate2--
+    wait(750)
+    notowns_jump(fleet_beacon, r_plate2)
+    upgrade(2, p_plating, 1)
+    wait(4600)
+        --r_plate3--
+    wait(750)
+    notowns_jump(fleet_beacon, r_plate3)
+    upgrade(3, p_plating, 1)
+    wait(5100)
+    stop()
+
+
+        --r_aweapon--
+    wait(350)
+    notowns_jump(cybernetics_core, r_aweapon)
+    upgrade(1, p_air_weapon, 1)
+    wait(4100)
+        --r_aweapon2--
+    wait(350)
+    notowns_jump(fleet_beacon, r_aweapon2)
+    upgrade(2, p_air_weapon, 1)
+    wait(4600)
+        --r_aweapon3--
+    wait(350)
+    notowns_jump(fleet_beacon, r_aweapon3)
+    upgrade(3, p_air_weapon, 1)
+    wait(5100)
+    stop()
+
+        --r_scarab--
+    wait(550)
+    notowns_jump(robotics_support_bay, r_scarab)
+    upgrade(1, scarab_damage, 1)
+    wait(2600)
+        --r_scarab2--
+    wait(1050)
+    notowns_jump(robotics_support_bay, r_scarab2)
+    upgrade(1, reaver_capacity, 1)
+    wait(2600)
+    stop()
+
+        --r_corsair--
+    wait(450)
+    notowns_jump(fleet_beacon, r_corsair)
+    tech(disruption_web, 1)
+    wait(1300)
+        --r_corsair2--
+    wait(1050)
+    notowns_jump(fleet_beacon, r_corsair)
+    upgrade(1, corsair_mana, 1)
+    wait(2600)
+    stop()
+
+        --r_obs--
+    wait(750)
+    notowns_jump(observatory, r_obs)
+    upgrade(1, observer_speed, 1)
+    wait(2100)
+        --r_obs2--
+    wait(1050)
+    notowns_jump(observatory, r_obs2)
+    upgrade(1, observer_sight, 1)
+    wait(2100)
+    stop()
+
+        --r_goon--
+    wait(350)
+    notowns_jump(cybernetics_core, r_goon)
+    upgrade(1, dragoon_range, 1)
+    wait(2600)
+    stop()
+
+        --r_carrier--
+    wait(550)
+    notowns_jump(fleet_beacon, r_carrier)
+    upgrade(1, carrier_capacity, 1)
+    wait(1600)
+    stop()
+
+        --r_da--
+    wait(350)
+    notowns_jump(templar_archives, r_da)
+    tech(mind_control, 1)
+    wait(1900)
+        --r_da2--
+    wait(350)
+    notowns_jump(templar_archives, r_da2)
+    tech(maelstrom, 1)
+    wait(1600)
+        --r_da3--
+    wait(1050)
+    notowns_jump(templar_archives, r_da3)
+    upgrade(1, dark_archon_mana, 1)
+    wait(2600)
+    stop()
+
+        --r_arb--
+    wait(450)
+    notowns_jump(arbiter_tribunal, r_arb)
+    tech(stasis_field, 1)
+    wait(1600)
+        --r_arb2--
+    wait(650)
+    notowns_jump(arbiter_tribunal, r_arb2)
+    upgrade(1, arbiter_mana, 1)
+    wait(2600)
+        --r_arb3--
+    wait(1050)
+    notowns_jump(templar_archives, r_arb3)
+    tech(recall, 1)
+    wait(1900)
+    stop()
+
+# ########################## END #############
+
+# Because even the best things must end some day...
+
+        --end_loop--
+    wait(30000)
+    goto(end_loop)
+
+
+
+
+

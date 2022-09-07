@@ -1,0 +1,2332 @@
+#Ashara T v1.2
+TMCx(1342, 101, aiscript):
+	start_town()
+	transports_off()
+	farms_notiming()
+
+#if DEBUG
+	debug(null, Ashara Terran 1.2)
+	--null--
+#endif
+
+
+	define_max(60, Terran SCV)
+	define_max(50, Terran Marine)
+	define_max(12, Terran Medic)
+	define_max(20, Terran Siege Tank<0>Tank Mode)
+	define_max(20, Terran Goliath)
+	define_max(255, Terran Wraith)
+	define_max(255, Terran Dropship)
+	define_max(7, Terran Battlecruiser)
+	define_max(5, Terran Science Vessel)
+	define_max(255, Terran Valkyrie)
+	define_max(255, Terran Ghost)
+	define_max(255, Nuclear Missile)
+	define_max(6, Terran Firebat)
+	define_max(10, Terran Vulture)
+	defenseclear_gg()
+	build(1, Terran Command Center, 2)
+	wait_buildstart(1, Terran Command Center)
+	build(1, Terran SCV, 2)
+	wait_buildstart(1, Terran SCV)
+	build(2, Terran SCV, 2)
+	wait_buildstart(2, Terran SCV)
+	build(3, Terran SCV, 2)
+	wait_buildstart(3, Terran SCV)
+	build(4, Terran SCV, 2)
+	wait_buildstart(4, Terran SCV)
+	build(5, Terran SCV, 2)
+	wait_buildstart(5, Terran SCV)
+	build(6, Terran SCV, 2)
+	wait_buildstart(6, Terran SCV)
+	build(7, Terran SCV, 2)
+	wait_buildstart(7, Terran SCV)
+	race_jump(ASHT 0001, ASHT 0002, ASHT 0003)
+
+
+		--ASHT 0001--
+	random_jump(64, ASHT 0004)
+	random_jump(85, ASHT 0005)
+	random_jump(85, ASHT 0006)
+	goto(ASHT 0007)
+
+
+		--ASHT 0002--
+	multirun(pool_detect)
+	random_jump(85, ASHT 0004)
+	goto(ASHT 0006)
+
+
+		--ASHT 0003--
+	multirun(tvp bunker)
+	random_jump(85, ASHT 0004)
+	random_jump(128, ASHT 0007)
+	random_jump(85, ASHT 0006)
+	goto(ASHT 0005)
+
+
+		--ASHT 0004--
+	build(8, Terran SCV, 2)
+	wait_buildstart(8, Terran SCV)
+	build(9, Terran SCV, 2)
+	build(1, Terran Supply Depot, 2)
+	wait_buildstart(9, Terran SCV)
+	wait_buildstart(1, Terran Supply Depot)
+	build(10, Terran SCV, 2)
+	wait_buildstart(10, Terran SCV)
+	build(1, Terran Barracks, 2)
+	wait_buildstart(1, Terran Barracks)
+	multirun(ASHT 0008)
+	defenseclear_gg()
+	defenseuse_gg(1, Terran Marine)
+	defenseuse_gg(1, Terran Firebat)
+	build(11, Terran SCV, 2)
+	wait_buildstart(11, Terran SCV)
+	build(12, Terran SCV, 2)
+	wait(240)
+
+	wait_buildstart(12, Terran SCV)
+	build(2, Terran Barracks, 2)
+	wait(150)
+
+	wait_buildstart(2, Terran Barracks)
+	build(13, Terran SCV, 2)
+	wait(240)
+
+	wait_buildstart(13, Terran SCV)
+	build(14, Terran SCV, 2)
+	wait(240)
+
+	wait_buildstart(14, Terran SCV)
+	build(2, Terran Supply Depot, 2)
+	wait(150)
+
+	wait_buildstart(2, Terran Supply Depot)
+	build(15, Terran SCV, 2)
+	wait(240)
+
+	wait_buildstart(15, Terran SCV)
+	build(1, Terran Refinery, 2)
+	wait(100)
+
+	wait_buildstart(1, Terran Refinery)
+	build(16, Terran SCV, 2)
+	wait(240)
+
+	wait_buildstart(16, Terran SCV)
+	build(17, Terran SCV, 2)
+	wait(240)
+
+	wait_buildstart(17, Terran SCV)
+	build(3, Terran Supply Depot, 2)
+	wait(150)
+
+	wait_buildstart(3, Terran Supply Depot)
+	build(18, Terran SCV, 2)
+	wait(240)
+
+	wait_buildstart(18, Terran SCV)
+	build(1, Terran Academy, 2)
+	wait(150)
+
+	wait_buildstart(1, Terran Academy)
+	build(19, Terran SCV, 2)
+	wait(240)
+
+	wait_buildstart(19, Terran SCV)
+	build(20, Terran SCV, 2)
+	wait(240)
+
+	wait_buildstart(20, Terran SCV)
+	wait(300)
+
+	build(3, Terran Barracks, 2)
+	wait(150)
+
+	wait_buildstart(3, Terran Barracks)
+	farms_timing()
+	build(21, Terran SCV, 2)
+	wait(120)
+
+	multirun(ASHT 0009)
+	wait(120)
+
+	wait_buildstart(21, Terran SCV)
+	build(22, Terran SCV, 2)
+	wait(240)
+
+	wait_buildstart(22, Terran SCV)
+	build(1, Terran Comsat Station, 1)
+	wait(1100)
+
+
+		--ASHT 0010--
+	wait(200)
+
+	time_jump(9, ASHT 0011)
+	goto(ASHT 0010)
+
+
+		--ASHT 0011--
+	wait(480)
+
+	build(1, Terran Factory, 2)
+	wait(480)
+
+	wait_buildstart(1, Terran Factory)
+	wait(100)
+
+	expand(99, ASHT 0012)
+	wait(100)
+
+	build(1, Terran Machine Shop, 2)
+	wait(50)
+
+	goto(ASHT 0013)
+
+
+		--ASHT 0008--
+	wait(200)
+
+	notowns_jump(Terran Barracks, ASHT 0008)
+	train(12, Terran Marine)
+	wait(100)
+
+	train(4, Terran Firebat)
+	wait(100)
+
+	train(2, Terran Medic)
+	wait(100)
+
+	multirun(ASHT 0014)
+	train(16, Terran Marine)
+	wait(100)
+
+	train(4, Terran Firebat)
+	wait(100)
+
+	train(5, Terran Medic)
+	wait(100)
+
+	train(22, Terran Marine)
+	wait(100)
+
+	stop()
+
+
+		--ASHT 0012--
+	start_town()
+	build(1, Terran Command Center, 2)
+	wait(500)
+
+	wait_buildstart(1, Terran Command Center)
+	wait(500)
+
+	wait_build(1, Terran Command Center)
+	build(1, Terran SCV, 2)
+	wait_buildstart(1, Terran SCV)
+	build(2, Terran SCV, 2)
+	wait(20)
+
+	wait_buildstart(2, Terran SCV)
+	build(1, Terran Bunker, 2)
+	wait_buildstart(1, Terran Bunker)
+	build(3, Terran SCV, 2)
+	wait(20)
+
+	wait_buildstart(3, Terran SCV)
+	build(4, Terran SCV, 2)
+	wait(20)
+
+	wait_buildstart(4, Terran SCV)
+	build(5, Terran SCV, 2)
+	wait(20)
+
+	wait_buildstart(5, Terran SCV)
+	build(6, Terran SCV, 2)
+	wait(20)
+
+	wait_buildstart(6, Terran SCV)
+	build(1, Terran Refinery, 1)
+	build(7, Terran SCV, 2)
+	wait(20)
+
+	wait_buildstart(7, Terran SCV)
+	build(8, Terran SCV, 2)
+	wait(240)
+
+	wait_buildstart(8, Terran SCV)
+	wait(150)
+
+	build(1, Terran Comsat Station, 1)
+	wait(150)
+
+	build(9, Terran SCV, 2)
+	wait(240)
+
+	wait_buildstart(9, Terran SCV)
+	build(10, Terran SCV, 2)
+	wait(240)
+
+	wait_buildstart(10, Terran SCV)
+	build(11, Terran SCV, 2)
+	wait(240)
+
+	wait_buildstart(11, Terran SCV)
+	build(1, Terran Missile Turret, 1)
+	build(12, Terran SCV, 2)
+	wait(240)
+
+	wait_buildstart(12, Terran SCV)
+	build(13, Terran SCV, 2)
+	wait(240)
+
+	wait_buildstart(13, Terran SCV)
+	build(14, Terran SCV, 2)
+	wait(240)
+
+	wait_buildstart(14, Terran SCV)
+	build(2, Terran Missile Turret, 1)
+	build(15, Terran SCV, 2)
+	wait(240)
+
+	wait_buildstart(15, Terran SCV)
+	build(16, Terran SCV, 2)
+	wait(240)
+
+	wait_buildstart(16, Terran SCV)
+	build(17, Terran SCV, 2)
+	wait(240)
+
+	wait_buildstart(17, Terran SCV)
+	build(18, Terran SCV, 2)
+	wait(240)
+
+	wait_buildstart(18, Terran SCV)
+	build(19, Terran SCV, 2)
+	wait(240)
+
+	wait_buildstart(19, Terran SCV)
+	build(20, Terran SCV, 2)
+	wait_buildstart(20, Terran SCV)
+	goto(ASHT 0015)
+
+
+		--ASHT 0006--
+	build(8, Terran SCV, 2)
+	wait_buildstart(8, Terran SCV)
+	build(1, Terran Barracks, 2)
+	wait_buildstart(1, Terran Barracks)
+	build(9, Terran SCV, 2)
+	wait_buildstart(9, Terran SCV)
+	build(2, Terran Barracks, 2)
+	wait_buildstart(2, Terran Barracks)
+	build(1, Terran Supply Depot, 2)
+	wait_buildstart(1, Terran Supply Depot)
+	multirun(ASHT 0016)
+	build(10, Terran SCV, 2)
+	wait(240)
+
+	wait_buildstart(10, Terran SCV)
+	build(11, Terran SCV, 2)
+	wait(300)
+
+	wait_buildstart(11, Terran SCV)
+	build(2, Terran Supply Depot, 2)
+	wait(100)
+
+	wait_buildstart(2, Terran Supply Depot)
+	build(12, Terran SCV, 2)
+	wait(300)
+
+	wait_buildstart(12, Terran SCV)
+	build(13, Terran SCV, 2)
+	wait(300)
+
+	wait_buildstart(13, Terran SCV)
+	build(14, Terran SCV, 2)
+	wait(300)
+
+	wait_buildstart(14, Terran SCV)
+	farms_timing()
+	build(15, Terran SCV, 2)
+	wait(300)
+
+	wait_buildstart(15, Terran SCV)
+	build(16, Terran SCV, 2)
+	wait(240)
+
+	wait_buildstart(16, Terran SCV)
+	build(17, Terran SCV, 2)
+	wait(240)
+
+	wait_buildstart(17, Terran SCV)
+	build(1, Terran Refinery, 2)
+	wait(100)
+
+	wait_buildstart(1, Terran Refinery)
+	defenseclear_gg()
+	defenseuse_gg(1, Terran Marine)
+	defenseuse_gg(1, Terran Firebat)
+	build(18, Terran SCV, 2)
+	wait(240)
+
+	wait_buildstart(18, Terran SCV)
+	build(1, Terran Academy, 2)
+	wait(150)
+
+	wait_buildstart(1, Terran Academy)
+	build(19, Terran SCV, 2)
+	wait(240)
+
+	wait_buildstart(19, Terran SCV)
+	build(20, Terran SCV, 2)
+	wait(240)
+
+	wait_buildstart(20, Terran SCV)
+	wait(300)
+
+	build(3, Terran Barracks, 2)
+	wait(150)
+
+	wait_buildstart(3, Terran Barracks)
+	build(21, Terran SCV, 2)
+	wait(120)
+
+	multirun(ASHT 0009)
+	wait(120)
+
+	wait_buildstart(21, Terran SCV)
+	build(22, Terran SCV, 2)
+	wait(240)
+
+	wait_buildstart(22, Terran SCV)
+	build(1, Terran Comsat Station, 1)
+	build(4, Terran Barracks, 2)
+	wait(1100)
+
+
+		--ASHT 0017--
+	wait(200)
+
+	time_jump(12, ASHT 0018)
+	goto(ASHT 0017)
+
+
+		--ASHT 0018--
+	wait(480)
+
+	build(1, Terran Factory, 2)
+	wait(480)
+
+	wait_buildstart(1, Terran Factory)
+	wait(100)
+
+	expand(99, ASHT 0019)
+	wait(100)
+
+	build(1, Terran Machine Shop, 2)
+	wait(50)
+
+	goto(ASHT 0013)
+
+
+		--ASHT 0016--
+	wait(100)
+
+	notowns_jump(Terran Barracks, ASHT 0016)
+	train(4, Terran Marine)
+	multirun(ASHT 0014)
+	wait(10)
+
+	train(12, Terran Marine)
+	wait(200)
+
+	train(4, Terran Firebat)
+	wait(100)
+
+	train(2, Terran Medic)
+	multirun(ASHT 0014)
+	wait(100)
+
+	train(16, Terran Marine)
+	wait(100)
+
+	train(4, Terran Firebat)
+	wait(100)
+
+	train(5, Terran Medic)
+	wait(100)
+
+	train(20, Terran Marine)
+	multirun(ASHT 0014)
+	wait(100)
+
+	train(5, Terran Firebat)
+	wait(100)
+
+	train(6, Terran Medic)
+	wait(100)
+
+	train(24, Terran Marine)
+	wait(100)
+
+	stop()
+
+
+		--ASHT 0019--
+	start_town()
+	build(1, Terran Command Center, 2)
+	wait(500)
+
+	wait_buildstart(1, Terran Command Center)
+	wait(500)
+
+	wait_build(1, Terran Command Center)
+	build(1, Terran SCV, 2)
+	wait_buildstart(1, Terran SCV)
+	build(2, Terran SCV, 2)
+	wait(20)
+
+	wait_buildstart(2, Terran SCV)
+	build(1, Terran Bunker, 2)
+	wait_buildstart(1, Terran Bunker)
+	build(3, Terran SCV, 2)
+	wait(20)
+
+	wait_buildstart(3, Terran SCV)
+	build(4, Terran SCV, 2)
+	wait(20)
+
+	wait_buildstart(4, Terran SCV)
+	build(5, Terran SCV, 2)
+	wait(20)
+
+	wait_buildstart(5, Terran SCV)
+	build(6, Terran SCV, 2)
+	wait(20)
+
+	wait_buildstart(6, Terran SCV)
+	build(1, Terran Refinery, 1)
+	build(7, Terran SCV, 2)
+	wait(20)
+
+	wait_buildstart(7, Terran SCV)
+	build(8, Terran SCV, 2)
+	wait(240)
+
+	wait_buildstart(8, Terran SCV)
+	wait(150)
+
+	build(1, Terran Comsat Station, 1)
+	wait(150)
+
+	build(9, Terran SCV, 2)
+	wait(240)
+
+	wait_buildstart(9, Terran SCV)
+	build(10, Terran SCV, 2)
+	wait(240)
+
+	wait_buildstart(10, Terran SCV)
+	build(11, Terran SCV, 2)
+	wait(240)
+
+	wait_buildstart(11, Terran SCV)
+	build(1, Terran Missile Turret, 1)
+	build(12, Terran SCV, 2)
+	wait(240)
+
+	wait_buildstart(12, Terran SCV)
+	build(13, Terran SCV, 2)
+	wait(240)
+
+	wait_buildstart(13, Terran SCV)
+	build(14, Terran SCV, 2)
+	wait(240)
+
+	wait_buildstart(14, Terran SCV)
+	build(2, Terran Missile Turret, 1)
+	build(15, Terran SCV, 2)
+	wait(240)
+
+	wait_buildstart(15, Terran SCV)
+	build(16, Terran SCV, 2)
+	wait(240)
+
+	wait_buildstart(16, Terran SCV)
+	build(17, Terran SCV, 2)
+	wait(240)
+
+	wait_buildstart(17, Terran SCV)
+	build(18, Terran SCV, 2)
+	wait(240)
+
+	wait_buildstart(18, Terran SCV)
+	build(19, Terran SCV, 2)
+	wait(240)
+
+	wait_buildstart(19, Terran SCV)
+	build(20, Terran SCV, 2)
+	wait_buildstart(20, Terran SCV)
+	goto(ASHT 0015)
+
+
+		--ASHT 0007--
+	build(8, Terran SCV, 2)
+	wait_buildstart(8, Terran SCV)
+	build(9, Terran SCV, 2)
+	build(1, Terran Supply Depot, 2)
+	wait_buildstart(9, Terran SCV)
+	wait_buildstart(1, Terran Supply Depot)
+	build(10, Terran SCV, 2)
+	wait_buildstart(10, Terran SCV)
+	build(11, Terran SCV, 2)
+	wait_buildstart(11, Terran SCV)
+	build(1, Terran Barracks, 2)
+	build(1, Terran Refinery, 1)
+	wait(100)
+
+	wait_buildstart(1, Terran Barracks)
+	build(1, Terran Comsat Station, 1)
+	multirun(ASHT 0020)
+	build(12, Terran SCV, 2)
+	wait(240)
+
+	wait_buildstart(12, Terran SCV)
+	defenseclear_gg()
+	defenseuse_gg(1, Terran Marine)
+	defenseclear_ag()
+	defenseuse_ag(1, Terran Marine)
+	build(13, Terran SCV, 2)
+	wait(240)
+
+	wait_buildstart(13, Terran SCV)
+	build(14, Terran SCV, 2)
+	wait(240)
+
+	wait_buildstart(14, Terran SCV)
+	build(15, Terran SCV, 2)
+	wait(240)
+
+	wait_buildstart(15, Terran SCV)
+	build(16, Terran SCV, 2)
+	wait(80)
+
+	wait_buildstart(16, Terran SCV)
+	build(1, Terran Factory, 2)
+	wait(100)
+
+	build(2, Terran Supply Depot, 2)
+	wait(50)
+
+	wait_buildstart(2, Terran Supply Depot)
+	wait_buildstart(1, Terran Factory)
+	build(17, Terran SCV, 2)
+	wait(240)
+
+	wait_buildstart(17, Terran SCV)
+	build(2, Terran Factory, 2)
+	wait(150)
+
+	wait_buildstart(2, Terran Factory)
+	build(1, Terran Machine Shop, 2)
+	build(18, Terran SCV, 2)
+	wait(120)
+
+	wait_buildstart(18, Terran SCV)
+	build(19, Terran SCV, 2)
+	wait(120)
+
+	wait_buildstart(19, Terran SCV)
+	build(3, Terran Supply Depot, 2)
+	wait(100)
+
+	wait_buildstart(3, Terran Supply Depot)
+	wait_buildstart(1, Terran Machine Shop)
+	tech(Tank Siege Mode, 1)
+	build(20, Terran SCV, 2)
+	wait(240)
+
+	wait_buildstart(20, Terran SCV)
+	build(21, Terran SCV, 2)
+	wait(240)
+
+	wait_buildstart(21, Terran SCV)
+	build(22, Terran SCV, 2)
+	wait(240)
+
+	wait_buildstart(22, Terran SCV)
+	farms_timing()
+	build(23, Terran SCV, 2)
+	wait(240)
+
+	wait_buildstart(23, Terran SCV)
+	wait(500)
+
+	build(2, Terran Machine Shop, 1)
+	wait(300)
+
+	tech(Spider Mines, 1)
+	wait(400)
+
+	build(1, Terran Academy, 2)
+	wait(150)
+
+	wait_buildstart(1, Terran Academy)
+	wait(1200)
+
+	build(3, Terran Factory, 2)
+	wait(150)
+
+	wait_buildstart(3, Terran Factory)
+
+		--ASHT 0021--
+	wait(200)
+
+	time_jump(13, ASHT 0022)
+	goto(ASHT 0021)
+
+
+		--ASHT 0022--
+	wait(720)
+
+	expand(99, ASHT 0012)
+	wait(100)
+
+	goto(ASHT 0013)
+
+
+		--ASHT 0020--
+	wait(200)
+
+	notowns_jump(Terran Barracks, ASHT 0020)
+	train(2, Terran Marine)
+	wait(10)
+
+	train(1, Terran Siege Tank<0>Tank Mode)
+	wait(10)
+
+	train(1, Terran Vulture)
+	wait(10)
+
+	train(3, Terran Marine)
+	wait(10)
+
+	train(2, Terran Siege Tank<0>Tank Mode)
+	wait(10)
+
+	train(2, Terran Vulture)
+	wait(10)
+
+	train(3, Terran Siege Tank<0>Tank Mode)
+	wait(10)
+
+	train(3, Terran Vulture)
+	wait(10)
+
+	train(4, Terran Siege Tank<0>Tank Mode)
+	wait(10)
+
+	train(4, Terran Marine)
+	wait(10)
+
+	train(4, Terran Vulture)
+	wait(10)
+
+	train(5, Terran Siege Tank<0>Tank Mode)
+	wait(10)
+
+	train(6, Terran Siege Tank<0>Tank Mode)
+	multirun(ASHT 0014)
+	wait(10)
+
+	train(5, Terran Vulture)
+	wait(10)
+
+	train(5, Terran Marine)
+	wait(10)
+
+	train(7, Terran Siege Tank<0>Tank Mode)
+	wait(10)
+
+	train(6, Terran Vulture)
+	wait(10)
+
+	train(8, Terran Siege Tank<0>Tank Mode)
+	wait(10)
+
+	train(7, Terran Vulture)
+	wait(10)
+
+	train(9, Terran Siege Tank<0>Tank Mode)
+	wait(10)
+
+	train(8, Terran Vulture)
+	wait(10)
+
+	train(10, Terran Siege Tank<0>Tank Mode)
+	wait(10)
+
+	train(9, Terran Vulture)
+	wait(10)
+
+	train(11, Terran Siege Tank<0>Tank Mode)
+	wait(200)
+
+	stop()
+
+
+		--ASHT 0005--
+	build(8, Terran SCV, 2)
+	wait_buildstart(8, Terran SCV)
+	build(9, Terran SCV, 2)
+	build(1, Terran Supply Depot, 2)
+	wait_buildstart(9, Terran SCV)
+	wait_buildstart(1, Terran Supply Depot)
+	build(10, Terran SCV, 2)
+	wait_buildstart(10, Terran SCV)
+	build(11, Terran SCV, 2)
+	wait_buildstart(11, Terran SCV)
+	build(12, Terran SCV, 2)
+	wait(240)
+
+	wait_buildstart(12, Terran SCV)
+	build(13, Terran SCV, 2)
+	wait_buildstart(13, Terran SCV)
+	wait(100)
+
+	expand(99, ASHT 0023)
+	wait(100)
+
+	build(13, Terran SCV, 2)
+	wait(240)
+
+	wait_buildstart(13, Terran SCV)
+	build(1, Terran Barracks, 2)
+	wait(10)
+
+	multirun(ASHT 0024)
+	wait(10)
+
+	build(14, Terran SCV, 2)
+	wait(240)
+
+	wait_buildstart(14, Terran SCV)
+	build(2, Terran Supply Depot, 2)
+	wait(40)
+
+	defenseclear_gg()
+	defenseuse_gg(1, Terran Marine)
+	defenseclear_ag()
+	defenseuse_ag(1, Terran Marine)
+	build(15, Terran SCV, 2)
+	wait(80)
+
+	wait_buildstart(15, Terran SCV)
+	build(16, Terran SCV, 2)
+	wait(80)
+
+	wait_buildstart(16, Terran SCV)
+	build(1, Terran Refinery, 1)
+	wait(100)
+
+	build(1, Terran Comsat Station, 1)
+	build(1, Terran Factory, 2)
+	wait(100)
+
+	wait_buildstart(1, Terran Factory)
+	build(17, Terran SCV, 2)
+	wait(240)
+
+	wait_buildstart(17, Terran SCV)
+	build(2, Terran Factory, 2)
+	wait(150)
+
+	wait_buildstart(2, Terran Factory)
+	build(1, Terran Machine Shop, 2)
+	wait(10)
+
+	build(18, Terran SCV, 2)
+	wait(120)
+
+	wait_buildstart(18, Terran SCV)
+	build(3, Terran Supply Depot, 2)
+	wait(100)
+
+	wait_buildstart(3, Terran Supply Depot)
+	wait_buildstart(1, Terran Machine Shop)
+	tech(Tank Siege Mode, 1)
+	build(19, Terran SCV, 2)
+	wait(240)
+
+	wait_buildstart(19, Terran SCV)
+	build(20, Terran SCV, 2)
+	wait(240)
+
+	wait_buildstart(20, Terran SCV)
+	build(21, Terran SCV, 2)
+	wait(240)
+
+	wait_buildstart(21, Terran SCV)
+	farms_timing()
+	wait(500)
+
+	build(2, Terran Machine Shop, 1)
+	wait(300)
+
+	tech(Spider Mines, 1)
+	wait(100)
+
+	build(3, Terran Factory, 2)
+	wait(150)
+
+	wait_buildstart(3, Terran Factory)
+	wait(150)
+
+	build(1, Terran Academy, 2)
+	wait(150)
+
+	wait_buildstart(1, Terran Academy)
+	wait(1000)
+
+	build(4, Terran Factory, 2)
+	wait(150)
+
+	wait_buildstart(4, Terran Factory)
+
+		--ASHT 0025--
+	wait(250)
+
+	time_jump(16, ASHT 0026)
+	goto(ASHT 0025)
+
+
+		--ASHT 0026--
+	wait(10)
+
+	send_suicide(0)
+	wait(100)
+
+	goto(ASHT 0013)
+
+
+		--ASHT 0024--
+	wait(10)
+
+	multirun(ASHT 0027)
+	wait(10)
+
+	goto(ASHT 0028)
+
+
+		--ASHT 0027--
+	wait(150)
+
+	notowns_jump(Terran Factory, ASHT 0027)
+	train(5, Terran Marine)
+	wait(500)
+
+	train(10, Terran Marine)
+	wait(500)
+
+	train(15, Terran Marine)
+	wait(500)
+
+	stop()
+
+
+		--ASHT 0028--
+	wait(200)
+
+	notowns_jump(Terran Factory, ASHT 0028)
+	wait(10)
+
+	train(1, Terran Siege Tank<0>Tank Mode)
+	wait(10)
+
+	train(1, Terran Vulture)
+	wait(20)
+
+	train(2, Terran Siege Tank<0>Tank Mode)
+	wait(10)
+
+	train(2, Terran Vulture)
+	wait(20)
+
+	train(3, Terran Siege Tank<0>Tank Mode)
+	wait(10)
+
+	train(3, Terran Vulture)
+	wait(20)
+
+	train(4, Terran Siege Tank<0>Tank Mode)
+	wait(10)
+
+	train(4, Terran Vulture)
+	wait(20)
+
+	train(5, Terran Siege Tank<0>Tank Mode)
+	wait(10)
+
+	multirun(ASHT 0014)
+	train(6, Terran Siege Tank<0>Tank Mode)
+	wait(10)
+
+	train(5, Terran Vulture)
+	wait(10)
+
+	train(7, Terran Siege Tank<0>Tank Mode)
+	wait(10)
+
+	train(6, Terran Vulture)
+	wait(10)
+
+	train(8, Terran Siege Tank<0>Tank Mode)
+	wait(10)
+
+	train(7, Terran Vulture)
+	wait(10)
+
+	train(9, Terran Siege Tank<0>Tank Mode)
+	wait(10)
+
+	train(8, Terran Vulture)
+	wait(10)
+
+	train(10, Terran Siege Tank<0>Tank Mode)
+	wait(10)
+
+	train(9, Terran Vulture)
+	wait(10)
+
+	train(11, Terran Siege Tank<0>Tank Mode)
+	wait(10)
+
+	train(12, Terran Vulture)
+	wait(10)
+
+	train(12, Terran Siege Tank<0>Tank Mode)
+	wait(10)
+
+	train(14, Terran Vulture)
+	wait(10)
+
+	train(14, Terran Siege Tank<0>Tank Mode)
+	wait(10)
+
+	train(16, Terran Vulture)
+	wait(10)
+
+	train(16, Terran Siege Tank<0>Tank Mode)
+	wait(10)
+
+	train(18, Terran Vulture)
+	wait(10)
+
+	stop()
+
+
+		--ASHT 0023--
+	start_town()
+	build(1, Terran Command Center, 2)
+	wait(500)
+
+	wait_buildstart(1, Terran Command Center)
+	wait(500)
+
+	wait_build(1, Terran Command Center)
+	build(1, Terran SCV, 2)
+	wait(300)
+
+	wait_buildstart(1, Terran SCV)
+	build(2, Terran SCV, 2)
+	wait(340)
+
+	wait_buildstart(2, Terran SCV)
+	build(3, Terran SCV, 2)
+	wait(300)
+
+	wait_buildstart(3, Terran SCV)
+	build(4, Terran SCV, 2)
+	wait(300)
+
+	wait_buildstart(4, Terran SCV)
+	build(5, Terran SCV, 2)
+	wait(300)
+
+	wait_buildstart(5, Terran SCV)
+	build(6, Terran SCV, 2)
+	wait(300)
+
+	wait_buildstart(6, Terran SCV)
+	build(1, Terran Refinery, 1)
+	build(7, Terran SCV, 2)
+	wait(300)
+
+	wait_buildstart(7, Terran SCV)
+	build(1, Terran Bunker, 2)
+	wait_buildstart(1, Terran Bunker)
+	build(8, Terran SCV, 2)
+	wait(340)
+
+	wait_buildstart(8, Terran SCV)
+	wait(150)
+
+	wait(150)
+
+	build(9, Terran SCV, 2)
+	wait(340)
+
+	wait_buildstart(9, Terran SCV)
+	build(10, Terran SCV, 2)
+	wait(340)
+
+	wait_buildstart(10, Terran SCV)
+	build(11, Terran SCV, 2)
+	wait(340)
+
+	wait_buildstart(11, Terran SCV)
+	build(12, Terran SCV, 2)
+	wait(340)
+
+	wait_buildstart(12, Terran SCV)
+	build(13, Terran SCV, 2)
+	wait(340)
+
+	wait_buildstart(13, Terran SCV)
+	build(14, Terran SCV, 2)
+	wait(340)
+
+	wait_buildstart(14, Terran SCV)
+	build(1, Terran Comsat Station, 1)
+	build(15, Terran SCV, 2)
+	wait(240)
+
+	wait_buildstart(15, Terran SCV)
+	build(16, Terran SCV, 2)
+	wait(240)
+
+	wait_buildstart(16, Terran SCV)
+	build(17, Terran SCV, 2)
+	wait(240)
+
+	wait_buildstart(17, Terran SCV)
+	build(18, Terran SCV, 2)
+	wait(240)
+
+	wait_buildstart(18, Terran SCV)
+	build(19, Terran SCV, 2)
+	wait(240)
+
+	wait_buildstart(19, Terran SCV)
+	build(20, Terran SCV, 2)
+	wait_buildstart(20, Terran SCV)
+
+		--ASHT 0029--
+	wait(200)
+
+	notowns_jump(Terran Engineering Bay, ASHT 0029)
+	build(2, Terran Missile Turret, 1)
+	goto(ASHT 0015)
+
+
+		--ASHT 0013--
+	race_jump(ASHT 0030, ASHT 0031, ASHT 0032)
+
+
+		--ASHT 0030--
+	random_jump(128, ASHT 0033)
+	goto(ASHT 0034)
+
+
+		--ASHT 0031--
+	random_jump(171, ASHT 0035)
+	goto(ASHT 0034)
+
+
+		--ASHT 0032--
+	random_jump(128, ASHT 0033)
+	goto(ASHT 0034)
+
+
+		--ASHT 0035--
+	define_max(60, Terran SCV)
+	define_max(70, Terran Marine)
+	define_max(15, Terran Medic)
+	define_max(10, Terran Siege Tank<0>Tank Mode)
+	define_max(255, Terran Goliath)
+	define_max(255, Terran Wraith)
+	define_max(2, Terran Dropship)
+	define_max(255, Terran Battlecruiser)
+	define_max(10, Terran Science Vessel)
+	define_max(255, Terran Valkyrie)
+	define_max(255, Terran Ghost)
+	define_max(255, Nuclear Missile)
+	define_max(15, Terran Firebat)
+	define_max(255, Terran Vulture)
+	defenseclear_gg()
+	defensebuild_gg(1, Terran Marine)
+	defenseuse_gg(1, Terran Marine)
+	defenseclear_ag()
+	defensebuild_ag(1, Terran Marine)
+	defenseuse_ag(1, Terran Marine)
+	wait(50)
+
+	multirun(ASHT 0036)
+	wait(50)
+
+	multirun(ASHT 0037)
+	wait(50)
+
+	build(1, Terran Engineering Bay, 2)
+	wait(100)
+
+	build(3, Terran Barracks, 2)
+	wait(100)
+
+	build(1, Terran Factory, 2)
+	wait(100)
+
+	build(1, Terran Missile Turret, 2)
+	wait(200)
+
+	build(1, Terran Machine Shop, 1)
+	wait(1500)
+
+	build(2, Terran Missile Turret, 2)
+	wait(100)
+
+	build(4, Terran Barracks, 2)
+	wait(100)
+
+	build(1, Terran Machine Shop, 2)
+	wait(2000)
+
+	wait(1000)
+
+	send_suicide(0)
+	wait(500)
+
+	expand(99, ASHT 0038)
+	wait(1000)
+
+	build(1, Terran Starport, 2)
+	wait(100)
+
+	build(5, Terran Barracks, 2)
+	wait(1000)
+
+	build(1, Terran Control Tower, 1)
+	wait(300)
+
+	build(1, Terran Science Facility, 2)
+	wait(100)
+
+	build(2, Terran Engineering Bay, 2)
+	wait(1500)
+
+	goto(ASHT 0039)
+
+
+		--ASHT 0036--
+	multirun(ASHT 0040)
+
+		--ASHT 0041--
+	train(8, Terran Marine)
+	wait(10)
+
+	train(2, Terran Medic)
+	wait(10)
+
+	train(16, Terran Marine)
+	wait(10)
+
+	train(4, Terran Medic)
+	wait(10)
+
+	train(20, Terran Marine)
+	wait(10)
+
+	train(4, Terran Firebat)
+	wait(10)
+
+	train(6, Terran Medic)
+	notowns_jump(Terran Machine Shop, ASHT 0041)
+	defensebuild_gg(1, Terran Siege Tank<0>Tank Mode)
+	wait(10)
+
+	train(1, Terran Siege Tank<0>Tank Mode)
+	wait(10)
+
+	train(8, Terran Marine)
+	wait(10)
+
+	train(2, Terran Medic)
+	wait(10)
+
+	train(2, Terran Siege Tank<0>Tank Mode)
+	wait(10)
+
+	train(16, Terran Marine)
+	wait(10)
+
+	train(4, Terran Medic)
+	wait(10)
+
+	train(3, Terran Siege Tank<0>Tank Mode)
+	goto(ASHT 0042)
+
+
+		--ASHT 0042--
+	train(8, Terran Marine)
+	wait(10)
+
+	train(2, Terran Medic)
+	wait(10)
+
+	train(2, Terran Siege Tank<0>Tank Mode)
+	wait(10)
+
+	train(16, Terran Marine)
+	wait(10)
+
+	train(4, Terran Medic)
+	wait(10)
+
+	train(3, Terran Siege Tank<0>Tank Mode)
+	wait(10)
+
+	train(4, Terran Firebat)
+	wait(10)
+
+	train(20, Terran Marine)
+	wait(10)
+
+	train(6, Terran Medic)
+	wait(10)
+
+	train(4, Terran Siege Tank<0>Tank Mode)
+	wait(10)
+
+	train(26, Terran Marine)
+	wait(10)
+
+	train(8, Terran Medic)
+	wait(10)
+
+	train(5, Terran Siege Tank<0>Tank Mode)
+	train(10, Terran Firebat)
+	wait(10)
+
+	train(35, Terran Marine)
+	wait(10)
+
+	train(9, Terran Medic)
+	wait(150)
+
+	goto(ASHT 0042)
+
+
+		--ASHT 0040--
+	wait(150)
+
+	notowns_jump(Terran Science Facility, ASHT 0040)
+	notowns_jump(Terran Control Tower, ASHT 0040)
+	train(2, Terran Science Vessel)
+	wait(800)
+
+	train(2, Terran Dropship)
+	wait(950)
+
+	train(5, Terran Science Vessel)
+	wait(800)
+
+	train(2, Terran Dropship)
+	wait(950)
+
+	train(9, Terran Science Vessel)
+	wait(800)
+
+	goto(ASHT 0040)
+
+
+		--ASHT 0039--
+	wait(6500)
+
+	send_suicide(0)
+	wait(500)
+
+	expand(99, ASHT 0038)
+	goto(ASHT 0039)
+
+
+		--ASHT 0038--
+	start_town()
+	build(1, Terran Command Center, 2)
+	wait(500)
+
+	wait_buildstart(1, Terran Command Center)
+	wait(500)
+
+	wait_build(1, Terran Command Center)
+	build(1, Terran SCV, 2)
+	wait_buildstart(1, Terran SCV)
+	build(2, Terran SCV, 2)
+	wait(20)
+
+	wait_buildstart(2, Terran SCV)
+	build(3, Terran SCV, 2)
+	wait(20)
+
+	wait_buildstart(3, Terran SCV)
+	build(4, Terran SCV, 2)
+	wait(20)
+
+	wait_buildstart(4, Terran SCV)
+	build(5, Terran SCV, 2)
+	wait(20)
+
+	wait_buildstart(5, Terran SCV)
+	build(1, Terran Missile Turret, 1)
+	build(6, Terran SCV, 2)
+	wait(20)
+
+	wait_buildstart(6, Terran SCV)
+	build(7, Terran SCV, 2)
+	wait(20)
+
+	wait_buildstart(7, Terran SCV)
+	build(8, Terran SCV, 2)
+	wait(240)
+
+	wait_buildstart(8, Terran SCV)
+	build(1, Terran Refinery, 1)
+	wait(150)
+
+	build(1, Terran Comsat Station, 1)
+	wait(150)
+
+	build(9, Terran SCV, 2)
+	wait(240)
+
+	wait_buildstart(9, Terran SCV)
+	build(2, Terran Missile Turret, 1)
+	build(10, Terran SCV, 2)
+	wait(240)
+
+	wait_buildstart(10, Terran SCV)
+	build(11, Terran SCV, 2)
+	wait(240)
+
+	wait_buildstart(11, Terran SCV)
+	build(12, Terran SCV, 2)
+	wait(240)
+
+	wait_buildstart(12, Terran SCV)
+	build(13, Terran SCV, 2)
+	wait(240)
+
+	wait_buildstart(13, Terran SCV)
+	build(14, Terran SCV, 2)
+	wait(240)
+
+	wait_buildstart(14, Terran SCV)
+	build(3, Terran Missile Turret, 1)
+	build(15, Terran SCV, 2)
+	wait(240)
+
+	wait_buildstart(15, Terran SCV)
+	build(16, Terran SCV, 2)
+	wait(240)
+
+	wait_buildstart(16, Terran SCV)
+	build(1, Terran Barracks, 2)
+	wait(50)
+
+	build(17, Terran SCV, 2)
+	wait(240)
+
+	wait_buildstart(17, Terran SCV)
+	build(18, Terran SCV, 2)
+	wait(240)
+
+	wait_buildstart(18, Terran SCV)
+	build(19, Terran SCV, 2)
+	wait(240)
+
+	wait_buildstart(19, Terran SCV)
+	build(20, Terran SCV, 2)
+	wait_buildstart(20, Terran SCV)
+	goto(ASHT 0015)
+
+
+		--ASHT 0033--
+	define_max(60, Terran SCV)
+	define_max(50, Terran Marine)
+	define_max(12, Terran Medic)
+	define_max(35, Terran Siege Tank<0>Tank Mode)
+	define_max(40, Terran Goliath)
+	define_max(255, Terran Wraith)
+	define_max(2, Terran Dropship)
+	define_max(255, Terran Battlecruiser)
+	define_max(2, Terran Science Vessel)
+	define_max(255, Terran Valkyrie)
+	define_max(255, Terran Ghost)
+	define_max(255, Nuclear Missile)
+	define_max(10, Terran Firebat)
+	define_max(30, Terran Vulture)
+	defenseclear_gg()
+	defensebuild_gg(1, Terran Marine)
+	defenseuse_gg(1, Terran Marine)
+	defensebuild_gg(1, Terran Siege Tank<0>Tank Mode)
+	defensebuild_gg(1, Terran Goliath)
+	defenseuse_gg(1, Terran Goliath)
+	defenseclear_ag()
+	defensebuild_ag(1, Terran Marine)
+	defenseuse_ag(1, Terran Marine)
+	defensebuild_ag(1, Terran Goliath)
+	defenseuse_ag(1, Terran Goliath)
+	wait(50)
+
+	multirun(ASHT 0043)
+	wait(50)
+
+	multirun(ASHT 0044)
+	wait(50)
+
+	build(1, Terran Engineering Bay, 2)
+	wait(100)
+
+	build(2, Terran Factory, 2)
+	wait(100)
+
+	build(1, Terran Missile Turret, 2)
+	wait(200)
+
+	build(1, Terran Machine Shop, 2)
+	wait(1500)
+
+	build(1, Terran Armory, 2)
+	wait(100)
+
+	build(4, Terran Factory, 2)
+	wait(100)
+
+	build(2, Terran Machine Shop, 2)
+	wait(3000)
+
+	define_max(10, Terran Marine)
+	define_max(255, Terran Medic)
+	define_max(255, Terran Firebat)
+	wait(1000)
+
+	send_suicide(0)
+	wait(500)
+
+	expand(99, ASHT 0045)
+	wait(1000)
+
+	build(1, Terran Starport, 2)
+	wait(100)
+
+	build(5, Terran Factory, 2)
+	wait(1000)
+
+	build(1, Terran Control Tower, 1)
+	wait(300)
+
+	build(1, Terran Science Facility, 2)
+	wait(100)
+
+	build(2, Terran Armory, 2)
+	wait(1500)
+
+	goto(ASHT 0046)
+
+
+		--ASHT 0043--
+	multirun(ASHT 0047)
+
+		--ASHT 0048--
+	wait(150)
+
+	notowns_jump(Terran Factory, ASHT 0048)
+	train(4, Terran Vulture)
+	wait(10)
+
+	train(3, Terran Siege Tank<0>Tank Mode)
+	wait(10)
+
+	train(8, Terran Vulture)
+	wait(10)
+
+	train(5, Terran Siege Tank<0>Tank Mode)
+	wait(10)
+
+	train(10, Terran Vulture)
+	wait(10)
+
+	train(10, Terran Siege Tank<0>Tank Mode)
+	wait(10)
+
+	train(12, Terran Vulture)
+	wait(10)
+
+	train(12, Terran Siege Tank<0>Tank Mode)
+	wait(10)
+
+	goto(ASHT 0049)
+
+
+		--ASHT 0049--
+	train(5, Terran Siege Tank<0>Tank Mode)
+	wait(150)
+
+	notowns_jump(Terran Armory, ASHT 0049)
+	goto(ASHT 0050)
+
+
+		--ASHT 0050--
+	train(3, Terran Goliath)
+	wait(10)
+
+	train(4, Terran Vulture)
+	wait(10)
+
+	train(3, Terran Siege Tank<0>Tank Mode)
+	wait(10)
+
+	train(8, Terran Vulture)
+	wait(10)
+
+	train(5, Terran Siege Tank<0>Tank Mode)
+	wait(10)
+
+	train(8, Terran Goliath)
+	wait(10)
+
+	train(10, Terran Vulture)
+	wait(10)
+
+	train(10, Terran Siege Tank<0>Tank Mode)
+	wait(10)
+
+	train(12, Terran Goliath)
+	wait(10)
+
+	train(12, Terran Siege Tank<0>Tank Mode)
+	wait(10)
+
+	train(12, Terran Vulture)
+	wait(10)
+
+	train(14, Terran Siege Tank<0>Tank Mode)
+	wait(10)
+
+	train(16, Terran Goliath)
+	wait(10)
+
+	train(16, Terran Siege Tank<0>Tank Mode)
+	wait(10)
+
+	train(20, Terran Goliath)
+	wait(10)
+
+	train(20, Terran Siege Tank<0>Tank Mode)
+	wait(10)
+
+	train(14, Terran Vulture)
+	wait(10)
+
+	train(24, Terran Goliath)
+	wait(10)
+
+	train(22, Terran Siege Tank<0>Tank Mode)
+	wait(10)
+
+	wait(1000)
+
+	goto(ASHT 0050)
+
+
+		--ASHT 0047--
+	wait(150)
+
+	notowns_jump(Terran Science Facility, ASHT 0047)
+	notowns_jump(Terran Control Tower, ASHT 0047)
+	train(2, Terran Science Vessel)
+	wait(800)
+
+	train(2, Terran Dropship)
+	wait(950)
+
+	goto(ASHT 0047)
+
+
+		--ASHT 0046--
+	wait(7000)
+
+	send_suicide(0)
+	wait(500)
+
+	expand(99, ASHT 0045)
+	goto(ASHT 0046)
+
+
+		--ASHT 0045--
+	start_town()
+	build(1, Terran Command Center, 2)
+	wait(500)
+
+	wait_buildstart(1, Terran Command Center)
+	wait(500)
+
+	wait_build(1, Terran Command Center)
+	build(1, Terran SCV, 2)
+	wait_buildstart(1, Terran SCV)
+	build(2, Terran SCV, 2)
+	wait(20)
+
+	wait_buildstart(2, Terran SCV)
+	build(3, Terran SCV, 2)
+	wait(20)
+
+	wait_buildstart(3, Terran SCV)
+	build(4, Terran SCV, 2)
+	wait(20)
+
+	wait_buildstart(4, Terran SCV)
+	build(5, Terran SCV, 2)
+	wait(20)
+
+	wait_buildstart(5, Terran SCV)
+	build(1, Terran Missile Turret, 1)
+	build(6, Terran SCV, 2)
+	wait(20)
+
+	wait_buildstart(6, Terran SCV)
+	build(7, Terran SCV, 2)
+	wait(20)
+
+	wait_buildstart(7, Terran SCV)
+	build(8, Terran SCV, 2)
+	wait(240)
+
+	wait_buildstart(8, Terran SCV)
+	build(1, Terran Refinery, 1)
+	wait(150)
+
+	build(1, Terran Comsat Station, 1)
+	wait(150)
+
+	build(9, Terran SCV, 2)
+	wait(240)
+
+	wait_buildstart(9, Terran SCV)
+	build(2, Terran Missile Turret, 1)
+	build(10, Terran SCV, 2)
+	wait(240)
+
+	wait_buildstart(10, Terran SCV)
+	build(11, Terran SCV, 2)
+	wait(240)
+
+	wait_buildstart(11, Terran SCV)
+	build(12, Terran SCV, 2)
+	wait(240)
+
+	wait_buildstart(12, Terran SCV)
+	build(13, Terran SCV, 2)
+	wait(240)
+
+	wait_buildstart(13, Terran SCV)
+	build(14, Terran SCV, 2)
+	wait(240)
+
+	wait_buildstart(14, Terran SCV)
+	build(3, Terran Missile Turret, 1)
+	build(15, Terran SCV, 2)
+	wait(240)
+
+	wait_buildstart(15, Terran SCV)
+	build(16, Terran SCV, 2)
+	wait(240)
+
+	wait_buildstart(16, Terran SCV)
+	build(17, Terran SCV, 2)
+	wait(240)
+
+	wait_buildstart(17, Terran SCV)
+	build(18, Terran SCV, 2)
+	wait(240)
+
+	wait_buildstart(18, Terran SCV)
+	build(19, Terran SCV, 2)
+	wait(240)
+
+	wait_buildstart(19, Terran SCV)
+	build(20, Terran SCV, 2)
+	wait_buildstart(20, Terran SCV)
+	goto(ASHT 0015)
+
+
+		--ASHT 0034--
+	define_max(60, Terran SCV)
+	define_max(30, Terran Marine)
+	define_max(7, Terran Medic)
+	define_max(12, Terran Siege Tank<0>Tank Mode)
+	define_max(8, Terran Goliath)
+	define_max(255, Terran Wraith)
+	define_max(2, Terran Dropship)
+	define_max(16, Terran Battlecruiser)
+	define_max(5, Terran Science Vessel)
+	define_max(6, Terran Valkyrie)
+	define_max(255, Terran Ghost)
+	define_max(255, Nuclear Missile)
+	define_max(255, Terran Firebat)
+	define_max(5, Terran Vulture)
+	defenseclear_gg()
+	defensebuild_gg(1, Terran Marine)
+	defenseuse_gg(1, Terran Marine)
+	defensebuild_gg(1, Terran Siege Tank<0>Tank Mode)
+	defensebuild_gg(1, Terran Battlecruiser)
+	defenseuse_gg(1, Terran Battlecruiser)
+	defenseclear_ag()
+	defensebuild_ag(1, Terran Marine)
+	defenseuse_ag(1, Terran Marine)
+	defensebuild_ag(1, Terran Battlecruiser)
+	defenseuse_ag(1, Terran Battlecruiser)
+	defenseclear_ga()
+	defensebuild_ga(1, Terran Battlecruiser)
+	defenseuse_ga(1, Terran Battlecruiser)
+	defenseclear_aa()
+	defensebuild_aa(1, Terran Valkyrie)
+	defenseuse_aa(1, Terran Valkyrie)
+	defensebuild_aa(1, Terran Battlecruiser)
+	defenseuse_aa(1, Terran Battlecruiser)
+	wait(50)
+
+	multirun(ASHT 0051)
+	wait(50)
+
+	multirun(ASHT 0052)
+	wait(50)
+
+	build(1, Terran Engineering Bay, 2)
+	wait(300)
+
+	build(2, Terran Barracks, 2)
+	wait(200)
+
+	build(1, Terran Starport, 2)
+	wait(1200)
+
+	build(1, Terran Missile Turret, 2)
+	wait(200)
+
+	build(1, Terran Science Facility, 2)
+	wait(100)
+
+	build(1, Terran Control Tower, 1)
+	wait(1400)
+
+	build(1, Terran Physics Lab, 2)
+	wait(1500)
+
+	build(1, Terran Armory, 2)
+	wait(1000)
+
+	send_suicide(0)
+	wait(500)
+
+	expand(99, ASHT 0053)
+	wait(1500)
+
+	build(3, Terran Starport, 2)
+	wait(1000)
+
+	build(3, Terran Control Tower, 1)
+	wait(4000)
+
+	goto(ASHT 0054)
+
+
+		--ASHT 0051--
+	wait(50)
+
+	multirun(ASHT 0055)
+	wait(150)
+
+
+		--ASHT 0056--
+	wait(250)
+
+	notowns_jump(Terran Science Facility, ASHT 0056)
+	notowns_jump(Terran Control Tower, ASHT 0056)
+	train(2, Terran Science Vessel)
+	wait(100)
+
+	train(3, Terran Battlecruiser)
+	wait(100)
+
+	train(1, Terran Dropship)
+	wait(100)
+
+	train(7, Terran Battlecruiser)
+	wait(100)
+
+	train(2, Terran Dropship)
+	wait(100)
+
+	train(3, Terran Science Vessel)
+	wait(100)
+
+	train(12, Terran Battlecruiser)
+	wait(1000)
+
+	goto(ASHT 0056)
+
+
+		--ASHT 0055--
+	train(6, Terran Marine)
+	wait(100)
+
+	train(2, Terran Medic)
+	wait(100)
+
+	train(3, Terran Siege Tank<0>Tank Mode)
+	wait(100)
+
+	train(10, Terran Marine)
+	wait(100)
+
+	train(5, Terran Siege Tank<0>Tank Mode)
+	wait(100)
+
+	train(4, Terran Medic)
+	wait(100)
+
+	train(2, Terran Vulture)
+	wait(100)
+
+	train(16, Terran Marine)
+	wait(100)
+
+	train(8, Terran Siege Tank<0>Tank Mode)
+	wait(100)
+
+	train(20, Terran Marine)
+	wait(100)
+
+	train(4, Terran Vulture)
+	wait(100)
+
+	train(5, Terran Medic)
+	wait(1500)
+
+	goto(ASHT 0055)
+
+
+		--ASHT 0054--
+	wait(7000)
+
+	send_suicide(0)
+	wait(500)
+
+	expand(99, ASHT 0053)
+	goto(ASHT 0054)
+
+
+		--ASHT 0053--
+	start_town()
+	build(1, Terran Command Center, 2)
+	wait(500)
+
+	wait_buildstart(1, Terran Command Center)
+	wait(500)
+
+	wait_build(1, Terran Command Center)
+	build(1, Terran SCV, 2)
+	wait_buildstart(1, Terran SCV)
+	build(2, Terran SCV, 2)
+	wait(20)
+
+	wait_buildstart(2, Terran SCV)
+	build(1, Terran Bunker, 2)
+	wait_buildstart(1, Terran Bunker)
+	build(3, Terran SCV, 2)
+	wait(20)
+
+	wait_buildstart(3, Terran SCV)
+	build(4, Terran SCV, 2)
+	wait(20)
+
+	wait_buildstart(4, Terran SCV)
+	build(5, Terran SCV, 2)
+	wait(20)
+
+	wait_buildstart(5, Terran SCV)
+	build(6, Terran SCV, 2)
+	wait(20)
+
+	wait_buildstart(6, Terran SCV)
+	build(1, Terran Refinery, 1)
+	build(7, Terran SCV, 2)
+	wait(20)
+
+	wait_buildstart(7, Terran SCV)
+	build(8, Terran SCV, 2)
+	wait(240)
+
+	wait_buildstart(8, Terran SCV)
+	build(1, Terran Missile Turret, 1)
+	wait(150)
+
+	build(1, Terran Comsat Station, 1)
+	wait(150)
+
+	build(9, Terran SCV, 2)
+	wait(240)
+
+	wait_buildstart(9, Terran SCV)
+	build(10, Terran SCV, 2)
+	wait(240)
+
+	wait_buildstart(10, Terran SCV)
+	build(2, Terran Missile Turret, 1)
+	build(11, Terran SCV, 2)
+	wait(240)
+
+	wait_buildstart(11, Terran SCV)
+	build(12, Terran SCV, 2)
+	wait(240)
+
+	wait_buildstart(12, Terran SCV)
+	build(13, Terran SCV, 2)
+	wait(240)
+
+	wait_buildstart(13, Terran SCV)
+	build(14, Terran SCV, 2)
+	wait(240)
+
+	wait_buildstart(14, Terran SCV)
+	build(15, Terran SCV, 2)
+	wait(240)
+
+	wait_buildstart(15, Terran SCV)
+	build(16, Terran SCV, 2)
+	wait(240)
+
+	wait_buildstart(16, Terran SCV)
+	build(17, Terran SCV, 2)
+	wait(240)
+
+	wait_buildstart(17, Terran SCV)
+	build(18, Terran SCV, 2)
+	wait(240)
+
+	wait_buildstart(18, Terran SCV)
+	build(19, Terran SCV, 2)
+	wait(240)
+
+	wait_buildstart(19, Terran SCV)
+	build(20, Terran SCV, 2)
+	wait_buildstart(20, Terran SCV)
+	goto(ASHT 0015)
+
+
+		--ASHT 0009--
+	wait(300)
+
+	notowns_jump(Terran Academy, ASHT 0009)
+	tech(Stim Packs, 1)
+	wait(1300)
+
+
+		--ASHT 0057--
+	wait(450)
+
+	notowns_jump(Terran Academy, ASHT 0057)
+	upgrade(1, U-238 Shells, 1)
+	wait(1600)
+
+	stop()
+
+
+		--ASHT 0052--
+	wait(300)
+
+	tech(Tank Siege Mode, 1)
+	wait(300)
+
+	upgrade(1, U-238 Shells, 1)
+	wait(1200)
+
+	tech(Spider Mines, 1)
+	wait(3000)
+
+
+		--ASHT 0058--
+	wait(450)
+
+	notowns_jump(Terran Physics Lab, ASHT 0058)
+	tech(Yamato Gun, 1)
+	wait(500)
+
+	upgrade(1, Charon Booster, 1)
+	wait(100)
+
+	upgrade(1, Terran Ship Weapons, 1)
+	wait(4200)
+
+	upgrade(1, Terran Ship Plating, 1)
+	wait(4200)
+
+	upgrade(2, Terran Ship Plating, 1)
+	wait(4700)
+
+	upgrade(3, Terran Ship Plating, 1)
+	wait(5200)
+
+	upgrade(2, Terran Ship Weapons, 1)
+	wait(4700)
+
+	upgrade(3, Terran Ship Weapons, 1)
+	wait(5000)
+
+	stop()
+
+
+		--ASHT 0037--
+	wait(250)
+
+	upgrade(1, Terran Infantry Weapons, 1)
+	wait(200)
+
+	tech(Tank Siege Mode, 1)
+	wait(4000)
+
+	upgrade(1, Terran Infantry Armor, 1)
+	wait(4200)
+
+
+		--ASHT 0059--
+	wait(450)
+
+	notowns_jump(Terran Science Facility, ASHT 0059)
+	upgrade(2, Terran Infantry Weapons, 1)
+	wait(200)
+
+	tech(Irradiate, 1)
+	wait(200)
+
+	upgrade(2, Terran Infantry Armor, 1)
+	wait(4500)
+
+	upgrade(3, Terran Infantry Weapons, 1)
+	wait(500)
+
+	upgrade(3, Terran Infantry Armor, 1)
+	wait(5200)
+
+	stop()
+
+
+		--ASHT 0044--
+	wait(300)
+
+	tech(Tank Siege Mode, 1)
+	wait(1200)
+
+	tech(Spider Mines, 1)
+	wait(2500)
+
+	upgrade(1, Charon Booster, 1)
+	wait(100)
+
+	upgrade(1, Terran Vehicle Weapons, 1)
+	wait(3000)
+
+
+		--ASHT 0060--
+	wait(450)
+
+	notowns_jump(Terran Science Facility, ASHT 0060)
+	upgrade(1, Terran Vehicle Plating, 1)
+	wait(100)
+
+	upgrade(2, Terran Vehicle Weapons, 1)
+	wait(4200)
+
+	upgrade(2, Terran Vehicle Plating, 1)
+	wait(800)
+
+	upgrade(3, Terran Vehicle Weapons, 1)
+	wait(5000)
+
+	upgrade(3, Terran Vehicle Plating, 1)
+	wait(5000)
+
+	stop()
+
+
+		--ASHT 0061--
+	send_suicide(0)
+	stop()
+
+
+		--ASHT 0015--
+	wait(30000)
+
+	goto(ASHT 0015)
+
+
+#		--ASHT 0062--
+#	give_money()
+#	wait(1500)
+
+#	goto(ASHT 0062)
+
+#	multirun(ASHT 0062)
+#	define_max(60, Terran SCV)
+#	define_max(16, Terran Marine)
+#	define_max(16, Terran Medic)
+#	define_max(10, Terran Siege Tank<0>Tank Mode)
+#	define_max(20, Terran Goliath)
+#	define_max(10, Terran Wraith)
+#	define_max(255, Terran Dropship)
+#	define_max(10, Terran Battlecruiser)
+#	define_max(5, Terran Science Vessel)
+#	define_max(255, Terran Valkyrie)
+#	define_max(255, Terran Ghost)
+#	define_max(255, Nuclear Missile)
+#	define_max(16, Terran Firebat)
+#	define_max(10, Terran Vulture)
+#	build(1, Terran Barracks, 2)
+#	wait(100)
+
+#	build(2, Terran Supply Depot, 2)
+#	build(8, Terran SCV, 2)
+#	wait(100)
+
+#	build(3, Terran Barracks, 2)
+#	defensebuild_gg(1, Terran Marine)
+#	farms_timing()
+#	build(1, Terran Academy, 2)
+#	train(5, Terran Marine)
+#	train(12, Terran Marine)
+#	train(12, Terran Firebat)
+#	train(12, Terran Medic)
+#	goto(ASHT 0015)
+
+#	wait(150)
+
+#	debug(ASHT 0063, More information on BroodWar AI #projects at http://www.broodwarai.com)
+
+
+
+
+
+		--ASHT 0014--
+	time_jump(45, ASHT 0064)
+	wait(1)
+
+	time_jump(9, ASHT 0065)
+	wait(1)
+
+	time_jump(5, ASHT 0066)
+	wait(1)
+
+	goto(ASHT 0067)
+
+
+		--ASHT 0064--
+	stop()
+
+
+		--ASHT 0065--
+	wait(150)
+
+	time_jump(13, ASHT 0068)
+	goto(ASHT 0065)
+
+
+		--ASHT 0068--
+	wait(380)
+
+	goto(ASHT 0061)
+
+
+		--ASHT 0066--
+	wait(150)
+
+	time_jump(8, ASHT 0069)
+	goto(ASHT 0066)
+
+
+		--ASHT 0069--
+	wait(380)
+
+	goto(ASHT 0061)
+
+
+		--ASHT 0067--
+	wait(150)
+
+	time_jump(5, ASHT 0070)
+	goto(ASHT 0067)
+
+
+		--ASHT 0070--
+	wait(320)
+
+	goto(ASHT 0061)
+	
+				--pool_detect--
+	rush(0, bunker)
+	wait(50)
+
+	goto(pool_detect)
+
+	
+		--bunker--
+	time_jump(3, delayed bunk)
+	wait_build(1, barracks)
+	defenseuse_gg(1, marine)
+	train(1, marine)
+
+	build(1, bunker, 1)
+	train(3, marine)
+	stop()
+	
+	--delayed bunk--
+	wait(2000)
+	build(1, bunker, 1)
+	stop()
+	
+
+	
+
+	
+			--tvp bunker--
+wait_buildstart(12, scv)
+rush(0, build tvp bunker)
+wait_build(1, barracks)
+wait(1500)
+build(1, bunker, 1)
+stop()
+--build tvp bunker--
+wait_buildstart(2, supply_depot)
+wait_build(1, barracks)
+creep(3)
+build(1, bunker, 1)
+wait_build(1, bunker)
+enemyowns_jump(cybernetics_core, terminate)
+creep(3)
+
+build(2, bunker, 1)
+stop()
+
+--terminate--
+stop()

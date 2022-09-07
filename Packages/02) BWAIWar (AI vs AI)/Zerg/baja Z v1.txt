@@ -1,0 +1,714 @@
+# baja Z 1.0
+
+# formely known as Raynor Zerg
+# last modified Feb 2005
+# Work in progress. 
+# Wow.. gluck flowcharting this p.o.s! 
+# Lots of unused blocks reported by PyAI. :/  
+# Oh well.. will need to update this soon I suppose.
+#
+#     KEY BLOCKS
+# blocks 100 = Tier1 units
+# blocks 200 = Tier2 Lair units
+# blocks 300 = Tier2 Air units
+# blocks 400 = Tier3 hive units
+# blocks 500 = Vs Terran specific
+# blocks 600 = Vs Zerg specific
+# blocks 700 = Vs Protoss specific
+# blocks 800 = Air map specific
+# blocks 0-10 = main branches/builds
+# blocks 11-29 = attack/train blocks
+# blocks 30's  = upgrades
+# blocks 40's  = special upgrades
+# blocks 60's  = worker/expo related
+# blocks 70's  = defence related
+
+# Zerg Expansion Custom Level
+ZMCx(1344, 101, aiscript):
+
+    start_town()
+    farms_notiming()
+    transports_off()
+
+#if DEBUG
+    debug(null, baja Z v1.0)
+    --null--
+#endif
+    
+    groundmap_jump(block1)
+    goto(block800)
+
+        --block1--
+    race_jump(block500, block600, block700)
+
+        --block30--
+    upgrade(1, zergling_speed, 100)
+
+        --block31--
+    wait(300)
+    notowns_jump(hive, block31)
+    upgrade(1, zergling_attack, 30)
+    stop()
+
+        --block33--
+    upgrade(1, hydralisk_speed, 100)
+    wait(2500)
+
+       # --block34--
+    upgrade(1, hydralisk_range, 30)
+    wait(2700)
+
+        --block35--
+    wait(200)
+    notowns_jump(lair, block35)
+    tech(lurker_aspect, 70)
+    place_guard(lurker, 0)
+    place_guard(lurker, 1)
+    place_guard(lurker, 2)
+    goto(block528)
+
+        --block36--
+    build(1, evolution_chamber, 80)
+    wait_build(1, evolution_chamber)
+    upgrade(1, z_missile_attack, 30)
+    wait(4500)
+    upgrade(1, z_carapace, 30)
+    resources_jump(800, 200, block37)
+    wait(4500)
+
+        --block37--
+    build(2, evolution_chamber, 80)
+    wait_build(2, evolution_chamber)
+    upgrade(1, z_melee_attack, 70)
+
+    wait(4500)
+
+        --block38--
+    wait(300)
+    notowns_jump(hive, block38)
+    build(3, evolution_chamber, 80)
+    wait_build(3, evolution_chamber)
+    upgrade(2, z_melee_attack, 70)
+    upgrade(2, z_missile_attack, 70)
+    upgrade(2, z_carapace, 70)
+    wait(4500)
+
+        --block39--
+    wait(400)
+    notowns_jump(ultralisk_cavern, block39)
+    upgrade(3, z_melee_attack, 70)
+    upgrade(3, z_missile_attack, 70)
+    upgrade(3, z_carapace, 70)
+    stop()
+
+        --block40--
+    upgrade(1, overlord_speed, 30)
+    wait(2700)
+    upgrade(1, overlord_capacity, 30)
+    wait(2700)
+
+        --block41--
+    wait(400)
+    notowns_jump(hive, block41)
+    upgrade(1, overlord_sight, 30)
+    stop()
+
+        --block45--
+    wait_train(3, queen)
+    tech(spawn_broodling, 70)
+    wait(2700)
+    upgrade(1, queen_mana, 30)
+    stop()
+
+        --block46--
+    wait_train(4, ultralisk)
+    upgrade(1, ultralisk_speed, 30)
+    wait(3600)
+    upgrade(1, ultralisk_armor, 30)
+    stop()
+
+        --block47--
+    wait_train(4, defiler)
+    tech(plague, 110)
+    wait(4500)
+    upgrade(1, defiler_mana, 110)
+    stop()
+
+        --block60--
+    start_town()
+    build(1, hatchery, 80)
+    wait_build(1, hatchery)
+    build(3, drone, 80)
+    wait_build(3, drone)
+    multirun(block63)
+    multirun(block75)
+    multirun(block76)
+    build(4, drone, 80)
+    wait_build(4, drone)
+    build(5, drone, 80)
+    wait_build(5, drone)
+    build(6, drone, 80)
+    wait_build(6, drone)
+    build(7, drone, 80)
+    wait_build(7, drone)
+    build(8, drone, 80)
+    wait_build(8, drone)
+    build(9, drone, 80)
+    wait_build(9, drone)
+    build(10, drone, 80)
+    wait_build(10, drone)
+    multirun(block512)
+    build(11, drone, 80)
+    wait_build(11, drone)
+    build(12, drone, 80)
+    wait_build(12, drone)
+#multirun block526
+#multirun block527
+#multirun block528
+    build(13, drone, 80)
+    wait_build(13, drone)
+    build(14, drone, 80)
+    wait_build(14, drone)
+    build(15, drone, 80)
+    wait_build(15, drone)
+
+        --block62--
+    build(16, drone, 150)
+    wait_build(16, drone)
+    build(17, drone, 150)
+    wait_build(17, drone)
+    build(18, drone, 150)
+    wait_build(18, drone)
+    build(19, drone, 150)
+    wait_build(19, drone)
+    build(20, drone, 150)
+    wait_build(20, drone)
+    build(21, drone, 150)
+    wait_build(21, drone)
+    build(22, drone, 150)
+    wait_build(22, drone)
+    build(23, drone, 150)
+    wait_build(23, drone)
+    build(24, drone, 150)
+    wait_build(24, drone)
+    build(25, drone, 150)
+    wait_build(25, drone)
+    build(26, drone, 150)
+    wait_build(26, drone)
+    build(27, drone, 150)
+    wait_build(27, drone)
+    build(30, drone, 150)
+    stop()
+
+        --block63--
+    resources_jump(400, 0, block64)
+    wait(100)
+    goto(block63)
+
+        --block64--
+    build(1, extractor, 80)
+    stop()
+
+        --block66--
+    wait(8000)
+    expand(99, block60)
+    wait(8000)
+
+        --block67--
+    resources_jump(600, 0, block68)
+    wait(2000)
+
+        --block68--
+    send_suicide(0)
+    wait(300)
+    expand(99, block60)
+    wait(6000)
+    goto(block67)
+
+        --block75--
+    build(2, creep_colony, 80)
+    wait_buildstart(2, creep_colony)
+    wait(200)
+    build(3, creep_colony, 80)
+    wait_buildstart(3, creep_colony)
+    build(3, sunken_colony, 80)
+
+        --block76--
+    wait(300)
+    notowns_jump(lair, block76)
+    notowns_jump(evolution_chamber, block76)
+    resources_jump(700, 0, block77)
+    wait(8000)
+
+        --block77--
+    build(4, creep_colony, 80)
+    wait_buildstart(4, creep_colony)
+    wait(200)
+    build(5, creep_colony, 80)
+    wait_buildstart(5, creep_colony)
+    wait(200)
+    build(6, creep_colony, 80)
+    wait_buildstart(6, creep_colony)
+    build(3, spore_colony, 80)
+    stop()
+
+        --block78--
+    wait(400)
+    notowns_jump(lair, block78)
+    place_guard(lurker, 0)
+    place_guard(lurker, 1)
+    stop()
+
+        --block104--
+    resources_jump(1500, 300, block105)
+    wait(400)
+    goto(block104)
+
+        --block105--
+    build(4, hatchery, 80)
+    wait_build(4, hatchery)
+
+        --block106--
+    resources_jump(2000, 500, block107)
+    wait(400)
+    goto(block106)
+
+        --block107--
+    build(6, hatchery, 80)
+    stop()
+
+        --block175--
+    build(2, creep_colony, 80)
+    wait_buildstart(2, creep_colony)
+    wait(200)
+    build(3, creep_colony, 80)
+    wait_buildstart(3, creep_colony)
+    build(3, sunken_colony, 80)
+
+        # --block176--
+    wait(300)
+    notowns_jump(lair, block76)
+    notowns_jump(evolution_chamber, block76)
+    resources_jump(700, 0, block77)
+    wait(8000)
+
+       # --block177--
+    build(4, creep_colony, 80)
+    wait_buildstart(4, creep_colony)
+    wait(200)
+    build(5, creep_colony, 80)
+    wait_buildstart(5, creep_colony)
+    wait(200)
+    build(6, creep_colony, 80)
+    wait_buildstart(6, creep_colony)
+    build(3, spore_colony, 80)
+    wait_build(3, spore_colony)
+    build(7, creep_colony, 80)
+    wait_build(7, creep_colony)
+    build(4, spore_colony, 80)
+    wait_build(4, spore_colony)
+    build(8, creep_colony, 80)
+    wait_build(8, creep_colony)
+    build(4, sunken_colony, 80)
+    wait_build(4, sunken_colony)
+    build(9, creep_colony, 80)
+    wait_build(9, creep_colony)
+    build(5, sunken_colony, 80)
+    wait_build(5, sunken_colony)
+    build(10, creep_colony, 80)
+    wait_build(10, creep_colony)
+    build(5, spore_colony, 80)
+    wait_build(5, spore_colony)
+    build(11, creep_colony, 80)
+    wait_build(11, creep_colony)
+    build(6, spore_colony, 80)
+    wait_build(6, spore_colony)
+    build(12, creep_colony, 80)
+    wait_build(12, creep_colony)
+    build(6, sunken_colony, 80)
+    stop()
+
+        --block500--
+    define_max(60, drone)
+    define_max(70, hydralisk)
+    define_max(70, zergling)
+    define_max(30, mutalisk)
+    define_max(12, scourge)
+    define_max(20, lurker)
+    define_max(6, queen)
+    define_max(6, defiler)
+    define_max(12, guardian)
+    define_max(6, devourer)
+    define_max(12, ultralisk)
+
+    build(1, drone, 150)
+    wait_buildstart(1, drone)
+    build(1, hatchery, 150)
+    wait_buildstart(1, hatchery)
+    build(1, overlord, 130)
+    wait_buildstart(1, overlord)
+    build(8, drone, 80)
+    build(9, drone, 80)
+    wait_buildstart(9, drone)
+    wait(300)
+    resources_jump(140, 0, block900)
+    build(2, overlord, 80)
+    wait_buildstart(2, overlord)
+    build(12, drone, 80)
+    wait_buildstart(12, drone)
+    expand(99, block60)
+    multirun(block66)
+    build(14, drone, 80)
+    wait_buildstart(14, drone)
+    build(1, spawning_pool, 80)
+    wait_buildstart(1, spawning_pool)
+    defenseuse_gg(1, zergling)
+    build(1, extractor, 80)
+    wait_buildstart(1, extractor)
+    build(1, creep_colony, 80)
+    wait_buildstart(1, creep_colony)
+    build(1, sunken_colony, 100)
+    wait_buildstart(1, sunken_colony)
+    train(4, zergling)
+    multirun(block512)
+    build(1, hydralisk_den, 80)
+    wait_buildstart(1, hydralisk_den)
+    defenseuse_gg(1, hydralisk)
+    defenseuse_ag(1, hydralisk)
+    multirun(block30)
+    train(8, zergling)
+    train(14, hydralisk)
+    build(2, hatchery, 80)
+    wait_buildstart(2, hatchery)
+    multirun(block33)
+    train(18, zergling)
+    train(20, hydralisk)
+    build(1, lair, 80)
+    wait_buildstart(1, lair)
+    multirun(block526)
+    multirun(block527)
+    multirun(block62)
+    build(1, queen_nest, 100)
+    wait_buildstart(1, queen_nest)
+    place_guard(queen, 0)
+    multirun(block45)
+    train(20, zergling)
+    train(30, hydralisk)
+    train(24, zergling)
+    build(1, hive, 150)
+    wait_buildstart(1, hive)
+    train(36, hydralisk)
+    train(30, zergling)
+    attack_add(36, zergling)
+    attack_add(32, hydralisk)
+    attack_prepare()
+    wait(300)
+    attack_do()
+    attack_clear()
+    multirun(block36)
+    multirun(block40)
+    multirun(block175)
+    build(1, spire, 80)
+    wait_buildstart(1, spire)
+    multirun(block529)
+    multirun(block534)
+
+        --block511--
+    resources_jump(1000, 600, block535)
+    wait(500)
+    goto(block511)
+
+        --block512--
+    start_town()
+    build(1, hatchery, 80)
+    wait_build(1, hatchery)
+    build(1, drone, 80)
+    wait_buildstart(1, drone)
+    farms_timing()
+    build(1, creep_colony, 80)
+    wait_buildstart(1, creep_colony)
+    build(1, sunken_colony, 80)
+    wait_buildstart(1, sunken_colony)
+    build(6, drone, 80)
+    wait_build(6, drone)
+    build(9, drone, 80)
+    wait_build(9, drone)
+    build(12, drone, 80)
+    stop()
+
+        --block526--
+    wait(100)
+    notowns_jump(spawning_pool, block526)
+    train(8, zergling)
+    wait(100)
+    train(12, zergling)
+    wait(200)
+    train(20, zergling)
+    wait(200)
+    train(30, zergling)
+    wait(200)
+    train(40, zergling)
+    wait(200)
+    goto(block526)
+
+        --block527--
+    wait(100)
+    notowns_jump(hydralisk_den, block527)
+    train(6, hydralisk)
+    wait(100)
+    train(12, hydralisk)
+    wait(100)
+    train(18, hydralisk)
+    wait(100)
+    train(28, hydralisk)
+    wait(200)
+    train(36, hydralisk)
+    wait(200)
+    train(46, hydralisk)
+    wait(200)
+    goto(block527)
+
+        --block528--
+    train(4, lurker)
+    wait(200)
+    train(6, lurker)
+    wait(200)
+    train(8, lurker)
+    wait(200)
+    train(10, lurker)
+    wait(400)
+    goto(block528)
+
+        --block529--
+    wait(100)
+    notowns_jump(spire, block529)
+    train(4, mutalisk)
+    wait(200)
+    train(8, mutalisk)
+    wait(200)
+    train(12, mutalisk)
+    wait(200)
+    goto(block529)
+
+        --block534--
+    wait(100)
+    notowns_jump(queen_nest, block534)
+    train(1, queen)
+    wait(200)
+    train(3, queen)
+    wait(400)
+    goto(block534)
+
+        --block535--
+    build(1, ultralisk_cavern, 80)
+    wait_buildstart(1, ultralisk_cavern)
+    multirun(block46)
+    multirun(block537)
+
+        --block536--
+    wait(300)
+    notowns_jump(ultralisk_cavern, block536)
+    train(2, ultralisk)
+    wait(200)
+    train(4, ultralisk)
+    wait(400)
+    train(8, ultralisk)
+    wait(200)
+    goto(block536)
+
+        --block537--
+    build(1, defiler_mound, 80)
+    wait_buildstart(1, defiler_mound)
+    multirun(block47)
+
+        --block538--
+    wait(300)
+    notowns_jump(defiler_mound, block538)
+    train(1, defiler)
+    wait(400)
+    train(3, defiler)
+    wait(400)
+    goto(block537)
+
+        --block600--
+#no zerg yet :(
+    goto(block500)
+
+        --block700--
+#no toss yet :(
+    goto(block500)
+
+        --block800--
+#no air yet :(
+    goto(block500)
+
+        --block900--
+    define_max(60, drone)
+    define_max(75, hydralisk)
+    define_max(100, zergling)
+    define_max(30, mutalisk)
+    define_max(12, scourge)
+    define_max(20, lurker)
+    define_max(6, queen)
+    define_max(6, defiler)
+    define_max(12, guardian)
+    define_max(6, devourer)
+    define_max(12, ultralisk)
+
+#random_jump 32 block902
+    build(2, overlord, 80)
+    wait_buildstart(2, overlord)
+    farms_timing()
+    multirun(block920)
+    build(11, drone, 80)
+    wait_buildstart(11, drone)
+    multirun(block922)
+    build(1, spawning_pool, 80)
+    wait_buildstart(1, spawning_pool)
+    defenseuse_gg(1, zergling)
+    multirun(block923)
+    build(12, drone, 80)
+    wait_buildstart(12, drone)
+    build(2, hatchery, 80)
+    wait_buildstart(2, hatchery)
+    wait(100)
+    build(3, hatchery, 80)
+    wait_buildstart(3, hatchery)
+    wait(100)
+    build(4, hatchery, 80)
+    wait_buildstart(4, hatchery)
+    wait(100)
+    build(5, hatchery, 80)
+    wait_buildstart(5, hatchery)
+    wait(100)
+    build(6, hatchery, 80)
+    wait_buildstart(6, hatchery)
+    train(12, zergling)
+    build(7, hatchery, 80)
+    wait_buildstart(7, hatchery)
+    train(18, zergling)
+    build(1, extractor, 80)
+    wait_buildstart(1, extractor)
+    train(24, zergling)
+    build(1, hydralisk_den, 80)
+    wait_buildstart(1, hydralisk_den)
+    send_suicide(0)
+    train(36, zergling)
+    multirun(block30)
+    train(48, zergling)
+    defenseuse_gg(1, hydralisk)
+    defenseuse_ag(1, hydralisk)
+    defensebuild_gg(1, hydralisk)
+    train(6, hydralisk)
+    train(48, zergling)
+    attack_add(6, hydralisk)
+    attack_add(48, zergling)
+    attack_prepare()
+    wait(200)
+    build(1, lair, 100)
+    wait_buildstart(1, lair)
+    multirun(block930)
+    attack_do()
+    attack_clear()
+    train(16, hydralisk)
+    train(48, zergling)
+    train(24, hydralisk)
+    build(1, queen_nest, 80)
+    wait_buildstart(1, queen_nest)
+    build(1, hive, 80)
+    wait_buildstart(1, hive)
+    multirun(block36)
+    multirun(block40)
+    train(32, hydralisk)
+    train(52, zergling)
+
+        --block905--
+    attack_add(30, hydralisk)
+    attack_add(50, zergling)
+    attack_prepare()
+    wait(200)
+    attack_do()
+    attack_clear()
+    attack_add(50, zergling)
+    attack_prepare()
+    wait(200)
+    attack_do()
+    attack_clear()
+    goto(block905)
+
+        --block920--
+    start_town()
+    build(1, hatchery, 80)
+    wait_build(1, hatchery)
+    train(8, zergling)
+    build(3, drone, 80)
+    wait_build(3, drone)
+    build(6, drone, 80)
+    wait_build(6, drone)
+    build(8, drone, 80)
+    wait_train(1, hydralisk)
+    wait_buildstart(1, extractor)
+
+        --block921--
+    wait(200)
+    notowns_jump(lair, block921)
+    build(15, drone, 80)
+    wait_build(15, drone)
+    build(18, drone, 80)
+    stop()
+
+        --block922--
+    start_town()
+    build(1, hatchery, 80)
+    wait_build(1, hatchery)
+    build(3, drone, 80)
+    wait_build(3, drone)
+    build(6, drone, 80)
+    wait_build(6, drone)
+    build(8, drone, 80)
+
+        --block923--
+    wait(200)
+    notowns_jump(lair, block923)
+    build(12, drone, 80)
+    wait_buildstart(12, drone)
+    build(15, drone, 80)
+    stop()
+
+        --block925--
+    wait(200)
+    notowns_jump(lair, block925)
+    build(12, drone, 80)
+    wait_build(12, drone)
+    build(15, drone, 80)
+    stop()
+
+        --block930--
+    wait_build(1, hydralisk_den)
+    upgrade(1, hydralisk_speed, 30)
+    wait(2700)
+    upgrade(1, hydralisk_range, 30)
+    wait(2700)
+
+        --block931--
+    wait(200)
+    notowns_jump(lair, block931)
+    tech(lurker_aspect, 70)
+    place_guard(lurker, 0)
+    place_guard(lurker, 1)
+    place_guard(lurker, 2)
+
+        --block950--
+    train(3, lurker)
+    wait(200)
+    train(6, lurker)
+    wait(600)
+    goto(block950)
+
+
+
+
+
+
+
+

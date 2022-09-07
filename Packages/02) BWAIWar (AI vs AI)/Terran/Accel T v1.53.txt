@@ -1,0 +1,1515 @@
+# stat_txt.tbl entry 1342: Terran Expansion Custom Level<0>
+TMCx(1342, 101, aiscript):
+	start_town()
+
+#if debug
+	debug(null, Accel T v1.53 by Equalizer)
+	--null--
+#endif
+
+	farms_notiming()
+	defaultbuild_off()
+	groundmap_jump(groundMap)
+	#[incomplete]goto(airMap)
+	stop()
+
+	--groundMap--
+	transports_off()
+
+	build(1, Terran Command Center, 150)
+	wait_buildstart(1, Terran Command Center)
+	build(4, Terran SCV, 130)
+	wait_buildstart(4, Terran SCV)
+
+	define_max(8, Terran SCV)
+	multirun(buildTerran SCVs)
+
+	#Gear-up for counter zerg
+
+	multirun(forcedExpand)
+	multirun(addonControl)
+	multirun(mainStaticDefenseControl)
+
+	multirun(techControl)
+	multirun(engineeringUpgrade1)
+	multirun(engineeringUpgrade2)
+	multirun(armoryUpgrades)
+	multirun(attackControl)
+
+	multirun(overloadControl)
+	multirun(dropshipControl)
+
+	--requeneSupply1--
+	enemyowns_jump(Protoss Gateway, counterRush)
+	enemyowns_jump(Zerg Spawning Pool, counterRush)
+
+	resources_jump(140, 0, accelerateSupply1) 
+	wait(50)
+	goto(requeneSupply1)
+	--accelerateSupply1--
+	#debug(daccelerateSupply1, Accelerate Supply1 Constructing)
+	--daccelerateSupply1--
+	build(1, Terran Supply Depot, 80)
+	wait_buildstart(1, Terran Supply Depot)
+
+	enemyowns_jump(Protoss Gateway, counterRush)
+	enemyowns_jump(Zerg Spawning Pool, counterRush)
+
+	define_max(13, Terran SCV)
+	wait(200)
+
+	enemyowns_jump(Protoss Gateway, counterRush)
+	enemyowns_jump(Zerg Spawning Pool, counterRush)
+
+	--requeneBarracks1--
+	enemyowns_jump(Zerg Sunken Colony, norush0)
+	enemyowns_jump(Zerg Creep Colony, norush0)
+	enemyowns_jump(Zerg Spawning Pool, counterRush)
+	--norush0--
+	resources_jump(150, 0, accelerateBarracks1) 
+	wait(50)
+	goto(requeneBarracks1)
+	--accelerateBarracks1--
+	#debug(daccelerateBarracks1, Accelerate Barracks1 Constructing)
+	--daccelerateBarracks1--
+	build(1, Terran Barracks, 80)
+	wait_buildstart(1, Terran Barracks)
+
+	define_max(15, Terran SCV)
+
+	enemyowns_jump(Protoss Nexus, counterRushLate)
+
+	enemyowns_jump(Zerg Sunken Colony, norush1)
+	enemyowns_jump(Zerg Creep Colony, norush1)
+	enemyowns_jump(Zerg Spawning Pool, counterRushLate)
+	--norush1--
+
+	wait(200)
+
+	enemyowns_jump(Zerg Sunken Colony, norush2)
+	enemyowns_jump(Zerg Creep Colony, norush2)
+	enemyowns_jump(Zerg Spawning Pool, counterRushLate)
+	--norush2--
+
+	define_max(3, Terran Marine)
+	defenseuse_gg(1, Terran Marine)
+	defenseuse_ag(1, Terran Marine)	
+
+	--requeneBarracks2--
+	resources_jump(150, 0, accelerateBarracks2) 
+	wait(50)
+	goto(requeneBarracks2)
+	--accelerateBarracks2--
+	#debug(daccelerateBarracks2, Accelerate Barracks2 Constructing)
+	--daccelerateBarracks2--
+	build(2, Terran Barracks, 80)
+	wait_buildstart(2, Terran Barracks)
+
+	wait(200)
+
+	--requeneSupply2--
+	resources_jump(100, 0, accelerateSupply2) 
+	wait(50)
+	goto(requeneSupply2)
+	--accelerateSupply2--
+	#debug(daccelerateSupply2, Accelerate Supply2 Constructing)
+	--daccelerateSupply2--
+	build(2, Terran Supply Depot, 80)
+	wait_buildstart(2, Terran Supply Depot)
+
+	define_max(17, Terran SCV)
+	wait(200)
+
+	--requeneNaturalEX--
+	resources_jump(400, 0, accelerateNaturalEX)
+	wait(50)
+	goto(requeneNaturalEX)
+	--accelerateNaturalEX--
+	#debug(daccelerateNaturalEX, Accelerating NaturalEX)
+	--daccelerateNaturalEX--
+	multirun(initializeExpand)
+
+	define_max(12, Terran Marine)
+
+	wait(200)
+
+	--requeneSupply3--
+	resources_jump(100, 0, accelerateSupply3) 
+	wait(50)
+	goto(requeneSupply3)
+	--accelerateSupply3--
+	#debug(daccelerateSupply3, Accelerate Supply3 Constructing)
+	--daccelerateSupply3--
+	build(3, Terran Supply Depot, 80)
+	wait_buildstart(3, Terran Supply Depot)
+
+	define_max(18, Terran SCV)
+	wait(200)
+	
+	--requeneAcademy--
+	wait_build(1, Terran Barracks)
+	resources_jump(150, 0, accelerateAcademy)
+	wait(50)
+	goto(requeneAcademy)
+	--accelerateAcademy--
+	#debug(daccelerateAcademy, Accelerating Academy Construction)
+	--daccelerateAcademy--
+	build(1, Terran Academy, 80)
+	wait_buildstart(1, Terran Academy)
+
+	define_max(6, Terran Medic)
+	place_guard(Terran Medic, 0)
+	place_guard(Terran Medic, 1)
+	place_guard(Terran Medic, 2)
+	place_guard(Terran Medic, 3)
+	place_guard(Terran Medic, 4)
+
+	wait(300)
+
+	define_max(4, Terran Firebat)
+	defenseuse_gg(1, Terran Firebat)
+
+	--requeneRefinery--
+	resources_jump(100, 0, accelerateRefinery) 
+	wait(50)
+	goto(requeneRefinery)
+	--accelerateRefinery--
+	#debug(daccelerateRefinery, Accelerate Refinery Constructing)
+	--daccelerateRefinery--
+	build(1, Terran Refinery, 80)
+	wait_buildstart(1, Terran Refinery)
+
+	wait(200)
+	farms_timing()
+
+	define_max(25, Terran SCV)
+	define_max(14, Terran Marine)
+	wait(400)
+
+	--normalizedelayNaturalExpand--
+
+	--requeneBarracks3--
+	resources_jump(200, 0, accelerateBarracks3) 
+	wait(100)
+	goto(requeneBarracks3)
+	--accelerateBarracks3--
+	#debug(daccelerateBarracks3, Accelerate Barracks3 Constructing)
+	--daccelerateBarracks3--
+	build(3, Terran Barracks, 80)
+	wait_buildstart(3, Terran Barracks)
+
+	define_max(16, Terran Marine)
+	define_max(30, Terran SCV)
+
+	wait(200)
+
+	--requeneEngineering1--
+	resources_jump(200, 0, accelerateEngineering1)
+	wait(100)
+	goto(requeneEngineering1)
+	--accelerateEngineering1--
+	#debug(daccelerateEngineering1, Accelerating Engineering1 Construction)
+	--daccelerateEngineering1--
+	build(1, Terran Engineering Bay, 80)
+	wait_buildstart(1, Terran Engineering Bay)
+
+	enemyowns_jump(Zerg Spire, Zcutfirebats)
+	define_max(20, Terran Marine)
+	define_max(6, Terran Firebat)
+	goto(normfirebats)
+	--Zcutfirebats--
+
+	#debug(danitmuta, anitmuta)
+	--danitmuta--
+	define_max(26, Terran Marine)
+	define_max(225, Terran Firebat)
+	--normfirebats--
+
+	define_max(35, Terran SCV)
+
+	wait(200)
+
+	--requeneFactory1--
+	wait_build(1, Terran Barracks)
+	resources_jump(200, 100, accelerateFactory1)
+	wait(100)
+	goto(requeneFactory1)
+	--accelerateFactory1--
+	#debug(daccelerateFactory1, Accelerating Factory1 Construction)
+	--daccelerateFactory1--
+	build(1, Terran Factory, 80)
+	wait_buildstart(1, Terran Factory)
+
+	define_max(255, Terran Vulture)
+	define_max(255, Terran Goliath)
+
+	define_max(30, Terran Marine)
+	define_max(40, Terran SCV)
+
+	wait(300)
+
+	define_max(4, Terran Siege Tank<0>Tank Mode)
+	defenseuse_gg(1, Terran Siege Tank<0>Tank Mode)
+
+	--requeneStarport1--
+	wait_build(1, Terran Factory)
+	resources_jump(200, 150, accelerateStarport1)
+	wait(150)
+	goto(requeneStarport1)
+	--accelerateStarport1--
+	#debug(daccelerateStarport1, Accelerating Starport1 Construction)
+	--daccelerateStarport1--
+	build(1, Terran Starport, 80)
+	wait_buildstart(1, Terran Starport)
+
+	define_max(255, Terran Science Vessel)
+	define_max(255, Terran Wraith)
+	define_max(255, Terran Valkyrie)
+	define_max(255, Terran Dropship)
+	define_max(255, Terran Battlecruiser)
+
+	define_max(45, Terran Marine)
+	define_max(6, Terran Firebat)
+	define_max(8, Terran Siege Tank<0>Tank Mode)
+
+	wait(300)
+
+	defenseuse_aa(1, Terran Wraith)
+	defenseuse_ga(1, Terran Wraith)
+
+	--requeneFactory2--
+	resources_jump(250, 200, accelerateFactory2)
+	wait(150)
+	goto(requeneFactory2)
+	--accelerateFactory2--
+	#debug(daccelerateFactory2, Accelerating Factory2 Construction)
+	--daccelerateFactory2--
+	build(2, Terran Factory, 80)
+	wait_buildstart(2, Terran Factory)
+
+	wait(300)
+
+	--requeneSciFacility--
+	wait_build(1, Terran Starport)
+	resources_jump(150, 150, accelerateSciFacility)
+	wait(150)
+	goto(requeneSciFacility)
+	--accelerateSciFacility--
+	#debug(daccelerateSciFacility, Accelerating SciFacility Construction)
+	--daccelerateSciFacility--
+	build(1, Terran Science Facility, 80)
+	wait_buildstart(1, Terran Science Facility)
+
+	define_max(90, Terran Marine)
+	define_max(15, Terran Siege Tank<0>Tank Mode)
+
+	define_max(5, Terran Science Vessel)
+
+	place_guard(Terran Science Vessel, 0)
+	place_guard(Terran Science Vessel, 1)
+	place_guard(Terran Science Vessel, 2)
+	place_guard(Terran Science Vessel, 3)
+	place_guard(Terran Science Vessel, 4)
+	place_guard(Terran Science Vessel, 5)
+
+	wait(300)
+
+	--requeneEngineering2--
+	resources_jump(200, 0, accelerateEngineering2)
+	wait(100)
+	goto(requeneEngineering2)
+	--accelerateEngineering2--
+	#debug(daccelerateEngineering2, Accelerating Engineering2 Construction)
+	--daccelerateEngineering2--
+	build(2, Terran Engineering Bay, 80)
+	wait_buildstart(2, Terran Engineering Bay)
+
+	wait(300)
+
+	define_max(5, Terran Battlecruiser)
+	defenseuse_aa(1, Terran Battlecruiser)
+	defenseuse_ga(1, Terran Battlecruiser)
+	defenseuse_ag(1, Terran Battlecruiser)
+	defenseuse_gg(1, Terran Battlecruiser)
+
+	--requeneArmory1--
+	wait_build(1, Terran Factory)
+	resources_jump(550, 550, accelerateArmory1)
+	wait(150)
+	goto(requeneArmory1)
+	--accelerateArmory1--
+	#debug(daccelerateArmory1, Accelerating Armory1 Construction)
+	--daccelerateArmory1--
+	build(1, Terran Armory, 80)
+	wait_buildstart(1, Terran Armory)
+
+	--mainSleep--
+	wait(4000)
+	goto(mainSleep)
+
+
+#ADDAPTIONS
+
+	--counterRush--
+	#suffix:CR
+	define_max(7, Terran SCV)
+
+	build(1, Terran Barracks, 80)
+	wait_buildstart(1, Terran Barracks)
+
+	wait(300)
+
+	define_max(12, Terran Marine)
+	defenseuse_gg(1, Terran Marine)
+	defenseuse_ag(1, Terran Marine)
+
+	build(2, Terran Barracks, 80)
+	wait_buildstart(2, Terran Barracks)
+
+	wait(300)
+
+	build(1, Terran Bunker, 80)
+	wait_buildstart(1, Terran Bunker)
+
+	wait_buildstart(1, Terran Supply Depot)
+
+	define_max(13, Terran SCV)
+
+	goto(delayNaturalExpand)
+
+
+	--counterRushLate--
+	define_max(8, Terran Marine)
+	defenseuse_gg(1, Terran Marine)
+	defenseuse_ag(1, Terran Marine)
+
+	--requeneBarracks2CRL--
+	resources_jump(150, 0, accelerateBarracks2CRL) 
+	wait(50)
+	goto(requeneBarracks2CRL)
+	--accelerateBarracks2CRL--
+	#debug(daccelerateBarracks2CRL, Accelerate Barracks2CRL Constructing)
+	--daccelerateBarracks2CRL--
+	build(2, Terran Barracks, 80)
+	wait_buildstart(2, Terran Barracks)
+
+	wait(200)
+
+	wait_build(1, Terran Barracks)
+	build(1, Terran Bunker, 80)
+	wait_buildstart(1, Terran Bunker)
+
+	goto(delayNaturalExpand)
+
+
+
+	--delayNaturalExpand--
+
+	--requeneSupply3DN--
+	resources_jump(100, 0, accelerateSupply3DN) 
+	wait(50)
+	goto(requeneSupply3DN)
+	--accelerateSupply3DN--
+	#debug(daccelerateSupply3DN, Accelerate Supply3DN Constructing)
+	--daccelerateSupply3DN--
+	build(3, Terran Supply Depot, 80)
+	wait_buildstart(3, Terran Supply Depot)
+
+	define_max(20, Terran SCV)
+	define_max(12, Terran Marine)
+	wait(200)
+	
+	--requeneAcademyDN--
+	wait_build(1, Terran Barracks)
+	resources_jump(150, 0, accelerateAcademyDN)
+	wait(50)
+	goto(requeneAcademyDN)
+	--accelerateAcademyDN--
+	#debug(daccelerateAcademyDN, Accelerating AcademyDN Construction)
+	--daccelerateAcademyDN--
+	build(1, Terran Academy, 80)
+	wait_buildstart(1, Terran Academy)
+
+	define_max(6, Terran Medic)
+	place_guard(Terran Medic, 0)
+	place_guard(Terran Medic, 1)
+	place_guard(Terran Medic, 2)
+	place_guard(Terran Medic, 3)
+	place_guard(Terran Medic, 4)
+
+	wait(300)
+
+	define_max(6, Terran Firebat)
+	defenseuse_gg(1, Terran Firebat)
+
+	--requeneRefineryDN--
+	resources_jump(100, 0, accelerateRefineryDN) 
+	wait(50)
+	goto(requeneRefineryDN)
+	--accelerateRefineryDN--
+	#debug(daccelerateRefineryDN, Accelerate RefineryDN Constructing)
+	--daccelerateRefineryDN--
+	build(1, Terran Refinery, 80)
+	wait_buildstart(1, Terran Refinery)
+
+	wait(200)
+	farms_timing()
+
+	define_max(25, Terran SCV)
+	define_max(14, Terran Marine)
+	wait(400)
+
+	--requeneNaturalEXDN--
+	resources_jump(400, 0, accelerateNaturalEXDN)
+	wait(100)
+	goto(requeneNaturalEXDN)
+	--accelerateNaturalEXDN--
+	#debug(daccelerateNaturalEXDN, Accelerating NaturalEXDN)
+	--daccelerateNaturalEXDN--
+	multirun(initializeExpand)
+
+	wait(400)
+
+	goto(normalizedelayNaturalExpand)
+
+
+
+	--overloadControl--
+	wait_build(1, Terran Barracks)
+	multirun(overloadMarine)
+	
+	--testAcademyUnits--
+	wait(500)
+	notowns_jump(Terran Academy, testAcademyUnits)
+	multirun(overloadFirebat)
+
+	--testMachineUnits--
+	wait(500)
+	notowns_jump(Terran Machine Shop, testMachineUnits)
+	multirun(overloadSiegeTank)
+
+	--testPhysUnits--
+	wait(500)
+	notowns_jump(Terran Physics Lab, testPhysUnits)
+	multirun(overloadBattlecruiser)
+	stop()
+
+
+	--overloadMarine--
+	#debug(doverloadMarine, overloadMarine)
+	--doverloadMarine--
+	wait_force(255, Terran Marine)
+	stop()
+
+	--overloadFirebat--
+	#debug(doverloadFirebat, overloadFirebat)
+	--doverloadFirebat--
+	wait_force(255, Terran Firebat)
+	stop()
+
+	--overloadSiegeTank--
+	#debug(doverloadSiegeTank, overloadSiegeTank)
+	--doverloadSiegeTank--
+	wait_force(255, Terran Siege Tank<0>Tank Mode)
+	stop()
+
+	--overloadGoliath--
+	#debug(doverloadGoliath, overloadGoliath)
+	--doverloadGoliath--
+	wait_force(255, Terran Goliath)
+	stop()
+
+	--overloadWraith--
+	#debug(doverloadWraith, overloadWraith)
+	--doverloadWraith--
+	wait_force(255, Terran Wraith)
+	stop()	
+
+	--overloadValkyrie--
+	#debug(doverloadValkyrie, overloadValkyrie)
+	--doverloadValkyrie--
+	wait_force(255, Terran Valkyrie)
+	stop()
+
+	--overloadBattlecruiser--
+	#debug(doverloadBattlecruiser, overloadBattlecruiser)
+	--doverloadBattlecruiser--
+	wait_force(255, Terran Battlecruiser)
+	stop()
+
+	--overloadVulture--
+	#debug(doverloadVulture, overloadVulture)
+	--doverloadVulture--
+	wait_force(255, Terran Vulture)
+	stop()
+
+
+	--dropshipControl--
+	wait_build(1, Terran Control Tower)
+	wait_force(1, Terran Science Vessel)
+	enemyowns_jump(Zerg Hive, stalldropship)
+	goto(normdropship)
+	--stalldropship--
+	wait_force(3, Terran Battlecruiser)
+	--normdropship--
+
+	#debug(dtransports, transports)
+	--dtransports--
+	check_transports()
+	define_max(1, Terran Dropship)
+	wait(2200)
+	define_max(2, Terran Dropship)
+	--dropshipCheck--
+	wait(2200)
+	groundmap_jump(dropshipCheck)
+	#debug(dmoretransports, moretransports)
+	--dmoretransports--
+	define_max(3, Terran Dropship)
+	wait(2200)
+	define_max(4, Terran Dropship)
+	stop()
+
+	--naturalEX--
+	#suffix:N
+	start_town()
+	build(1, Terran Command Center, 80)
+	wait_build(1, Terran Command Center)
+	multirun(buildExpandSCVs)
+	multirun(OUTStaticDefenseControl)
+
+	wait(1500)
+
+	--requeneComsatEX1--
+	wait(500)
+	notowns_jump(Terran Academy, requeneComsatEX1)
+	--testComsatEX1--
+	resources_jump(250, 250, buildComsatEX1)
+	enemyowns_jump(Zerg Hydralisk Den, checkLurkerEX1)
+	enemyowns_jump(Protoss Templar Archives, buildComsatEX1)
+	wait(500)
+	goto(requeneComsatEX1)
+
+	--checkLurkerEX1--
+	enemyowns_jump(Zerg Lair, buildComsatEX1)
+	enemyowns_jump(Zerg Hive, buildComsatEX1)
+	wait(500)
+	goto(requeneComsatEX1)
+
+	--buildComsatEX1--
+
+	build(1, Terran Comsat Station, 70)
+
+	wait(500)
+
+	build(1, Terran Bunker, 80)
+
+	wait(200)
+
+	--requeneBarracksEX1--
+	resources_jump(300, 0, accelerateBarracksEX1) 
+	wait(400)
+	goto(requeneBarracksEX1)
+	--accelerateBarracksEX1--
+	#debug(daccelerateBarracksEX1, Accelerate BarracksEX1 Constructing)
+	--daccelerateBarracksEX1--
+	build(1, Terran Barracks, 80)
+	wait_buildstart(1, Terran Barracks)
+
+	wait(500)
+
+	--requeneBarracksEX2--
+	resources_jump(500, 0, accelerateBarracksEX2) 
+	wait(500)
+	goto(requeneBarracksEX2)
+	--accelerateBarracksEX2--
+	#debug(daccelerateBarracksEX2, Accelerate BarracksEX2 Constructing)
+	--daccelerateBarracksEX2--
+	build(2, Terran Barracks, 80)
+	wait_buildstart(2, Terran Barracks)
+
+	wait(500)
+
+	--requeneFactoryEX1--
+	resources_jump(750, 550, accelerateFactoryEX1)
+	#enemyowns_jump(Zerg Queen's Nest, accelerateFactoryEX1)
+	wait(400)
+	goto(requeneFactoryEX1)
+	--accelerateFactoryEX1--
+	#debug(daccelerateFactoryEX1, Accelerating FactoryEX1 Construction)
+	--daccelerateFactoryEX1--
+	build(1, Terran Factory, 80)
+	wait_buildstart(1, Terran Factory)
+	wait(1500)
+	build(1, Terran Machine Shop, 80)
+
+	wait(500)
+
+	--requeneStarportEX1--
+	resources_jump(1200, 1000, accelerateStarportEX1)
+	wait(500)
+	goto(requeneStarportEX1)
+	--accelerateStarportEX1--
+	#debug(daccelerateStarportEX1, Accelerating StarportEX1 Construction)
+	--daccelerateStarportEX1--
+	build(1, Terran Starport, 80)
+	wait_buildstart(1, Terran Starport)
+	wait(1300)
+	build(1, Terran Control Tower, 80)
+
+	stop()
+
+
+	--outpost--
+	start_town()
+	build(1, Terran Command Center, 80)
+	wait_build(1, Terran Command Center)
+
+	multirun(buildExpandSCVs)
+	multirun(OUTStaticDefenseControl)
+
+	wait(2500)
+
+	--requeneComsatOUT1--
+	wait(500)
+	notowns_jump(Terran Academy, requeneComsatOUT1)
+	--runComsatOUT1--
+	resources_jump(250, 250, buildComsatOUT1)
+	enemyowns_jump(Zerg Hydralisk Den, checkLurkerOUT1)
+	enemyowns_jump(Zerg Lair, buildComsatOUT1)
+	enemyowns_jump(Protoss Templar Archives, buildComsatOUT1)
+	wait(500)
+	goto(requeneComsatOUT1)
+
+	--checkLurkerOUT1--
+	enemyowns_jump(Zerg Lair, buildComsatOUT1)
+	enemyowns_jump(Zerg Hive, buildComsatOUT1)
+	goto(requeneComsatOUT1)
+
+	--buildComsatOUT1--
+	wait(200)
+	build(1, Terran Comsat Station, 70)
+
+	wait(200)
+
+	--requeneBarracksOUT1--
+	resources_jump(650, 0, accelerateBarracksOUT1) 
+	wait(500)
+	goto(requeneBarracksOUT1)
+	--accelerateBarracksOUT1--
+	#debug(daccelerateBarracksOUT1, Accelerate BarracksOUT1 Constructing)
+	--daccelerateBarracksOUT1--
+	build(1, Terran Barracks, 80)
+	wait_buildstart(1, Terran Barracks)
+
+	wait(500)
+
+	--requeneFactoryOUT1--
+	resources_jump(1200, 800, accelerateFactoryOUT1)
+	wait(500)
+	goto(requeneFactoryOUT1)
+	--accelerateFactoryOUT1--
+	#debug(daccelerateFactoryOUT1, Accelerating FactoryOUT1 Construction)
+	--daccelerateFactoryOUT1--
+	build(1, Terran Factory, 80)
+	wait_buildstart(1, Terran Factory)
+	wait(1500)
+	build(1, Terran Machine Shop, 80)
+
+	wait(500)
+
+	--requeneStarportOUT1--
+	resources_jump(1600, 1400, accelerateStarportOUT1)
+	wait(750)
+	goto(requeneStarportOUT1)
+	--accelerateStarportOUT1--
+	#debug(daccelerateStarportOUT1, Accelerating StarportOUT1 Construction)
+	--daccelerateStarportOUT1--
+	build(1, Terran Starport, 80)
+	wait_buildstart(1, Terran Starport)
+	wait(1300)
+	build(1, Terran Control Tower, 80)
+	stop()
+
+
+	--initializeExpand--
+	#debug(drunEX1, runEX1)
+	--drunEX1--
+
+	expand(1, naturalEX)
+	wait(2000)
+
+	notowns_jump(Terran Machine Shop, initializeExpand)
+
+	--runExpand--
+	#require guard
+	wait_force(3, Terran Siege Tank)
+	wait_force(26, Terran Marine)
+
+	enemyowns_jump(Zerg Hive, stallEX2)
+	goto(normEX2)
+
+	--stallEX2--
+	wait_train(1, Terran Battlecruiser)
+	wait_train(6, Terran Siege Tank<0>Tank Mode)
+	wait_train(32, Terran Marine)
+	--normEX2--
+	wait(1000)
+
+	#debug(daccelerateNewOutpost, NewOutpost Constructing)
+	--daccelerateNewOutpost--
+	expand(2, outpost)
+	define_max(50, Terran SCV)
+	wait(6000)
+
+	#require minimum guard
+	wait_force(6, Terran Siege Tank)
+	wait_force(32, Terran Marine)
+	wait(1000)
+	#debug(daccelerateNewOutpost2, NewOutpost2 Constructing)
+	--daccelerateNewOutpost2--
+	expand(3, outpost)
+	wait(7000)
+
+	--reExpand--
+	#require minimum guard
+	wait_force(6, Terran Siege Tank)
+	wait_force(32, Terran Marine)
+	wait(1000)
+	#debug(dacceleratecontinueNewOutpost, continue NewOutpost Constructing)
+	--dacceleratecontinueNewOutpost--
+	expand(99, outpost)
+	wait(8000)
+	goto(reExpand)
+
+
+	--forcedExpand--
+
+	wait(15000)
+	--expand1forced1--
+	#debug(dexpand1forced1, expand1forced1)
+	--dexpand1forced1--
+	expand(1, naturalEX)
+
+	wait(5000)	
+	--expand1forced2--
+	#debug(dexpand1forced2, expand1forced2)
+	--dexpand1forced2--
+	expand(1, naturalEX)
+
+	wait(5000)
+	--expand2forced1--
+	#debug(dexpand2forced1, expand2forced1)
+	--dexpand2forced1--
+	expand(2, outpost)
+
+	wait(5000)
+	--expand2forced2--
+	#debug(dexpand2forced2, expand2forced2)
+	--dexpand2forced2--
+	expand(2, outpost)
+
+	wait(5000)
+	--expand3forced1--
+	#debug(dexpand3forced1, expand3forced1)
+	--dexpand3forced1--
+	expand(3, outpost)
+
+	wait(5000)
+	--expand3forced2--
+	#debug(dexpand3forced2, expand3forced2)
+	--dexpand3forced2--
+	expand(3, outpost)
+
+	wait(5000)
+	--expand3forced3--
+	#debug(dexpand3forced3, expand3forced3)
+	--dexpand3forced3--
+	expand(3, outpost)
+
+	stop()
+
+
+
+	--buildTerran SCVs--
+	build(5, Terran SCV, 80)
+	wait_buildstart(5, Terran SCV)
+	wait_build(4, Terran SCV)
+	wait(220)
+	build(6, Terran SCV, 80)
+	wait_buildstart(6, Terran SCV)
+	wait_build(5, Terran SCV)
+	wait(220)
+	build(7, Terran SCV, 80)
+	wait_buildstart(7, Terran SCV)
+	wait_build(6, Terran SCV)
+	wait(220)
+
+	enemyowns_jump(Zerg Hatchery, stallSCV)
+	goto(normSCV)
+	--stallSCV--
+	wait(130)
+	--normSCV--
+
+	build(8, Terran SCV, 80)
+	wait_buildstart(8, Terran SCV)
+	wait_build(7, Terran SCV)
+	wait(220)
+	build(9, Terran SCV, 80)
+	wait_buildstart(9, Terran SCV)
+	wait_build(8, Terran SCV)
+	wait(220)
+	build(10, Terran SCV, 80)
+	wait_buildstart(10, Terran SCV)
+	wait_build(9, Terran SCV)
+	wait(220)
+	build(11, Terran SCV, 80)
+	wait_buildstart(11, Terran SCV)
+	wait_build(10, Terran SCV)
+	wait(220)
+	build(12, Terran SCV, 80)
+	wait_buildstart(12, Terran SCV)
+	wait_build(11, Terran SCV)
+	wait(220)
+	build(13, Terran SCV, 80)
+	wait_buildstart(13, Terran SCV)
+	wait_build(12, Terran SCV)	
+	wait(220)
+	build(14, Terran SCV, 80)
+	wait_buildstart(14, Terran SCV)
+	wait_build(13, Terran SCV)
+	wait(220)
+	build(15, Terran SCV, 80)
+	wait_buildstart(15, Terran SCV)
+	wait_build(14, Terran SCV)
+	wait(220)
+	build(16, Terran SCV, 80)
+	wait_buildstart(16, Terran SCV)
+	wait_build(15, Terran SCV)
+	wait(220)
+	build(17, Terran SCV, 80)
+	wait_buildstart(17, Terran SCV)
+	wait_build(16, Terran SCV)
+	wait(220)
+	build(18, Terran SCV, 80)
+	wait_buildstart(18, Terran SCV)
+	wait_build(17, Terran SCV)
+	wait(220)
+	build(19, Terran SCV, 80)
+	wait_buildstart(19, Terran SCV)
+	wait_build(18, Terran SCV)
+	wait(220)
+	build(20, Terran SCV, 80)
+	wait_buildstart(20, Terran SCV)
+	wait_build(19, Terran SCV)
+	wait(220)
+	build(21, Terran SCV, 80)
+	wait_buildstart(21, Terran SCV)
+	wait_build(20, Terran SCV)
+	wait(220)
+	build(22, Terran SCV, 80)
+	wait_buildstart(22, Terran SCV)
+	wait_build(21, Terran SCV)
+	wait(220)
+	build(23, Terran SCV, 80)
+	wait_buildstart(23, Terran SCV)
+	wait_build(22, Terran SCV)
+	wait(220)
+	build(24, Terran SCV, 80)
+	wait_buildstart(24, Terran SCV)
+	wait_build(23, Terran SCV)
+	wait(220)
+	build(25, Terran SCV, 80)
+	wait_buildstart(25, Terran SCV)
+	wait_build(24, Terran SCV)
+	wait(220)
+	build(26, Terran SCV, 80)
+	wait_buildstart(26, Terran SCV)
+	wait_build(25, Terran SCV)
+	wait(220)
+	build(27, Terran SCV, 80)
+	wait_buildstart(27, Terran SCV)
+	wait_build(26, Terran SCV)
+	wait(220)
+	build(28, Terran SCV, 80)
+	wait_buildstart(28, Terran SCV)
+	wait_build(27, Terran SCV)
+	wait(220)
+	build(29, Terran SCV, 80)
+	wait_buildstart(29, Terran SCV)
+	wait_build(28, Terran SCV)
+	wait(220)
+	build(30, Terran SCV, 80)
+	stop()
+
+	--buildExpandSCVs--
+	build(1, Terran SCV, 70)
+	wait_build(1, Terran SCV)
+	build(2, Terran SCV, 70)
+	wait_build(2, Terran SCV)
+	build(3, Terran SCV, 70)
+	wait_build(3, Terran SCV)
+	build(4, Terran SCV, 70)
+	wait_build(4, Terran SCV)
+	build(5, Terran SCV, 70)
+	wait_build(5, Terran SCV)
+	build(6, Terran SCV, 70)
+	wait_build(6, Terran SCV)
+	build(7, Terran SCV, 70)
+	wait_build(7, Terran SCV)
+	build(8, Terran SCV, 70)
+	wait_build(8, Terran SCV)
+	build(9, Terran SCV, 70)
+	wait_build(9, Terran SCV)
+	build(10, Terran SCV, 70)
+	wait_build(10, Terran SCV)
+	build(11, Terran SCV, 70)
+	wait_build(11, Terran SCV)
+	build(12, Terran SCV, 70)
+	wait_build(12, Terran SCV)
+	build(13, Terran SCV, 70)
+	wait_build(13, Terran SCV)
+	build(14, Terran SCV, 70)
+	wait_build(14, Terran SCV)
+	build(15, Terran SCV, 70)
+	wait_build(15, Terran SCV)
+	build(16, Terran SCV, 70)
+	wait_build(16, Terran SCV)
+	build(17, Terran SCV, 70)
+	wait_build(17, Terran SCV)
+	build(18, Terran SCV, 70)
+	wait_build(18, Terran SCV)
+	build(19, Terran SCV, 70)
+	wait_build(19, Terran SCV)
+	build(20, Terran SCV, 70)
+	wait_build(20, Terran SCV)
+	build(21, Terran SCV, 70)
+	wait_build(21, Terran SCV)
+	build(22, Terran SCV, 70)
+	wait_build(22, Terran SCV)
+	build(23, Terran SCV, 70)
+	wait_build(23, Terran SCV)
+	build(24, Terran SCV, 70)
+	wait_build(24, Terran SCV)
+	build(25, Terran SCV, 70)
+	wait_build(25, Terran SCV)
+	stop()
+
+
+	--addonControl--
+
+	--requeneComsat--
+	wait_build(1, Terran Academy)
+	resources_jump(250, 250, buildComsat)
+	enemyowns_jump(Zerg Lair, checkbuildComsat)
+	enemyowns_jump(Zerg Hive, checkbuildComsat)
+	enemyowns_jump(Protoss Templar Archives, buildComsat)
+	wait(200)
+	notowns_jump(Terran Factory, requeneComsat)
+	goto(buildComsat)
+	--checkbuildComsat--
+	enemyowns_jump(Zerg Hydralisk Den, buildComsatslow)
+	wait(200)
+	notowns_jump(Terran Factory, requeneComsat)
+	goto(buildComsat)
+	--buildComsatslow--
+	wait(1400)
+
+	--buildComsat--
+	#debug(dbuildComsat, Building Comsat)
+	--dbuildComsat--
+	build(1, Terran Comsat Station, 70)
+	place_guard(Terran SCV, 0)
+	wait(200)
+
+	wait_build(1, Terran Factory)
+	build(1, Terran Machine Shop, 80)
+
+	wait_build(1, Terran Starport)
+	build(1, Terran Control Tower, 80)
+
+	wait_build(2, Terran Factory)
+	build(2, Terran Machine Shop, 80)
+
+	wait_build(1, Terran Science Facility)
+
+	--requenetechBattlecuiser--
+	enemyowns_jump(Zerg Hive, techBattlecuiser)
+	resources_jump(1000, 800, techBattlecuiser)
+	wait(300)
+	goto(requenetechBattlecuiser)
+	--techBattlecuiser--
+
+	build(1, Terran Physics Lab, 80)
+
+	wait_build(2, Terran Starport)
+	build(2, Terran Control Tower, 80)
+
+	stop()
+
+
+
+
+	--mainStaticDefenseControl--
+
+	wait_build(1, Terran Engineering Bay)
+	--mainRetestTurrets1--
+	wait(200)
+	enemyowns_jump(Protoss Templar Archives, buildmainTurrets1)
+	enemyowns_jump(Zerg Spire, buildmainTurrets1)
+	enemyowns_jump(Zerg Greater Spire, buildmainTurrets1)
+	enemyowns_jump(Zerg Hydralisk Den, mainTurretsCheckLurker)
+	goto(mainRetestTurrets1)
+
+	--mainTurretsCheckLurker--
+	enemyowns_jump(Zerg Lair, buildmainTurrets1slow)
+	enemyowns_jump(Zerg Hive, buildmainTurrets1)
+	goto(mainRetestTurrets1)
+
+	--buildmainTurrets1slow--
+
+	wait(1600)
+
+	--buildmainTurrets1--
+	#debug(dbuildmainTurrets1, Building mainTurrets1)
+	--dbuildmainTurrets1--
+
+	build(1, Terran Missile Turret, 70)
+	wait(300)
+
+	build(2, Terran Missile Turret, 70)
+	wait(300)
+
+	--mainRetestTurrets2--
+	wait(500)
+	enemyowns_jump(Zerg Spire, buildmainTurrets2)
+	enemyowns_jump(Zerg Greater Spire, buildmainTurrets2)
+	goto(mainRetestTurrets2)
+	--buildmainTurrets2--
+	#debug(dbuildmainTurrets2, Building mainTurrets2)
+	--dbuildmainTurrets2--
+
+	build(3, Terran Missile Turret, 70)
+	wait(300)
+
+	build(4, Terran Missile Turret, 70)
+	wait(300)
+
+	build(5, Terran Missile Turret, 70)
+	wait(300)
+
+	stop()
+
+
+	--OUTStaticDefenseControl--
+
+	--EXRetestTurrets1--
+	wait(500)
+	notowns_jump(Terran Engineering Bay, EXRetestTurrets1)
+	enemyowns_jump(Protoss Templar Archives, buildEXTurrets1)
+	enemyowns_jump(Zerg Spire, buildEXTurrets1)
+	enemyowns_jump(Zerg Greater Spire, buildEXTurrets1)
+	enemyowns_jump(Zerg Hydralisk Den, EXTurretsCheckLurker)
+	goto(EXRetestTurrets1)
+
+	--EXTurretsCheckLurker--
+	enemyowns_jump(Zerg Lair, buildEXTurrets1slow)
+	enemyowns_jump(Zerg Hive, buildEXTurrets1)
+	goto(EXRetestTurrets1)
+
+	--buildEXTurrets1slow--
+	wait(1600)
+
+	--buildEXTurrets1--
+	#debug(dbuildEXTurrets1, Building EXTurrets1)
+	--dbuildEXTurrets1--
+
+	build(1, Terran Missile Turret, 70)
+	wait(300)
+
+	--EXRetestTurrets2--
+	wait(500)
+	notowns_jump(Terran Engineering Bay, EXRetestTurrets2)
+	enemyowns_jump(Zerg Spire, buildEXTurrets2)
+	enemyowns_jump(Zerg Greater Spire, buildEXTurrets2)
+	goto(EXRetestTurrets2)
+	--buildEXTurrets2--
+	#debug(dbuildEXTurrets2, Building EXTurrets2)
+	--dbuildEXTurrets2--
+
+	build(2, Terran Missile Turret, 70)
+	wait(300)
+
+	build(3, Terran Missile Turret, 70)
+	wait(300)
+
+	stop()
+
+
+	--techControl--
+
+	--requeneUpgradeAcademy1--
+	wait_build(1, Terran Academy)
+	resources_jump(75, 75, upgradeAcademy1)
+	wait(150)
+	goto(requeneUpgradeAcademy1)
+	--upgradeAcademy1--
+	#debug(dupgradeAcademy1, Upgrading Academy1)
+	--dupgradeAcademy1--
+	tech(Stim Packs, 80)
+
+	wait(1500)
+
+	--requeneUpgradeAcademy2--
+	wait_build(1, Terran Academy)
+	resources_jump(100, 100, upgradeAcademy2)
+	wait(150)
+	goto(requeneUpgradeAcademy2)
+	--upgradeAcademy2--
+	#debug(dupgradeAcademy2, Upgrading Academy2)
+	--dupgradeAcademy2--
+	upgrade(1, U-238 Shells, 80)
+
+	wait(300)
+	
+	--requeneUpgradeMachine1--
+	wait_build(1, Terran Machine Shop)
+	resources_jump(150, 150, upgradeMachine1)
+	wait(150)
+	goto(requeneUpgradeMachine1)
+	--upgradeMachine1--
+	#debug(dupgradeMachine1, Upgrading Machine1)
+	--dupgradeMachine1--
+	tech(Tank Siege Mode, 80)
+
+	wait(1500)
+
+	wait_build(1, Terran Science Facility)
+	wait_force(1, Terran Science Vessel)
+
+	--requeneUpgradeScience1--
+	wait_build(1, Terran Science Facility)
+	resources_jump(300, 300, upgradeScience1)
+	wait(300)
+	goto(requeneUpgradeScience1)
+	--upgradeScience1--
+	#debug(dupgradeScience1, Upgrading Science1)
+	--dupgradeScience1--
+	tech(Irradiate, 80)
+
+	wait(300)
+
+	--requeneUpgradePhysics1--
+	wait_build(1, Terran Physics Lab)
+	resources_jump(750, 750, upgradePhysics1)
+	wait(300)
+	goto(requeneUpgradePhysics1)
+	--upgradePhysics1--
+	#debug(dupgradePhysics1, Upgrading Physics1)
+	--dupgradePhysics1--
+	wait_force(1, Terran Battlecruiser)
+	tech(Yamato Gun, 80)
+
+	wait(300)
+
+	--requeneUpgradeAcademy3--
+	wait_build(1, Terran Academy)
+	enemyowns_jump(Zerg Defiler Mound, checkRestore)
+	wait(300)
+	goto(requeneUpgradeAcademy3)
+	--checkRestore--
+	resources_jump(500, 500, upgradeAcademy3)
+	wait(300)
+	goto(requeneUpgradeAcademy3)
+	--upgradeAcademy3--
+	#debug(dupgradeAcademy3, Upgrading Academy3)
+	--dupgradeAcademy3--
+	tech(Restoration, 80)
+
+	wait(300)
+
+	stop()
+
+
+
+	--engineeringUpgrade1--
+	--requeneUpgradeEngineering1--
+	wait_build(1, Terran Engineering Bay)
+	resources_jump(100, 100, upgradeEngineering1)
+	wait(150)
+	goto(requeneUpgradeEngineering1)
+	--upgradeEngineering1--
+	#debug(dupgradeEngineering1, Upgrading Engineering1)
+	--dupgradeEngineering1--
+	upgrade(1, Terran Infantry Weapons, 80)
+
+	wait(4500)
+
+	--requeneUpgradeEngineering2--
+	wait_build(1, Terran Engineering Bay)
+	resources_jump(150, 150, upgradeEngineering2)
+	wait(200)
+	goto(requeneUpgradeEngineering2)
+	--upgradeEngineering2--
+	#debug(dupgradeEngineering2, Upgrading Engineering2)
+	--dupgradeEngineering2--
+	upgrade(1, Terran Infantry Armor, 80)
+
+	wait(4500)
+
+	--requeneUpgradeEngineering4--
+	wait_build(1, Terran Science Facility)
+	wait_build(2, Terran Engineering Bay)
+	resources_jump(200, 200, upgradeEngineering4)
+	wait(250)
+	goto(requeneUpgradeEngineering4)
+	--upgradeEngineering4--
+	#debug(dupgradeEngineering4, Upgrading Engineering4)
+	--dupgradeEngineering4--
+	upgrade(2, Terran Infantry Armor, 80)
+
+	wait(5000)
+
+	--requeneUpgradeEngineering6--
+	wait_build(1, Terran Science Facility)
+	wait_build(2, Terran Engineering Bay)
+	resources_jump(300, 300, upgradeEngineering6)
+	wait(300)
+	goto(requeneUpgradeEngineering6)
+	--upgradeEngineering6--
+	#debug(dupgradeEngineering6, Upgrading Engineering6)
+	--dupgradeEngineering6--
+	upgrade(3, Terran Infantry Armor, 80)
+
+	stop()
+
+
+	--engineeringUpgrade2--
+
+	--requeneUpgradeEngineering3--
+	wait_build(1, Terran Science Facility)
+	wait_build(2, Terran Engineering Bay)
+	resources_jump(200, 200, upgradeEngineering3)
+	wait(250)
+	goto(requeneUpgradeEngineering3)
+	--upgradeEngineering3--
+	#debug(dupgradeEngineering3, Upgrading Engineering3)
+	--dupgradeEngineering3--
+	upgrade(2, Terran Infantry Weapons, 80)
+
+	wait(5000)
+
+	--requeneUpgradeEngineering5--
+	wait_build(1, Terran Science Facility)
+	wait_build(2, Terran Engineering Bay)
+	resources_jump(300, 300, upgradeEngineering5)
+	wait(300)
+	goto(requeneUpgradeEngineering5)
+	--upgradeEngineering5--
+	#debug(dupgradeEngineering5, Upgrading Engineering5)
+	--dupgradeEngineering5--
+	upgrade(3, Terran Infantry Weapons, 80)
+
+	stop()
+
+
+
+	--armoryUpgrades--
+	--requeneUpgradeArmory1--
+	wait_build(1, Terran Armory)
+	resources_jump(250, 250, upgradeArmory1)
+	wait(200)
+	goto(requeneUpgradeArmory1)
+	--upgradeArmory1--
+	#debug(dupgradeArmory1, Upgrading Armory1)
+	--dupgradeArmory1--
+	upgrade(1, Terran Vehicle Weapons, 80)
+	wait(4500)
+
+
+	--requeneUpgradeArmory3--
+	wait_build(1, Terran Armory)
+	resources_jump(300, 300, upgradeArmory3)
+	wait(250)
+	goto(requeneUpgradeArmory3)
+	--upgradeArmory3--
+	#debug(dupgradeArmory3, Upgrading Armory3)
+	--dupgradeArmory3--
+	upgrade(2, Terran Vehicle Weapons, 80)
+	wait(5000)
+
+
+	--requeneUpgradeArmory5--
+	wait_build(1, Terran Armory)
+	resources_jump(350, 350, upgradeArmory5)
+	wait(300)
+	goto(requeneUpgradeArmory5)
+	--upgradeArmory5--
+	#debug(dupgradeArmory5, Upgrading Armory5)
+	--dupgradeArmory5--
+	upgrade(3, Terran Vehicle Weapons, 80)
+	wait(5400)
+
+	--requeneUpgradeArmory2--
+	wait_build(1, Terran Armory)
+	resources_jump(400, 400, upgradeArmory2)
+	wait(200)
+	goto(requeneUpgradeArmory2)
+	--upgradeArmory2--
+	#debug(dupgradeArmory2, Upgrading Armory2)
+	--dupgradeArmory2--
+	upgrade(1, Terran Vehicle Plating, 80)
+	wait(4500)
+
+	--requeneUpgradeArmory4--
+	wait_build(1, Terran Armory)
+	resources_jump(500, 500, upgradeArmory4)
+	wait(250)
+	goto(requeneUpgradeArmory4)
+	--upgradeArmory4--
+	#debug(dupgradeArmory4, Upgrading Armory4)
+	--dupgradeArmory4--
+	upgrade(2, Terran Vehicle Plating, 80)
+	wait(5000)
+
+	--requeneUpgradeArmory6--
+	wait_build(1, Terran Armory)
+	resources_jump(550, 550, upgradeArmory6)
+	wait(300)
+	goto(requeneUpgradeArmory6)
+	--upgradeArmory6--
+	#debug(dupgradeArmory6, Upgrading Armory6)
+	--dupgradeArmory6--
+	upgrade(3, Terran Vehicle Plating, 80)
+	wait(5400)
+	
+	stop()
+
+
+
+
+	--attackControl--
+
+	wait_build(1, Terran Academy)
+	wait(500)
+
+	--reattacklvl1--
+
+	enemyowns_jump(Zerg Ultralisk Cavern, skipAttacklvl1)
+	enemyowns_jump(Zerg Lurker, skipAttacklvl1)
+	enemyowns_jump(Zerg Sunken Colony, skipAttacklvl1)
+
+	attack_add(4, Terran Medic)
+	attack_add(4, Terran Firebat)
+	attack_add(16, Terran Marine)
+
+	wait_train(4, Terran Firebat)
+	wait_train(16, Terran Marine)
+
+	enemyowns_jump(Zerg Ultralisk Cavern, skipAttacklvl1)
+	enemyowns_jump(Zerg Lurker, skipAttacklvl1)
+	enemyowns_jump(Zerg Sunken Colony, skipAttacklvl1)
+	notowns_jump(Terran Machine Shop, runattacklvl1)
+	goto(attackLoop)
+	--runattacklvl1--
+
+	#debug(dattacklvl1, attacklvl1)
+	--dattacklvl1--
+
+	attack_prepare()
+	attack_do()
+	--skipAttacklvl1--
+	attack_clear()
+
+	wait(2000)
+
+	notowns_jump(Terran Machine Shop, reattacklvl1)
+
+	--attackLoop--
+
+	clear_combatdata()
+
+	attack_add(4, Terran Battlecruiser)
+	attack_add(2, Terran Science Vessel)
+
+	attack_add(6, Terran Siege Tank<0>Tank Mode)
+	attack_add(30, Terran Marine)
+	attack_add(4, Terran Firebat)
+	attack_add(6, Terran Medic)
+
+	wait_train(3, Terran Siege Tank<0>Tank Mode)
+	wait_train(26, Terran Marine)
+
+	time_jump(20, ZincreaseATKstrength)
+	enemyowns_jump(Zerg Hive, ZpowerATK)
+	enemyowns_jump(Zerg Lair, runNormalAttackSequence)
+	goto(ZincreaseATKstrength)
+
+	--ZpowerATK--
+	#debug(dZpowerATK, ZpowerATK)
+	--dZpowerATK--
+	define_max(1, Terran Science Vessel)
+
+	attack_add(1, Terran Science Vessel)
+	attack_add(2, Terran Siege Tank<0>Tank Mode)
+
+	enemyowns_jump(Zerg Defiler Mound, ZPATKmoreFirebats)
+	attack_add(1, Terran Firebat)
+	attack_add(5, Terran Marine)
+	goto(ZPATKnormalFirebats)
+	--ZPATKmoreFirebats--
+	define_max(12, Terran Firebat)
+	attack_add(3, Terran Firebat)
+	attack_add(4, Terran Marine)
+	--ZPATKnormalFirebats--
+
+	attack_add(2, Terran Medic)
+
+	wait_train(1, Terran Battlecruiser)
+	wait_train(6, Terran Siege Tank<0>Tank Mode)
+	wait_train(32, Terran Marine)
+
+	define_max(5, Terran Science Vessel)
+
+	goto(runNormalAttackSequence)
+
+	--ZincreaseATKstrength--
+	#debug(dZstandardATKincrease, ZstandardATKincrease)
+	--dZstandardATKincrease--
+
+	define_max(20, Terran Siege Tank<0>Tank Mode)
+	define_max(10, Terran Medic)
+
+	attack_add(1, Terran Science Vessel)
+	attack_add(4, Terran Siege Tank<0>Tank Mode)
+	attack_add(2, Terran Medic)
+
+	enemyowns_jump(Zerg Defiler Mound, ZATKmoreFirebats)
+	attack_add(1, Terran Firebat)
+	attack_add(5, Terran Marine)
+	goto(ZATKnormalFirebats)
+	--ZATKmoreFirebats--
+	define_max(12, Terran Firebat)
+	attack_add(3, Terran Firebat)
+	attack_add(4, Terran Marine)
+	--ZATKnormalFirebats--
+
+	wait_train(6, Terran Siege Tank<0>Tank Mode)
+	wait_train(32, Terran Marine)
+
+	--runNormalAttackSequence--
+
+	target_expansion()
+
+	attack_prepare()
+	wait(100)
+	attack_do()
+	attack_clear()
+
+	wait(500)
+	goto(attackLoop)
+
+
+
+
+
+
